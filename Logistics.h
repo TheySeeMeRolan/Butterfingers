@@ -8,7 +8,7 @@
 #include "Race.h"
 #include "Report.h"
 #include "Subject.h"
-#include "Container.h"
+#include "Equipment.h"
 
 #include <iostream>
 #include <string>
@@ -26,7 +26,7 @@ private:
 public:
     void addTrack(Race*);
     void increaseInterval();
-    void equip(Race* race, Container* container);
+    void equip(Race* race, Equipment* equipment);
     virtual tuple<Race *, Race *, Race *> getRaces();
     virtual void notify();
     Logistics();

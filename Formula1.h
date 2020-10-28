@@ -7,7 +7,6 @@
 
 #include "Logistics.h"
 #include "Track.h"
-#include "Season.h"
 
 #include <vector>
 #include <string>
@@ -22,7 +21,7 @@ private:
     vector<Track*> tracks;
     //Season* season;
 public:
-    Formula1(Logistics* l, Season* s);
+    Formula1(Logistics* l);
     void prepareLogistics();
     void createTeams();
     void startSession();
