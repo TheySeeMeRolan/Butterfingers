@@ -13,6 +13,8 @@ public:
     virtual int getTotalLength();
     StraightPart();
     StraightPart(int l, int d);
+
+    
 };
 
 #endif //PROJECT_STRAIGHTPART_H
