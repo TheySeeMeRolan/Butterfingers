@@ -7,7 +7,7 @@
 
 #include "Equipment.h"
 #include "Track.h"
-//#include "State.h"
+#include "Strategy.h"
 
 #include <iostream>
 #include <string>
@@ -23,7 +23,7 @@ private:
     Equipment* equipment;
     Track* track;
     bool european;
-//    State* state;
+    Strategy* strategy;
 public:
     Race(Track* t);
     void update();
