@@ -11,19 +11,20 @@
 using namespace std;
 
 class TrackPart{
-private:
+protected:
     int length;
     int difficulty;
+    string TrackPartType;
     bool european;
 public:
     //virtual void AddPart(TrackPart* part)=0;
     //virtual void setEuropean(bool E)=0;
+    //virtual bool isEuropean()=0;
     virtual int getTotalLength()=0;
     virtual int getTotalDifficulty()=0;
-    //bool isEuropean();
+    virtual string getTrackPartType()=0;
     virtual ~TrackPart();
-    TrackPart();
-    TrackPart(int l, int d);
+    TrackPart(int l, int d, string t);
 };
 
 #endif //PROJECT_TRACKPART_H

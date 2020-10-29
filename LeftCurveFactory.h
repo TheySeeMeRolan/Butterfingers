@@ -6,12 +6,12 @@
 #define PROJECT_LEFTCURVEFACTORY_H
 
 #include "TrackPartFactory.h"
+#include "LeftCurvePart.h"
 
 class LeftCurveFactory: public TrackPartFactory {
 public:
+    virtual TrackPart* CreatePart(int l, int d);
     virtual TrackPart* CreatePart();
-    LeftCurveFactory();
-    LeftCurveFactory(int l, int d);
 };
 
 

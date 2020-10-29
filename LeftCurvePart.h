@@ -9,9 +9,9 @@
 
 class LeftCurvePart: public TrackPart{
 public:
-    virtual int getTotalDifficulty();
-    virtual int getTotalLength();
-    LeftCurvePart();
+    int getTotalDifficulty();
+    int getTotalLength();
+    string getTrackPartType();
     LeftCurvePart(int l, int d);
 };
 

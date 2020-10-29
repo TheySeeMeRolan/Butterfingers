@@ -9,9 +9,7 @@
 
 class RightCurveFactory: public TrackPartFactory {
 public:
-    virtual TrackPart* CreatePart();
-    RightCurveFactory();
-    RightCurveFactory(int l, int d);
+    TrackPart* CreatePart(int l, int d);
 };
 
 

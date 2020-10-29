@@ -11,7 +11,7 @@
 #include "Electronics.h"
 #include "Spoiler.h"
 
-class Formula1Car{
+class Formula1Car {
 private:
     Engine* engine;
     Tyre* tyres[4];

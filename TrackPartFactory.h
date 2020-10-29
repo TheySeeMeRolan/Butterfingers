@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <string>
+#include <time.h>
 
 using namespace std;
 
@@ -16,9 +17,7 @@ private:
     int length;
     int difficulty;
 public:
-    virtual TrackPart* CreatePart()=0;
-    TrackPartFactory();
-    TrackPartFactory(int l, int d);
+    virtual TrackPart* CreatePart(int l, int d)=0;
     virtual ~TrackPartFactory();
 };
 

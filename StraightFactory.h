@@ -8,9 +8,7 @@
 
 class StaightFactory: public TrackPartFactory{
 public:
-    virtual TrackPart* CreatePart();
-    StraightFactory();
-    StraightFactory(int l, int d);
+    virtual TrackPart* CreatePart(int l, int d);
 };
 
 #endif //PROJECT_STRAIGHTFACTORY_H
