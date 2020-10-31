@@ -1,4 +1,5 @@
 #include "PracticeStrategy.h"
+#include "Team.h"
 
 vector<Team *> PracticeStrategy::race(vector<Team *> teams, Track *track) {
     if(track->isEuropean()) {

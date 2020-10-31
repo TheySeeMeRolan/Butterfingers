@@ -1,4 +1,5 @@
 #include "QualifyingStrategy.h"
+#include "Team.h"
 
 vector<Team *> QualifyingStrategy::race(vector<Team *> teams, Track *track) {
     vector<int> teamScore;
@@ -44,6 +45,7 @@ int QualifyingStrategy::determineTeamRaceScore(Team* team, int difficulty, int l
         tyreScore += 5;
     }
 
+    teamScore += tyreScore;
     teamScore += engineScore;
     teamScore += chasisScore;
     teamScore += electronicScore;

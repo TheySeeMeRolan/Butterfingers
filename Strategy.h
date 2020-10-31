@@ -1,13 +1,13 @@
 #ifndef PROJECT_STRATEGY_H
 #define PROJECT_STRATEGY_H
 
-#include "Team.h"
 #include "Track.h"
 
 #include <iostream>
 #include <string>
 #include <vector>
 
+class Team;
 using namespace std;
 
 class Strategy{

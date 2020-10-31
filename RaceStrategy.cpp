@@ -1,4 +1,5 @@
 #include "RaceStrategy.h"
+#include "Team.h"
 
 vector<Team *> RaceStrategy::race(vector<Team *> teams, Track *track) {
     vector<int> teamScore;
