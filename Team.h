@@ -29,6 +29,7 @@ public:
     virtual void update();
     void test(Formula1Car* c);
     void changeTestType();
+    string getCompany();
     Engine* getEngine();
     Tyre* getTyre();
     Chasis* getChasis();

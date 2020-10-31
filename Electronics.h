@@ -13,6 +13,10 @@ using namespace std;
 class Electronics{
     string type;
     int efficiency;
+
+public:
+    string getType();
+    int getEfficiency();
 };
 
 #endif //PROJECT_ELECTRONICS_H

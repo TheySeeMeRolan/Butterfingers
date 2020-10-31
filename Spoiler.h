@@ -14,5 +14,9 @@ class Spoiler{
     string type;
     int weight;
     int aeroDynamicScore;
+public:
+    string getType();
+    int getWeight();
+    int getAerodynamicsScore();
 };
 #endif //PROJECT_SPOILER_H

@@ -6,11 +6,12 @@ vector<Team *> QualifyingStrategy::race(vector<Team *> teams, Track *track) {
     if(track->isEuropean()) {
         for (auto &team : teams) {
             std::cout<< team->getCompany() << " is running a European Qualifying race\n";
-            teamScore.push_back(determineTeamRaceScore(track->getTotalDifficulty(),track->getTotalLength()));
+            teamScore.push_back(determineTeamRaceScore(team,track->getTotalDifficulty(),track->getTotalLength()));
         }
     } else {
         for (auto &team : teams) {
             std::cout<< team->getCompany() << " is running a Non-European Qualifying race\n";
+            teamScore.push_back(determineTeamRaceScore(team,track->getTotalDifficulty()+1,track->getTotalLength()));
         }
     }
     for (int i = 0; i < (int)teams.size()-1; ++i) {
@@ -25,6 +26,27 @@ vector<Team *> QualifyingStrategy::race(vector<Team *> teams, Track *track) {
     return teams;
 }
 
-int QualifyingStrategy::determineTeamRaceScore(int, int) {
-    return 0;
+int QualifyingStrategy::determineTeamRaceScore(Team* team, int difficulty, int length) {
+    int teamScore = length;
+    int tyreScore = team->getTyre()->getThread() * difficulty;
+    int engineScore = team->getEngine()->getHorsePower() * difficulty + team->getEngine()->getTorque() * difficulty;
+    int chasisScore = team->getChasis()->getWeight() * difficulty + team->getChasis()->aerodynamicScore() * difficulty;
+    int electronicScore = team->getElectronics()->getEfficiency() * difficulty;
+    int spoilerScore = team->getSpoiler()->getWeight() * difficulty + team->getSpoiler()->getAerodynamicScore() * difficulty;
+
+    if(team->getTyre()->getType() == "soft") {
+        tyreScore += 4;
+    }
+    else if(team->getTyre()->getType() == "medium") {
+        tyreScore += 6;
+    }
+    else {
+        tyreScore += 5;
+    }
+
+    teamScore += engineScore;
+    teamScore += chasisScore;
+    teamScore += electronicScore;
+    teamScore += spoilerScore;
+    return teamScore;
 }

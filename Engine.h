@@ -15,5 +15,9 @@ private:
     string type;
     int horsePower;
     int torque;
+public:
+    string getType();
+    int getHorsePower();
+    int getTorque();
 };
 #endif //PROJECT_ENGINE_H
