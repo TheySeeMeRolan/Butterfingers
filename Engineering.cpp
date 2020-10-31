@@ -4,6 +4,6 @@ Engineering::Engineering(): Human(){
     
 }
 
-Engineering::Engineering(Team* t): Human(t){
+Engineering::Engineering(Team* t, Human * s): Human(t, s){
     
 }

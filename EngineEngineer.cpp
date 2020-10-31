@@ -4,6 +4,6 @@
 
  }
 
- EngineEngineer::EngineEngineer(Team* team): Engineering(team){
+ EngineEngineer::EngineEngineer(Team* team, Human * s): Engineering(team, s){
      
  }

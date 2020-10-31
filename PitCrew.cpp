@@ -4,6 +4,6 @@
 
  }
     
- PitCrew::PitCrew(Team* team): Personnel(team){
+ PitCrew::PitCrew(Team* team, Human * s): Personnel(team, s){
      
  }

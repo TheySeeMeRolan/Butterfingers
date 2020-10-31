@@ -4,6 +4,6 @@ Strategist::Strategist():Personnel(){
 
 }
 
-Strategist::Strategist(Team* t): Personnel(t){
+Strategist::Strategist(Team* t, Human * s): Personnel(t, s){
     
 }

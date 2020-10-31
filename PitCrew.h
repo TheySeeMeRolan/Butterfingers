@@ -12,7 +12,7 @@ public:
     void handleRequest();
     void changeTyre();
     PitCrew();
-    PitCrew(Team* team);
+    PitCrew(Team* team, Human * s);
 };
 
 #endif //PROJECT_PITCREW_H

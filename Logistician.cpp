@@ -4,6 +4,6 @@ Logistician::Logistician(): Personnel(){
 
 }
 
-Logistician::Logistician(Team* t): Personnel(t){
+Logistician::Logistician(Team* t, Human * s): Personnel(t, s){
 
 }

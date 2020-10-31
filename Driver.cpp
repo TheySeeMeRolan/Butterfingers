@@ -13,7 +13,7 @@ Driver::Driver(Team* team, Human * s) : Personnel(team, s){
 
 }
 
-Driver::Driver(Team* team, int l, int s):Personnel(team){
+Driver::Driver(Team* team, Human *p, int l, int s):Personnel(team, p){
     luck= l;
     skill= s;
 }

@@ -4,8 +4,9 @@
 
 // }
 
-Human::Human(Team* t){
+Human::Human(Team* t, Human * s){
     team= t;
+    successor = s;
 }
 
 Human::~Human(){

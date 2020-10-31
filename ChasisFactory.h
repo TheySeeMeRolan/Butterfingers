@@ -12,8 +12,8 @@
 class ChasisFactory: public HumanFactory{
 public:
     ChasisFactory(Team* t);
-    Human * makeEngineer() ;
-    Human * makePersonnel() ;
+    Human * makeEngineer(Human * s) ;
+    Human * makePersonnel(Human * s) ;
 };
 
 #endif //PROJECT_CHASISFACTORY_H

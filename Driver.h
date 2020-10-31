@@ -17,8 +17,8 @@ public:
     void handleRequest();
     void drive();
     Driver();
-    Driver(Team* team);
-    Driver(Team* team, int l, int s);
+    Driver(Team* team, Human * s);
+    Driver(Team* team, Human * s, int l, int s);
 };
 
 #endif //PROJECT_DRIVER_H

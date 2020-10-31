@@ -11,6 +11,6 @@ class Engineering: public Human{
 public:
     void handleRequest();
     Engineering();
-    Engineering(Team* team)
+    Engineering(Team* team, Human * s)
 };
 #endif //PROJECT_ENGINEERING_H

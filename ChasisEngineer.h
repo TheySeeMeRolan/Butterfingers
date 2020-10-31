@@ -12,7 +12,7 @@ public:
     void handleRequest();
     void test();
     ChasisEngineer();
-    ChasisEngineer(Team* team);
+    ChasisEngineer(Team* team, Human * s);
 };
 
 #endif //PROJECT_CHASISENGINEER_H
