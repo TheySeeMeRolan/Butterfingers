@@ -4,8 +4,8 @@
 
 #ifndef PROJECT_LOGISTICONSERVER_H
 #define PROJECT_LOGISTICONSERVER_H
-#include "Subject.h"
 
+class Subject;
 #include <iostream>
 #include <string>
 

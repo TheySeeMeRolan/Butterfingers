@@ -110,7 +110,7 @@ void Logistics::equip(Race *race, Equipment *equipment)
 void Logistics::startNextWeek()
 {
     week++;
-    Subject::notify();
+    notify();
 }
 
 tuple<Race *, Race *, Race *> Logistics::getRaces()

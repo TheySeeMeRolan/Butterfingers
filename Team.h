@@ -7,15 +7,16 @@
 
 #include "LogisticObserver.h"
 #include "Human.h"
+#include "Command.h"
 #include "Formula1Car.h"
 #include "CarPartBuilder.h"
-#include 
+#include "CarMemento.h"
 #include<iostream>
 #include<string>
 #include<tuple>
 
 using namespace std;
-
+class Race;
 class Team: public LogisticObserver {
 private:
     string company;

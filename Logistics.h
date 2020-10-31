@@ -25,13 +25,13 @@ private:
     vector<Report*> monthlyReport;
 public:
 
+    Logistics():Subject()
+    {};
     void scheduleSeason( vector<Track*> tracksForRaces);
     void kickOffSeason();
     void startNextWeek();
     void equip(Race* race, Equipment* equipment);
     virtual tuple< Race *, Race *, Race *> getRaces();
-    Logistics():Subject()
-    {};
     Logistics( vector<Team*> teams );
 };
 

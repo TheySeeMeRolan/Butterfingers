@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include "LogisticObserver.h"
 
 using namespace std;
 
@@ -22,7 +23,7 @@ public:
     void attach(LogisticObserver* team);
     void detach(LogisticObserver* team);
     virtual tuple<Race*, Race*, Race*> getRaces()=0;
-    virtual void notify();
+    void notify();
     virtual ~Subject();
     Subject();
 };
