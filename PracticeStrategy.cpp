@@ -1,12 +1,16 @@
 #include "PracticeStrategy.h"
 
-vector<Team *> PracticeStrategy::race(vector<Team *> team, Track *track) {
+vector<Team *> PracticeStrategy::race(vector<Team *> teams, Track *track) {
     if(track->isEuropean()) {
-        for (int i = 0; i < 10; ++i) {
-            team[i]->getChasis();
+        for (auto &team : teams) {
+            std::cout<<team->getCompany() << " is running a European practice race.\n"
+//            team->strategise(); //will have to ask if you would want to
         }
     } else {
-
+        for (auto &team : teams) {
+            std::cout<<team->getCompany() << " is running a Non-European practice race.\n"
+//            team->strategise(); //will have to ask if you would want to
+        }
     }
-    return team;
+    return teams;
 }

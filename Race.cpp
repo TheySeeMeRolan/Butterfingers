@@ -1,10 +1,9 @@
 #include "Race.h"
 
-Race::Race(Track *t) {
+Race::Race(Track *t, string location) {
     track = t;
-    location = track->getLocation(); //track must get a getLocation() method....
+    this->location = location;
     date = 0;
-    equipment = nullptr;
     update();
     european = track->isEuropean();
 }
@@ -16,7 +15,6 @@ Race::~Race() {
     teams.clear();
     logStatement.clear();
     track = nullptr;
-    equipment = nullptr;
     delete strategy;
     strategy = nullptr;
 }
@@ -36,13 +34,33 @@ void Race::update() {
             strategy = new RaceStrategy();
             break;
         default:
+            date = 0;
             delete strategy;
             strategy = nullptr;
     }
 }
 
 void Race::race() {
-    strategy->race(teams,track);
+    int dayCounter = 0;
+    vector<Team*> teamsCopy = teams;
+    while (dayCounter < 3) {
+        teams = strategy->race(teams,track);
+        date++;
+        this->update();
+        dayCounter++;
+    }
+
+    for (int i = 0; i < (int)teamsCopy.size(); ++i) {
+        for (int j = 0; j < (int)teamsCopy.size(); ++j) {
+            if(teamsCopy[i]==teams[j]) {
+                logStatement.push_back(j);
+                break;
+            }
+        }
+    }
+
+    teams = teamsCopy;
+    teamsCopy.clear();
 }
 
 Track* Race::getTrack() {
@@ -53,8 +71,8 @@ void Race::addTeam(Team *t) {
     teams.push_back(t);
 }
 
-void Race::StoreEquipment(Equipment *equipment) {
-    this->equipment = equipment;
+void Race::StoreEquipment(vector<Equipment *> teamEquipment) {
+    this->equipment = teamEquipment;
 }
 
 vector<int> Race::getLogStatement() {

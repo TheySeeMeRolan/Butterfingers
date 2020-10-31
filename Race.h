@@ -21,18 +21,18 @@ private:
     string location;
     vector<int> logStatement;
     int date;
-    Equipment* equipment;
+    vector<Equipment*> equipment;
     Track* track;
     bool european;
     Strategy* strategy;
 public:
-    Race(Track* t);
+    Race(Track* t, string location);
     ~Race();
     void addTeam(Team* t);
     void update();
     Track* getTrack();
     vector<int> getLogStatement();
-    void StoreEquipment(Equipment* equipment);
+    void StoreEquipment(vector<Equipment*> teamEquipment);
     void race();
 };
 
