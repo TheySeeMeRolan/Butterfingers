@@ -17,8 +17,8 @@ private:
 public:
     virtual ~HumanFactory();
     HumanFactory(Team* t);
-    virtual Human* makePersonnel()=0;
-    virtual Human* makeEngineer()=0;
+    virtual Human* makePersonnel(Human *)=0;
+    virtual Human* makeEngineer(Human *)=0;
     Team* getTeam();
 };
 #endif //PROJECT_HUMANFACTORY_H

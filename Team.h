@@ -36,8 +36,12 @@
 #include "Strategise.h"
 #include "Testing.h"
 
+// template
+#include "Test.h"
+#include "WindTunnel.h"
+#include "Simulation.h"
 
-#include 
+
 #include<iostream>
 #include<string>
 #include<tuple>
@@ -47,8 +51,7 @@ using namespace std;
 class Team: public LogisticObserver {
 private:
     string company;
-    Human ** personnel;
-    Human ** engineers;
+    Human * lead;
     tuple<Race*, Race*, Race*> upcomingRaces;
     Formula1Car* currentCar;
     Formula1Car* futureCar;
@@ -56,13 +59,12 @@ private:
     Command* command[4];
     int windTunnelTokens;
     HumanFactory** factories;
+    Test * tester;
 
 public:
     Formula1Car* construct();
     Formula1Car* cloneCar();
     virtual void update();
-    void test(Formula1Car* c);
-    void changeTestType();
     Engine* getEngine();
     Tyre* getTyre();
     Chasis* getChasis();
@@ -76,6 +78,12 @@ public:
     void race();
     void strategise();
     void test();
+
+    // template 
+    void runTest(string car); ///get car from memento store and run test to see if its replaced
+    void changeTestType(string type);
+
+    string getCompany();
 
     Team();
     Team(Subject* s);

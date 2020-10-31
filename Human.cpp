@@ -1,8 +1,8 @@
 #include "Human.h"
 
-Human::Human(){
+// Human::Human(){
 
-}
+// }
 
 Human::Human(Team* t){
     team= t;
