@@ -5,15 +5,18 @@
 #ifndef PROJECT_TEAM_H
 #define PROJECT_TEAM_H
 
-#include "LogisticOnserver.h"
-
+#include "LogisticObserver.h"
+#include "Human.h"
+#include "Formula1Car.h"
+#include "CarPartBuilder.h"
+#include 
 #include<iostream>
 #include<string>
 #include<tuple>
 
 using namespace std;
 
-class Team: public LogisticOnserver {
+class Team: public LogisticObserver {
 private:
     string company;
     Human* personnel;

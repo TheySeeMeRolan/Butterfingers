@@ -18,7 +18,6 @@ public:
     void registerTeam(Subject*);
     virtual void update()=0;
     LogisticObserver();
-    LogisticObserver(Subject* s);
     virtual ~LogisticObserver();
 };
 

@@ -16,16 +16,15 @@ using namespace std;
 
 class Subject{
 protected:
-    vector<Team*> teams;
+    vector<LogisticObserver*> teams;
     int week;
 public:
-    void attach(Team* team);
-    void detach(Team* team);
+    void attach(LogisticObserver* team);
+    void detach(LogisticObserver* team);
     virtual tuple<Race*, Race*, Race*> getRaces()=0;
-    virtual void notify()=0;
+    virtual void notify();
     virtual ~Subject();
     Subject();
-    Subject(int w, vector<Team*> t);
 };
 
 #endif //PROJECT_SUBJECT_H
