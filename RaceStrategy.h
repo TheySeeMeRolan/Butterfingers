@@ -6,7 +6,8 @@
 class RaceStrategy: public Strategy{
 public:
     virtual vector<Team*> race(vector<Team*> teams, Track* track);
-    RaceStrategy();
+    virtual int determineTeamRaceScore(int, int);
+    virtual ~RaceStrategy();
 };
 
 

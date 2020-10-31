@@ -13,6 +13,7 @@ using namespace std;
 class Strategy{
 public:
     virtual vector<Team*> race(vector<Team*> team, Track* track)=0;
+    virtual int determineTeamRaceScore(int, int)=0;
     virtual ~Strategy();
 };
 

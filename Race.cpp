@@ -44,9 +44,9 @@ void Race::race() {
     int dayCounter = 0;
     vector<Team*> teamsCopy = teams;
     while (dayCounter < 3) {
-        teams = strategy->race(teams,track);
+        teams = strategy->race(teams,track); //teams will be set according to race strategy's race method qualifying will reshuffle the teams such that the starting positions are different
         date++;
-        this->update();
+        this->update(); //changes the strategy based on the date variable
         dayCounter++;
     }
 

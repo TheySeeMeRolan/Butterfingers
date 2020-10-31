@@ -14,3 +14,7 @@ vector<Team *> PracticeStrategy::race(vector<Team *> teams, Track *track) {
     }
     return teams;
 }
+
+int PracticeStrategy::determineTeamRaceScore(int, int) {
+    return 0;
+}
