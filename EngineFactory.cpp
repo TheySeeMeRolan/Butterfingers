@@ -5,7 +5,7 @@ EngineFactory::EngineFactory(Team* t): HumanFactory(t){
 }
 
 Human* EngineFactory::makeEngineer(){
-    Human* re= new makeEngineer(getTeam());
+    Human* re= new EngineEngineer(getTeam());
     return re;
 }
 

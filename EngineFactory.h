@@ -11,9 +11,9 @@
 
 class EngineFactory: public HumanFactory{
 public:
-    EngineFactory();
-    virtual Human * makeEngineer() ;
-    virtual Human * makePersonnel() ;
+    EngineFactory(Team* t);
+    Human * makeEngineer() ;
+    Human * makePersonnel() ;
 };
 
 #endif //PROJECT_ENGINEFACTORY_H
