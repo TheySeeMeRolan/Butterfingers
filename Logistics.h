@@ -25,14 +25,14 @@ private:
     vector<Report*> monthlyReport;
 public:
 
+    void scheduleSeason( vector<Track*> tracksForRaces);
+    void kickOffSeason();
     void startNextWeek();
     void equip(Race* race, Equipment* equipment);
-    virtual tuple<Race *, Race *, Race *> getRaces();
-    virtual void notify();
-    Logistics();
-    Logistics(vector<Race*> races);
-    Logistics(vector<Race*> races, int w, vector<Team*> t);
-    Logistics(int w, vector<Team*> t);
+    virtual tuple< Race *, Race *, Race *> getRaces();
+    Logistics():Subject()
+    {};
+    Logistics( vector<Team*> teams );
 };
 
 #endif //PROJECT_LOGISTICS_H
