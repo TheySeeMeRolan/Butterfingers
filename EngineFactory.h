@@ -6,6 +6,8 @@
 #define PROJECT_ENGINEFACTORY_H
 
 #include "HumanFactory.h"
+#include "EngineEngineer.h"
+#include "PitCrew.h"
 
 class EngineFactory: public HumanFactory{
 public:

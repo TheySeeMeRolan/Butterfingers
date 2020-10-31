@@ -12,10 +12,13 @@
 using namespace std;
 
 class HumanFactory{
+private:
+    Team* team;
 public:
     virtual ~HumanFactory();
-    HumanFactory();
-    virtual Human* makePersonnel()=0;
-    virtual Human* makeEngineer()=0;
+    HumanFactory(Team* t);
+    virtual Human* makePersonnel(Team* t)=0;
+    virtual Human* makeEngineer(Team* t)=0;
+    Team* getTeam();
 };
 #endif //PROJECT_HUMANFACTORY_H

@@ -6,10 +6,12 @@
 #define PROJECT_CHASISFACTORY_H
 
 #include "HumanFactory.h"
+#include "Strategist.h"
+#include "ChasisEngineer.h"
 
 class ChasisFactory: public HumanFactory{
 public:
-    ChasisFactory();
+    ChasisFactory(Team* t);
     virtual Human * makeEngineer() ;
     virtual Human * makePersonnel() ;
 };
