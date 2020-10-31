@@ -12,6 +12,6 @@ void LogisticObserver::registerTeam(Subject *s)
 
 LogisticObserver::~LogisticObserver()
 {
-    
+
 }
 

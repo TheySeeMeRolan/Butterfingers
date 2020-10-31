@@ -24,8 +24,8 @@ private:
     vector<Report*> weeklyReport;
     vector<Report*> monthlyReport;
 public:
-    void addTrack(Race*);
-    void increaseInterval();
+
+    void startNextWeek();
     void equip(Race* race, Equipment* equipment);
     virtual tuple<Race *, Race *, Race *> getRaces();
     virtual void notify();
