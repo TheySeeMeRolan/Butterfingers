@@ -32,7 +32,7 @@ public:
     void update();
     Track* getTrack();
     vector<int> getLogStatement();
-    void StoreEquipment(vector<Equipment*> teamEquipment);
+    void storeEquipment(vector<Equipment*> teamEquipment);
     void race();
 };
 
