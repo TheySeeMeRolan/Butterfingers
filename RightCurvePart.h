@@ -9,8 +9,6 @@
 
 class RightCurvePart: public TrackPart{
 public:
-    int getTotalDifficulty();
-    int getTotalLength();
     RightCurvePart(int l, int d);
 };
 

@@ -17,11 +17,10 @@ protected:
     string trackPartType;
 public:
     virtual void addPart(TrackPart* part)=0; //Can only be called on Track
-    virtual void setEuropean(bool E)=0; //Can only be called on Track
     virtual bool isEuropean()=0; //Can only be called on Track
 
-    virtual int getTotalLength()=0;//Can be called on Track or TrackParts
-    virtual int getTotalDifficulty()=0;//Can be called on Track or TrackParts
+    virtual int getTotalLength();//Can be called on Track or TrackParts
+    virtual int getTotalDifficulty();//Can be called on Track or TrackParts
     virtual string getTrackPartType();//Can be called on Track or TrackParts
 
     virtual ~TrackPart();

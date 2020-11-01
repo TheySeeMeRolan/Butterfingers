@@ -6,6 +6,7 @@
 #define PROJECT_RIGHTCURVEFACTORY_H
 
 #include "TrackPartFactory.h"
+#include "RightCurvePart.h"
 
 class RightCurveFactory: public TrackPartFactory {
 public:

@@ -9,8 +9,6 @@
 
 class StraightPart: public TrackPart{
 public:
-    int getTotalDifficulty();
-    int getTotalLength();
     StraightPart(int l, int d);    
 };
 

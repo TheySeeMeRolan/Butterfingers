@@ -17,13 +17,14 @@ private:
     vector<TrackPart*> sections;
     bool european;
 public:
-    void addPart(TrackPart* part);
+    void addPart(TrackPart* part); // Should be added anonymously - i.e Factory->createPart() in the parameter
     int getTotalDifficulty();
     int getTotalLength();
     bool isEuropean();
+    string getTrackPartType();
 
     Track(bool isEuropean);
-    ~Track();
+    ~Track();// because the destructor manages the pointers within the vector
 };
 
 #endif //PROJECT_TRACK_H
