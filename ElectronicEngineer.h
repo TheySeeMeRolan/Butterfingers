@@ -12,7 +12,7 @@ public:
     void handleRequest();
     void tinker();
     ElectronicEngineer();
-    ElectronicEngineer(Team* team);
+    ElectronicEngineer(Team* team, Human * s);
 };
 
 

@@ -12,8 +12,8 @@
 class ElectronicFactory: public HumanFactory{
 public:
     ElectronicFactory(Team* t);
-    Human * makeEngineer() ;
-    Human * makePersonnel() ;
+    Human * makeEngineer(Human * s) ;
+    Human * makePersonnel(Human * s) ;
 };
 
 #endif //PROJECT_ELECTRONICFACTORY_H

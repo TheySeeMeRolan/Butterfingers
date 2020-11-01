@@ -16,7 +16,7 @@
 //Humans
 #include "Human.h"
 #include "AerodynamicsEngineer.h"
-#include "ElectronicsEngineer.h"
+#include "ElectronicEngineer.h"
 #include "ChasisEngineer.h"
 #include "EngineEngineer.h"
 #include "Strategist.h"
@@ -31,10 +31,10 @@
 // commands
 #include "Command.h"
 #include "CarMemento.h"
-#include "Prepare.h"
-#include "Racing.h"
-#include "Strategise.h"
-#include "Testing.h"
+#include "PrepareCommand.h"
+#include "RacingCommand.h"
+#include "StrategiseCommand.h"
+#include "TestingCommand.h"
 
 // template
 #include "Test.h"

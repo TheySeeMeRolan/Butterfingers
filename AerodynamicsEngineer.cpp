@@ -4,6 +4,6 @@ AerodynamicsEngineer::AerodynamicsEngineer(): Engineering(){
 
 }
 
-AerodynamicsEngineer::AerodynamicsEngineer(Team* team): Engineering(team){
+AerodynamicsEngineer::AerodynamicsEngineer(Team* team, Human * s): Engineering(team, s){
     
 }

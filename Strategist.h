@@ -11,6 +11,6 @@ public:
     void handleRequest();
     void strategise();
     Strategist();
-    Strategist(Team* team);
+    Strategist(Team* team, Human * s);
 };
 #endif //PROJECT_STRATEGIST_H

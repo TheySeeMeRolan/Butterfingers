@@ -12,7 +12,7 @@ public:
     void handleRequest();
     void changeShape();
     AerodynamicsEngineer();
-    AerodynamicsEngineer(Team* team);
+    AerodynamicsEngineer(Team* team, Human * s);
 };
 
 #endif //PROJECT_AERODYNAMICS_H

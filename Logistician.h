@@ -12,7 +12,7 @@ public:
     void handleRequest();
     void analyseTrack();
     Logistician();
-    Logistician(Team* team);
+    Logistician(Team* team, Human * s);
 };
 
 #endif //PROJECT_LOGISTICIAN_H

@@ -21,6 +21,8 @@ public:
     Driver(Team* team, int l, int s);
     int getSkill();
     int getLuck();
+    Driver(Team* team, Human * s);
+    Driver(Team* team, Human * s, int l, int s);
 };
 
 #endif //PROJECT_DRIVER_H

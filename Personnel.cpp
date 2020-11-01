@@ -4,6 +4,6 @@ Personnel::Personnel():Human(){
 
 }
 
-Personnel::Personnel(Team* t):Human(t){
+Personnel::Personnel(Team* t, Human * s):Human(t, s){
     
 }

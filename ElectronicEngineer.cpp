@@ -4,7 +4,7 @@ ElectronicEngineer::ElectronicEngineer(): Engineering(){
 
 }
 
-ElectronicEngineer::ElectronicEngineer(Team* t): Engineering(t){
+ElectronicEngineer::ElectronicEngineer(Team* t, Human * s) : Engineering(t, s){
 
 }
 

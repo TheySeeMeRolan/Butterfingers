@@ -9,9 +9,9 @@ Team::Team()
     factories[2] = new ChasisFactory(this);
     factories[3] = new EngineFactory(this);
 
-    // Strategist holds Driver, driver holds Logistician etc , start creation from the back (Engine Engineer)
+    // Strategist holds Driver, driver holds Logistician etc , start creation from the back (EngineEngineer)
     Human * tempHuman = factories[3]->makePersonnel(nullptr); // engine engineer with no successor
-    tempHuman = factories[2]->makePersonnel(tempHuman); // electronics engineer with engine engineer successor  
+    tempHuman = factories[2]->makePersonnel(tempHuman); // electronics engineer with engine engineer successor 
     tempHuman = factories[1]->makePersonnel(tempHuman); // aerodynamics engineer with electronics engineer successor
     tempHuman = factories[0]->makePersonnel(tempHuman); // chasis engineer with aerodynamics engineer successor
     tempHuman = factories[3]->makeEngineer(tempHuman);  // pitcrew engineer with chasis engineer successor  
@@ -30,10 +30,17 @@ Team::Team()
 
     /// Create the commands ( to use the personnel )
 
-    command[0] = new Prepare();
-    command[1] = new Racing();
-    command[2] = new Strategise();
-    command[3] = new Testing();
+    command[0] = new PrepareCommand(lead);
+    command[1] = new RacingCommand(lead);
+    command[2] = new StrategiseCommand(lead);
+    command[3] = new TestingCommand(lead);
+}
+
+Team::~Team(){
+    // for(int i ; i < 4)
+    // {
+
+    // }
 }
 
 

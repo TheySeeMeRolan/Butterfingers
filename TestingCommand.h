@@ -2,15 +2,15 @@
 // Created by Joanita on 2020/10/27.
 //
 
-#ifndef PROJECT_TESTING_H
-#define PROJECT_TESTING_H
+#ifndef PROJECT_TESTINGCOMMAND_H
+#define PROJECT_TESTINGCOMMAND_H
 
 #include "Command.h"
 
-class Testing: public Command{
+class TestingCommand: public Command{
 public:
     virtual void execute();
-    Testing();
+    TestingCommand(Human *);
 };
 
 #endif //PROJECT_TESTING_H

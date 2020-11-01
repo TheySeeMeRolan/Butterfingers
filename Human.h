@@ -14,7 +14,7 @@ protected:
     Team* team;
     Human* successor;
 public:
-    virtual void handleRequest();
+    virtual void handleRequest(string s);
     // Human();
     Human(Team* team, Human * s);
     virtual ~Human();
