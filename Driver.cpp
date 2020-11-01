@@ -46,3 +46,17 @@ void Driver::drive()
     cout<<"Team "<<team->getCompany()<<"'s driver drives the car."<<endl;
 
 }
+
+
+int Driver:: getSkill(){
+    retutn skill;
+}
+
+int Driver:: getLuck(){
+    return luck;
+}
+
+
+
+
+
