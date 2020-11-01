@@ -132,4 +132,3 @@ void Logistics::goToRace(Team *t)
 {
 races.at(week)->addTeam(t);
 }
-

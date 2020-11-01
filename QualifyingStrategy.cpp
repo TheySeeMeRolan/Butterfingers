@@ -31,9 +31,9 @@ int QualifyingStrategy::determineTeamRaceScore(Team* team, int difficulty, int l
     int teamScore = length;
     int tyreScore = team->getTyre()->getThread() * difficulty;
     int engineScore = team->getEngine()->getHorsePower() * difficulty + team->getEngine()->getTorque() * difficulty;
-    int chasisScore = team->getChasis()->getWeight() * difficulty + team->getChasis()->aerodynamicScore() * difficulty;
+    int chasisScore = team->getChasis()->getHeight() * difficulty + team->getChasis()->getAerodynamicsScore() * difficulty;
     int electronicScore = team->getElectronics()->getEfficiency() * difficulty;
-    int spoilerScore = team->getSpoiler()->getWeight() * difficulty + team->getSpoiler()->getAerodynamicScore() * difficulty;
+    int spoilerScore = team->getSpoiler()->getWeight() * difficulty + team->getSpoiler()->getAerodynamicsScore() * difficulty;
 
     if(team->getTyre()->getType() == "soft") {
         tyreScore += 4;
