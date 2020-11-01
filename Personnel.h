@@ -8,9 +8,9 @@
 
 class Personnel: public Human{
 public:
-    void handleRequest();
+    void handleRequest(string s);
     Personnel();
-    Personnel(Team* team);
+    Personnel(Team* team, Human * s);
 };
 
 #endif //PROJECT_PERSONNEL_H

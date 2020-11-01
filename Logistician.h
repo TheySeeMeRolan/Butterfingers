@@ -9,10 +9,11 @@
 
 class Logistician: public Personnel{
 public:
-    void handleRequest();
+    void handleRequest(string s);
     void analyseTrack();
+    void prepareForRace();
     Logistician();
-    Logistician(Team* team);
+    Logistician(Team* team, Human * s);
 };
 
 #endif //PROJECT_LOGISTICIAN_H

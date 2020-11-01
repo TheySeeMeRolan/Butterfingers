@@ -9,10 +9,10 @@
 
 class EngineEngineer: public Engineering{
 public:
-    void handleRequest();
+    void handleRequest(string s);
     void useWrench();
     EngineEngineer();
-    EngineEngineer(Team* team);
+    EngineEngineer(Team* team, Human * s);
 };
 
 #endif //PROJECT_ENGINEENGINEER_H

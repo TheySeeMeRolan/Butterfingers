@@ -8,9 +8,9 @@
 
 class Strategist: public Personnel{
 public:
-    void handleRequest();
+    void handleRequest(string s);
     void strategise();
     Strategist();
-    Strategist(Team* team);
+    Strategist(Team* team, Human * s);
 };
 #endif //PROJECT_STRATEGIST_H

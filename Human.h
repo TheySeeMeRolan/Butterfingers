@@ -1,20 +1,22 @@
-//
-// Created by Joanita on 2020/10/27.
-//
-
 #ifndef PROJECT_HUMAN_H
 #define PROJECT_HUMAN_H
 
+// #include "Team.h"
+#include<iostream>
+#include<string>
+#include "string.h"
 #include "Team.h"
+using namespace std;
 
+// class Team;
 class Human{
-private:
+protected:
     Team* team;
     Human* successor;
 public:
-    virtual handleRequest();
-    Human();
-    Human(Team* team);
+    virtual void handleRequest(string s);
+    // Human();
+    Human(Team* team, Human * s);
     virtual ~Human();
 };
 

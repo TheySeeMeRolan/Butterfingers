@@ -6,12 +6,14 @@
 #define PROJECT_AERODYNAMICSFACTORY_H
 
 #include "HumanFactory.h"
+#include "AerodynamicsEngineer.h"
+#include "Driver.h"
 
 class AerodynamicsFactory: public HumanFactory{
 public:
-    AerodynamicsFactory();
-    virtual Human * makeEngineer() ;
-    virtual Human * makePersonnel() ;
+    AerodynamicsFactory(Team* t);
+    Human * makeEngineer(Human * s);
+    Human * makePersonnel(Human * s);
 };
 
 #endif //PROJECT_AERODYNAMICSFACTORY_H

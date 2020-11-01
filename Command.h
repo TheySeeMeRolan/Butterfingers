@@ -12,7 +12,7 @@
 using namespace std;
 
 class Command{
-private:
+protected:
     Human* human;
 public:
     virtual void execute()=0;

@@ -6,12 +6,14 @@
 #define PROJECT_ENGINEFACTORY_H
 
 #include "HumanFactory.h"
+#include "EngineEngineer.h"
+#include "PitCrew.h"
 
 class EngineFactory: public HumanFactory{
 public:
-    EngineFactory();
-    virtual Human * makeEngineer() ;
-    virtual Human * makePersonnel() ;
+    EngineFactory(Team* t);
+    Human * makeEngineer(Human *) ;
+    Human * makePersonnel(Human *) ;
 };
 
 #endif //PROJECT_ENGINEFACTORY_H
