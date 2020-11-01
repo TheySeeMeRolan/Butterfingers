@@ -4,15 +4,15 @@
 
 #ifndef PROJECT_LOGISTICONSERVER_H
 #define PROJECT_LOGISTICONSERVER_H
-
-class Subject;
+#include "Subject.h"
+//class Subject;
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 class LogisticObserver {
-private:
+protected:
     Subject* registeredAt;
 public:
     void registerTeam(Subject*);

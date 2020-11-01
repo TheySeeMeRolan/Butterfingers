@@ -1,10 +1,7 @@
-//
-// Created by Joanita on 2020/10/27.
-//
-
 #ifndef PROJECT_LOGISTICS_H
 #define PROJECT_LOGISTICS_H
-
+//class Subject;
+//
 #include "Race.h"
 #include "Report.h"
 #include "Subject.h"
@@ -30,7 +27,8 @@ public:
     void scheduleSeason( vector<Track*> tracksForRaces);
     void kickOffSeason();
     void startNextWeek();
-    void equip(Race* race, Equipment* equipment);
+    void equipRace(Race* race, Equipment* equipment);
+    void goToRace(Team* t);
     virtual tuple< Race *, Race *, Race *> getRaces();
     Logistics( vector<Team*> teams );
 };

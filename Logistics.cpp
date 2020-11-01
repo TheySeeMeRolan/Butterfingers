@@ -127,3 +127,13 @@ void Logistics::kickOffSeason()
     }
 
 }
+
+void Logistics::goToRace(Team *t)
+{
+races.at(week)->addTeam(t);
+}
+
+void Logistics::equipRace(Race *race, Equipment *equipment)
+{
+races.at(week+12)->storeEquipment(race,equipment);
+}

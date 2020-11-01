@@ -35,3 +35,8 @@ void Subject::notify() {
         (*Obs_it)->update();
     }
 }
+
+int Subject::getWeek()
+{
+    return week;
+}

@@ -1,6 +1,3 @@
-//
-// Created by Joanita on 2020/10/27.
-//
 
 #ifndef PROJECT_TEAM_H
 #define PROJECT_TEAM_H
@@ -22,6 +19,7 @@ private:
     string company;
     Human* personnel;
     tuple<Race*, Race*, Race*> upcomingRaces;
+    Equipment* teamEquipment;
     Formula1Car* currentCar;
     Formula1Car* futureCar;
     CarPartBuilder* carPartBuilder[5];
@@ -46,6 +44,7 @@ public:
     void test();
     Team();
     Team(Subject* s);
+    void shipCarToFactory();
 };
 
 
