@@ -2,15 +2,15 @@
 // Created by Joanita on 2020/10/27.
 //
 
-#ifndef PROJECT_PREPARE_H
-#define PROJECT_PREPARE_H
+#ifndef PROJECT_PREPARECOMMAND_H
+#define PROJECT_PREPARECOMMAND_H
 
 #include "Command.h"
 
-class Prepare: public Command{
+class PrepareCommand: public Command{
 public:
     virtual void execute();
-    Prepare();
+    PrepareCommand(Human *);
 };
 
 #endif //PROJECT_PREPARE_H

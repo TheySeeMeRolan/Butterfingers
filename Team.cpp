@@ -30,10 +30,10 @@ Team::Team()
 
     /// Create the commands ( to use the personnel )
 
-    command[0] = new Prepare();
-    command[1] = new Racing();
-    command[2] = new Strategise();
-    command[3] = new Testing();
+    command[0] = new PrepareCommand(lead);
+    command[1] = new RacingCommand(lead);
+    command[2] = new StrategiseCommand(lead);
+    command[3] = new TestingCommand(lead);
 }
 
 Team::~Team(){
