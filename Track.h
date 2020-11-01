@@ -1,7 +1,3 @@
-//
-// Created by Joanita on 2020/10/27.
-//
-
 #ifndef PROJECT_TRACK_H
 #define PROJECT_TRACK_H
 

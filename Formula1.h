@@ -1,7 +1,3 @@
-//
-// Created by Joanita on 2020/10/27.
-//
-
 #ifndef PROJECT_FORMULA1_H
 #define PROJECT_FORMULA1_H
 

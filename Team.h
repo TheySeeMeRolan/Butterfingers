@@ -1,4 +1,3 @@
-
 #ifndef PROJECT_TEAM_H
 #define PROJECT_TEAM_H
 

@@ -1,7 +1,3 @@
-//
-// Created by Joanita on 2020/10/27.
-//
-
 #ifndef PROJECT_ENGINE_H
 #define PROJECT_ENGINE_H
 

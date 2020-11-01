@@ -1,7 +1,3 @@
-//
-// Created by Joanita on 2020/10/27.
-//
-
 #ifndef PROJECT_ENGINEPARTBUILDER_H
 #define PROJECT_ENGINEPARTBUILDER_H
 
