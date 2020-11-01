@@ -58,8 +58,10 @@ void Race::race() {
             }
         }
     }
-
     teams = teamsCopy;
+    for(auto& team: teams) {
+        team->shipCarToFactory();
+    }
     teamsCopy.clear();
 }
 
