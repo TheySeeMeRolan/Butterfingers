@@ -13,11 +13,9 @@
 using namespace std;
 
 class TrackPartFactory {
-private:
-    int length;
-    int difficulty;
 public:
     virtual TrackPart* CreatePart(int l, int d)=0;
+    virtual TrackPart *CreatePart()=0;
     virtual ~TrackPartFactory();
 };
 

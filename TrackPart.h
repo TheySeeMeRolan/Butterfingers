@@ -14,8 +14,7 @@ class TrackPart{
 protected:
     int length;
     int difficulty;
-    string TrackPartType;
-    bool european;
+    string trackPartType;
 public:
     //virtual void AddPart(TrackPart* part)=0;
     //virtual void setEuropean(bool E)=0;

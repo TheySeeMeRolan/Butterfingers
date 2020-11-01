@@ -14,11 +14,12 @@ using namespace std;
 
 class Track: public TrackPart{
 private:
-    vector<TrackPart*>;
+    vector<TrackPart*> sections;
+    bool european;
 public:
     void addPart(TrackPart* part);
     void setEuropean(bool e);
-    virtual int getTotalDifficulty() ;
+    virtual int getTotalDifficulty();
     virtual int getTotalLength();
     bool isEuropean();
     Track();
