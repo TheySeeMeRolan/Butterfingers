@@ -1,34 +1,39 @@
-//
-// Created by Joanita on 2020/10/27.
-//
-
 #ifndef PROJECT_RACE_H
 #define PROJECT_RACE_H
 
+//#include "Team.h"
 #include "Equipment.h"
 #include "Track.h"
 #include "Strategy.h"
+#include "PracticeStrategy.h"
+#include "QualifyingStrategy.h"
+#include "RaceStrategy.h"
 
 #include <iostream>
 #include <string>
 #include <vector>
 
+class Team;
 using namespace std;
 
 class Race{
 private:
+    vector<Team*> teams;
     string location;
     vector<int> logStatement;
     int date;
-    Equipment* equipment;
+    vector<Equipment*> equipment;
     Track* track;
     bool european;
     Strategy* strategy;
 public:
-    Race(Track* t);
+    Race(Track* t, string location);
+    ~Race();
+    void addTeam(Team* t);
     void update();
     Track* getTrack();
-    void StoreEquipment(Equipment* equipment);
+    vector<int> getLogStatement();
+    void storeEquipment(Equipment* teamEquipment);
     void race();
 };
 

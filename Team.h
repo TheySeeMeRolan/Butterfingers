@@ -1,6 +1,3 @@
-//
-// Created by Joanita on 2020/10/27.
-//
 
 #ifndef PROJECT_TEAM_H
 #define PROJECT_TEAM_H
@@ -53,12 +50,13 @@
 #include<tuple>
 
 using namespace std;
-
+class Race;
 class Team: public LogisticObserver {
 private:
     string company;
     Human * lead;
     tuple<Race*, Race*, Race*> upcomingRaces;
+    Equipment* teamEquipment;
     Formula1Car* currentCar;
     Formula1Car* futureCar;
     CarPartBuilder* carPartBuilder[5];
@@ -72,6 +70,9 @@ public:
     Formula1Car* construct();
     Formula1Car* cloneCar();
     virtual void update();
+    void test(Formula1Car* c);
+    void changeTestType();
+    string getCompany();
     Engine* getEngine();
     Tyre* getTyre();
     Chasis* getChasis();
@@ -91,10 +92,9 @@ public:
     void runSimulationTest(Formula1Car *); ///get car from memento store and run test to see if its replaced ///
     void changeTestType(string type);
 
-    string getCompany();
-
     Team();
     Team(Subject* s);
+    void shipCarToFactory();
 };
 
 

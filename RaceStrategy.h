@@ -1,7 +1,3 @@
-//
-// Created by Joanita on 2020/10/27.
-//
-
 #ifndef PROJECT_RACESTRATEGY_H
 #define PROJECT_RACESTRATEGY_H
 
@@ -9,8 +5,9 @@
 
 class RaceStrategy: public Strategy{
 public:
-    virtual vector<Team*> race(vector<Team*> team, Track* track);
-    RaceStrategy();
+    virtual vector<Team*> race(vector<Team*> teams, Track* track);
+    virtual int determineTeamRaceScore(Team*, int, int);
+    virtual ~RaceStrategy();
 };
 
 
