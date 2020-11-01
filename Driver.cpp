@@ -22,23 +22,36 @@ void Driver::handleRequest(string p)
 {
     if(p == "prepare")
     {
-        this->drive();
-    }else if(p == "test simulation")
+        
+    }
+    
+    if(p == "test simulation")
     {
         this->drive();
-    }else if(p == "test windtunnel")
+    }
+    
+    if(p == "test windtunnel")
     {
 
-    }else if(p == "strategise")
+    }
+    
+    if(p == "strategise")
     {
         
-    }else if(p == "racing")
+    }
+
+    if(p == "service")
+    {
+        
+    }
+    
+    if(p == "racing")
     {
         this->drive();
     }
 
     // send it along the line
-    successor->handleRequest();
+    successor->handleRequest(p);
 }
 
 void Driver::drive()
@@ -49,7 +62,7 @@ void Driver::drive()
 
 
 int Driver:: getSkill(){
-    retutn skill;
+    return skill;
 }
 
 int Driver:: getLuck(){
