@@ -73,7 +73,7 @@ void Race::addTeam(Team *t) {
     teams.push_back(t);
 }
 
-void Race::StoreEquipment(vector<Equipment *> teamEquipment) {
+void Race::storeEquipment(vector<Equipment *> teamEquipment){
     this->equipment = teamEquipment;
 }
 
