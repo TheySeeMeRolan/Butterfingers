@@ -1,23 +1,25 @@
-//
-// Created by Joanita on 2020/10/27.
-//
 
 #ifndef PROJECT_TEAM_H
 #define PROJECT_TEAM_H
 
-#include "LogisticOnserver.h"
-
+#include "LogisticObserver.h"
+#include "Human.h"
+#include "Command.h"
+#include "Formula1Car.h"
+#include "CarPartBuilder.h"
+#include "CarMemento.h"
 #include<iostream>
 #include<string>
 #include<tuple>
 
 using namespace std;
-
-class Team: public LogisticOnserver {
+class Race;
+class Team: public LogisticObserver {
 private:
     string company;
     Human* personnel;
     tuple<Race*, Race*, Race*> upcomingRaces;
+    Equipment* teamEquipment;
     Formula1Car* currentCar;
     Formula1Car* futureCar;
     CarPartBuilder* carPartBuilder[5];
@@ -43,6 +45,7 @@ public:
     void test();
     Team();
     Team(Subject* s);
+    void shipCarToFactory();
 };
 
 

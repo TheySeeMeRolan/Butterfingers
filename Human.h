@@ -1,18 +1,14 @@
-//
-// Created by Joanita on 2020/10/27.
-//
-
 #ifndef PROJECT_HUMAN_H
 #define PROJECT_HUMAN_H
 
-#include "Team.h"
-
+// #include "Team.h"
+class Team;
 class Human{
 private:
     Team* team;
     Human* successor;
 public:
-    virtual handleRequest();
+    virtual void handleRequest();
     Human();
     Human(Team* team);
     virtual ~Human();
