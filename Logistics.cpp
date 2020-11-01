@@ -93,7 +93,7 @@ Logistics::Logistics(vector<Team *> teams)
 
 }
 
-void Logistics::equip(Race *race, Equipment *equipment)
+void Logistics::equipRace(Race *race, Equipment *equipment)
 {
     for (int r = 0;r  <42 ; r++)
     {
@@ -133,7 +133,3 @@ void Logistics::goToRace(Team *t)
 races.at(week)->addTeam(t);
 }
 
-void Logistics::equipRace(Race *race, Equipment *equipment)
-{
-races.at(week+12)->storeEquipment(race,equipment);
-}
