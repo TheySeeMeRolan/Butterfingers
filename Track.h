@@ -18,12 +18,12 @@ private:
     bool european;
 public:
     void addPart(TrackPart* part);
-    void setEuropean(bool e);
-    virtual int getTotalDifficulty();
-    virtual int getTotalLength();
+    int getTotalDifficulty();
+    int getTotalLength();
     bool isEuropean();
-    Track();
-    Track(int l, int d);
+
+    Track(bool isEuropean);
+    ~Track();
 };
 
 #endif //PROJECT_TRACK_H

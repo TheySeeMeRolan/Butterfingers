@@ -10,8 +10,8 @@
 
 class LeftCurveFactory: public TrackPartFactory {
 public:
-    virtual TrackPart* CreatePart(int l, int d);
-    virtual TrackPart* CreatePart();
+    TrackPart* createPart(int l, int d);
+    TrackPart* createPart();
 };
 
 

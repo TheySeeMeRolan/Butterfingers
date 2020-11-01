@@ -9,12 +9,9 @@
 
 class StraightPart: public TrackPart{
 public:
-    virtual int getTotalDifficulty();
-    virtual int getTotalLength();
-    StraightPart();
-    StraightPart(int l, int d);
-
-    
+    int getTotalDifficulty();
+    int getTotalLength();
+    StraightPart(int l, int d);    
 };
 
 #endif //PROJECT_STRAIGHTPART_H

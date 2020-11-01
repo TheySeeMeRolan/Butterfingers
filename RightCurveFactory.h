@@ -9,7 +9,8 @@
 
 class RightCurveFactory: public TrackPartFactory {
 public:
-    TrackPart* CreatePart(int l, int d);
+    TrackPart* createPart(int l, int d);
+    TrackPart* createPart();
 };
 
 

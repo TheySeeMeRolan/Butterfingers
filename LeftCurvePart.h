@@ -11,7 +11,6 @@ class LeftCurvePart: public TrackPart{
 public:
     int getTotalDifficulty();
     int getTotalLength();
-    string getTrackPartType();
     LeftCurvePart(int l, int d);
 };
 
