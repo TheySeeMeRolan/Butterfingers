@@ -24,7 +24,7 @@ public:
 
     Logistics():Subject()
     {};
-    void scheduleSeason( vector<Track*> tracksForRaces);
+    void scheduleSeason( vector<Track*> tracksForEU,vector<Track*> tracksForNonEU);
     void kickOffSeason();
     void startNextWeek();
     void equipRace(Race* race, Equipment* equipment);

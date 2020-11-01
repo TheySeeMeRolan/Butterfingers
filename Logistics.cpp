@@ -1,9 +1,10 @@
 #include "Logistics.h"
 
-void Logistics::scheduleSeason(vector<Track*> tracksForRaces)
+void Logistics::scheduleSeason(vector<Track*> tracksForEU,vector<Track*> tracksForNonEU)
 {
 
-    vector<Track*> unusedTracks = tracksForRaces ;
+    vector<Track*> unusedTracksEU = tracksForEU ;
+    vector<Track*> unusedTracksNonEU = tracksForNonEU ;
     vector<string> europeanLocations =
             {
              "Nürburgring , Germany",
@@ -36,46 +37,56 @@ void Logistics::scheduleSeason(vector<Track*> tracksForRaces)
     vector<string> unusedNonEuropeanLocations = nonEuropeanLocations;
 
 
-    for (int r = 0;r  <42 ; r++)
+    for (int r = 0;r  <46 ; r++)
     {
-        if(r%2 == 1) // racing weekend
+        int trackNumber;
+        Track* trackToBeUsed;
+        int locationNumber;
+        string location;
+        if (r<4)
         {
-            //section that determines which unused track to use
-
-            int trackNumber = rand() % unusedTracks.size();
-            Track* trackToBeUsed = unusedTracks.at(trackNumber);
-            unusedTracks.erase( unusedTracks.begin()+(trackNumber-1));
-
-            if (unusedTracks.size() == 0)
-                unusedTracks=tracksForRaces;
-
-            int locationNumber;
-            string location;
-            if (trackToBeUsed->isEuropean())
+            races.push_back(nullptr);
+            continue;
+        }
+        if(r%2 == 0 ) // racing weekend
+        {
+            if (r<=24) // if EU race range
             {
-                 locationNumber = rand() % unusedEuropeanLocations.size();
-                 location = unusedEuropeanLocations.at(locationNumber);
-                 unusedEuropeanLocations.erase(unusedEuropeanLocations.begin()+(locationNumber-1));
+                trackNumber = rand() % unusedTracksEU.size();
+                trackToBeUsed = unusedTracksEU.at(trackNumber);
+                unusedTracksEU.erase(unusedTracksEU.begin() + (trackNumber - 1));
 
-                 if (unusedEuropeanLocations.size() == 0)
-                    unusedEuropeanLocations=europeanLocations;
+                if (unusedTracksEU.size() == 0)
+                    unusedTracksEU = tracksForEU;
+
+
+                locationNumber = rand() % unusedEuropeanLocations.size();
+                location = unusedEuropeanLocations.at(locationNumber);
+                unusedEuropeanLocations.erase(unusedEuropeanLocations.begin() + (locationNumber - 1));
+
+                if (unusedEuropeanLocations.size() == 0)
+                    unusedEuropeanLocations = europeanLocations;
 
             }
             else
             {
+                trackNumber = rand() % unusedTracksNonEU.size();
+                trackToBeUsed = unusedTracksNonEU.at(trackNumber);
+                unusedTracksNonEU.erase(unusedTracksNonEU.begin() + (trackNumber - 1));
+
+                if (unusedTracksNonEU.size() == 0)
+                    unusedTracksNonEU = tracksForNonEU;
+
+
                 locationNumber = rand() % unusedNonEuropeanLocations.size();
                 location = unusedNonEuropeanLocations.at(locationNumber);
-                unusedNonEuropeanLocations.erase(unusedNonEuropeanLocations.begin()+(locationNumber-1));
+                unusedNonEuropeanLocations.erase(unusedNonEuropeanLocations.begin() + (locationNumber - 1));
 
                 if (unusedNonEuropeanLocations.size() == 0)
-                    unusedNonEuropeanLocations=nonEuropeanLocations;
+                    unusedNonEuropeanLocations = nonEuropeanLocations;
             }
 
             races.push_back(new Race(trackToBeUsed , location));
-
-
-
-
 
         }
         else
