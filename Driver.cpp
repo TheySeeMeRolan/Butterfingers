@@ -42,7 +42,7 @@ void Driver::handleRequest(string p)
 
     if(p == "service")
     {
-        
+
     }
     
     if(p == "racing")
@@ -50,14 +50,15 @@ void Driver::handleRequest(string p)
         this->drive();
     }
 
-    // send it along the line
-    successor->handleRequest(p);
+    if (successor) 
+    {
+        successor->handleRequest(p);
+    }
 }
 
 void Driver::drive()
 {
     cout<<"Team "<<team->getCompany()<<"'s driver drives the car."<<endl;
-
 }
 
 

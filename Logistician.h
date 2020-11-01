@@ -11,6 +11,7 @@ class Logistician: public Personnel{
 public:
     void handleRequest(string s);
     void analyseTrack();
+    void prepareForRace();
     Logistician();
     Logistician(Team* team, Human * s);
 };
