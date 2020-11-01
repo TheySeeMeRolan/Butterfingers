@@ -100,7 +100,7 @@ void Logistics::equipRace(Race *race, Equipment *equipment)
 
         if (this->races.at(r) == race)
         {
-            races.at(r)->StoreEquipment(equipment);
+            races.at(r)->storeEquipment(equipment);
         }
 
     }
