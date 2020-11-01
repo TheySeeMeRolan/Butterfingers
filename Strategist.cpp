@@ -12,7 +12,7 @@ void Strategist::handleRequest(string p){
     
     if(p == "prepare")
     {
-        this->changeTyre();
+
     }
     
     if(p == "test simulation")

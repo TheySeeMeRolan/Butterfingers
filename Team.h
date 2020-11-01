@@ -13,6 +13,7 @@
 #include "ElectronicFactory.h"
 #include "ChasisFactory.h"
 #include "EngineFactory.h"
+
 //Humans
 #include "Human.h"
 #include "AerodynamicsEngineer.h"
@@ -30,11 +31,16 @@
 
 // commands
 #include "Command.h"
-#include "CarMemento.h"
 #include "PrepareCommand.h"
 #include "RacingCommand.h"
 #include "StrategiseCommand.h"
 #include "TestingCommand.h"
+#include "ServiceCommand.h"
+#include "WindTestingCommand.h"
+#include "SimulationTestingCommand.h"
+
+//Memento
+#include "CarMemento.h"
 
 // template
 #include "Test.h"
@@ -81,8 +87,8 @@ public:
     void test();
 
     // template 
-    void runWindTest(Formula1Car *); ///get car from memento store and run test to see if its replaced
-    void runSimulationTest(Formula1Car *); ///get car from memento store and run test to see if its replaced
+    void runWindTest(Formula1Car *); ///get car from memento store and run test to see if its replaced ///
+    void runSimulationTest(Formula1Car *); ///get car from memento store and run test to see if its replaced ///
     void changeTestType(string type);
 
     string getCompany();

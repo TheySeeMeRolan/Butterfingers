@@ -19,21 +19,15 @@ Team::Team()
     tempHuman = factories[1]->makeEngineer(tempHuman); // driver with logistician successor
     tempHuman = factories[0]->makeEngineer(tempHuman); // strategist with driver successor
 
-    // engineers[1] = factories[1]->makeEngineer();
-    // engineers[2] = factories[2]->makeEngineer();
-    // engineers[3] = factories[3]->makeEngineer();
-
-    // personnel[0] = factories[0]->makePersonnel(); 
-    // personnel[1] = factories[1]->makePersonnel(); 
-    // personnel[2] = factories[2]->makePersonnel(); 
-    // personnel[3] = factories[3]->makePersonnel(); 
 
     /// Create the commands ( to use the personnel )
 
     command[0] = new PrepareCommand(lead);
     command[1] = new RacingCommand(lead);
     command[2] = new StrategiseCommand(lead);
-    command[3] = new TestingCommand(lead);
+    command[3] = new WindTestingCommand(lead);
+    command[4] = new SimulationTestingCommand(lead);
+    command[5] = new ServiceCommand(lead);
 }
 
 Team::~Team(){
@@ -80,21 +74,21 @@ void Team::runSimulationTest(Formula1Car * p)
     simulationTest->test(p);
 }
 
-void Team::changeTestType(string type)
-{
-    if (tester)
-    {
-        delete tester;
-    }
+// void Team::changeTestType(string type)
+// {
+//     // if (tester)
+//     // {
+//     //     delete tester;
+//     // }
 
-    if(type == "wind tunnel")
-    {
-        tester = new WindTunnel();
-    }else if(type == "simulation")
-    {
-        tester = new Simulation();
-    }
-}
+//     // if(type == "wind tunnel")
+//     // {
+//     //     tester = new WindTunnel();
+//     // }else if(type == "simulation")
+//     // {
+//     //     tester = new Simulation();
+//     // }
+// }
 
 string Team::getCompany()
 {
