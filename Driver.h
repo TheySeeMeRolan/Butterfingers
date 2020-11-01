@@ -14,7 +14,7 @@ private:
     int luck;
     int skill;
 public:
-    void handleRequest();
+    void handleRequest(string s);
     void drive();
     Driver();
     Driver(Team* team);

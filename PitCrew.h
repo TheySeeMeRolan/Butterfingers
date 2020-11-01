@@ -9,7 +9,7 @@
 
 class PitCrew: public Personnel{
 public:
-    void handleRequest();
+    void handleRequest(string s);
     void changeTyre();
     PitCrew();
     PitCrew(Team* team, Human * s);

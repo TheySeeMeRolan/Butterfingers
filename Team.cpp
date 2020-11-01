@@ -66,16 +66,18 @@ void Team::test()
 }
 
 // template
-void Team::runTest(string car)
+void Team::runWindTest(Formula1Car * p)
 {
     // send in the car to the test and have it return a car to replace the memento with
-    if(car == "future")
-    {
-        tester->test(futureCar);
-    }else if(car == "current")
-    {
-        tester->test(currentCar);
-    }
+    // send in future or current car
+    windTest->test(p);
+}
+
+void Team::runSimulationTest(Formula1Car * p)
+{
+    // send in the car to the test and have it return a car to replace the memento with
+    // send in future or current car
+    simulationTest->test(p);
 }
 
 void Team::changeTestType(string type)

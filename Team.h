@@ -59,7 +59,8 @@ private:
     Command* command[4];
     int windTunnelTokens;
     HumanFactory** factories;
-    Test * tester;
+    Test * windTest;
+    Test * simulationTest;
 
 public:
     Formula1Car* construct();
@@ -80,7 +81,8 @@ public:
     void test();
 
     // template 
-    void runTest(string car); ///get car from memento store and run test to see if its replaced
+    void runWindTest(Formula1Car *); ///get car from memento store and run test to see if its replaced
+    void runSimulationTest(Formula1Car *); ///get car from memento store and run test to see if its replaced
     void changeTestType(string type);
 
     string getCompany();

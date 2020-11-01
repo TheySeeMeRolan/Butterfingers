@@ -9,7 +9,7 @@
 
 class ElectronicEngineer: public Engineering{
 public:
-    void handleRequest();
+    void handleRequest(string s);
     void tinker();
     ElectronicEngineer();
     ElectronicEngineer(Team* team, Human * s);

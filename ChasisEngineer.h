@@ -9,7 +9,7 @@
 
 class ChasisEngineer: public Engineering{
 public:
-    void handleRequest();
+    void handleRequest(string s);
     void test();
     ChasisEngineer();
     ChasisEngineer(Team* team, Human * s);

@@ -9,7 +9,7 @@
 
 class Logistician: public Personnel{
 public:
-    void handleRequest();
+    void handleRequest(string s);
     void analyseTrack();
     Logistician();
     Logistician(Team* team, Human * s);
