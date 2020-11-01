@@ -1,9 +1,9 @@
 #ifndef PROJECT_RACE_H
 #define PROJECT_RACE_H
 
+//#include "Team.h"
 #include "Equipment.h"
 #include "Track.h"
-#include "Team.h"
 #include "Strategy.h"
 #include "PracticeStrategy.h"
 #include "QualifyingStrategy.h"
@@ -13,6 +13,7 @@
 #include <string>
 #include <vector>
 
+class Team;
 using namespace std;
 
 class Race{
