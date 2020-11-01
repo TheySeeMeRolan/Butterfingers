@@ -93,7 +93,8 @@ Logistics::Logistics(vector<Team *> teams)
 
 }
 
-void Logistics::equipRace(Race *race, Equipment *equipment){
+void Logistics::equipRace(Race *race, Equipment *equipment)
+{
     for (int r = 0;r  <42 ; r++)
     {
 
