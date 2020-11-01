@@ -1,4 +1,5 @@
 #include "Race.h"
+#include "Team.h"
 
 Race::Race(Track *t, string location) {
     track = t;

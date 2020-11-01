@@ -3,7 +3,7 @@
 
 #include "Strategy.h"
 
-class QualifyingStrategy: public Strategy{
+class QualifyingStrategy: public Strategy {
 public:
     virtual vector<Team*> race(vector<Team*> teams, Track* track);
     virtual int determineTeamRaceScore(Team*, int, int);
