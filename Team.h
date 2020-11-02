@@ -64,6 +64,7 @@ private:
     HumanFactory** factories;
     Test * windTest;
     Test * simulationTest;
+    
 
 public:
     Formula1Car* construct();
@@ -77,8 +78,10 @@ public:
     Chasis* getChasis();
     Electronics* getElectronics();
     Spoiler* getSpoiler();
-    CarMemento* unload();
-    void save(CarMemento* mem);
+
+    //memento functions
+    CarMemento* createMemento(bool b);// if bool true create memento of current car else create memento of future car
+    void reinstantiateMemento(CarMemento* me, bool b);// bool is to check for future or current car. if true current car else future car:)
 
     // command functions will utilise the personell and engineers handle request function
     void prepare();

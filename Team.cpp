@@ -121,3 +121,36 @@ void Team::shipCarToFactory()
 {
 //TBD
 }
+
+
+
+CarMemento* Team::createMemento(bool b){
+    if (b)
+        return new CarMemento(currentCar);
+    else
+        return new CarMemento(futureCar);
+}
+
+
+   
+
+void Team::reinstantiateMemento(CarMemento* me, bool b){
+    if (b){
+        //current car
+        Formula1Car* mementoCar= me->getState();
+        currentCar->setChasis(mementoCar->getChasis());
+        currentCar->setEngine(mementoCar->getEngine());
+        currentCar->setElectronics(mementoCar->getElectronics());
+        currentCar->setSpoiler(mementoCar->getSpoiler());
+        currentCar->setTyre(mementoCar->getTyre());
+    }else{
+        //future car
+        Formula1Car* mementoCar= me->getState();
+        futureCar->setChasis(mementoCar->getChasis());
+        futureCar->setEngine(mementoCar->getEngine());
+        futureCar->setElectronics(mementoCar->getElectronics());
+        futureCar->setSpoiler(mementoCar->getSpoiler());
+        futureCar->setTyre(mementoCar->getTyre());
+
+    }
+}

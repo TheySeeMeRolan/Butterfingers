@@ -12,7 +12,10 @@ class Hangar{
 private:
     CarMemento* stored;
 public:
-    Carmemento* retrieveMemento();
+    CarMemento* retrieveMemento();
+    void storeMemento(CarMemento* car);
+    Hangar();
+    Hangar(CarMemento* car);
 };
 
 #endif //PROJECT_HANGAR_H

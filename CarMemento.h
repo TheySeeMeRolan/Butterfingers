@@ -7,7 +7,8 @@ class CarMemento{
 private:
     Formula1Car* car;
 public:
-    Formula1Car* setState();
+    Formula1Car* getState();
+    CarMemento(Formula1Car* car);
 };
 
 #endif //PROJECT_CARMEMENTO_H
