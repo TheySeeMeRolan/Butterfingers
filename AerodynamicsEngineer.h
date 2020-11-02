@@ -9,7 +9,7 @@
 
 class AerodynamicsEngineer: public Engineering{
 public:
-    void handleRequest();
+    void handleRequest(string p);
     void changeShape();
     AerodynamicsEngineer();
     AerodynamicsEngineer(Team* team, Human * s);

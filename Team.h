@@ -59,7 +59,7 @@ private:
     Formula1Car* currentCar;
     Formula1Car* futureCar;
     CarPartBuilder* carPartBuilder[5];
-    Command* command[4];
+    Command* command[6];
     int windTunnelTokens;
     HumanFactory** factories;
     Test * windTest;

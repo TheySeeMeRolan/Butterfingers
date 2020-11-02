@@ -7,3 +7,37 @@ AerodynamicsEngineer::AerodynamicsEngineer(): Engineering(){
 AerodynamicsEngineer::AerodynamicsEngineer(Team* team, Human * s): Engineering(team, s){
     
 }
+
+void AerodynamicsEngineer::handleRequest(string p){
+    if(p == "prepare"){
+    
+    }
+    
+    if(p == "test simulation"){
+
+    }
+    
+    if(p == "test windtunnel"){
+
+    }
+    
+    if(p == "strategise"){
+        changeShape();
+    }
+
+    if(p == "service"){
+        changeShape();
+    }
+    
+    if(p == "racing"){
+        
+    }
+
+    if (successor) {
+        successor->handleRequest(p);
+    }
+}
+
+void AerodynamicsEngineer::changeShape(){
+    cout<<"The "<<team->getCompany()<<" team's aerodynamic engineer is changing the shape of the formula one racing car"<<endl;
+}

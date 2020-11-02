@@ -28,6 +28,8 @@ Team::Team()
     command[3] = new WindTestingCommand(lead);
     command[4] = new SimulationTestingCommand(lead);
     command[5] = new ServiceCommand(lead);
+
+
 }
 
 Team::~Team(){
