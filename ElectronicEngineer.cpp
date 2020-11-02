@@ -11,11 +11,11 @@ ElectronicEngineer::ElectronicEngineer(Team* t, Human * s) : Engineering(t, s){
 
 void ElectronicEngineer::handleRequest(string p){
     if(p == "prepare"){
-    
+        tinker();
     }
     
     if(p == "test simulation"){
-
+        
     }
     
     if(p == "test windtunnel"){
@@ -23,11 +23,11 @@ void ElectronicEngineer::handleRequest(string p){
     }
     
     if(p == "strategise"){
-        tinker();
+        
     }
 
     if(p == "service"){
-            tinker();
+        tinker();
     }
     
     if(p == "racing"){

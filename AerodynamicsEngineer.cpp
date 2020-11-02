@@ -18,15 +18,15 @@ void AerodynamicsEngineer::handleRequest(string p){
     }
     
     if(p == "test windtunnel"){
-
+        changeShape();
     }
     
     if(p == "strategise"){
-        changeShape();
+        
     }
 
     if(p == "service"){
-        changeShape();
+
     }
     
     if(p == "racing"){
