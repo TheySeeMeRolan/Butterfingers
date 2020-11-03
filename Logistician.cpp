@@ -12,19 +12,20 @@ Logistician::Logistician(Team* t, Human * s): Personnel(t, s){
 void Logistician::handleRequest(string p){
     if(p == "prepare")
     {
-        this->prepareForRace();
 
         if(get<2>(team->getUpcomingRaces())!= nullptr)
         {
-            (team->getRegisteredAt())->equipRace(get<2>(team->getUpcomingRaces()),team->getTeamEquipment());
+            if (!get<2>(team->getUpcomingRaces())->getTrack()->isEuropean())
+                shipContainerNonEuropean();
         }
         if(get<1>(team->getUpcomingRaces())!= nullptr)
         {
-            // DECIDE ON TIRES
+            orderTyres();
         }
         if(get<0>(team->getUpcomingRaces())!= nullptr)
         {
-            team->getRegisteredAt()->goToRace(this);
+            this->prepareForRace();
+            travelToRace();
         }
 
     }
@@ -65,7 +66,35 @@ void Logistician::analyseTrack(){
 }
 
 void Logistician::prepareForRace(){
-    cout<<"The "<<team->getCompany()<<" team logistician prepares for the race"<<endl;
+    cout<<"The "<<team->getCompany()<<" team logistician prepares for the race";
+    if (get<0>(team->getUpcomingRaces())->getTrack()->isEuropean())
+    {
+        cout<<"and transports all the equipment to the European track ";
+        shipContainerEuropean();
+    }
+    cout<<endl;
 }
 
- 
+void Logistician::travelToRace()
+{
+    cout<<"The "<<team->getCompany()<<" team logistician aranges transport for the team and they travel to the race"<<endl;
+    team->getRegisteredAt()->goToRace(this);
+
+}
+void Logistician::orderTyres()
+{
+    cout<<"The "<<team->getCompany()<<" team logistician orders tyres for the race taking place in one months time , as specified by engineers and strategist"<<endl;
+    // need some fucntion here
+}
+
+void Logistician::shipContainerNonEuropean()
+{
+
+    team->getRegisteredAt()->equipRace(get<2>(team->getUpcomingRaces()),team->getTeamEquipment());
+
+}
+void Logistician::shipContainerEuropean()
+{
+    team->getRegisteredAt()->equipRace(get<0>(team->getUpcomingRaces()),team->getTeamEquipment());
+
+}

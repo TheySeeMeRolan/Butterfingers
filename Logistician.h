@@ -12,7 +12,12 @@ public:
     void handleRequest(string s);
     void analyseTrack();
     void prepareForRace();
-//    Logistician();
+    void travelToRace();
+    void orderTyres();
+    void shipContainerNonEuropean();
+    void shipContainerEuropean();
+
+    //    Logistician();
     Logistician(Team* team, Human * s);
 };
 
