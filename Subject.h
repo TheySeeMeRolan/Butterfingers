@@ -1,11 +1,11 @@
 #ifndef PROJECT_SUBJECT_H
 #define PROJECT_SUBJECT_H
 //#include "Team.h"
-#include "Race.h"
 #include <tuple>
 #include <string>
 #include <vector>
 #include <iostream>
+#include "Race.h"
 #include "LogisticObserver.h"
 class Team;
 

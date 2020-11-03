@@ -2,10 +2,10 @@
 #define PROJECT_LOGISTICS_H
 //class Subject;
 //
-#include "Race.h"
+//#include "Race.h"
 #include "Report.h"
 #include "Subject.h"
-#include "Equipment.h"
+//#include "Equipment.h"
 
 #include <iostream>
 #include <string>
