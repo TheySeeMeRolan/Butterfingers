@@ -9,8 +9,9 @@
 #include <iostream>
 
 using namespace std;
+class Logistics;
 
-class Formula1{
+class Formula1 {
 private:
     vector<LogisticObserver*> f1Teams;
     Logistics* f1Logistics;

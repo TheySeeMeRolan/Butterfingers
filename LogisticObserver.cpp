@@ -1,4 +1,5 @@
 #include "LogisticObserver.h"
+#include "Subject.cpp"
 
 LogisticObserver::LogisticObserver()
 {

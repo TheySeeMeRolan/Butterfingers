@@ -4,7 +4,7 @@
 vector<Team *> RaceStrategy::race(vector<Team *> teams, Track *track) {
     vector<int> teamScore;
     Team* temp;
-    int startPosition = 0;
+    int tempScore,startPosition = 0;
     if(track->isEuropean()) {
         for (auto &team : teams) {
             ((Driver*)team->getDriver())->drive();
@@ -21,6 +21,9 @@ vector<Team *> RaceStrategy::race(vector<Team *> teams, Track *track) {
     for (int i = 0; i < (int)teams.size()-1; ++i) {
         for (int j = 0; j < (int)teams.size()-i-1; ++j) {
             if(teamScore[j] < teamScore[j+1]) {
+                tempScore = teamScore[j];
+                teamScore[j] = teamScore[j+1];
+                teamScore[j+1] = tempScore;
                 temp = teams[j];
                 teams[j] = teams[j+1];
                 teams[j+1] = temp;

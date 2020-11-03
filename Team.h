@@ -42,6 +42,7 @@
 #include "Test.h"
 #include "WindTunnel.h"
 #include "Simulation.h"
+#include "Equipment.h"
 
 
 #include<iostream>
