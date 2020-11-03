@@ -10,6 +10,6 @@ Engine* EnginePartBuilder::getPart(){
     return this->enginePart;
 }
 
-EnginePartBuilder(){
+EnginePartBuilder::EnginePartBuilder(){
 
 }
