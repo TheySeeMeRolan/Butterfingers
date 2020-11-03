@@ -1,7 +1,6 @@
 #ifndef PROJECT_RACE_H
 #define PROJECT_RACE_H
 
-//#include "Team.h"
 #include "Equipment.h"
 #include "Track.h"
 #include "Strategy.h"

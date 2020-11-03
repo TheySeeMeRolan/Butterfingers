@@ -45,14 +45,34 @@ void Race::race() {
     int dayCounter = 0;
     vector<Team*> teamsCopy = teams;
     while (dayCounter < 3) {
+
+        if(dayCounter==0 && track->isEuropean()) {
+            std::cout<<"Running a European practice race in: " + location +"\n";
+        }
+        else if(dayCounter==0) {
+            std::cout<<"Running a Non-European practice race in: " + location +"\n";
+        }
+        else if(dayCounter==1 && track->isEuropean()) {
+            std::cout<<"Running a European qualifying race in: " + location +"\n";
+        }
+        else if(dayCounter==1) {
+            std::cout<<"Running a Non-European qualifying race in: " + location +"\n";
+        }
+        else if(dayCounter==2 && track->isEuropean()) {
+            std::cout<<"Running a European race in: " + location +"\n";
+        }
+        else if(dayCounter==2) {
+            std::cout<<"Running a European race in: " + location +"\n";
+        }
+
         teams = strategy->race(teams,track); //teams will be set according to race strategy's race method qualifying will reshuffle the teams such that the starting positions are different
         date++;
         this->update(); //changes the strategy based on the date variable
         dayCounter++;
     }
 
-    for (int i = 0; i < (int)teamsCopy.size(); ++i) {
-        for (int j = 0; j < (int)teamsCopy.size(); ++j) {
+    for (int i = 0; i < (int)teamsCopy.size(); i++) {
+        for (int j = 0; j < (int)teamsCopy.size(); j++) {
             if(teamsCopy[i]==teams[j]) {
                 logStatement.push_back(j);
                 break;

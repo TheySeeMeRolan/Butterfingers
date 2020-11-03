@@ -154,3 +154,19 @@ Equipment* Team::getTeamEquipment()
 
     return teamEquipment;
 }
+
+Human* Team::getDriver() {
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "Driver") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
+}
+
+Human* Team::getPitCrew(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "PitCrew") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
+}

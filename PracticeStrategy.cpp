@@ -4,11 +4,11 @@
 vector<Team *> PracticeStrategy::race(vector<Team *> teams, Track *track) {
     if(track->isEuropean()) {
         for (auto &team : teams) {
-            std::cout<<team->getCompany() << " is running a European practice race.\n";
+            ((Driver*)team->getDriver())->drive();
         }
     } else {
         for (auto &team : teams) {
-            std::cout<<team->getCompany() << " is running a Non-European practice race.\n";
+            ((Driver*)team->getDriver())->drive();
         }
     }
     return teams;

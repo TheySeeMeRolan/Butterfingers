@@ -6,12 +6,12 @@ vector<Team *> QualifyingStrategy::race(vector<Team *> teams, Track *track) {
     Team* temp;
     if(track->isEuropean()) {
         for (auto &team : teams) {
-            std::cout<< team->getCompany() << " is running a European Qualifying race\n";
+            ((Driver*)team->getDriver())->drive();
             teamScore.push_back(determineTeamRaceScore(team,track->getTotalDifficulty(),track->getTotalLength()));
         }
     } else {
         for (auto &team : teams) {
-            std::cout<< team->getCompany() << " is running a Non-European Qualifying race\n";
+            ((Driver*)team->getDriver())->drive();
             teamScore.push_back(determineTeamRaceScore(team,track->getTotalDifficulty()+1,track->getTotalLength()));
         }
     }
@@ -28,7 +28,8 @@ vector<Team *> QualifyingStrategy::race(vector<Team *> teams, Track *track) {
 }
 
 int QualifyingStrategy::determineTeamRaceScore(Team* team, int difficulty, int length) {
-    int teamScore = length;
+    int cumulativeTeamScore = length;
+    int driverScore = ((Driver*)team->getDriver())->getSkill() + ((Driver*)team->getDriver())->getLuck();
     int tyreScore = team->getTyre()->getThread() * difficulty;
     int engineScore = team->getEngine()->getHorsePower() * difficulty + team->getEngine()->getTorque() * difficulty;
     int chasisScore = team->getChasis()->getHeight() * difficulty + team->getChasis()->getAerodynamicsScore() * difficulty;
@@ -45,10 +46,11 @@ int QualifyingStrategy::determineTeamRaceScore(Team* team, int difficulty, int l
         tyreScore += 5;
     }
 
-    teamScore += tyreScore;
-    teamScore += engineScore;
-    teamScore += chasisScore;
-    teamScore += electronicScore;
-    teamScore += spoilerScore;
-    return teamScore;
+    cumulativeTeamScore += driverScore;
+    cumulativeTeamScore += tyreScore;
+    cumulativeTeamScore += engineScore;
+    cumulativeTeamScore += chasisScore;
+    cumulativeTeamScore += electronicScore;
+    cumulativeTeamScore += spoilerScore;
+    return cumulativeTeamScore;
 }
