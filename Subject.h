@@ -20,7 +20,7 @@ public:
     void detach(LogisticObserver* team);
     virtual tuple<Race*, Race*, Race*> getRaces()=0;
     virtual void equipRace(Race *race, Equipment *equipment)=0;
-    void goToRace(Team* t)=0;
+    virtual void goToRace(Team* t)=0;
     virtual int getWeek();
     void notify();
     virtual ~Subject();

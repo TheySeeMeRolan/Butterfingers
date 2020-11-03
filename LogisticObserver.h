@@ -1,9 +1,10 @@
 #ifndef PROJECT_LOGISTICONSERVER_H
 #define PROJECT_LOGISTICONSERVER_H
-#include "Subject.h"
-//class Subject;
+//#include "Subject.h"
 #include <iostream>
 #include <string>
+
+class Subject;
 
 using namespace std;
 
