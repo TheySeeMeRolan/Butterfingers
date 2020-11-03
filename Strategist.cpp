@@ -1,10 +1,6 @@
 #include "Strategist.h"
 #include "Team.cpp"
 
-Strategist::Strategist():Personnel(){
-    typeHuman="Strategist";
-}
-
 Strategist::Strategist(Team* t, Human * s): Personnel(t, s){
     typeHuman="Strategist";
 }

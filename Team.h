@@ -99,6 +99,8 @@ public:
     //getters for logistic
     tuple< Race *, Race *, Race *> getUpcomingRaces();
     Equipment* getTeamEquipment();
+
+    Human*
 };
 
 
