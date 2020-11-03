@@ -21,9 +21,7 @@ private:
     vector<Report*> weeklyReport;
     vector<Report*> monthlyReport;
 public:
-
-    Logistics():Subject()
-    {};
+    Logistics():Subject(){};
     void scheduleSeason( vector<Track*> tracksForEU,vector<Track*> tracksForNonEU);
     void kickOffSeason();
     void startNextWeek();
