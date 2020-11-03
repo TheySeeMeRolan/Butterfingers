@@ -1,12 +1,8 @@
 #include "Strategist.h"
 #include "Team.cpp"
 
-//Strategist::Strategist():Personnel(){
-//
-//}
-
 Strategist::Strategist(Team* t, Human * s): Personnel(t, s){
-    
+    typeHuman="Strategist";
 }
 
 void Strategist::handleRequest(string p){

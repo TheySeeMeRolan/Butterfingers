@@ -1,12 +1,8 @@
 #include "ChasisEngineer.h"
 #include "Team.cpp"
 
-//ChasisEngineer::ChasisEngineer(): Engineering(){
-//
-//}
-
 ChasisEngineer::ChasisEngineer(Team* t, Human * s):Engineering(t, s){
-    
+    typeHuman="ChasisEngineer";
 }
 
 void ChasisEngineer::handleRequest(string p){

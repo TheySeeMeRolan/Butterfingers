@@ -18,3 +18,13 @@ Human::~Human(){
     }
     
 }
+
+
+
+Human* Human::getSuccesor(){
+    return successor;
+}
+
+string Human::getTypeHuman(){
+    return typeHuman;
+}

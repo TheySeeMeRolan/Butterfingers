@@ -1,12 +1,8 @@
 #include "EngineEngineer.h"
 #include "Team.cpp"
 
-// EngineEngineer::EngineEngineer():Engineering(){
-//
-// }
-
  EngineEngineer::EngineEngineer(Team* team, Human * s): Engineering(team, s){
-     
+     typeHuman="EngineEngineer";
  }
 
  void EngineEngineer::handleRequest(string p){

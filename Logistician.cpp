@@ -1,12 +1,8 @@
 #include "Logistician.h"
 #include "Team.cpp"
 
-//Logistician::Logistician(): Personnel(){
-//
-//}
-
 Logistician::Logistician(Team* t, Human * s): Personnel(t, s){
-
+    typeHuman="Logistician";
 }
 
 void Logistician::handleRequest(string p){
