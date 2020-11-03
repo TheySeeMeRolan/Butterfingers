@@ -1,6 +1,7 @@
 #include"CarMemento.h"
 
 CarMemento::CarMemento(Formula1Car* car){
+    this->car= new Formula1Car();
     this->car->setChasis(car->getChasis());
     this->car->setTyre(car->getTyre());
     this->car->setEngine(car->getEngine());
