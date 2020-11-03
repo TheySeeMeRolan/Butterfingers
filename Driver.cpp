@@ -1,19 +1,15 @@
- #include "Driver.h"
- #include<iostream>
-#include<string>
-#include "string.h"
+#include "Driver.h"
+#include "Team.cpp"
+//Driver::Driver(): Personnel() {
+//
+//}
+//
+//
+//Driver::Driver(Team* team, Human * s) : Personnel(team, s){
+//
+//}
 
- 
-Driver::Driver(): Personnel() {
-
-}
-
-
-Driver::Driver(Team* team, Human * s) : Personnel(team, s){
-
-}
-
-Driver::Driver(Team* team, Human *p, int l, int s):Personnel(team, p){
+Driver::Driver(Team* team, Human *p, int l, int s) : Personnel(team, p){
     luck= l;
     skill= s;
 }

@@ -8,8 +8,8 @@
 
 class Personnel: public Human{
 public:
-    void handleRequest(string s);
-    Personnel();
+    virtual void handleRequest(string s);
+//    Personnel();
     Personnel(Team* team, Human * s);
 };
 

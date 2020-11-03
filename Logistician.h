@@ -12,7 +12,7 @@ public:
     void handleRequest(string s);
     void analyseTrack();
     void prepareForRace();
-    Logistician();
+//    Logistician();
     Logistician(Team* team, Human * s);
 };
 
