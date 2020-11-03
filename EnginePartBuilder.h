@@ -8,9 +8,8 @@ class EnginePartBuilder: public CarPartBuilder{
 private:
     Engine* enginePart;
 public:
-    virtual void buildPart() ;
+    void buildPart();
     Engine* getPart();
-    EnginePartBuilder();
 };
 
 #endif //PROJECT_ENGINEPARTBUILDER_H
