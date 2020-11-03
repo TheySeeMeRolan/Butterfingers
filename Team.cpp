@@ -102,8 +102,7 @@ void Team::update()
     int currentWeek;
     currentWeek=registeredAt->getWeek();
     upcomingRaces = registeredAt->getRaces();
-    //if
-
+    prepare();
 
 }
 
