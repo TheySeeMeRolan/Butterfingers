@@ -42,6 +42,7 @@
 #include "Test.h"
 #include "WindTunnel.h"
 #include "Simulation.h"
+#include "Equipment.h"
 
 
 #include<iostream>
@@ -93,6 +94,7 @@ public:
     void runSimulationTest(Formula1Car *); ///get car from memento store and run test to see if its replaced ///
     void changeTestType(string type);
     Team();
+    ~Team();
     Team(Subject* s);
     void shipCarToFactory();
 

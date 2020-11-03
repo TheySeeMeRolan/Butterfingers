@@ -9,18 +9,21 @@
 #include <iostream>
 
 using namespace std;
+class Logistics;
 
-class Formula1{
+class Formula1 {
 private:
-    vector<Team*> teams;
-    Logistics* Logistics;
-    vector<Track*> tracks;
+    vector<LogisticObserver*> f1Teams;
+    Logistics* f1Logistics;
+    vector<Track*> tracksNonEU;
+    vector<Track*> tracksEU;
     //Season* season;
 public:
-    Formula1(Logistics* l);
+    Formula1();
     void prepareLogistics();
-    void createTeams();
-    void startSession();
+    void startSeason();
+    void addTracks(vector<Track*> tracksToAdd);
+    void addTeams(vector<LogisticObserver*> teamsToAdd);
 };
 
 #endif //PROJECT_FORMULA1_H
