@@ -2,15 +2,15 @@
 
 void Subject::attach(LogisticObserver *team)
 {
+    teams.push_back(team);
     team->registerTeam(this);
-
 }
 
 void Subject::detach(LogisticObserver *team) {
     team->registerTeam(nullptr);
 
     vector<LogisticObserver*>::iterator it = teams.begin();
-    for (int x=0; x < teams.size() ; ++x)
+    for (int x=0; x < teams.size() ; ++x,++it)
     {
         if (*it == team)
             teams.erase(it);
