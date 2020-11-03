@@ -2,8 +2,6 @@
 #define PROJECT_COMMAND_H
 
 #include "Human.h"
-#include <iostream>
-#include <string>
 
 using namespace std;
 
