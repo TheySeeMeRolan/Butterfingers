@@ -12,7 +12,7 @@ class TrackPartFactory {
 public:
     virtual TrackPart* createPart(int l, int d)=0;
     virtual TrackPart* createPart()=0;
-    virtual ~TrackPartFactory(){};
+    virtual ~TrackPartFactory();
 };
 
 

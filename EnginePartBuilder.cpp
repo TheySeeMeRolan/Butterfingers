@@ -9,7 +9,3 @@ void EnginePartBuilder::buildPart(){
 Engine* EnginePartBuilder::getPart(){
     return this->enginePart;
 }
-
-EnginePartBuilder(){
-
-}

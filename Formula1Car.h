@@ -10,22 +10,19 @@
 class Formula1Car {
 private:
     Engine* engine;
-    Tyre* tyres[4];   //unsure if this is correct - for an array of pointers this is correct
-    Chasis* chasis;
+    Tyre* tyres[4];   
     Electronics* electronics;
     Spoiler* spoiler;
+    Chasis* chasis;
 public:
-    Formula1Car();//not necessary since it does nothing besides the default
-    Formula1Car(Engine* engn, Tyre** trs, Chasis* chs, Electronics* elctr, Spoiler* splr); // defeats the purpose of the builder
-
     Engine* getEngine();
-    Tyre** getTyre();//unsure if this is correct - for returning an array of pointers this is correct
+    Tyre** getTyre();
     Chasis* getChasis();
     Electronics* getElectronics();
     Spoiler* getSpoiler();
 
     void setEngine(Engine* engn);
-    void setTyre(Tyre* trs[4]);//unsure if this is correct - for an array of pointers this is correct
+    void setTyre(Tyre* trs[4]);
     void setChasis(Chasis* chs);
     void setElectronics(Electronics* elctr);
     void setSpoiler(Spoiler* splr);
