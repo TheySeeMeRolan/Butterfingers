@@ -36,24 +36,24 @@ vector<Team *> RaceStrategy::race(vector<Team *> teams, Track *track) {
 int RaceStrategy::determineTeamRaceScore(Team* team, int difficulty, int length) {
     int cumulativeTeamScore = length;
     int driverScore = ((Driver*)team->getDriver())->getSkill() + ((Driver*)team->getDriver())->getLuck();
-    int tyreScore = team->getTyre()->getThread() * difficulty;
+//    int tyreScore = team->getTyre()->getThread() * difficulty;
     int engineScore = team->getEngine()->getHorsePower() * difficulty + team->getEngine()->getTorque() * difficulty;
     int chasisScore = team->getChasis()->getHeight() * difficulty + team->getChasis()->getAerodynamicsScore() * difficulty;
     int electronicScore = team->getElectronics()->getEfficiency() * difficulty;
     int spoilerScore = team->getSpoiler()->getWeight() * difficulty + team->getSpoiler()->getAerodynamicsScore() * difficulty;
 
-    if(team->getTyre()->getType() == "soft") {
-        tyreScore += 4;
-    }
-    else if(team->getTyre()->getType() == "medium") {
-        tyreScore += 6;
-    }
-    else {
-        tyreScore += 5;
-    }
+//    if(team->getTyre()->getType() == "soft") {
+//        tyreScore += 4;
+//    }
+//    else if(team->getTyre()->getType() == "medium") {
+//        tyreScore += 6;
+//    }
+//    else {
+//        tyreScore += 5;
+//    }
 
     cumulativeTeamScore += driverScore;
-    cumulativeTeamScore += tyreScore;
+//    cumulativeTeamScore += tyreScore;
     cumulativeTeamScore += engineScore;
     cumulativeTeamScore += chasisScore;
     cumulativeTeamScore += electronicScore;
