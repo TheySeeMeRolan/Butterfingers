@@ -13,7 +13,7 @@ class Logistics;
 
 class Formula1 {
 private:
-    vector<Team*> f1Teams;
+    vector<LogisticObserver*> f1Teams;
     Logistics* f1Logistics;
     vector<Track*> tracksNonEU;
     vector<Track*> tracksEU;
@@ -23,7 +23,7 @@ public:
     void prepareLogistics();
     void startSeason();
     void addTracks(vector<Track*> tracksToAdd);
-    void addTeams(vector<Team*> teamsToAdd);
+    void addTeams(vector<LogisticObserver*> teamsToAdd);
 };
 
 #endif //PROJECT_FORMULA1_H

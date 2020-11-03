@@ -7,7 +7,7 @@ Formula1::Formula1()
 
 void Formula1::prepareLogistics()
 {
-    vector<Team*>::iterator it = f1Teams.begin();
+    vector<LogisticObserver*>::iterator it = f1Teams.begin();
     for (; it!=f1Teams.end(); ++it)
     {
         f1Logistics->attach(*it);
@@ -35,7 +35,7 @@ void Formula1::addTracks(vector<Track*> tracksToAdd)
 
 }
 
-void Formula1::addTeams(vector<Team*> teamsToAdd)
+void Formula1::addTeams(vector<LogisticObserver*> teamsToAdd)
 {
 
     f1Teams = teamsToAdd;
