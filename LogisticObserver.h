@@ -13,6 +13,7 @@ protected:
 public:
     void registerTeam(Subject*);
     virtual void update()=0;
+    Subject* getRegisteredAt();
     LogisticObserver();
     virtual ~LogisticObserver();
 };

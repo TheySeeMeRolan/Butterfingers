@@ -12,6 +12,20 @@ void Logistician::handleRequest(string p){
     if(p == "prepare")
     {
         this->prepareForRace();
+
+        if(get<2>(team->getUpcomingRaces())!= nullptr)
+        {
+            (team->getRegisteredAt())->equipRace(get<2>(team->getUpcomingRaces()),team->getTeamEquipment());
+        }
+        if(get<1>(team->getUpcomingRaces())!= nullptr)
+        {
+            // DECIDE ON TIRES
+        }
+        if(get<0>(team->getUpcomingRaces())!= nullptr)
+        {
+            team->getRegisteredAt()->goToRace(this);
+        }
+
     }
     
     if(p == "test simulation")

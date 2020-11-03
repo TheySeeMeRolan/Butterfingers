@@ -14,4 +14,7 @@ LogisticObserver::~LogisticObserver()
 {
 
 }
-
+Subject* LogisticObserver::getRegisteredAt()
+{
+    return registeredAt;
+}

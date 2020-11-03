@@ -102,18 +102,7 @@ void Team::update()
     currentWeek=registeredAt->getWeek();
     upcomingRaces = registeredAt->getRaces();
     //if
-    if(get<2>(upcomingRaces)!= nullptr)
-    {
-        registeredAt->equipRace(get<2>(upcomingRaces),teamEquipment);
-    }
-    if(get<1>(upcomingRaces)!= nullptr)
-    {
-        // DECIDE ON TIRES
-    }
-    if(get<0>(upcomingRaces)!= nullptr)
-    {
-        registeredAt->goToRace(this);
-    }
+
 
 }
 
@@ -153,4 +142,15 @@ void Team::reinstantiateMemento(CarMemento* me, bool b){
         futureCar->setTyre(mementoCar->getTyre());
 
     }
+}
+
+tuple< Race *, Race *, Race *> Team::getUpcomingRaces()
+{
+    return upcomingRaces;
+}
+
+Equipment* Team::getTeamEquipment()
+{
+
+    return teamEquipment;
 }

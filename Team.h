@@ -88,15 +88,17 @@ public:
     void race();
     void strategise();
     void test();
-
     // template 
     void runWindTest(Formula1Car *); ///get car from memento store and run test to see if its replaced ///
     void runSimulationTest(Formula1Car *); ///get car from memento store and run test to see if its replaced ///
     void changeTestType(string type);
-
     Team();
     Team(Subject* s);
     void shipCarToFactory();
+
+    //getters for logistic
+    tuple< Race *, Race *, Race *> getUpcomingRaces();
+    Equipment* getTeamEquipment();
 };
 
 
