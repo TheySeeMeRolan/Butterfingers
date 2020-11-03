@@ -10,13 +10,13 @@ Human::Human(Team* t, Human * s){
 }
 
 Human::~Human(){
-    if (successor){
-        delete successor;
-    }
-    if (team){
-        delete team;
-    }
-    
+//    if (successor){
+//        delete successor;
+//    }
+//    if (team){
+//        delete team;
+//    }
+//
 }
 
 

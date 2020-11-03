@@ -171,3 +171,23 @@ Human* Team::getPitCrew(){
     }
     return temp;
 }
+
+Engine *Team::getEngine() {
+    return currentCar->getEngine();
+}
+
+Tyre **Team::getTyre() {
+    return currentCar->getTyre();
+}
+
+Chasis *Team::getChasis() {
+    return currentCar->getChasis();
+}
+
+Electronics *Team::getElectronics() {
+    return currentCar->getElectronics();
+}
+
+Spoiler *Team::getSpoiler() {
+    return currentCar->getSpoiler();
+}

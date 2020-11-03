@@ -75,7 +75,7 @@ public:
     void changeTestType();
     string getCompany();
     Engine* getEngine();
-    Tyre* getTyre();
+    Tyre** getTyre();
     Chasis* getChasis();
     Electronics* getElectronics();
     Spoiler* getSpoiler();
