@@ -8,6 +8,7 @@ class LeftCurveFactory: public TrackPartFactory {
 public:
     TrackPart* createPart(int l, int d);
     TrackPart* createPart();
+    ~LeftCurveFactory();
 };
 
 
