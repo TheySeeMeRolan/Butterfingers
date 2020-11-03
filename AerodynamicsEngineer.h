@@ -11,7 +11,7 @@ class AerodynamicsEngineer: public Engineering{
 public:
     void handleRequest(string p);
     void changeShape();
-    AerodynamicsEngineer();
+//    AerodynamicsEngineer();
     AerodynamicsEngineer(Team* team, Human * s);
 };
 

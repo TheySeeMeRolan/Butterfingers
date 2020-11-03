@@ -2,22 +2,20 @@
 #define PROJECT_HUMAN_H
 
 // #include "Team.h"
-#include<iostream>
-#include<string>
-#include "string.h"
-#include "Team.h"
+#include <iostream>
+#include <string>
+//#include "Team.h"
 using namespace std;
 
-// class Team;
+class Team; 
 class Human{
 protected:
     Team* team;
     Human* successor;
 public:
-    virtual void handleRequest(string s);
-    // Human();
     Human(Team* team, Human * s);
     virtual ~Human();
+    virtual void handleRequest(string s);
 };
 
 #endif //PROJECT_HUMAN_H

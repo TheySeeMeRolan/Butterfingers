@@ -9,8 +9,8 @@
 
 class Engineering: public Human{
 public:
-    void handleRequest();
-    Engineering();
-    Engineering(Team* team, Human * s)
+    virtual void handleRequest();
+//    Engineering();
+    Engineering(Team* team, Human * s);
 };
 #endif //PROJECT_ENGINEERING_H

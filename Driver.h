@@ -4,10 +4,8 @@
 
 #ifndef PROJECT_DRIVER_H
 #define PROJECT_DRIVER_H
-#include "Human.h"
+//#include "Human.h"
 #include "Personnel.h"
-
-
 
 class Driver: public Personnel{
 private:
@@ -16,13 +14,13 @@ private:
 public:
     void handleRequest(string s);
     void drive();
-    Driver();
-    Driver(Team* team);
-    Driver(Team* team, int l, int s);
+//    Driver();
+//    Driver(Team* team, Human* human);
+    Driver(Team* team, Human* human, int l, int s);
     int getSkill();
     int getLuck();
-    Driver(Team* team, Human * s);
-    Driver(Team* team, Human * s, int l, int s);
+//    Driver(Team* team, Human * s);
+//    Driver(Team* team, Human * s, int l, int s);
 };
 
 #endif //PROJECT_DRIVER_H

@@ -11,7 +11,7 @@ class ChasisEngineer: public Engineering{
 public:
     void handleRequest(string s);
     void test();
-    ChasisEngineer();
+//    ChasisEngineer();
     ChasisEngineer(Team* team, Human * s);
 };
 

@@ -11,7 +11,7 @@ class ElectronicEngineer: public Engineering{
 public:
     void handleRequest(string s);
     void tinker();
-    ElectronicEngineer();
+//    ElectronicEngineer();
     ElectronicEngineer(Team* team, Human * s);
 };
 

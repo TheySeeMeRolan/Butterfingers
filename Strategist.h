@@ -6,7 +6,7 @@ class Strategist: public Personnel{
 public:
     void handleRequest(string s);
     void strategise();
-    Strategist();
+//    Strategist();
     Strategist(Team* team, Human * s);
 };
 #endif //PROJECT_STRATEGIST_H

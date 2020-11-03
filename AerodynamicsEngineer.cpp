@@ -1,8 +1,9 @@
 #include"AerodynamicsEngineer.h"
+#include "Team.cpp"
 
-AerodynamicsEngineer::AerodynamicsEngineer(): Engineering(){
-
-}
+//AerodynamicsEngineer::AerodynamicsEngineer(): Engineering(){
+//
+//}
 
 AerodynamicsEngineer::AerodynamicsEngineer(Team* team, Human * s): Engineering(team, s){
     
