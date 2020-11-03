@@ -78,7 +78,7 @@ void Logistician::prepareForRace(){
 void Logistician::travelToRace()
 {
     cout<<"The "<<team->getCompany()<<" team logistician aranges transport for the team and they travel to the race"<<endl;
-    team->getRegisteredAt()->goToRace(this);
+    team->getRegisteredAt()->goToRace(team);
 
 }
 void Logistician::orderTyres()
@@ -95,6 +95,8 @@ void Logistician::shipContainerNonEuropean()
 }
 void Logistician::shipContainerEuropean()
 {
+    cout<<"The "<<team->getCompany()<<" team logistician ships the container for the non-European race taking place in 3 months time "<<endl;
+
     team->getRegisteredAt()->equipRace(get<0>(team->getUpcomingRaces()),team->getTeamEquipment());
 
 }
