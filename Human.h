@@ -12,10 +12,13 @@ class Human{
 protected:
     Team* team;
     Human* successor;
+    string typeHuman; //vir Janlu
 public:
     Human(Team* team, Human * s);
     virtual ~Human();
     virtual void handleRequest(string s);
+    Human* getSuccesor();   //vir Janlu
+    string getTypeHuman();  //vir Janlu
 };
 
 #endif //PROJECT_HUMAN_H

@@ -1,12 +1,12 @@
 #include "PitCrew.h"
 #include "Team.cpp"
 
-//PitCrew::PitCrew():Personnel(){
-//
-//}
+PitCrew::PitCrew():Personnel(){
+   typeHuman="PitCrew";
+}
 
 PitCrew::PitCrew(Team* team, Human * s): Personnel(team, s){
-    
+   typeHuman="PitCrew";    
 }
 
 void PitCrew::handleRequest(string p){
