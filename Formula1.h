@@ -15,13 +15,15 @@ class Formula1 {
 private:
     vector<Team*> f1Teams;
     Logistics* f1Logistics;
-    vector<Track*> f1Tracks;
+    vector<Track*> tracksNonEU;
+    vector<Track*> tracksEU;
     //Season* season;
 public:
     Formula1();
     void prepareLogistics();
-    void createTeams();
-    void startSession();
+    void startSeason();
+    void addTracks(vector<Track*> tracksToAdd);
+    void addTeams(vector<Team*> teamsToAdd);
 };
 
 #endif //PROJECT_FORMULA1_H

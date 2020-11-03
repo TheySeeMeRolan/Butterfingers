@@ -75,7 +75,7 @@ void Logistician::prepareForRace(){
 void Logistician::travelToRace()
 {
     cout<<"The "<<team->getCompany()<<" team logistician aranges transport for the team and they travel to the race"<<endl;
-    team->getRegisteredAt()->goToRace(this);
+    team->getRegisteredAt()->goToRace(team);
 
 }
 void Logistician::orderTyres()

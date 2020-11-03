@@ -28,7 +28,6 @@ public:
     void equipRace(Race* race, Equipment* equipment);
     void goToRace(Team* t);
     virtual tuple< Race *, Race *, Race *> getRaces();
-    Logistics( vector<Team*> teams );
 };
 
 #endif //PROJECT_LOGISTICS_H
