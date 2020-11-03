@@ -5,17 +5,18 @@
 
  
 Driver::Driver(): Personnel() {
-
+    typeHuman="Driver";
 }
 
 
 Driver::Driver(Team* team, Human * s) : Personnel(team, s){
-
+    typeHuman="Driver";
 }
 
 Driver::Driver(Team* team, Human *p, int l, int s):Personnel(team, p){
     luck= l;
     skill= s;
+    typeHuman= "Driver";
 }
 
 void Driver::handleRequest(string p)

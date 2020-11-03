@@ -1,11 +1,11 @@
 #include"EngineEngineer.h"
 
  EngineEngineer::EngineEngineer():Engineering(){
-
+     typeHuman="EngineEngineer";
  }
 
  EngineEngineer::EngineEngineer(Team* team, Human * s): Engineering(team, s){
-     
+     typeHuman="EngineEngineer";
  }
 
  void EngineEngineer::handleRequest(string p){
