@@ -28,8 +28,8 @@ Team::Team()
     command[0] = new PrepareCommand(lead);
     command[1] = new RacingCommand(lead);
     command[2] = new StrategiseCommand(lead);
-    command[3] = new WindTestingCommand(lead);
-    command[4] = new SimulationTestingCommand(lead);
+    command[3] = new WindTestingCommand(nullptr, lead);
+    command[4] = new SimulationTestingCommand(nullptr, lead);
     command[5] = new ServiceCommand(lead);
 }
 
