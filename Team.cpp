@@ -1,6 +1,10 @@
 #include "Team.h"
+#include "AerodynamicsFactory.h"
+#include "ElectronicFactory.h"
+#include "ChasisFactory.h"
+#include "EngineFactory.h"
 
-TeamResources::Team()
+Team::Team()
 {
     teamResources = new TeamResources();
     /// Create the Human array using the factories
@@ -29,7 +33,7 @@ TeamResources::Team()
     command[5] = new ServiceCommand(lead);
 }
 
-TeamResources::~Team(){
+Team::~Team(){
     // for(int i ; i < 4)
     // {
 
@@ -37,22 +41,22 @@ TeamResources::~Team(){
 }
 
 // "button" functions
-void TeamResources::prepare()
+void Team::prepare()
 {
     command[0]->execute();
 }
 
-void TeamResources::race()
+void Team::race()
 {
     command[1]->execute();
 }
 
-void TeamResources::strategise()
+void Team::strategise()
 {
     command[2]->execute();
 }
 
-void TeamResources::test()
+void Team::test()
 {
     command[3]->execute();
 }
