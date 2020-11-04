@@ -1,7 +1,7 @@
 #include "Team.h"
 #include "Subject.cpp"
 
-Team::Team()
+TeamResources::Team()
 {
     /// Create the Human array using the factories
     factories = new HumanFactory*[4];
@@ -33,7 +33,7 @@ Team::Team()
 
 }
 
-Team::~Team(){
+TeamResources::~Team(){
     // for(int i ; i < 4)
     // {
 
@@ -42,22 +42,22 @@ Team::~Team(){
 
 
 // "button" functions
-void Team::prepare()
+void TeamResources::prepare()
 {
     command[0]->execute();
 }
 
-void Team::race()
+void TeamResources::race()
 {
     command[1]->execute();
 }
 
-void Team::strategise()
+void TeamResources::strategise()
 {
     command[2]->execute();
 }
 
-void Team::test()
+void TeamResources::test()
 {
     command[3]->execute();
 }

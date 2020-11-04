@@ -6,37 +6,9 @@
 #define BUTTERFINGERS_TEAMRESOURCES_H
 
 
-/// Human Factories
-#include "HumanFactory.h"
-#include "AerodynamicsFactory.h"
-#include "ElectronicFactory.h"
-#include "ChasisFactory.h"
-#include "EngineFactory.h"
-
-//Humans
-#include "Human.h"
-#include "AerodynamicsEngineer.h"
-#include "ElectronicEngineer.h"
-#include "ChasisEngineer.h"
-#include "EngineEngineer.h"
-#include "Strategist.h"
-#include "Driver.h"
-#include "Logistician.h"
-#include "PitCrew.h"
-
 // car builder
 #include "Formula1Car.h"
 #include "CarPartBuilder.h"
-
-// commands
-#include "Command.h"
-#include "PrepareCommand.h"
-#include "RacingCommand.h"
-#include "StrategiseCommand.h"
-#include "TestingCommand.h"
-#include "ServiceCommand.h"
-#include "WindTestingCommand.h"
-#include "SimulationTestingCommand.h"
 
 //Memento
 #include "CarMemento.h"
@@ -69,10 +41,8 @@ private:
 public:
     Formula1Car* construct();
     Formula1Car* cloneCar();
-    virtual void update();
     void test(Formula1Car* c);
     void changeTestType();
-    string getCompany();
     Engine* getEngine();
     Tyre** getTyre();
     Chasis* getChasis();
@@ -83,11 +53,6 @@ public:
     CarMemento* createMemento(bool b);// if bool true create memento of current car else create memento of future car
     void reinstantiateMemento(CarMemento* me, bool b);// bool is to check for future or current car. if true current car else future car:)
 
-    // command functions will utilise the personell and engineers handle request function
-    void prepare();
-    void race();
-    void strategise();
-    void test();
     // template
     void runWindTest(Formula1Car *); ///get car from memento store and run test to see if its replaced ///
     void runSimulationTest(Formula1Car *); ///get car from memento store and run test to see if its replaced ///

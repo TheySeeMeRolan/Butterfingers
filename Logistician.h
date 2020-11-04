@@ -9,6 +9,7 @@
 
 class Logistician: public Personnel{
 public:
+    virtual void update();
     void handleRequest(string s);
     void analyseTrack();
     void prepareForRace();
