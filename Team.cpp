@@ -19,7 +19,7 @@ Team::Team()
     tempHuman = factories[2]->makeEngineer(tempHuman); // logistician with pitcrew successor
     tempHuman = factories[1]->makeEngineer(tempHuman); // driver with logistician successor
     tempHuman = factories[0]->makeEngineer(tempHuman); // strategist with driver successor
-    
+
     /// Create the commands ( to use the personnel )
     command[0] = new PrepareCommand(lead);
     command[1] = new RacingCommand(lead);
