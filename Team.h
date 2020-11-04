@@ -15,6 +15,7 @@
 #include "ServiceCommand.h"
 #include "WindTestingCommand.h"
 #include "SimulationTestingCommand.h"
+#include "Driver.h"
 
 using namespace std;
 class Team : public LogisticObserver {
