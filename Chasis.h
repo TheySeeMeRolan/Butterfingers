@@ -18,4 +18,16 @@ public:
     int getAerodynamicsScore();
 };
 
+int Chasis::getAerodynamicsScore() {
+    return 0;
+}
+
+int Chasis::getHeight() {
+    return 0;
+}
+
+string Chasis::getType() {
+    return std::string();
+}
+
 #endif //PROJECT_CHASIS_H

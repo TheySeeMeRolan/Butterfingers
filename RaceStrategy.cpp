@@ -37,10 +37,10 @@ int RaceStrategy::determineTeamRaceScore(Team* team, int difficulty, int length)
     int cumulativeTeamScore = length;
     int driverScore = ((Driver*)team->getDriver())->getSkill() + ((Driver*)team->getDriver())->getLuck();
 //    int tyreScore = team->getTyre()->getThread() * difficulty;
-    int engineScore = team->getTeamResources()->getEngine()->getHorsePower() * difficulty +  team->getTeamResources()->getEngine()->getTorque() * difficulty;
-    int chasisScore =  team->getTeamResources()->getChasis()->getHeight() * difficulty +  team->getTeamResources()->getChasis()->getAerodynamicsScore() * difficulty;
-    int electronicScore =  team->getTeamResources()->getElectronics()->getEfficiency() * difficulty;
-    int spoilerScore = team->getTeamResources()->getSpoiler()->getWeight() * difficulty +  team->getTeamResources()->getSpoiler()->getAerodynamicsScore() * difficulty;
+    int engineScore = team->getTeamResources()->getEngine()->getHorsePower() * difficulty + team->getTeamResources()->getEngine()->getTorque() * difficulty;
+    int chasisScore = team->getTeamResources()->getChasis()->getHeight() * difficulty + team->getTeamResources()->getChasis()->getAerodynamicsScore() * difficulty;
+    int electronicScore = team->getTeamResources()->getElectronics()->getEfficiency() * difficulty;
+    int spoilerScore = team->getTeamResources()->getSpoiler()->getWeight() * difficulty + team->getTeamResources()->getSpoiler()->getAerodynamicsScore() * difficulty;
 
 //    if(team->getTyre()->getType() == "soft") {
 //        tyreScore += 4;
