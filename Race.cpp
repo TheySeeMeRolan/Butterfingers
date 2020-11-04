@@ -81,7 +81,7 @@ void Race::race() {
     }
     teams = teamsCopy;
     for(auto& team: teams) {
-        team->shipCarToFactory();
+        team->getLogistician()->handleRequest("Service");
     }
     teamsCopy.clear();
 }

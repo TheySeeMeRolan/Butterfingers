@@ -1,5 +1,5 @@
 #include "Strategist.h"
-#include "Team.cpp"
+//#include "Team.cpp"
 
 Strategist::Strategist(Team* t, Human * s,TeamResources* tR): Personnel(t, s,tR){
     typeHuman="Strategist";

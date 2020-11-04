@@ -1,5 +1,5 @@
 #include "ElectronicEngineer.h"
-#include "Team.cpp"
+//#include "Team.cpp"
 
 ElectronicEngineer::ElectronicEngineer(Team* t, Human * s,TeamResources* tR) : Engineering(t, s,tR){
     typeHuman="ElectronicEngineer";
@@ -37,5 +37,5 @@ void ElectronicEngineer::handleRequest(string p){
 }
 
 void ElectronicEngineer::tinker(){
-    cout<<"The "<<team->getCompany()<<" team's electronic engineer is fiddling with the electronics."<<endl;
+//    cout<<"The "<<team->getCompany()<<" team's electronic engineer is fiddling with the electronics."<<endl;
 }

@@ -1,5 +1,5 @@
 #include"AerodynamicsEngineer.h"
-#include "Team.cpp"
+//#include "Team.cpp"
 
 AerodynamicsEngineer::AerodynamicsEngineer(Team* team, Human * s,TeamResources* tR): Engineering(team, s,tR){
     typeHuman="AerodynamicsEngineer";
