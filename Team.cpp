@@ -172,6 +172,54 @@ Human* Team::getPitCrew(){
     return temp;
 }
 
+Human* Team::getLogistician(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "Logistician") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
+}
+
+Human* Team::getStrategist(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "Strategist") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
+}
+
+Human* Team::getElectricEngineer(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "ElectronicEngineer") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
+}
+
+Human* Team::getEngineEngineer(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "EngineEngineer") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
+}
+
+Human* Team::getChassisEngineer(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "ChassisEngineer") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
+}
+
+Human* Team::getAerodynamicsEngineer(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "AerodynamicsEngineer") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
+}
+
 Engine *Team::getEngine() {
     return currentCar->getEngine();
 }

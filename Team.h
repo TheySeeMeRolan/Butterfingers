@@ -102,8 +102,15 @@ public:
     tuple< Race *, Race *, Race *> getUpcomingRaces();
     Equipment* getTeamEquipment();
 
+    Human* getStrategist();
+    Human* getLogistician();
     Human* getDriver();
     Human* getPitCrew();
+
+    Human* getChassisEngineer();
+    Human* getAerodynamicsEngineer();
+    Human* getElectricEngineer();
+    Human* getEngineEngineer();
 };
 
 
