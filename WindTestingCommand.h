@@ -6,7 +6,9 @@
 class WindTestingCommand: public Command{
 public:
     virtual void execute();
-    WindTestingCommand(Human *);
+    WindTestingCommand(Human *human, Human *h);
 };
+
+
 
 #endif 

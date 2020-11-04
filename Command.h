@@ -10,8 +10,10 @@ protected:
     Human* human;
 public:
     virtual void execute()=0;
-    Command(Human* human);
-    virtual ~Command();
+    Command(Human* human)
+    {this->human = human;}
+    virtual ~Command()
+    {};
 };
 
 #endif //PROJECT_COMMAND_H
