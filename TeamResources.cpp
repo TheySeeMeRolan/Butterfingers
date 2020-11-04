@@ -54,9 +54,9 @@ upcomingRaces = uR;
 //     // }
 // }
 //
-void TeamResources::update()
-{
-//    int currentWeek;
+//void TeamResources::update()
+//{
+////    int currentWeek;
 //    currentWeek=registeredAt->getWeek();
 //    upcomingRaces = registeredAt->getRaces();
 //    //if

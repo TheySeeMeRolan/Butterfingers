@@ -139,5 +139,6 @@ void Team::update()
     int currentWeek;
     currentWeek=registeredAt->getWeek();
     teamResources->setUpcomingRaces(registeredAt->getRaces());
+    // call commands
 }
 

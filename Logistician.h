@@ -18,6 +18,10 @@ public:
     void shipContainerNonEuropean();
     void shipContainerEuropean();
 
+
+
+    void equipRace(Race* race, Equipment* equipment);
+    void goToRace(Team* t);
     //    Logistician();
     Logistician(Team* team, Human * s,TeamResources* tR);
 };

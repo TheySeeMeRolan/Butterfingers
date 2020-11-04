@@ -1,5 +1,5 @@
 #include "Logistician.h"
-#include "Team.cpp"
+//#include "Team.cpp"
 #include "Race.cpp"
 
 Logistician::Logistician(Team* t, Human * s,TeamResources* tR): Personnel(t, s,tR){
@@ -10,16 +10,16 @@ void Logistician::handleRequest(string p){
     if(p == "prepare")
     {
 
-        if(get<2>(team->getUpcomingRaces())!= nullptr)
+        if(get<2>(teamResources->getUpcomingRaces())!= nullptr)
         {
-            if (!get<2>(team->getUpcomingRaces())->getTrack()->isEuropean())
+            if (!get<2>(teamResources->getUpcomingRaces())->getTrack()->isEuropean())
                 shipContainerNonEuropean();
         }
-        if(get<1>(team->getUpcomingRaces())!= nullptr)
+        if(get<1>(teamResources->getUpcomingRaces())!= nullptr)
         {
             orderTyres();
         }
-        if(get<0>(team->getUpcomingRaces())!= nullptr)
+        if(get<0>(teamResources->getUpcomingRaces())!= nullptr)
         {
             this->prepareForRace();
             travelToRace();
@@ -64,7 +64,7 @@ void Logistician::analyseTrack(){
 
 void Logistician::prepareForRace(){
     cout<<"The "<<team->getCompany()<<" team logistician prepares for the race";
-    if (get<0>(team->getUpcomingRaces())->getTrack()->isEuropean())
+    if (get<0>(teamResources->getUpcomingRaces())->getTrack()->isEuropean())
     {
         cout<<"and transports all the equipment to the European track ";
         shipContainerEuropean();
@@ -75,7 +75,7 @@ void Logistician::prepareForRace(){
 void Logistician::travelToRace()
 {
     cout<<"The "<<team->getCompany()<<" team logistician aranges transport for the team and they travel to the race"<<endl;
-    team->getRegisteredAt()->goToRace(team);
+//    this->team->getRegisteredAt()->goToRace(team);
 
 }
 void Logistician::orderTyres()
@@ -87,11 +87,11 @@ void Logistician::orderTyres()
 void Logistician::shipContainerNonEuropean()
 {
 
-    team->getRegisteredAt()->equipRace(get<2>(team->getUpcomingRaces()),team->getTeamEquipment());
+    equipRace(get<2>(teamResources->getUpcomingRaces()),teamResources->getTeamEquipment());
 
 }
 void Logistician::shipContainerEuropean()
 {
-    team->getRegisteredAt()->equipRace(get<0>(team->getUpcomingRaces()),team->getTeamEquipment());
+    equipRace(get<0>(teamResources->getUpcomingRaces()),teamResources->getTeamEquipment());
 
 }
