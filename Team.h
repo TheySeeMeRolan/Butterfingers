@@ -4,6 +4,15 @@
 #include "TeamResources.h"
 #include "Human.h"
 #include "Command.h"
+#include "HumanFactory.h"
+#include "Command.h"
+#include "PrepareCommand.h"
+#include "RacingCommand.h"
+#include "StrategiseCommand.h"
+#include "TestingCommand.h"
+#include "ServiceCommand.h"
+#include "WindTestingCommand.h"
+#include "SimulationTestingCommand.h"
 
 using namespace std;
 class Team {
