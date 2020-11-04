@@ -7,7 +7,7 @@
 #include <iostream>
 #include "Race.h"
 #include "LogisticObserver.h"
-class Team;
+//class Team;
 
 using namespace std;
 
@@ -19,8 +19,6 @@ public:
     void attach(LogisticObserver* team);
     void detach(LogisticObserver* team);
     virtual tuple<Race*, Race*, Race*> getRaces()=0;
-    virtual void equipRace(Race *race, Equipment *equipment)=0;
-    virtual void goToRace(Team* t)=0;
     virtual int getWeek();
     void notify();
     virtual ~Subject();

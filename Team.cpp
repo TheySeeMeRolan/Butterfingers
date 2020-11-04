@@ -9,10 +9,10 @@ Team::Team()
     teamResources = new TeamResources();
     /// Create the Human array using the factories
     factories = new HumanFactory*[4];
-    factories[0] = new AerodynamicsFactory(this);
-    factories[1] = new ElectronicFactory(this);
-    factories[2] = new ChasisFactory(this);
-    factories[3] = new EngineFactory(this);
+    factories[0] = new AerodynamicsFactory(this,teamResources);
+    factories[1] = new ElectronicFactory(this,teamResources);
+    factories[2] = new ChasisFactory(this,teamResources);
+    factories[3] = new EngineFactory(this,teamResources);
 
     // Strategist holds Driver, driver holds Logistician etc , start creation from the back (EngineEngineer)
     Human * tempHuman = factories[3]->makePersonnel(nullptr); // engine engineer with no successor
@@ -132,5 +132,12 @@ Human* Team::getAerodynamicsEngineer(){
 
 TeamResources *Team::getTeamResources() {
     return teamResources;
+}
+
+void Team::update()
+{
+    int currentWeek;
+    currentWeek=registeredAt->getWeek();
+    teamResources->setUpcomingRaces(registeredAt->getRaces());
 }
 

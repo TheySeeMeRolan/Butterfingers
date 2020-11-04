@@ -2,6 +2,8 @@
 #define PROJECT_TEAM_H
 
 #include "TeamResources.h"
+#include "Logistics.h"
+#include "LogisticObserver.h"
 #include "Human.h"
 #include "Command.h"
 #include "HumanFactory.h"
@@ -15,7 +17,7 @@
 #include "SimulationTestingCommand.h"
 
 using namespace std;
-class Team {
+class Team : public LogisticObserver {
 private:
     string company;
     Human * lead;

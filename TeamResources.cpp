@@ -33,6 +33,11 @@ void TeamResources::runSimulationTest(Formula1Car * p)
     simulationTest->test(p);
 }
 
+void TeamResources::setUpcomingRaces(tuple<Race *, Race *, Race *> uR)
+{
+upcomingRaces = uR;
+}
+
 // void TeamResources::changeTestType(string type)
 // {
 //     // if (tester)
@@ -49,8 +54,8 @@ void TeamResources::runSimulationTest(Formula1Car * p)
 //     // }
 // }
 //
-//void TeamResources::update()
-//{
+void TeamResources::update()
+{
 //    int currentWeek;
 //    currentWeek=registeredAt->getWeek();
 //    upcomingRaces = registeredAt->getRaces();

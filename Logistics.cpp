@@ -99,19 +99,19 @@ void Logistics::scheduleSeason(vector<Track*> tracksForEU,vector<Track*> tracksF
 
 }
 
-void Logistics::equipRace(Race *race, Equipment *equipment)
-{
-    for (int r = 0;r  <42 ; r++)
-    {
-
-        if (this->races.at(r) == race)
-        {
-            races.at(r)->storeEquipment(equipment);
-        }
-
-    }
-
-}
+//void Logistics::equipRace(Race *race, Equipment *equipment)
+//{
+//    for (int r = 0;r  <42 ; r++)
+//    {
+//
+//        if (this->races.at(r) == race)
+//        {
+//            races.at(r)->storeEquipment(equipment);
+//        }
+//
+//    }
+//
+//}
 
 void Logistics::startNextWeek()
 {
@@ -134,7 +134,7 @@ void Logistics::kickOffSeason()
 
 }
 
-void Logistics::goToRace(Team *t)
-{
-races.at(week)->addTeam(t);
-}
+//void Logistics::goToRace(Team *t)
+//{
+//races.at(week)->addTeam(t);
+//}

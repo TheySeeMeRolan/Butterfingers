@@ -63,6 +63,7 @@ public:
 
     //getters for logistic
     tuple< Race *, Race *, Race *> getUpcomingRaces();
+    void setUpcomingRaces(tuple< Race *, Race *, Race *> uR);
     Equipment* getTeamEquipment();
 
 

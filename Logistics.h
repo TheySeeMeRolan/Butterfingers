@@ -25,8 +25,8 @@ public:
     void scheduleSeason( vector<Track*> tracksForEU,vector<Track*> tracksForNonEU);
     void kickOffSeason();
     void startNextWeek();
-    void equipRace(Race* race, Equipment* equipment);
-    void goToRace(Team* t);
+//    void equipRace(Race* race, Equipment* equipment);
+//    void goToRace(Team* t);
     virtual tuple< Race *, Race *, Race *> getRaces();
 };
 
