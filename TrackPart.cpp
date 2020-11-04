@@ -22,3 +22,7 @@ int TrackPart::getTotalLength(){
 int TrackPart::getTotalDifficulty(){
     return this->difficulty;
 }
+
+TrackPart::~TrackPart() {
+
+}

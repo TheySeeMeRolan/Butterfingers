@@ -30,3 +30,7 @@ Human* Human::getSuccesor(){
 string Human::getTypeHuman(){
     return typeHuman;
 }
+
+void Human::handleRequest(string s) {
+
+}

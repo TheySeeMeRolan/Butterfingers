@@ -17,4 +17,8 @@ public:
     virtual ~Strategy();
 };
 
+Strategy::~Strategy() {
+
+}
+
 #endif //PROJECT_STRATEGY_H

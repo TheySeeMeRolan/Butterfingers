@@ -106,3 +106,7 @@ void Logistician::equipRace(Race *race, Equipment *equipment)
 {
     race->storeEquipment(equipment);
 }
+
+void Logistician::update() {
+
+}

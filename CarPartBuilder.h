@@ -7,4 +7,13 @@ public:
     virtual ~CarPartBuilder();
     CarPartBuilder();
 };
+
+CarPartBuilder::CarPartBuilder() {
+
+}
+
+CarPartBuilder::~CarPartBuilder() {
+
+}
+
 #endif //PROJECT_CARPARTBUILDER_H

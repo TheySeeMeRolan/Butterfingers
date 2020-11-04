@@ -7,3 +7,7 @@
 Engineering::Engineering(Team* t, Human * s,TeamResources* tR): Human(t, s,tR){
     
 }
+
+void Engineering::handleRequest() {
+
+}
