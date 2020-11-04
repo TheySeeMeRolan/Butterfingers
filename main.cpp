@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Formula1.h"
+//#include "Formula1.h"
 
 /*
 includes for generating tracks
@@ -10,6 +10,7 @@ includes for generating tracks
 #include "LeftCurveFactory.h"
 #include "RightCurveFactory.h"
 #include "StraightFactory.h"
+#include "Track.h"
 
 
 /*
@@ -40,7 +41,7 @@ int main(){
 
     //Create Teams - which should construct() cars and create all the humans
 
-    Formula1* season1 = new Formula1();
+//    Formula1* season1 = new Formula1();
 //    vector<Track*> seasonTracks;
 //    seasonTracks.push_back(track1);
 //    season1->addTracks(seasonTracks);
