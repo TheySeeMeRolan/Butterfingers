@@ -15,4 +15,8 @@ public:
     int getEfficiency();
 };
 
+int Electronics::getEfficiency() {
+    return 0;
+}
+
 #endif //PROJECT_ELECTRONICS_H

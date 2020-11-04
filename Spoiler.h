@@ -15,4 +15,13 @@ public:
     int getWeight();
     int getAerodynamicsScore();
 };
+
+int Spoiler::getWeight() {
+    return 0;
+}
+
+int Spoiler::getAerodynamicsScore() {
+    return 0;
+}
+
 #endif //PROJECT_SPOILER_H

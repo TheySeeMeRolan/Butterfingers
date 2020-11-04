@@ -60,3 +60,7 @@ int RaceStrategy::determineTeamRaceScore(Team* team, int difficulty, int length)
     cumulativeTeamScore += spoilerScore;
     return cumulativeTeamScore;
 }
+
+RaceStrategy::~RaceStrategy() {
+
+}

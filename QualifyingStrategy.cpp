@@ -58,3 +58,7 @@ int QualifyingStrategy::determineTeamRaceScore(Team* team, int difficulty, int l
     cumulativeTeamScore += spoilerScore;
     return cumulativeTeamScore;
 }
+
+QualifyingStrategy::~QualifyingStrategy() {
+
+}
