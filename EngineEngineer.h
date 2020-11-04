@@ -12,7 +12,7 @@ public:
     void handleRequest(string s);
     void useWrench();
 //    EngineEngineer();
-    EngineEngineer(Team* team, Human * s);
+    EngineEngineer(Team* team, Human * s,TeamResources* tR);
 };
 
 #endif //PROJECT_ENGINEENGINEER_H

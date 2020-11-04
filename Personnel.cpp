@@ -4,6 +4,10 @@
 //
 //}
 
-Personnel::Personnel(Team* t, Human * s):Human(t, s){
+Personnel::Personnel(Team* t, Human * s,TeamResources* tR):Human(t, s,tR){
     
+}
+
+void Personnel::handleRequest(string s) {
+    Human::handleRequest(s);
 }

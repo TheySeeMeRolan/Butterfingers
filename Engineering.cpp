@@ -4,6 +4,6 @@
 //
 //}
 
-Engineering::Engineering(Team* t, Human * s): Human(t, s){
+Engineering::Engineering(Team* t, Human * s,TeamResources* tR): Human(t, s,tR){
     
 }

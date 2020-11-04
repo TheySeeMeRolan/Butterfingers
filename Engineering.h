@@ -11,6 +11,6 @@ class Engineering: public Human{
 public:
     virtual void handleRequest();
 //    Engineering();
-    Engineering(Team* team, Human * s);
+    Engineering(Team* team, Human * s,TeamResources* tR);
 };
 #endif //PROJECT_ENGINEERING_H

@@ -1,7 +1,7 @@
 #include "ChasisEngineer.h"
 #include "Team.cpp"
 
-ChasisEngineer::ChasisEngineer(Team* t, Human * s):Engineering(t, s){
+ChasisEngineer::ChasisEngineer(Team* t, Human * s,TeamResources* tR):Engineering(t, s,tR){
     typeHuman="ChasisEngineer";
 }
 

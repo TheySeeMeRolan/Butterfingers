@@ -2,7 +2,7 @@
 #include "Team.cpp"
 #include "Race.cpp"
 
-Logistician::Logistician(Team* t, Human * s): Personnel(t, s){
+Logistician::Logistician(Team* t, Human * s,TeamResources* tR): Personnel(t, s,tR){
     typeHuman="Logistician";
 }
 

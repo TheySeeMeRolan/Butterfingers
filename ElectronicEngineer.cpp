@@ -1,7 +1,7 @@
 #include "ElectronicEngineer.h"
 #include "Team.cpp"
 
-ElectronicEngineer::ElectronicEngineer(Team* t, Human * s) : Engineering(t, s){
+ElectronicEngineer::ElectronicEngineer(Team* t, Human * s,TeamResources* tR) : Engineering(t, s,tR){
     typeHuman="ElectronicEngineer";
 }
 

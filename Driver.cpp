@@ -1,7 +1,7 @@
 #include "Driver.h"
 #include "Team.cpp"
 
-Driver::Driver(Team* team, Human *p, int l, int s):Personnel(team, p){
+Driver::Driver(Team* team, Human *p, int l, int s,TeamResources* tR):Personnel(team, p,tR){
     luck= l;
     skill= s;
     typeHuman= "Driver";

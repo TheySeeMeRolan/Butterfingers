@@ -19,7 +19,7 @@ public:
     void shipContainerEuropean();
 
     //    Logistician();
-    Logistician(Team* team, Human * s);
+    Logistician(Team* team, Human * s,TeamResources* tR);
 };
 
 #endif //PROJECT_LOGISTICIAN_H

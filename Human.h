@@ -4,6 +4,7 @@
 // #include "Team.h"
 #include <iostream>
 #include <string>
+#include "TeamResources.h"
 //#include "Team.h"
 using namespace std;
 
@@ -13,8 +14,9 @@ protected:
     Team* team;
     Human* successor;
     string typeHuman; //vir Janlu
+    TeamResources* teamResources;
 public:
-    Human(Team* team, Human * s);
+    Human(Team* team, Human * s,TeamResources* tR);
     virtual ~Human();
     virtual void handleRequest(string s);
     Human* getSuccesor();   //vir Janlu

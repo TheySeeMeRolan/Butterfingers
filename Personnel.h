@@ -10,7 +10,7 @@ class Personnel: public Human{
 public:
     virtual void handleRequest(string s);
 //    Personnel();
-    Personnel(Team* team, Human * s);
+    Personnel(Team* team, Human * s,TeamResources* tR);
 };
 
 #endif //PROJECT_PERSONNEL_H

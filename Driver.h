@@ -14,13 +14,10 @@ private:
 public:
     void handleRequest(string s);
     void drive();
-//    Driver();
-//    Driver(Team* team, Human* human);
-    Driver(Team* team, Human* human, int l, int s);
+    Driver(Team* team, Human* human, int l, int s,TeamResources* tR);
     int getSkill();
     int getLuck();
-//    Driver(Team* team, Human * s);
-    Driver(Team* team, int l, int s);
+//    Driver(Team* team, int l, int s);
 };
 
 #endif //PROJECT_DRIVER_H
