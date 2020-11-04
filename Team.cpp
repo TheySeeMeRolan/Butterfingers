@@ -1,8 +1,8 @@
 #include "Team.h"
-#include "Subject.cpp"
 
 TeamResources::Team()
 {
+    teamResources = new TeamResources();
     /// Create the Human array using the factories
     factories = new HumanFactory*[4];
     factories[0] = new AerodynamicsFactory(this);
@@ -20,17 +20,13 @@ TeamResources::Team()
     tempHuman = factories[1]->makeEngineer(tempHuman); // driver with logistician successor
     tempHuman = factories[0]->makeEngineer(tempHuman); // strategist with driver successor
 
-
     /// Create the commands ( to use the personnel )
-
     command[0] = new PrepareCommand(lead);
     command[1] = new RacingCommand(lead);
     command[2] = new StrategiseCommand(lead);
     command[3] = new WindTestingCommand(lead);
     command[4] = new SimulationTestingCommand(lead);
     command[5] = new ServiceCommand(lead);
-
-
 }
 
 TeamResources::~Team(){
@@ -39,7 +35,6 @@ TeamResources::~Team(){
 
     // }
 }
-
 
 // "button" functions
 void TeamResources::prepare()
@@ -62,98 +57,9 @@ void TeamResources::test()
     command[3]->execute();
 }
 
-// template
-void Team::runWindTest(Formula1Car * p)
-{
-    // send in the car to the test and have it return a car to replace the memento with
-    // send in future or current car
-    windTest->test(p);
-}
-
-void Team::runSimulationTest(Formula1Car * p)
-{
-    // send in the car to the test and have it return a car to replace the memento with
-    // send in future or current car
-    simulationTest->test(p);
-}
-
-// void Team::changeTestType(string type)
-// {
-//     // if (tester)
-//     // {
-//     //     delete tester;
-//     // }
-
-//     // if(type == "wind tunnel")
-//     // {
-//     //     tester = new WindTunnel();
-//     // }else if(type == "simulation")
-//     // {
-//     //     tester = new Simulation();
-//     // }
-// }
-
 string Team::getCompany()
 {
     return company;
-}
-void Team::update()
-{
-    int currentWeek;
-    currentWeek=registeredAt->getWeek();
-    upcomingRaces = registeredAt->getRaces();
-    //if
-
-
-}
-
-void Team::shipCarToFactory()
-{
-//TBD
-}
-
-
-
-CarMemento* Team::createMemento(bool b){
-    if (b)
-        return new CarMemento(currentCar);
-    else
-        return new CarMemento(futureCar);
-}
-
-
-   
-
-void Team::reinstantiateMemento(CarMemento* me, bool b){
-    if (b){
-        //current car
-        Formula1Car* mementoCar= me->getState();
-        currentCar->setChasis(mementoCar->getChasis());
-        currentCar->setEngine(mementoCar->getEngine());
-        currentCar->setElectronics(mementoCar->getElectronics());
-        currentCar->setSpoiler(mementoCar->getSpoiler());
-        currentCar->setTyre(mementoCar->getTyre());
-    }else{
-        //future car
-        Formula1Car* mementoCar= me->getState();
-        futureCar->setChasis(mementoCar->getChasis());
-        futureCar->setEngine(mementoCar->getEngine());
-        futureCar->setElectronics(mementoCar->getElectronics());
-        futureCar->setSpoiler(mementoCar->getSpoiler());
-        futureCar->setTyre(mementoCar->getTyre());
-
-    }
-}
-
-tuple< Race *, Race *, Race *> Team::getUpcomingRaces()
-{
-    return upcomingRaces;
-}
-
-Equipment* Team::getTeamEquipment()
-{
-
-    return teamEquipment;
 }
 
 Human* Team::getDriver() {
@@ -172,22 +78,55 @@ Human* Team::getPitCrew(){
     return temp;
 }
 
-Engine *Team::getEngine() {
-    return currentCar->getEngine();
+Human* Team::getLogistician(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "Logistician") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
 }
 
-Tyre **Team::getTyre() {
-    return currentCar->getTyre();
+Human* Team::getStrategist(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "Strategist") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
 }
 
-Chasis *Team::getChasis() {
-    return currentCar->getChasis();
+Human* Team::getElectricEngineer(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "ElectronicEngineer") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
 }
 
-Electronics *Team::getElectronics() {
-    return currentCar->getElectronics();
+Human* Team::getEngineEngineer(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "EngineEngineer") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
 }
 
-Spoiler *Team::getSpoiler() {
-    return currentCar->getSpoiler();
+Human* Team::getChassisEngineer(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "ChassisEngineer") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
 }
+
+Human* Team::getAerodynamicsEngineer(){
+    Human* temp = lead;
+    while (temp->getSuccesor()->getTypeHuman() != "AerodynamicsEngineer") {
+        temp = temp->getSuccesor();
+    }
+    return temp;
+}
+
+TeamResources *Team::getTeamResources() {
+    return teamResources;
+}
+
