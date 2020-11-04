@@ -11,7 +11,7 @@
 
 class EngineFactory: public HumanFactory{
 public:
-    EngineFactory(Team* t);
+    EngineFactory(Team* t,TeamResources* tR);
     Human * makeEngineer(Human *) ;
     Human * makePersonnel(Human *) ;
 };

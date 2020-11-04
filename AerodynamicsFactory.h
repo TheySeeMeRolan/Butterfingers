@@ -11,7 +11,7 @@
 
 class AerodynamicsFactory: public HumanFactory{
 public:
-    AerodynamicsFactory(Team* t);
+    AerodynamicsFactory(Team* t,TeamResources* tR);
     Human * makeEngineer(Human * s);
     Human * makePersonnel(Human * s);
 };

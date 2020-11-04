@@ -6,10 +6,15 @@ HumanFactory::~HumanFactory(){
     }
 }
 
-HumanFactory::HumanFactory(Team* t){
+HumanFactory::HumanFactory(Team* t,TeamResources* tR){
     team= t;
+    teamResources = tR;
 }
 
 Team* HumanFactory::getTeam(){
     return team;
+}
+
+TeamResources *HumanFactory::getTeamResources() {
+    return teamResources;
 }
