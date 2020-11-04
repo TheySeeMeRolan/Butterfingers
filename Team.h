@@ -4,6 +4,7 @@
 #include "TeamResources.h"
 #include "Human.h"
 #include "Command.h"
+#include "HumanFactory.h"
 
 using namespace std;
 class Team {
