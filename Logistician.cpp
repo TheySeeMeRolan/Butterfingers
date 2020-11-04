@@ -95,3 +95,14 @@ void Logistician::shipContainerEuropean()
     equipRace(get<0>(teamResources->getUpcomingRaces()),teamResources->getTeamEquipment());
 
 }
+
+void Logistician::goToRace(Team *t)
+{
+    get<2>(teamResources->getUpcomingRaces())->addTeam(t);
+
+}
+
+void Logistician::equipRace(Race *race, Equipment *equipment)
+{
+    race->storeEquipment(equipment);
+}
