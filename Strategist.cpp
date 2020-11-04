@@ -46,5 +46,5 @@ void Strategist::handleRequest(string p){
 }
 
 void Strategist::strategise(){
-    cout<<"The "<<team->getCompany()<<" teams strategist formulates a race plan"<<endl;
+//    cout<<"The "<<team->getCompany()<<" teams strategist formulates a race plan"<<endl;
 }

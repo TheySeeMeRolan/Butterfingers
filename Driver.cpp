@@ -47,7 +47,7 @@ void Driver::handleRequest(string p)
 
 void Driver::drive()
 {
-    cout<<"Team "<<team->getCompany()<<"'s driver drives the car."<<endl;
+//    cout<<"Team "<<team->getCompany()<<"'s driver drives the car."<<endl;
 }
 
 
