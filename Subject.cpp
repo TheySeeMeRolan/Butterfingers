@@ -1,6 +1,6 @@
 #include "Subject.h"
 
-void Subject::attach(LogisticObserver *team)
+void Subject::attach(Observer *team)
 {
     teams.push_back(team);
     team->registerTeam(this);

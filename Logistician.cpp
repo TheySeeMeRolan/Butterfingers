@@ -1,5 +1,4 @@
 #include "Logistician.h"
-//#include "Team.cpp"
 #include "Race.cpp"
 
 Logistician::Logistician(Team* t, Human * s,TeamResources* tR): Personnel(t, s,tR){

@@ -13,11 +13,11 @@ using namespace std;
 
 class Subject{
 protected:
-    vector<LogisticObserver*> teams;
+    vector<Observer*> teams;
     int week;
 public:
-    void attach(LogisticObserver* team);
-    void detach(LogisticObserver* team);
+    void attach(Observer* team);
+    void detach(Observer* team);
     virtual tuple<Race*, Race*, Race*> getRaces()=0;
     virtual int getWeek();
     void notify();

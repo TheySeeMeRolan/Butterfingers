@@ -2,7 +2,6 @@
 #define PROJECT_TEAM_H
 
 #include "TeamResources.h"
-#include "Logistics.h"
 #include "Observer.h"
 #include "Human.h"
 #include "Command.h"
@@ -18,7 +17,7 @@
 #include "Driver.h"
 
 using namespace std;
-class Team : public LogisticObserver {
+class Team : public Observer {
 private:
     string company;
     Human * lead;
