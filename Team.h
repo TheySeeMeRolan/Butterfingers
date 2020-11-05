@@ -39,8 +39,8 @@ public:
     Team(WeekCalender* schedule);
     ~Team();
     virtual void update();
-    void test(Formula1Car* c);
-    void changeTestType();
+    void test(Formula1Car* c){};
+    void changeTestType(){};
     string getCompany();
 
     // command functions will utilise the personell and engineers handle request function

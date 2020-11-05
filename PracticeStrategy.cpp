@@ -1,14 +1,13 @@
 #include "PracticeStrategy.h"
-#include "Team.h"
 
 vector<Team *> PracticeStrategy::race(vector<Team *> teams, Track *track) {
     if(track->isEuropean()) {
         for (auto &team : teams) {
-            ((Driver*)team->getDriver())->drive();
+//            ((Driver*)team->getDriver())->drive();
         }
     } else {
         for (auto &team : teams) {
-            ((Driver*)team->getDriver())->drive();
+//            ((Driver*)team->getDriver())->drive();
         }
     }
     return teams;

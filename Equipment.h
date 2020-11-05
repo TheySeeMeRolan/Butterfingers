@@ -10,11 +10,11 @@ class Equipment{
 private:
     string name;
 public:
-    void add(Equipment* equipment);
-    void remove(Equipment* equipment);
-    void equip();
-    Equipment();
-    Equipment(string name);
+    void add(Equipment* equipment){};
+    void remove(Equipment* equipment){};
+    void equip(){};
+    Equipment(){};
+    Equipment(string name){this->name = name;};
 };
 
 #endif //PROJECT_EQUIPMENT_H

@@ -11,6 +11,8 @@ includes for generating tracks
 #include "RightCurveFactory.h"
 #include "StraightFactory.h"
 #include "Track.h"
+#include "Team.h"
+#include "Race.h"
 
 
 /*
@@ -38,6 +40,25 @@ int main(){
     track1->addPart(trackParts[0]);
     track1->addPart(trackParts[1]);
     track1->addPart(trackParts[2]);
+
+    WeekCalender* calender = new WeekCalender();
+    Team* team1 = new Team(calender);
+    Team* team2 = new Team(calender);
+    Team* team3 = new Team(calender);
+    Team* team4 = new Team(calender);
+    Team* team5 = new Team(calender);
+
+    Race* race = new Race(track1,"Soweto");
+    race->addTeam(team1);
+    race->addTeam(team2);
+    race->addTeam(team3);
+    race->addTeam(team4);
+    race->addTeam(team5);
+
+    Equipment* equipment = new Equipment("Stuff");
+    race->storeEquipment(equipment);
+
+    race->race();
 
     //Create Teams - which should construct() cars and create all the humans
 

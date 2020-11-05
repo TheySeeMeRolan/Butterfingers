@@ -1,5 +1,4 @@
 #include "RaceStrategy.h"
-#include "Team.h"
 
 vector<Team *> RaceStrategy::race(vector<Team *> teams, Track *track) {
     vector<int> teamScore;
@@ -7,13 +6,13 @@ vector<Team *> RaceStrategy::race(vector<Team *> teams, Track *track) {
     int tempScore,startPosition = 0;
     if(track->isEuropean()) {
         for (auto &team : teams) {
-            ((Driver*)team->getDriver())->drive();
+//            ((Driver*)team->getDriver())->drive();
             teamScore.push_back(determineTeamRaceScore(team,track->getTotalDifficulty(),track->getTotalLength())-startPosition);
             startPosition++;
         }
     } else {
         for (auto &team : teams) {
-            ((Driver*)team->getDriver())->drive();
+//            ((Driver*)team->getDriver())->drive();
             teamScore.push_back(determineTeamRaceScore(team,track->getTotalDifficulty()+1,track->getTotalLength())-startPosition);
             startPosition++;
         }
@@ -35,12 +34,12 @@ vector<Team *> RaceStrategy::race(vector<Team *> teams, Track *track) {
 
 int RaceStrategy::determineTeamRaceScore(Team* team, int difficulty, int length) {
     int cumulativeTeamScore = length;
-    int driverScore = ((Driver*)team->getDriver())->getSkill() + ((Driver*)team->getDriver())->getLuck();
+//    int driverScore = ((Driver*)team->getDriver())->getSkill() + ((Driver*)team->getDriver())->getLuck();
 //    int tyreScore = team->getTyre()->getThread() * difficulty;
-    int engineScore = team->getTeamResources()->getEngine()->getHorsePower() * difficulty + team->getTeamResources()->getEngine()->getTorque() * difficulty;
-    int chasisScore = team->getTeamResources()->getChasis()->getHeight() * difficulty + team->getTeamResources()->getChasis()->getAerodynamicsScore() * difficulty;
-    int electronicScore = team->getTeamResources()->getElectronics()->getEfficiency() * difficulty;
-    int spoilerScore = team->getTeamResources()->getSpoiler()->getWeight() * difficulty + team->getTeamResources()->getSpoiler()->getAerodynamicsScore() * difficulty;
+//    int engineScore = team->getTeamResources()->getEngine()->getHorsePower() * difficulty + team->getTeamResources()->getEngine()->getTorque() * difficulty;
+//    int chasisScore = team->getTeamResources()->getChasis()->getHeight() * difficulty + team->getTeamResources()->getChasis()->getAerodynamicsScore() * difficulty;
+//    int electronicScore = team->getTeamResources()->getElectronics()->getEfficiency() * difficulty;
+//    int spoilerScore = team->getTeamResources()->getSpoiler()->getWeight() * difficulty + team->getTeamResources()->getSpoiler()->getAerodynamicsScore() * difficulty;
 
 //    if(team->getTyre()->getType() == "soft") {
 //        tyreScore += 4;
@@ -52,12 +51,12 @@ int RaceStrategy::determineTeamRaceScore(Team* team, int difficulty, int length)
 //        tyreScore += 5;
 //    }
 
-    cumulativeTeamScore += driverScore;
+//    cumulativeTeamScore += driverScore;
 //    cumulativeTeamScore += tyreScore;
-    cumulativeTeamScore += engineScore;
-    cumulativeTeamScore += chasisScore;
-    cumulativeTeamScore += electronicScore;
-    cumulativeTeamScore += spoilerScore;
+//    cumulativeTeamScore += engineScore;
+//    cumulativeTeamScore += chasisScore;
+//    cumulativeTeamScore += electronicScore;
+//    cumulativeTeamScore += spoilerScore;
     return cumulativeTeamScore;
 }
 

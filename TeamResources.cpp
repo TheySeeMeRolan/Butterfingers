@@ -4,7 +4,7 @@
 
 #include "TeamResources.h"
 #include "Team.h"
-#include "Subject.cpp"
+#include "Subject.h"
 
 TeamResources::TeamResources()
 {
@@ -121,6 +121,7 @@ Engine *TeamResources::getEngine() {
 
 Tyre **TeamResources::getTyre() {
 //    return currentCar->getTyre();
+    return nullptr;
 }
 
 Chasis *TeamResources::getChasis() {

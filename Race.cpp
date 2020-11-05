@@ -69,6 +69,7 @@ void Race::race() {
         date++;
         this->update(); //changes the strategy based on the date variable
         dayCounter++;
+        std::cout<<std::endl;
     }
 
     for (int i = 0; i < (int)teamsCopy.size(); i++) {
@@ -81,7 +82,7 @@ void Race::race() {
     }
     teams = teamsCopy;
     for(auto& team: teams) {
-        team->getLogistician()->handleRequest("Service");
+//        team->getLogistician()->handleRequest("Service");
     }
     teamsCopy.clear();
 }

@@ -12,7 +12,6 @@
 #include <string>
 #include <vector>
 
-class Team;
 using namespace std;
 
 class Race{

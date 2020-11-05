@@ -1,6 +1,5 @@
 #include "Logistician.h"
-#include "Race.cpp"
-
+#include "Race.h"
 Logistician::Logistician(Team* t, Human * s,TeamResources* tR): Personnel(t, s,tR){
     typeHuman="Logistician";
 }
