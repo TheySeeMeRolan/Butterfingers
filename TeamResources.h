@@ -7,6 +7,7 @@
 
 
 // car builder
+#include "vector"
 #include "Formula1Car.h"
 #include "CarPartBuilder.h"
 
@@ -28,7 +29,7 @@ class Race;
 
 class TeamResources {
 private:
-    tuple<Race*, Race*, Race*> upcomingRaces;
+    vector <Race*> upcomingRaces;
     Equipment* teamEquipment;
     Formula1Car* currentCar;
     Formula1Car* futureCar;
