@@ -1,9 +1,9 @@
 #include "HumanFactory.h"
 
 HumanFactory::~HumanFactory(){
-    if(team){
-        delete team;
-    }
+    // if(team){
+    //     delete team;
+    // }
 }
 
 HumanFactory::HumanFactory(Team* t,TeamResources* tR){
