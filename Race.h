@@ -29,6 +29,8 @@ public:
     ~Race();
     void addTeam(Team* t);
     void update();
+    bool isEuropean();
+    string getLocation();
     Track* getTrack();
     vector<int> getLogStatement();
     void storeEquipment(Equipment* teamEquipment);

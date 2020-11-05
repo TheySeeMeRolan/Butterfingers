@@ -103,6 +103,14 @@ vector<int> Race::getLogStatement() {
     return logStatement;
 }
 
+bool Race::isEuropean() {
+    return european;
+}
+
+string Race::getLocation() {
+    return location;
+}
+
 
 
 
