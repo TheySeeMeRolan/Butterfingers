@@ -8,6 +8,7 @@ public:
     StraightPart(int l, int d);    
     void addPart(TrackPart* part); //Can only be called on Track Composite
     bool isEuropean(); //Can only be called on Track Composite
+    ~StraightPart();
 };
 
 #endif //PROJECT_STRAIGHTPART_H

@@ -16,5 +16,5 @@ TrackPart* LeftCurveFactory::createPart()
 
 LeftCurveFactory::~LeftCurveFactory()
 {
-    cout << "I'm fucking useless" << endl;
+    cout << "Destructed LeftCurveFactory (derived)" << endl;
 }

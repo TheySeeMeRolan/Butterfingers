@@ -35,6 +35,7 @@ string Track::getTrackPartType()
 {
     string out;
     out = this->trackPartType;
+    out += " ";
     out += '\n';
 
     int lCount = 0;
@@ -56,22 +57,26 @@ string Track::getTrackPartType()
         }
     }
 
-    out += "Left curve parts: " + lCount;
+    out += "Left curve parts: ";
+    out += to_string(lCount);
     out += '\n';
-    out += "Right curve parts: " + rCount;
+    out += "Right curve parts: ";
+    out += to_string(rCount);
     out += '\n';
-    out += "Straight parts: " + sCount;
+    out += "Straight parts: ";
+    out += to_string(sCount);
 
     return out;
 }
 
-Track::Track(bool isEuropean) : TrackPart(0, 0, "Composite section")
+Track::Track(bool isEuropean) : TrackPart(0, 0, "Composite track")
 {
     this->european = isEuropean;
 }
 
 Track::~Track()
 {
+    cout << "Destructing track composite (derived) + all trackparts in the sections vector:" << endl;
     for (vector<TrackPart *>::iterator it = sections.begin(); it != sections.end(); ++it)
     {
         delete (*it);

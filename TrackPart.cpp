@@ -6,9 +6,11 @@ TrackPart::TrackPart(int l, int d, string t){
     difficulty = d;
     trackPartType = t;
 
-    cout << this->getTrackPartType();
-    cout << " part made with length: " + l;
-    cout << " and difficulty: " + d << endl;
+    cout << t;
+    cout << " part made with length: ";
+    cout << l;
+    cout << " and difficulty: ";
+    cout << d << endl;
 }
 
 string TrackPart::getTrackPartType(){
@@ -23,6 +25,6 @@ int TrackPart::getTotalDifficulty(){
     return this->difficulty;
 }
 
-TrackPart::~TrackPart() {
-
+TrackPart::~TrackPart(){
+    cout << "Destructed TrackPart(base)" << endl;
 }

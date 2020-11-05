@@ -12,4 +12,10 @@ void LeftCurvePart::addPart(TrackPart* part)
 bool LeftCurvePart::isEuropean()
 {
     cout << "isEuropean() can only be called on Track" << endl;
+    return false;
+}
+
+LeftCurvePart::~LeftCurvePart()
+{   
+    cout << "Destructed LeftCurvePart (derived)" << endl;
 }

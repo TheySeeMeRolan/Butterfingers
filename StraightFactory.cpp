@@ -13,3 +13,7 @@ TrackPart* StraightFactory::createPart()
     int d = rand() % 100 + 1;
     return new StraightPart(l, d);
 }
+
+StraightFactory::~StraightFactory(){
+    cout << "Destructed StraightFactory (derived)" << endl;
+}

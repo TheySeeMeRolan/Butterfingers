@@ -3,5 +3,5 @@
 using namespace std;
 
 TrackPartFactory::~TrackPartFactory(){
-    cout << "Im the base of uselessness" << endl;
+    cout << "Destructed TrackPartFactory (base)" << endl;
 }

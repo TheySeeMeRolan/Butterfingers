@@ -13,3 +13,7 @@ TrackPart* RightCurveFactory::createPart()
     int d = rand() % 100 + 1;
     return new RightCurvePart(l, d);
 }
+
+RightCurveFactory::~RightCurveFactory(){
+    cout << "Destructed RightCurveFactory (derived)" << endl;
+}

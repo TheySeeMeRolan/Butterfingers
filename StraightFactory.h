@@ -7,6 +7,7 @@ class StraightFactory: public TrackPartFactory{
 public:
    TrackPart* createPart(int l, int d);
    TrackPart* createPart();
+   ~StraightFactory();
 };
 
 #endif //PROJECT_STRAIGHTFACTORY_H

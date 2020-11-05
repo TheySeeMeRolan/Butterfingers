@@ -12,4 +12,10 @@ void StraightPart::addPart(TrackPart* part)
 bool StraightPart::isEuropean()
 {
     cout << "isEuropean() can only be called on Track" << endl;
+    return false;
+}
+
+StraightPart::~StraightPart()
+{   
+    cout << "Destructed StraightPart (derived)" << endl;
 }
