@@ -1,11 +1,13 @@
 #include "EnginePartBuilder.h"
 
-using namespace std;
-
 void EnginePartBuilder::buildPart(){
     this->enginePart = new Engine();
 }
 
-Engine* EnginePartBuilder::getPart(){
+CarPart* EnginePartBuilder::getPart(){
     return this->enginePart;
+}
+
+EnginePartBuilder::~EnginePartBuilder(){
+    cout << "Destructed EnginePartBuilder (Derived)" << endl;
 }

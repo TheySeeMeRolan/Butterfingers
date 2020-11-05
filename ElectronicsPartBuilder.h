@@ -1,16 +1,16 @@
 #ifndef PROJECT_ELECTRONICSPARTBUILDER_H
 #define PROJECT_ELECTRONICSPARTBUILDER_H
 
-#include "Electronics.h.h"
+#include "Electronics.h"
 #include "CarPartBuilder.h"
 
 class ElectronicsPartBuilder: public CarPartBuilder{
 private:
-    Electronics* ElectronicPart;
+    Electronics* electronicPart;
 public:
-    virtual void buildPart() ;
-    Electronics* getPart();
-    ElectronicsPartBuilder();
+    void buildPart();
+    CarPart* getPart();
+    ~ElectronicsPartBuilder();
 };
 
 

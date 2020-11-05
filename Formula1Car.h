@@ -10,22 +10,22 @@
 class Formula1Car {
 private:
     Engine* engine;
-    Tyre* tyres[4];   
+    Tyre* tyres;   
     Electronics* electronics;
     Spoiler* spoiler;
     Chasis* chasis;
 public:
     Engine* getEngine();
-    Tyre** getTyre();
+    Tyre* getTyres();
     Chasis* getChasis();
     Electronics* getElectronics();
     Spoiler* getSpoiler();
 
-    void setEngine(Engine* engn);
-    void setTyre(Tyre* trs[4]);
-    void setChasis(Chasis* chs);
-    void setElectronics(Electronics* elctr);
-    void setSpoiler(Spoiler* splr);
+    void setEngine(CarPart* engn);
+    void setTyre(CarPart* trs);
+    void setChasis(CarPart* chs);
+    void setElectronics(CarPart* elctr);
+    void setSpoiler(CarPart* splr);
 };
 
 #endif //PROJECT_FORMULA1CAR_H

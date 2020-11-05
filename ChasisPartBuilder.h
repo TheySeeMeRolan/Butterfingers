@@ -6,11 +6,11 @@
 
 class ChasisPartBuilder: public CarPartBuilder{
 private:
-    Chasis* ChasisPart;
+    Chasis* chasisPart;
 public:
-    virtual void buildPart() ;
-    Chasis* getPart();
-    ChasisPartBuilder();
+    void buildPart();
+    CarPart* getPart();
+    ~ChasisPartBuilder();
 };
 
 #endif //PROJECT_CHASISPARTBUILDER_H

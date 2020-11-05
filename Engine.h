@@ -1,22 +1,20 @@
 #ifndef PROJECT_ENGINE_H
 #define PROJECT_ENGINE_H
 
-#include <string>
-#include <iostream>
-#include <ctime>
+#include "CarPart.h"
 
 using namespace std;
 
-class Engine {
+class Engine : public CarPart {
 private:
-    string type; //not sure if this is needed
     int horsePower;
     int torque;
 public:
     Engine();
-    Engine(int hp, int tor);
-    string getType(); //not sure if this is needed
     int getHorsePower();
     int getTorque();
+    void setHorsePower(int hp);
+    void setTorque(int tor);
+    ~Engine();
 };
 #endif //PROJECT_ENGINE_H

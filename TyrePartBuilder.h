@@ -4,13 +4,13 @@
 #include "Tyre.h"
 #include "CarPartBuilder.h"
 
-class TyrePartBuilder: public CarPartBuilder{
+class TyrePartBuilder: public CarPartBuilder {
 private:
     Tyre* tyrePart;
 public:
-    virtual void buildPart() ;
-    Tyre* getPart();
-    TyrePartBuilder();
+    void buildPart();
+    CarPart* getPart();
+    ~TyrePartBuilder();
 };
 
 #endif //PROJECT_TYREPARTBUILDER_H

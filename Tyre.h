@@ -3,15 +3,20 @@
 
 #include <iostream>
 #include <string>
+#include "CarPart.h"
 
 using namespace std;
 
-class Tyre{
-    string type;
+class Tyre : public CarPart{
     int thread;
+    int pressure;
 public:
-    string getType();
+    Tyre();
     int getThread();
+    int getPressure();
+    void setThread(int thr);
+    void setPressure(int pre);
+    ~Tyre();
 };
 
 #endif //PROJECT_TYRE_H

@@ -1,27 +1,20 @@
 #ifndef PROJECT_SPOILER_H
 #define PROJECT_SPOILER_H
 
-#include <iostream>
-#include <string>
+#include "CarPart.h"
 
 using namespace std;
 
-class Spoiler{
-    string type;
+class Spoiler : public CarPart {
     int weight;
     int aeroDynamicScore;
 public:
-    string getType();
+    Spoiler();
     int getWeight();
     int getAerodynamicsScore();
+    void setWeight(int wgt);
+    void setAerodynamicsScore(int ADS);
+    ~Spoiler();
 };
-
-int Spoiler::getWeight() {
-    return 0;
-}
-
-int Spoiler::getAerodynamicsScore() {
-    return 0;
-}
 
 #endif //PROJECT_SPOILER_H

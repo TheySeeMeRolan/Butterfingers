@@ -9,7 +9,8 @@ private:
     Engine* enginePart;
 public:
     void buildPart();
-    Engine* getPart();
+    CarPart* getPart();
+    ~EnginePartBuilder();
 };
 
 #endif //PROJECT_ENGINEPARTBUILDER_H

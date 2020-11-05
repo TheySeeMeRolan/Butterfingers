@@ -2,34 +2,31 @@
 
 using namespace std;
 
-void Formula1Car:: setEngine(Engine* engn){
-    this->engine = engn;
+void Formula1Car::setEngine(CarPart* engn){
+    this->engine = (Engine*)engn;
 }
 
-void Formula1Car::setTyre(Tyre** trs){
-    this->tyres[0] = trs[0];
-    this->tyres[1] = trs[1];
-    this->tyres[2] = trs[2];
-    this->tyres[3] = trs[3];
+void Formula1Car::setTyre(CarPart* trs){
+    this->tyres = (Tyre*)trs;
 }
 
-void Formula1Car::setChasis(Chasis* chs){
-    this->chasis= chs;
+void Formula1Car::setChasis(CarPart* chs){
+    this->chasis= (Chasis*)chs;
 }
 
-void Formula1Car::setElectronics(Electronics* elctr){
-    this->electronics= elctr;
+void Formula1Car::setElectronics(CarPart* elctr){
+    this->electronics= (Electronics*)elctr;
 }
 
-void Formula1Car::setSpoiler(Spoiler* splr){
-    this->spoiler= splr;
+void Formula1Car::setSpoiler(CarPart* splr){
+    this->spoiler= (Spoiler*)splr;
 }
 
-Engine* Formula1Car:: getEngine(){
+Engine* Formula1Car::getEngine(){
     return this->engine;
 }
 
-Tyre** Formula1Car:: getTyre(){
+Tyre* Formula1Car:: getTyres(){
     return this->tyres;
 }
 

@@ -1,22 +1,21 @@
 #ifndef PROJECT_ELECTRONICS_H
 #define PROJECT_ELECTRONICS_H
 
-#include <iostream>
-#include <string>
+#include "CarPart.h"
 
 using namespace std;
 
-class Electronics{
-    string type;
+class Electronics : public CarPart{
     int efficiency;
+    int assistance;
 
 public:
-    string getType();
+    Electronics();
     int getEfficiency();
+    int getAssistance();
+    void setEfficiency(int eff);
+    void setAssistance(int ass);
+    ~Electronics();
 };
-
-int Electronics::getEfficiency() {
-    return 0;
-}
 
 #endif //PROJECT_ELECTRONICS_H

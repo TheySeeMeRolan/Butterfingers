@@ -6,11 +6,11 @@
 
 class SpoilerPartBuilder: public CarPartBuilder{
 private:
-    Spoiler* tyrePart;
+    Spoiler* spoilerPart;
 public:
-    virtual void buildPart() ;
-    Spoiler* getPart();
-    SpoilerPartBuilder()
+    void buildPart() ;
+    CarPart* getPart();
+    ~SpoilerPartBuilder();
 };
 
 #endif //PROJECT_SPOILERPARTBUILDER_H
