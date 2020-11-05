@@ -5,11 +5,11 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include "Race.h"
 #include "Observer.h"
+//class Observer;
 //class Team;
-
 using namespace std;
+//class Observer;
 
 class Subject{
 protected:
@@ -18,7 +18,6 @@ protected:
 public:
     void attach(Observer* team);
     void detach(Observer* team);
-    virtual tuple<Race*, Race*, Race*> getRaces()=0;
     virtual int getWeek();
     void notify();
     virtual ~Subject();

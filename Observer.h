@@ -4,17 +4,17 @@
 #include <iostream>
 #include <string>
 
-class Subject;
+//#include "Subject.h"
 
 using namespace std;
 
 class Observer {
 protected:
-    Subject* registeredAt;
+//    Subject* registeredAt;
 public:
-    void registerTeam(Subject*);
+//    void registerTeam(Subject*);
     virtual void update()=0;
-    Subject* getRegisteredAt();
+//    Subject* getRegisteredAt();
     Observer();
     virtual ~Observer();
 };

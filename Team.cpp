@@ -1,8 +1,5 @@
 #include "Team.h"
-#include "AerodynamicsFactory.h"
-#include "ElectronicFactory.h"
-#include "ChasisFactory.h"
-#include "EngineFactory.h"
+
 
 Team::Team()
 {
@@ -137,8 +134,8 @@ TeamResources *Team::getTeamResources() {
 void Team::update()
 {
     int currentWeek;
-    currentWeek=registeredAt->getWeek();
-    teamResources->setUpcomingRaces(registeredAt->getRaces());
+//    currentWeek=registeredAt->getWeek();
+//    teamResources->setUpcomingRaces(registeredAt->getRaces());
     // call commands
 }
 

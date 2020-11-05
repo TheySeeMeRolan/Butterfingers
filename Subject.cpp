@@ -3,13 +3,13 @@
 void Subject::attach(Observer *team)
 {
     teams.push_back(team);
-    team->registerTeam(this);
+//    team->registerTeam(this);
 }
 
-void Subject::detach(LogisticObserver *team) {
-    team->registerTeam(nullptr);
+void Subject::detach(Observer *team) {
+//    team->registerTeam(nullptr);
 
-    vector<LogisticObserver*>::iterator it = teams.begin();
+    vector<Observer*>::iterator it = teams.begin();
     for (int x=0; x < teams.size() ; ++x,++it)
     {
         if (*it == team)
@@ -28,7 +28,7 @@ Subject::~Subject() {
 }
 void Subject::notify() {
 
-    vector<  LogisticObserver*  >::iterator Obs_it = teams.begin();
+    vector<  Observer*  >::iterator Obs_it = teams.begin();
 
     for(Obs_it= teams.begin(); Obs_it!= teams.end(); ++Obs_it)
     {

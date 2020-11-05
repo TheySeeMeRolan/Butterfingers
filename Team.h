@@ -15,7 +15,11 @@
 #include "WindTestingCommand.h"
 #include "SimulationTestingCommand.h"
 #include "Driver.h"
-
+#include "AerodynamicsFactory.h"
+#include "ElectronicFactory.h"
+#include "ChasisFactory.h"
+#include "EngineFactory.h"
+#include "WeekCalender.h"
 using namespace std;
 class Team : public Observer {
 private:
@@ -51,6 +55,8 @@ public:
     Human* getAerodynamicsEngineer();
     Human* getElectricEngineer();
     Human* getEngineEngineer();
+
+
 };
 
 
