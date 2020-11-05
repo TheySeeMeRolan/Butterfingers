@@ -3,7 +3,7 @@
 
 #include "TeamResources.h"
 #include "Logistics.h"
-#include "LogisticObserver.h"
+#include "Observer.h"
 #include "Human.h"
 #include "Command.h"
 #include "HumanFactory.h"

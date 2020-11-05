@@ -6,7 +6,7 @@
 #include <vector>
 #include <iostream>
 #include "Race.h"
-#include "LogisticObserver.h"
+#include "Observer.h"
 //class Team;
 
 using namespace std;
