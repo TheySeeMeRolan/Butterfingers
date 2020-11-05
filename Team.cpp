@@ -1,11 +1,12 @@
 #include "Team.h"
 
 
-Team::Team(WeekCalender* schedule)
+Team::Team(WeekCalender* schedule, string name)
 {
     calender=schedule;
 
-    teamResources = new TeamResources();
+
+    teamResources = new TeamResources(name);
     /// Create the Human array using the factories
     factories = new HumanFactory*[4];
     factories[0] = new AerodynamicsFactory(this,teamResources);
@@ -23,12 +24,14 @@ Team::Team(WeekCalender* schedule)
     tempHuman = factories[1]->makeEngineer(tempHuman); // driver with logistician successor
     tempHuman = factories[0]->makeEngineer(tempHuman); // strategist with driver successor
 
+    lead = tempHuman;
+
     /// Create the commands ( to use the personnel )
     command[0] = new PrepareCommand(lead);
     command[1] = new RacingCommand(lead);
     command[2] = new StrategiseCommand(lead);
-    command[3] = new WindTestingCommand(nullptr, lead);
-    command[4] = new SimulationTestingCommand(nullptr, lead);
+    command[3] = new WindTestingCommand(lead);
+    command[4] = new SimulationTestingCommand(lead);
     command[5] = new ServiceCommand(lead);
 }
 
@@ -55,15 +58,21 @@ void Team::strategise()
     command[2]->execute();
 }
 
-void Team::test()
+void Team::testWindTunnel()
 {
     command[3]->execute();
 }
 
-string Team::getCompany()
+void Team::testSimulation()
 {
-    return company;
+    command[4]->execute();
 }
+
+void Team::service()
+{
+    command[5]->execute();
+}
+
 
 Human* Team::getDriver() {
     Human* temp = lead;
@@ -129,15 +138,19 @@ Human* Team::getAerodynamicsEngineer(){
     return temp;
 }
 
+Human* Team::getLead(){
+    return lead;
+}
+
 TeamResources *Team::getTeamResources() {
     return teamResources;
 }
 
 void Team::update()
 {
-    cout<<"Team "<<company<<" gets updated via Calender Notification"<<endl;
+    cout<<"Team "<<teamResources->getCompany()<<" gets updated via Calender Notification"<<endl;
     currentWeek = calender->getWeek();
-    cout<<"Team "<<company<<" gets updated week : "<<currentWeek<<endl;
+    cout<<"Team "<<teamResources->getCompany()<<" gets updated week : "<<currentWeek<<endl;
 
 }
 

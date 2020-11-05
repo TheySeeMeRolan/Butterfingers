@@ -37,9 +37,12 @@ private:
     int windTunnelTokens;
     Test * windTest;
     Test * simulationTest;
+    string company;
 
 
 public:
+    TeamResources(string);
+    string getCompany();
     Formula1Car* construct();
     Formula1Car* cloneCar();
     void test(Formula1Car* c);

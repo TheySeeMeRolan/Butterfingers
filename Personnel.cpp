@@ -4,7 +4,7 @@
 //
 //}
 
-Personnel::Personnel(Team* t, Human * s,TeamResources* tR):Human(t, s,tR){
+Personnel::Personnel(Team* t, Human * s,TeamResources* tR):Human(t, s, tR){
     
 }
 

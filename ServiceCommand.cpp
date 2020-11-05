@@ -2,6 +2,7 @@
 
 ServiceCommand::ServiceCommand(Human * p): Command(p){}
 
-void ServiceCommand::execute(){
+void ServiceCommand::execute()
+{
     human->handleRequest("service");
 }

@@ -6,7 +6,7 @@
 class SimulationTestingCommand: public Command{
 public:
     virtual void execute();
-    SimulationTestingCommand(Human *human, Human *);
+    SimulationTestingCommand(Human *human);
 };
 
 #endif 

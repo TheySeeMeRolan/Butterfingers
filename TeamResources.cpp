@@ -6,9 +6,9 @@
 #include "Team.h"
 #include "Subject.h"
 
-TeamResources::TeamResources()
+TeamResources::TeamResources(string name)
 {
-//nothing needed
+    company = name;
 }
 
 TeamResources::~TeamResources()
@@ -16,6 +16,10 @@ TeamResources::~TeamResources()
 
 }
 
+string TeamResources::getCompany()
+{
+    return company;
+}
 
 
 // template

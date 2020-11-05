@@ -5,8 +5,10 @@
 
  void WindTestingCommand::execute()
  {
-
+    human->handleRequest("test windtunnel");
  }
-WindTestingCommand::WindTestingCommand(Human *human, Human *h) : Command(human) {
+
+
+WindTestingCommand::WindTestingCommand(Human *human) : Command(human) {
 
 };

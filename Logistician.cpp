@@ -57,11 +57,11 @@ void Logistician::handleRequest(string p){
 }
 
 void Logistician::analyseTrack(){
-    cout<<"The "<<team->getCompany()<<" team logistician analyses the track"<<endl;
+    cout<<"The "<<teamResources->getCompany()<<" team logistician analyses the track"<<endl;
 }
 
 void Logistician::prepareForRace(){
-    cout<<"The "<<team->getCompany()<<" team logistician prepares for the race";
+    cout<<"The "<<teamResources->getCompany()<<" team logistician prepares for the race";
     if (get<0>(teamResources->getUpcomingRaces())->getTrack()->isEuropean())
     {
         cout<<"and transports all the equipment to the European track ";
@@ -72,13 +72,13 @@ void Logistician::prepareForRace(){
 
 void Logistician::travelToRace()
 {
-    cout<<"The "<<team->getCompany()<<" team logistician aranges transport for the team and they travel to the race"<<endl;
+    cout<<"The "<<teamResources->getCompany()<<" team logistician aranges transport for the team and they travel to the race"<<endl;
 //    this->team->getRegisteredAt()->goToRace(team);
 
 }
 void Logistician::orderTyres()
 {
-    cout<<"The "<<team->getCompany()<<" team logistician orders tyres for the race taking place in one months time , as specified by engineers and strategist"<<endl;
+    cout<<"The "<<teamResources->getCompany()<<" team logistician orders tyres for the race taking place in one months time , as specified by engineers and strategist"<<endl;
     // need some fucntion here
 }
 
