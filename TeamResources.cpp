@@ -35,7 +35,7 @@ void TeamResources::runSimulationTest(Formula1Car * p)
 
 void TeamResources::setUpcomingRaces(tuple<Race *, Race *, Race *> uR)
 {
-upcomingRaces = uR;
+//upcomingRaces = uR;
 }
 
 // void TeamResources::changeTestType(string type)
@@ -104,7 +104,7 @@ void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
 
 tuple< Race *, Race *, Race *> TeamResources::getUpcomingRaces()
 {
-    return upcomingRaces;
+//    return upcomingRaces;
 }
 
 Equipment* TeamResources::getTeamEquipment()
