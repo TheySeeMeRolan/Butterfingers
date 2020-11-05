@@ -1,16 +1,21 @@
-//
-// Created by Rolan-Petr Strydom on 2020/11/05.
-//
-
 #include "WeekCalender.h"
 
 void WeekCalender::goToNextWeek()
 {
-
+    this->week++;
+    cout<< "Calender week changes from "<< week -1 <<"to "<<week;
 }
 
 void WeekCalender::startSeason()
 {
+    cout<<" ###################### SEASON STARTS #####################"<<endl;
+    for(int a= 0;a<46;a++)
+    {
+        goToNextWeek();
+        notify();
+    }
+    cout<<" #################### SEASON HAS ENDED ####################"<<endl;
+
 
 }
 
@@ -20,6 +25,7 @@ void WeekCalender::notify()
 
     for(Obs_it= teams.begin(); Obs_it!= teams.end(); ++Obs_it)
     {
+        cout<<"CALENDER NOTIFIES OBSERVERS"<<endl;
         (*Obs_it)->update();
     }
 }

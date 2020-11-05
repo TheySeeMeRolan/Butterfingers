@@ -6,10 +6,8 @@
 #include <vector>
 #include <iostream>
 #include "Observer.h"
-//class Observer;
-//class Team;
+
 using namespace std;
-//class Observer;
 
 class Subject{
 protected:

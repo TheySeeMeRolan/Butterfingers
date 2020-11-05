@@ -1,8 +1,8 @@
 #ifndef PROJECT_TEAM_H
 #define PROJECT_TEAM_H
 
-#include "TeamResources.h"
 #include "Observer.h"
+#include "WeekCalender.h"
 #include "Human.h"
 #include "Command.h"
 #include "HumanFactory.h"
@@ -19,18 +19,24 @@
 #include "ElectronicFactory.h"
 #include "ChasisFactory.h"
 #include "EngineFactory.h"
-#include "WeekCalender.h"
+#include "TeamResources.h"
+
 using namespace std;
-class Team : public Observer {
+class Team : public Observer
+{
+
 private:
+    WeekCalender* calender;
     string company;
     Human * lead;
     Command* command[6];
     TeamResources* teamResources;
     HumanFactory** factories;
+    int currentWeek;
+
 
 public:
-    Team();
+    Team(WeekCalender* schedule);
     ~Team();
     virtual void update();
     void test(Formula1Car* c);

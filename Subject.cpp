@@ -3,11 +3,10 @@
 void Subject::attach(Observer *team)
 {
     teams.push_back(team);
-//    team->registerTeam(this);
+
 }
 
 void Subject::detach(Observer *team) {
-//    team->registerTeam(nullptr);
 
     vector<Observer*>::iterator it = teams.begin();
     for (int x=0; x < teams.size() ; ++x,++it)
@@ -22,8 +21,8 @@ Subject::Subject()
     week = -1;
 }
 
-Subject::~Subject() {
-
+Subject::~Subject()
+{
     teams.clear();
 }
 void Subject::notify() {

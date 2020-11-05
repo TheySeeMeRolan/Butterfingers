@@ -1,8 +1,10 @@
 #include "Team.h"
 
 
-Team::Team()
+Team::Team(WeekCalender* schedule)
 {
+    calender=schedule;
+
     teamResources = new TeamResources();
     /// Create the Human array using the factories
     factories = new HumanFactory*[4];
@@ -133,9 +135,9 @@ TeamResources *Team::getTeamResources() {
 
 void Team::update()
 {
-    int currentWeek;
-//    currentWeek=registeredAt->getWeek();
-//    teamResources->setUpcomingRaces(registeredAt->getRaces());
-    // call commands
+    cout<<"Team "<<company<<" gets updated via Calender Notification"<<endl;
+    currentWeek = calender->getWeek();
+    cout<<"Team "<<company<<" gets updated week : "<<currentWeek<<endl;
+
 }
 
