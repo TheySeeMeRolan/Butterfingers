@@ -19,9 +19,10 @@ Team::Team(WeekCalender* schedule)
     tempHuman = factories[1]->makePersonnel(tempHuman); // aerodynamics engineer with electronics engineer successor
     tempHuman = factories[0]->makePersonnel(tempHuman); // chasis engineer with aerodynamics engineer successor
     tempHuman = factories[3]->makeEngineer(tempHuman);  // pitcrew engineer with chasis engineer successor  
-    tempHuman = factories[2]->makeEngineer(tempHuman); // logistician with pitcrew successor
     tempHuman = factories[1]->makeEngineer(tempHuman); // driver with logistician successor
     tempHuman = factories[0]->makeEngineer(tempHuman); // strategist with driver successor
+    tempHuman = factories[2]->makeEngineer(tempHuman); // logistician with pitcrew successor
+    lead = tempHuman;
 
     /// Create the commands ( to use the personnel )
     command[0] = new PrepareCommand(lead);
