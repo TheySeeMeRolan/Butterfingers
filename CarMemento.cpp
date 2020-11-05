@@ -3,7 +3,7 @@
 CarMemento::CarMemento(Formula1Car* car){
     this->car= new Formula1Car();
     this->car->setChasis(car->getChasis());
-    this->car->setTyre(car->getTyre());
+//    this->car->setTyre(car->getTyre());
     this->car->setEngine(car->getEngine());
     this->car->setElectronics(car->getElectronics());
     this->car->setSpoiler(car->getSpoiler());

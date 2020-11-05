@@ -89,7 +89,7 @@ void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
         currentCar->setEngine(mementoCar->getEngine());
         currentCar->setElectronics(mementoCar->getElectronics());
         currentCar->setSpoiler(mementoCar->getSpoiler());
-        currentCar->setTyre(mementoCar->getTyre());
+//        currentCar->setTyre(mementoCar->getTyre());
     }else{
         //future car
         Formula1Car* mementoCar= me->getState();
@@ -97,7 +97,7 @@ void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
         futureCar->setEngine(mementoCar->getEngine());
         futureCar->setElectronics(mementoCar->getElectronics());
         futureCar->setSpoiler(mementoCar->getSpoiler());
-        futureCar->setTyre(mementoCar->getTyre());
+//        futureCar->setTyre(mementoCar->getTyre());
 
     }
 }
@@ -120,7 +120,7 @@ Engine *TeamResources::getEngine() {
 }
 
 Tyre **TeamResources::getTyre() {
-    return currentCar->getTyre();
+//    return currentCar->getTyre();
 }
 
 Chasis *TeamResources::getChasis() {

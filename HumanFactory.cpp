@@ -2,7 +2,7 @@
 
 HumanFactory::~HumanFactory(){
     if(team){
-        delete team;
+//        delete team;
     }
 }
 
