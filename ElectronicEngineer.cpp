@@ -37,5 +37,5 @@ void ElectronicEngineer::handleRequest(string p){
 }
 
 void ElectronicEngineer::tinker(){
-//    cout<<"The "<<team->getCompany()<<" team's electronic engineer is fiddling with the electronics."<<endl;
+   cout<<"The "<<teamResources->getCompany()<<" team's electronic engineer is fiddling with the electronics."<<endl;
 }

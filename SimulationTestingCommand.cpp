@@ -4,9 +4,11 @@
 
 #include "SimulationTestingCommand.h"
 
-void SimulationTestingCommand::execute() {
-
+void SimulationTestingCommand::execute() 
+{
+    human->handleRequest("test simulation");
 }
-SimulationTestingCommand::SimulationTestingCommand(Human *human, Human *) : Command(human) {
+
+SimulationTestingCommand::SimulationTestingCommand(Human *human) : Command(human) {
 
 }

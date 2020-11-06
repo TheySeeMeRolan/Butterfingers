@@ -27,7 +27,6 @@ class Team : public Observer
 
 private:
     WeekCalender* calender;
-    string company;
     Human * lead;
     Command* command[6];
     TeamResources* teamResources;
@@ -36,18 +35,20 @@ private:
 
 
 public:
-    Team(WeekCalender* schedule);
+    Team(WeekCalender* schedule, string);
     ~Team();
     virtual void update();
     void test(Formula1Car* c){};
     void changeTestType(){};
-    string getCompany();
+    
 
     // command functions will utilise the personell and engineers handle request function
     void prepare();
     void race();
     void strategise();
-    void test();
+    void testWindTunnel();
+    void testSimulation();
+    void service();
 
     TeamResources* getTeamResources();
     //getters for the personnel hierarchy
@@ -61,6 +62,7 @@ public:
     Human* getAerodynamicsEngineer();
     Human* getElectricEngineer();
     Human* getEngineEngineer();
+    Human* getLead();
 
 
 };

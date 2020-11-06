@@ -41,11 +41,14 @@ private:
     int windTunnelTokens;
     Test * windTest;
     Test * simulationTest;
+    string company;
 
 
 public:
     void construct();
     void cloneCar();
+    TeamResources(string);
+    string getCompany();
     void test(Formula1Car* c);
     void changeTestType();
     Engine* getEngine();
@@ -62,7 +65,6 @@ public:
     void runWindTest(Formula1Car *); ///get car from memento store and run test to see if its replaced ///
     void runSimulationTest(Formula1Car *); ///get car from memento store and run test to see if its replaced ///
     void changeTestType(string type);
-    TeamResources();
     ~TeamResources();
     void shipCarToFactory();
 
