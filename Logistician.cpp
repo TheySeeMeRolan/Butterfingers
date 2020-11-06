@@ -42,12 +42,12 @@ void Logistician::handleRequest(string p){
 
     if(p == "service")
     {
-        std::cout<<"Servicing\n";
+//        std::cout<<"Servicing\n";
     }
     
     if(p == "racing")
     {
-        this->analyseTrack();
+//        this->analyseTrack();
     }
 
     if (successor) 

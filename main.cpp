@@ -37,9 +37,9 @@ int main(){
     trackGenerator[2] = new RightCurveFactory();
 
     TrackPart* trackParts[3];
-    trackParts[0] = trackGenerator[0]->createPart(10,10);
-    trackParts[1] = trackGenerator[1]->createPart(10,10);
-    trackParts[2] = trackGenerator[2]->createPart(10,10);
+    trackParts[0] = trackGenerator[0]->createPart(25,10);
+    trackParts[1] = trackGenerator[1]->createPart(25,10);
+    trackParts[2] = trackGenerator[2]->createPart(25,10);
 
     Track* track1 = new Track(true);
     track1->addPart(trackParts[0]);
@@ -51,32 +51,44 @@ int main(){
     Team* team2 = new Team(calender, "Ferrari");
     Team* team3 = new Team(calender, "McLaren");
     Team* team4 = new Team(calender, "Renault");
-    Team* team5 = new Team(calender, "Red Bull");
+    Team* team5 = new Team(calender, "AlphaTauri");
+    Team* team6 = new Team(calender, "Williams Racing");
+    Team* team7 = new Team(calender, "Hass F1 Team");
+    Team* team8 = new Team(calender, "Lotus");
+    Team* team9 = new Team(calender, "Alfa Romeo");
+    Team* team10 = new Team(calender, "Toro Rosso");
 
     Race* race = new Race(track1,"Soweto");
+
+    cout<<endl;
+    Equipment* equipment = new Equipment("Stuff");
+    race->storeEquipment(equipment);
+
     race->addTeam(team1);
     race->addTeam(team2);
     race->addTeam(team3);
     race->addTeam(team4);
     race->addTeam(team5);
+    race->addTeam(team6);
+    race->addTeam(team7);
+    race->addTeam(team8);
+    race->addTeam(team9);
+    race->addTeam(team10);
 
-    Equipment* equipment = new Equipment("Stuff");
 
     cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
     cout<<"\033[1;36m          SIMULISATION    \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
 
-    race->storeEquipment(equipment);
 
-    race->race();
 
     // commands and chain of responsibility
     // team1->prepare(); // needs to be implemented still
-    team1->race();
-    team1->strategise();
-    team1->testWindTunnel();
-    team1->testSimulation();
-    team1->service();
+//    team1->race();
+//    team1->strategise();
+//    team1->testWindTunnel();
+//    team1->testSimulation();
+//    team1->service();
     
     // team1->getLead()->handleRequest("racing");
 

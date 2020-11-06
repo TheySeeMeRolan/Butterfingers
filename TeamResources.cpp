@@ -7,6 +7,7 @@
 
 TeamResources::TeamResources(string name)
 {
+    construct();
     company = name;
 }
 

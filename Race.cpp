@@ -47,22 +47,22 @@ void Race::race() {
     while (dayCounter < 3) {
 
         if(dayCounter==0 && track->isEuropean()) {
-            std::cout<<"Running a European practice race in: " + location +"\n";
+            std::cout<<"--Running a European Practice race in: " + location +"--\n";
         }
         else if(dayCounter==0) {
-            std::cout<<"Running a Non-European practice race in: " + location +"\n";
+            std::cout<<"--Running a Non-European Practice race in: " + location +"--\n";
         }
         else if(dayCounter==1 && track->isEuropean()) {
-            std::cout<<"Running a European qualifying race in: " + location +"\n";
+            std::cout<<"--Running a European Qualifying race in: " + location +"--\n";
         }
         else if(dayCounter==1) {
-            std::cout<<"Running a Non-European qualifying race in: " + location +"\n";
+            std::cout<<"--Running a Non-European Qualifying race in: " + location +"--\n";
         }
         else if(dayCounter==2 && track->isEuropean()) {
-            std::cout<<"Running a European race in: " + location +"\n";
+            std::cout<<"--Running a European Race in: " + location +"--\n";
         }
         else if(dayCounter==2) {
-            std::cout<<"Running a European race in: " + location +"\n";
+            std::cout<<"--Running a European Race in: " + location +"--\n";
         }
 
         teams = strategy->race(teams,track); //teams will be set according to race strategy's race method qualifying will reshuffle the teams such that the starting positions are different
@@ -82,7 +82,7 @@ void Race::race() {
     }
     teams = teamsCopy;
     for(auto& team: teams) {
-        team->getLogistician()->handleRequest("service");
+        team->service();
     }
     teamsCopy.clear();
 }
@@ -93,6 +93,9 @@ Track* Race::getTrack() {
 
 void Race::addTeam(Team *t) {
     teams.push_back(t);
+    if(teams.size()==10){
+        race();
+    }
 }
 
 void Race::storeEquipment(Equipment* teamEquipment){
