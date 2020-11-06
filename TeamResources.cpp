@@ -156,9 +156,12 @@ void TeamResources::construct()
     this->carPartBuilder[4] = new SpoilerPartBuilder();
     this->carPartBuilder[4]->buildPart();
     this->currentCar->setSpoiler(this->carPartBuilder[4]->getPart());
+
+    this->currentCar2 = cloneCar();
+    this->futureCar = cloneCar();
 }
 
-void TeamResources::cloneCar() {
+Formula1Car* TeamResources::cloneCar() {
     this->futureCar = new Formula1Car();
 
     if (currentCar == nullptr){

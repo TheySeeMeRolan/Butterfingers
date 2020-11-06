@@ -31,7 +31,10 @@ private:
     int currentWeek;
     vector <Race*> raceSchedule;
     Equipment* teamEquipment;
+
     Formula1Car* currentCar;
+    Formula1Car* currentCar2;
+
     Formula1Car* futureCar;
     CarPartBuilder* carPartBuilder[5];
     int windTunnelTokens;
@@ -42,7 +45,7 @@ private:
 
 public:
     void construct();
-    void cloneCar();
+    Formula1Car* cloneCar();
     TeamResources(string,vector<Race*> sRaces);
     string getCompany();
     void test(Formula1Car* c);
