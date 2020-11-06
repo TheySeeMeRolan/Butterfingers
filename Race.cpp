@@ -82,7 +82,7 @@ void Race::race() {
     }
     teams = teamsCopy;
     for(auto& team: teams) {
-//        team->getLogistician()->handleRequest("Service");
+        team->getLogistician()->handleRequest("service");
     }
     teamsCopy.clear();
 }
@@ -101,6 +101,14 @@ void Race::storeEquipment(Equipment* teamEquipment){
 
 vector<int> Race::getLogStatement() {
     return logStatement;
+}
+
+bool Race::isEuropean() {
+    return european;
+}
+
+string Race::getLocation() {
+    return location;
 }
 
 
