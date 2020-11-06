@@ -20,32 +20,29 @@ includes for generating teams???
 -----------------------------
 #include "Team.h"
 */
+
 #include <vector>
 
 using namespace std;
 
 int main(){
 
-    cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
-    cout<<"\033[1;36m       INITIALISATIONS    \033[0m\n";
+cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
+    cout<<"\033[1;36m       INITIALIZATION    \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
 
-    //Create Tracks
+    //Create TracksFactories
     TrackPartFactory* trackGenerator[3];
     trackGenerator[0] = new LeftCurveFactory();
     trackGenerator[1] = new StraightFactory();
-    trackGenerator[2] = new RightCurveFactory();
-
-    TrackPart* trackParts[3];
-    trackParts[0] = trackGenerator[0]->createPart(10,10);
-    trackParts[1] = trackGenerator[1]->createPart(10,10);
-    trackParts[2] = trackGenerator[2]->createPart(10,10);
-
-    Track* track1 = new Track(true);
-    track1->addPart(trackParts[0]);
-    track1->addPart(trackParts[1]);
-    track1->addPart(trackParts[2]);
-
+    trackGenerator[2] = new RightCurveFactory();   
+    //Create Tracks
+    Track* track1 = new Track(true); 
+    track1->addPart(trackGenerator[1]->createPart());
+    track1->addPart(trackGenerator[0]->createPart());
+    track1->addPart(trackGenerator[2]->createPart());
+    track1->addPart(trackGenerator[1]->createPart(50,20));
+    //Create teams and add them to the calendar
     WeekCalender* calender = new WeekCalender();
     Team* team1 = new Team(calender, "Mercedes");
     Team* team2 = new Team(calender, "Ferrari");
@@ -53,7 +50,7 @@ int main(){
     Team* team4 = new Team(calender, "Renault");
     Team* team5 = new Team(calender, "Red Bull");
 
-    Race* race = new Race(track1,"Soweto");
+    Race* race = new Race(track1,"Circuit de Monaco");
     race->addTeam(team1);
     race->addTeam(team2);
     race->addTeam(team3);
@@ -62,8 +59,8 @@ int main(){
 
     Equipment* equipment = new Equipment("Stuff");
 
-    cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
-    cout<<"\033[1;36m          SIMULISATION    \033[0m\n";
+cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
+    cout<<"\033[1;36m          SIMULATION           \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
 
     race->storeEquipment(equipment);
@@ -97,4 +94,7 @@ int main(){
     cout<<"\033[1;36m         DESTRUCTION    \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
     delete trackGenerator[0];
+    delete trackGenerator[1];
+    delete trackGenerator[2];
+    delete track1;
 }
