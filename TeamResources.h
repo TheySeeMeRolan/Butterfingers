@@ -1,10 +1,5 @@
-//
-// Created by ro on 2020/11/04.
-//
-
 #ifndef BUTTERFINGERS_TEAMRESOURCES_H
 #define BUTTERFINGERS_TEAMRESOURCES_H
-
 
 // car builder
 #include "vector"
@@ -33,7 +28,8 @@ class Race;
 
 class TeamResources {
 private:
-    vector <Race*> upcomingRaces;
+    int currentWeek;
+    vector <Race*> raceSchedule;
     Equipment* teamEquipment;
     Formula1Car* currentCar;
     Formula1Car* futureCar;
@@ -47,7 +43,7 @@ private:
 public:
     void construct();
     void cloneCar();
-    TeamResources(string);
+    TeamResources(string,vector<Race*> sRaces);
     string getCompany();
     void test(Formula1Car* c);
     void changeTestType();
@@ -56,6 +52,8 @@ public:
     Chasis* getChasis();
     Electronics* getElectronics();
     Spoiler* getSpoiler();
+    void setCurrentWeek(int cD);
+    int getCurrentWeek();
 
     //memento functions
     CarMemento* createMemento(bool b);// if bool true create memento of current car else create memento of future car
@@ -69,8 +67,8 @@ public:
     void shipCarToFactory();
 
     //getters for logistic
-    tuple< Race *, Race *, Race *> getUpcomingRaces();
-    void setUpcomingRaces(tuple< Race *, Race *, Race *> uR);
+    vector< Race *> getRaceSchedule();
+    void setRaceSchedule(vector<Race*> uR);
     Equipment* getTeamEquipment();
 
 

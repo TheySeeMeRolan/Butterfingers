@@ -1,12 +1,12 @@
 #include "Team.h"
 
 
-Team::Team(WeekCalender* schedule, string name)
+Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
 {
     calender=schedule;
 
 
-    teamResources = new TeamResources(name);
+    teamResources = new TeamResources(name,sRaces);
     /// Create the Human array using the factories
     factories = new HumanFactory*[4];
     factories[0] = new AerodynamicsFactory(this,teamResources);
@@ -149,9 +149,11 @@ TeamResources *Team::getTeamResources() {
 
 void Team::update()
 {
-    cout<<"Team "<<teamResources->getCompany()<<" gets updated via Calender Notification"<<endl;
     currentWeek = calender->getWeek();
-    cout<<"Team "<<teamResources->getCompany()<<" gets updated week : "<<currentWeek<<endl;
+    teamResources->setCurrentWeek(currentWeek);
+    cout<<"Team "<<teamResources->getCompany()<<" receives Calender Notification AND gets updated week : "<<currentWeek<<endl;
+
+//    cout<<"Team "<<teamResources->getCompany()<<" gets updated week : "<<currentWeek<<endl;
 
 }
 

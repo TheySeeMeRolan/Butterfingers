@@ -5,9 +5,10 @@
 #include "TeamResources.h"
 
 
-TeamResources::TeamResources(string name)
+TeamResources::TeamResources(string name,vector<Race*> sRaces)
 {
     company = name;
+    raceSchedule = sRaces;
 }
 
 TeamResources::~TeamResources()
@@ -36,36 +37,7 @@ void TeamResources::runSimulationTest(Formula1Car * p)
     simulationTest->test(p);
 }
 
-void TeamResources::setUpcomingRaces(tuple<Race *, Race *, Race *> uR)
-{
-//upcomingRaces = uR;
-}
 
-// void TeamResources::changeTestType(string type)
-// {
-//     // if (tester)
-//     // {
-//     //     delete tester;
-//     // }
-
-//     // if(type == "wind tunnel")
-//     // {
-//     //     tester = new WindTunnel();
-//     // }else if(type == "simulation")
-//     // {
-//     //     tester = new Simulation();
-//     // }
-// }
-//
-//void TeamResources::update()
-//{
-////    int currentWeek;
-//    currentWeek=registeredAt->getWeek();
-//    upcomingRaces = registeredAt->getRaces();
-//    //if
-//
-//
-//}
 
 void TeamResources::shipCarToFactory()
 {
@@ -105,9 +77,9 @@ void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
     }
 }
 
-tuple< Race *, Race *, Race *> TeamResources::getUpcomingRaces()
+vector< Race *> TeamResources::getRaceSchedule()
 {
-//    return upcomingRaces;
+//    return getRaceSchedule;
 }
 
 Equipment* TeamResources::getTeamEquipment()
@@ -209,4 +181,19 @@ Formula1Car* TeamResources::getCar(bool current)
         return this->futureCar;
     }
     return NULL;
+}
+
+void TeamResources::setRaceSchedule(vector<Race *> uR) {
+    this->raceSchedule;
+
+}
+
+void TeamResources::setCurrentWeek(int cD)
+{
+this->currentWeek = cD;
+}
+
+int TeamResources::getCurrentWeek()
+{
+    return currentWeek;
 }

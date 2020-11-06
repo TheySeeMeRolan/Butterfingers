@@ -46,12 +46,29 @@ int main(){
     track1->addPart(trackParts[1]);
     track1->addPart(trackParts[2]);
 
+    Track* track2 = new Track(false);
+    track2->addPart(trackParts[0]);
+    track2->addPart(trackParts[1]);
+    track2->addPart(trackParts[2]);
+
     WeekCalender* calender = new WeekCalender();
-    Team* team1 = new Team(calender, "Mercedes");
-    Team* team2 = new Team(calender, "Ferrari");
-    Team* team3 = new Team(calender, "McLaren");
-    Team* team4 = new Team(calender, "Renault");
-    Team* team5 = new Team(calender, "Red Bull");
+
+    vector<Race*> seasonRaces = {new Race(track1,"UK"),new Race(track1,"SPAIN"),new Race(track1,"FRANCE"),new Race(track1,"BELGIUM")
+                                 ,new Race(track2,"SA"),new Race(track2,"USA")};
+
+    Team* team1 = new Team(calender, "Mercedes",seasonRaces);
+    Team* team2 = new Team(calender, "Ferrari",seasonRaces);
+    Team* team3 = new Team(calender, "McLaren",seasonRaces);
+    Team* team4 = new Team(calender, "Renault",seasonRaces);
+    Team* team5 = new Team(calender, "Red Bull",seasonRaces);
+
+    calender->attach(team1);
+    calender->attach(team2);
+    calender->attach(team3);
+    calender->attach(team4);
+    calender->attach(team5);
+
+    calender->startSeason();
 
     Race* race = new Race(track1,"Soweto");
     race->addTeam(team1);
@@ -59,6 +76,16 @@ int main(){
     race->addTeam(team3);
     race->addTeam(team4);
     race->addTeam(team5);
+
+        cout<<"HIEEEEEEEEEEEEEERRRRR"<<((Driver*)team3->getDriver())->getLuck()<<endl;
+        cout<<"HIEEEEEEEEEEEEEERRRRR"<<((Driver*)team3->getDriver())->getSkill()<<endl;
+        AerodynamicsFactory* aF = new AerodynamicsFactory(nullptr,nullptr);
+//        Human* AWE = aF->makePersonnel(nullptr);
+//    cout<<"HIEEEEEEEEEEEEEERRRRR"<< ((Driver*)AWE)->getSkill()<<endl;
+//    cout<<"HIEEEEEEEEEEEEEERRRRR"<< ((Driver*)AWE)->getLuck()<<endl;
+
+    team3->getDriver();
+
 
     Equipment* equipment = new Equipment("Stuff");
 

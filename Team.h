@@ -35,7 +35,7 @@ private:
 
 
 public:
-    Team(WeekCalender* schedule, string);
+    Team(WeekCalender* schedule, string,vector<Race*>);
     ~Team();
     virtual void update();
     void test(Formula1Car* c){};
