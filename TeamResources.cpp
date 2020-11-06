@@ -3,8 +3,7 @@
 //
 
 #include "TeamResources.h"
-#include "Team.h"
-#include "Subject.h"
+
 
 TeamResources::TeamResources()
 {
