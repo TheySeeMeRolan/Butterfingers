@@ -157,18 +157,19 @@ void TeamResources::construct()
 }
 
 Formula1Car* TeamResources::cloneCar() {
-    this->futureCar = new Formula1Car();
+    Formula1Car* car = new Formula1Car();
 
     if (currentCar == nullptr){
         cout << "currentCar needs to be set first to clone it to futureCar" << endl;
         this->construct();
     }
 
-    this->futureCar->setEngine(this->carPartBuilder[0]->getPart());
-    this->futureCar->setTyre(this->carPartBuilder[1]->getPart());
-    this->futureCar->setChasis(this->carPartBuilder[2]->getPart());
-    this->futureCar->setElectronics(this->carPartBuilder[3]->getPart());
-    this->futureCar->setSpoiler(this->carPartBuilder[4]->getPart());
+    car->setEngine(this->carPartBuilder[0]->getPart());
+    car->setTyre(this->carPartBuilder[1]->getPart());
+    car->setChasis(this->carPartBuilder[2]->getPart());
+    car->setElectronics(this->carPartBuilder[3]->getPart());
+    car->setSpoiler(this->carPartBuilder[4]->getPart());
+    return car;
 }
 
 Formula1Car* TeamResources::getCar(bool current)

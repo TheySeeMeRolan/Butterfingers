@@ -44,11 +44,11 @@ bool Test::test(Formula1Car *car) {
 }
 
 bool Test::load() {
-
+    return false;
 }
 
 bool Test::run() {
-
+    return false;
 }
 
 void Test::undo() {
