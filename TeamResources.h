@@ -44,8 +44,8 @@ private:
 
 
 public:
-    Formula1Car* construct();
-    Formula1Car* cloneCar();
+    void construct();
+    void cloneCar();
     void test(Formula1Car* c);
     void changeTestType();
     Engine* getEngine();
@@ -72,6 +72,7 @@ public:
     Equipment* getTeamEquipment();
 
 
+    Formula1Car *getCar(bool current);
 };
 
 
