@@ -8,14 +8,17 @@
 using namespace std;
 
 class Tyre : public CarPart{
+    string tyreType;
     int thread;
     int pressure;
 public:
     Tyre();
     int getThread();
     int getPressure();
+    string getTyreType();
     void setThread(int thr);
     void setPressure(int pre);
+    void setTyreType(string tyrType);
     ~Tyre();
 };
 
