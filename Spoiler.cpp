@@ -2,7 +2,6 @@
 
 Spoiler::Spoiler():CarPart("Spoiler")
 {
-    srand((unsigned)time(NULL));
     int wgt = rand() % 100 + 1;
     int ADS = rand() % 100 + 1;
     this->weight = wgt;

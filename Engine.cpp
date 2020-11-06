@@ -2,7 +2,6 @@
 
 Engine::Engine():CarPart("Engine")
 {
-    srand((unsigned)time(NULL));
     int hp = rand() % 100 + 1;
     int tor = rand() % 100 + 1;
     this->horsePower = hp;
