@@ -20,6 +20,7 @@
 #include "ChasisFactory.h"
 #include "EngineFactory.h"
 #include "TeamResources.h"
+#include "OrderTyresCommand.h"
 
 using namespace std;
 class Team : public Observer
@@ -29,7 +30,7 @@ private:
     WeekCalender* calender;
     Human * lead;
     Driver* driver;
-    Command* command[6];
+    Command* command[8];
     TeamResources* teamResources;
     HumanFactory** factories;
     int currentWeek;
@@ -50,6 +51,7 @@ public:
     void testWindTunnel();
     void testSimulation();
     void service();
+    void orderTyres();
 
     TeamResources* getTeamResources();
     //getters for the personnel hierarchy

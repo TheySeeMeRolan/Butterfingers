@@ -24,7 +24,15 @@ void Strategist::handleRequest(string p){
     
     if(p == "strategise")
     {
-        this->strategise();
+        Race* race1Month= nullptr;
+        if (teamResources->getCurrentWeek()<=39 )
+        {
+            race1Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek() + 4);
+        }
+        if(race1Month!= nullptr ) //&& !race1Month->getTrack()->isEuropean()
+        {
+            this->strategise();
+        }
     }
 
     if(p == "service")
@@ -48,7 +56,7 @@ void Strategist::handleRequest(string p){
 void Strategist::strategise(){
     cout<<"The "<<teamResources->getCompany()<<" teams strategist formulates it choice of tyre"<<endl;
 
-    int chosenTyre= rand() % 2 ;
+    int chosenTyre= rand() % 3 ;
     vector<int> tyres = teamResources->getTyresToOrder();
     tyres.at(chosenTyre) = tyres.at(chosenTyre) + 1 ;
     teamResources->setTyresToOrder(tyres);

@@ -34,6 +34,8 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     command[3] = new WindTestingCommand(lead);
     command[4] = new SimulationTestingCommand(lead);
     command[5] = new ServiceCommand(lead);
+
+    command[7] = new OrderTyresCommand(lead);
 }
 
 Team::~Team(){
@@ -153,8 +155,16 @@ void Team::update()
     teamResources->setCurrentWeek(currentWeek);
     cout<<"Team "<<teamResources->getCompany()<<" receives Calender Notification AND gets updated week : "<<currentWeek<<endl;
     prepare();
+    strategise();
+    orderTyres();
+
 
 //    cout<<"Team "<<teamResources->getCompany()<<" gets updated week : "<<currentWeek<<endl;
 
+}
+
+void Team::orderTyres()
+{
+command[7]->execute();
 }
 
