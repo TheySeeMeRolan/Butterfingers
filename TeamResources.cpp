@@ -5,74 +5,19 @@
 #include "TeamResources.h"
 
 
+TeamResources::TeamResources()
+{
+//nothing needed
+}
+
 TeamResources::~TeamResources()
 {
-    cout << "Destructed TeamResources" << endl;
-}
 
-void TeamResources::construct()
-{   
-    cout << "Constructing a Formula1 car" << endl;
-    this->currentCar = new Formula1Car();
-
-    //Engine building
-    this->carPartBuilder[0] = new EnginePartBuilder();
-    this->carPartBuilder[0]->buildPart();
-    this->currentCar->setEngine(this->carPartBuilder[0]->getPart());
-    srand(1);
-
-    //Tyre building
-    this->carPartBuilder[1] = new TyrePartBuilder();
-    this->carPartBuilder[1]->buildPart();
-    this->currentCar->setTyre(this->carPartBuilder[1]->getPart());
-    srand(2);
-
-    //Chasis building
-    this->carPartBuilder[2] = new ChasisPartBuilder();
-    this->carPartBuilder[2]->buildPart();
-    this->currentCar->setChasis(this->carPartBuilder[2]->getPart());
-    srand(3);
-
-
-    //Electronics building
-    this->carPartBuilder[3] = new ElectronicsPartBuilder();
-    this->carPartBuilder[3]->buildPart();
-    this->currentCar->setElectronics(this->carPartBuilder[3]->getPart());
-    srand(4);
-
-    //Spoiler building
-    this->carPartBuilder[4] = new SpoilerPartBuilder();
-    this->carPartBuilder[4]->buildPart();
-    this->currentCar->setSpoiler(this->carPartBuilder[4]->getPart());
-}
-
-void TeamResources::cloneCar() {
-    this->futureCar = new Formula1Car();
-
-    if (currentCar == nullptr){
-        cout << "currentCar needs to be set first to clone it to futureCar" << endl;
-        this->construct();
-    }
-
-    this->futureCar->setEngine(this->carPartBuilder[0]->getPart());
-    this->futureCar->setTyre(this->carPartBuilder[1]->getPart());
-    this->futureCar->setChasis(this->carPartBuilder[2]->getPart());
-    this->futureCar->setElectronics(this->carPartBuilder[3]->getPart());
-    this->futureCar->setSpoiler(this->carPartBuilder[4]->getPart());
-}
-
-Formula1Car* TeamResources::getCar(bool current)
-{
-    if (current == true){
-        return this->currentCar;
-    } else {
-        return this->futureCar;
-    }
-    return NULL;
 }
 
 
-/* template
+
+// template
 void TeamResources::runWindTest(Formula1Car * p)
 {
     // send in the car to the test and have it return a car to replace the memento with
@@ -92,38 +37,38 @@ void TeamResources::setUpcomingRaces(tuple<Race *, Race *, Race *> uR)
 //upcomingRaces = uR;
 }
 
+// void TeamResources::changeTestType(string type)
+// {
+//     // if (tester)
+//     // {
+//     //     delete tester;
+//     // }
 
- void TeamResources::changeTestType(string type)
- {
- if (tester)
- {
-    delete tester;
-}
-
-if(type == "wind tunnel")
- {
-     tester = new WindTunnel();
-     }else if(type == "simulation")
-     {
-     tester = new Simulation();
-     }
- }
-
-void TeamResources::update()
-{
-    int currentWeek;
-    currentWeek=registeredAt->getWeek();
-    upcomingRaces = registeredAt->getRaces();
-    if
-
-
-}
-
+//     // if(type == "wind tunnel")
+//     // {
+//     //     tester = new WindTunnel();
+//     // }else if(type == "simulation")
+//     // {
+//     //     tester = new Simulation();
+//     // }
+// }
+//
+//void TeamResources::update()
+//{
+////    int currentWeek;
+//    currentWeek=registeredAt->getWeek();
+//    upcomingRaces = registeredAt->getRaces();
+//    //if
+//
+//
+//}
 
 void TeamResources::shipCarToFactory()
 {
 //TBD
 }
+
+
 
 CarMemento* TeamResources::createMemento(bool b){
     if (b)
@@ -131,6 +76,9 @@ CarMemento* TeamResources::createMemento(bool b){
     else
         return new CarMemento(futureCar);
 }
+
+
+
 
 void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
     if (b){
@@ -165,6 +113,7 @@ Equipment* TeamResources::getTeamEquipment()
 }
 
 
+
 Engine *TeamResources::getEngine() {
     return currentCar->getEngine();
 }
@@ -186,6 +135,14 @@ Spoiler *TeamResources::getSpoiler() {
     return currentCar->getSpoiler();
 }
 
+Formula1Car *TeamResources::construct() {
+    return nullptr;
+}
+
+Formula1Car *TeamResources::cloneCar() {
+    return nullptr;
+}
+
 void TeamResources::test(Formula1Car *c) {
 
 }
@@ -197,4 +154,3 @@ void TeamResources::changeTestType() {
 void TeamResources::changeTestType(string type) {
 
 }
-*/
