@@ -33,7 +33,7 @@ private:
     TeamResources* teamResources;
     HumanFactory** factories;
     int currentWeek;
-
+    vector<int> driverStats;
 
 public:
     Team(WeekCalender* schedule, string,vector<Race*>);
@@ -55,7 +55,7 @@ public:
     //getters for the personnel hierarchy
     Human* getStrategist();
     Human* getLogistician();
-    Human* getDriver();
+    vector<int> getDriver();
     Human* getPitCrew();
 
     //getters for the engineers hierarchy

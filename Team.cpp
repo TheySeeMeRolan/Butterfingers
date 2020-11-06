@@ -19,7 +19,9 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     tempHuman = factories[2]->makePersonnel(tempHuman); // electronics engineer with engine engineer successor 
     tempHuman = factories[1]->makePersonnel(tempHuman); // aerodynamics engineer with electronics engineer successor
     tempHuman = factories[0]->makePersonnel(tempHuman); // chasis engineer with aerodynamics engineer successor
-    tempHuman = factories[3]->makeEngineer(tempHuman);  // pitcrew engineer with chasis engineer successor  
+    driverStats.push_back(dynamic_cast<Driver *>(tempHuman)->getSkill());
+    driverStats.push_back(dynamic_cast<Driver *>(tempHuman)->getLuck());
+    tempHuman = factories[3]->makeEngineer(tempHuman);  // pitcrew engineer with chasis engineer successor
     tempHuman = factories[1]->makeEngineer(tempHuman); // driver with logistician successor
     tempHuman = factories[0]->makeEngineer(tempHuman); // strategist with driver successor
     tempHuman = factories[2]->makeEngineer(tempHuman); // logistician with pitcrew successor
@@ -75,12 +77,8 @@ void Team::service()
 }
 
 
-Human* Team::getDriver() {
-    Human* temp = lead;
-    while (temp->getSuccesor()->getTypeHuman() != "Driver") {
-        temp = temp->getSuccesor();
-    }
-    return temp;
+vector<int> Team::getDriver() {
+    return driverStats;
 }
 
 Human* Team::getPitCrew(){

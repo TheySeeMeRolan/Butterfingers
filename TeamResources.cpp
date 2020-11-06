@@ -80,7 +80,7 @@ void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
 
 vector< Race *> TeamResources::getRaceSchedule()
 {
-//    return getRaceSchedule;
+    return raceSchedule;
 }
 
 Equipment* TeamResources::getTeamEquipment()
@@ -95,9 +95,8 @@ Engine *TeamResources::getEngine() {
     return currentCar->getEngine();
 }
 
-Tyre **TeamResources::getTyre() {
-//    return currentCar->getTyre();
-    return nullptr;
+Tyre *TeamResources::getTyre() {
+    return currentCar->getTyres();
 }
 
 Chasis *TeamResources::getChasis() {
@@ -197,4 +196,8 @@ this->currentWeek = cD;
 int TeamResources::getCurrentWeek()
 {
     return currentWeek;
+}
+
+CarPartBuilder *TeamResources::getTyrePartBuilder() {
+    return this->carPartBuilder[1];
 }

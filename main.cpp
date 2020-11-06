@@ -80,7 +80,7 @@ int main(){
     calender->attach(team9);
     calender->attach(team10);
 
-    calender->startSeason();
+//    calender->startSeason();
 
 
     Race* race = new Race(track1,"Soweto");
@@ -100,17 +100,6 @@ int main(){
     race->addTeam(team9);
     race->addTeam(team10);
 
-        cout<<"HIEEEEEEEEEEEEEERRRRR"<<((Driver*)team3->getDriver())->getLuck()<<endl;
-        cout<<"HIEEEEEEEEEEEEEERRRRR"<<((Driver*)team3->getDriver())->getSkill()<<endl;
-        AerodynamicsFactory* aF = new AerodynamicsFactory(nullptr,nullptr);
-//        Human* AWE = aF->makePersonnel(nullptr);
-//    cout<<"HIEEEEEEEEEEEEEERRRRR"<< ((Driver*)AWE)->getSkill()<<endl;
-//    cout<<"HIEEEEEEEEEEEEEERRRRR"<< ((Driver*)AWE)->getLuck()<<endl;
-
-    team3->getDriver();
-
-
-//    Equipment* equipment = new Equipment("Stuff");
 
     cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
     cout<<"\033[1;36m          SIMULISATION    \033[0m\n";

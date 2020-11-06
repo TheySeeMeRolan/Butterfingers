@@ -22,3 +22,9 @@ int PracticeStrategy::determineTeamRaceScore(Team*,int, int) {
 PracticeStrategy::~PracticeStrategy() {
 
 }
+
+vector<Team *> PracticeStrategy::sort(vector<Team *>t, vector<int>, vector<int> &) {
+    return t;
+}
+
+

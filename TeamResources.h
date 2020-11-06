@@ -48,7 +48,7 @@ public:
     void test(Formula1Car* c);
     void changeTestType();
     Engine* getEngine();
-    Tyre** getTyre();
+    Tyre* getTyre();
     Chasis* getChasis();
     Electronics* getElectronics();
     Spoiler* getSpoiler();
@@ -73,6 +73,7 @@ public:
 
 
     Formula1Car *getCar(bool current);
+    CarPartBuilder* getTyrePartBuilder();
 };
 
 
