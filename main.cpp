@@ -58,16 +58,16 @@ int main(){
 
 
 
-    Team* team1 = new Team(calender, "Mercedes");
-    Team* team2 = new Team(calender, "Ferrari");
-    Team* team3 = new Team(calender, "McLaren");
-    Team* team4 = new Team(calender, "Renault");
-    Team* team5 = new Team(calender, "AlphaTauri");
-    Team* team6 = new Team(calender, "Williams Racing");
-    Team* team7 = new Team(calender, "Hass F1 Team");
-    Team* team8 = new Team(calender, "Lotus");
-    Team* team9 = new Team(calender, "Alfa Romeo");
-    Team* team10 = new Team(calender, "Toro Rosso");
+    Team* team1 = new Team(calender, "Mercedes",seasonRaces);
+    Team* team2 = new Team(calender, "Ferrari",seasonRaces);
+    Team* team3 = new Team(calender, "McLaren",seasonRaces);
+    Team* team4 = new Team(calender, "Renault",seasonRaces);
+    Team* team5 = new Team(calender, "AlphaTauri",seasonRaces);
+    Team* team6 = new Team(calender, "Williams Racing",seasonRaces);
+    Team* team7 = new Team(calender, "Hass F1 Team",seasonRaces);
+    Team* team8 = new Team(calender, "Lotus",seasonRaces);
+    Team* team9 = new Team(calender, "Alfa Romeo",seasonRaces);
+    Team* team10 = new Team(calender, "Toro Rosso",seasonRaces);
 
     calender->attach(team1);
     calender->attach(team2);
@@ -110,7 +110,7 @@ int main(){
     team3->getDriver();
 
 
-    Equipment* equipment = new Equipment("Stuff");
+//    Equipment* equipment = new Equipment("Stuff");
 
     cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
     cout<<"\033[1;36m          SIMULISATION    \033[0m\n";
