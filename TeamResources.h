@@ -14,9 +14,7 @@
 #include "CarMemento.h"
 
 // template
-#include "Test.h"
-#include "WindTunnel.h"
-#include "Simulation.h"
+
 #include "Equipment.h"
 
 
@@ -38,10 +36,8 @@ private:
     Formula1Car* futureCar;
     CarPartBuilder* carPartBuilder[5];
     int windTunnelTokens;
-    Test * windTest;
-    Test * simulationTest;
-    string company;
 
+    string company;
 
 public:
     void construct();
@@ -74,6 +70,8 @@ public:
     void setRaceSchedule(vector<Race*> uR);
     Equipment* getTeamEquipment();
 
+    int getWindTunnelTokens();
+    void setWindTunnelTokens(int);
 
     Formula1Car *getCar(bool current);
     CarPartBuilder* getTyrePartBuilder();

@@ -115,6 +115,22 @@ cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───�
 //    team1->testWindTunnel();
 //    team1->testSimulation();
 //    team1->service();
+    team1->race();
+    team1->strategise();
+    cout<<endl<<"TEST 1"<<endl;
+    team1->testWindTunnel();
+    cout<<"TEST 2"<<endl;
+    team1->testWindTunnel();
+    cout<<"TEST 3"<<endl;
+    team1->testWindTunnel();
+    cout<<endl<<"TEST 1"<<endl;
+    team1->testSimulation();
+    cout<<"TEST 2"<<endl;
+    team1->testSimulation();
+        cout<<"TEST 3"<<endl;
+    team1->testSimulation();
+    // team1->testSimulation();
+    team1->service();
     
     // team1->getLead()->handleRequest("racing");
 
