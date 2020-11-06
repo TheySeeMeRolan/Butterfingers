@@ -9,7 +9,6 @@ private:
     Tyre* tyrePart;
 public:
     void buildPart();
-    void setType(string tyreType);
     CarPart* getPart();
     ~TyrePartBuilder();
 };

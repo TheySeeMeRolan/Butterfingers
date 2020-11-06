@@ -1,7 +1,0 @@
-<map id="TrackPart" name="TrackPart">
-<area shape="rect" id="node1" title="Abstract interface class." alt="" coords="205,5,283,32"/>
-<area shape="rect" id="node2" href="$class_left_curve_part.html" title=" " alt="" coords="5,80,104,107"/>
-<area shape="rect" id="node3" href="$class_right_curve_part.html" title=" " alt="" coords="129,80,237,107"/>
-<area shape="rect" id="node4" href="$class_straight_part.html" title=" " alt="" coords="261,80,352,107"/>
-<area shape="rect" id="node5" href="$class_track.html" title=" " alt="" coords="377,80,431,107"/>
-</map>

@@ -8,6 +8,7 @@ TrackPart* RightCurveFactory::createPart(int l, int d)
 
 TrackPart* RightCurveFactory::createPart()
 {
+    srand((unsigned)time(NULL));
     int l = rand() % 100 + 1;
     int d = rand() % 100 + 1;
     return new RightCurvePart(l, d);
