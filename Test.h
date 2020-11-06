@@ -25,10 +25,10 @@ public:
     Test(TeamResources * t, Hangar*);
     Formula1Car* getState();
     bool test(Formula1Car* car);
+    // primitive functions
     virtual bool load();
     virtual bool run();
-    virtual void save();
-    // void getResult(bool);
+    virtual void undo();
 };
 
 #endif //PROJECT_TEST_H

@@ -4,7 +4,7 @@
 
 bool WindTunnel::load(){
    
-    cout<<teamResources->getCompany()<<" is using the wind tunnel"<<endl;
+    cout<<"LOAD WIND TUNNEL FOR "<<teamResources->getCompany()<<" TEAM."<<endl;
 
     int tokensUsed =  (rand() % 30) + 1;
     int currentTokens = teamResources->getWindTunnelTokens();
@@ -15,8 +15,8 @@ bool WindTunnel::load(){
         result = true;
     }
 
-
-    cout<<"Tokens used in this test: "<<tokensUsed<<endl<<endl;
+    cout<<"Tokens used in this test: "<<tokensUsed<<endl;
+    cout<<"Total Tokens used: "<<teamResources->getWindTunnelTokens()<<endl<<endl;
 
     cout<<"STATS BEFORE TEST:"<<endl;
     cout<<"-----------------------"<<endl<<endl;
@@ -33,11 +33,14 @@ bool WindTunnel::load(){
 }
 
 bool WindTunnel::run(){
-    cout<<"...running wind tunnel test..."<<endl;
+    cout<<"RUNNING WIND TUNNEL TEST"<<endl;
+    cout<<"-----------------------"<<endl<<endl;
 
     // get car from the wind tests hangar
     // teamResources->reinstantiateMemento(); // create memento of the current car
 
+    hangar->storeMemento(teamResources->createMemento(true)); // store memento of current car
+    // the mememto gets replaced if the car generated is better than the car stored in the memento
 
     Formula1Car * before = teamResources->getCar(true); // get current car
     int var1 = before->getChasis()->getAerodynamicsScore();
@@ -56,15 +59,20 @@ bool WindTunnel::run(){
 
     if(result1 < result2)
     {
+        // the new car will stay the same
         return true; // the new aerodynamics score is better
     }else
     {
+        
         return false;
     }
 }
 
-void WindTunnel::save(){
-    teamResources->reinstantiateMemento(teamResources->createMemento(true), true); // create memento of current car 
+void WindTunnel::undo(){
+    cout<<"RETRIEVE CAR FROM HANGAR AFTER WIND TUNNEL TEST"<<endl;
+    Test::undo();
+    
+    // teamResources->reinstantiateMemento(teamResources->createMemento(true), true); // create memento of current car 
 }
 
 

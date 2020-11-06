@@ -75,7 +75,9 @@ CarMemento* TeamResources::createMemento(bool b){
 
 
 void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
+
     if (b){
+        cout<<"Reinstating current car."<<endl;
         //current car
         Formula1Car* mementoCar= me->getState();
         currentCar->setChasis(mementoCar->getChasis());
@@ -84,6 +86,7 @@ void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
         currentCar->setSpoiler(mementoCar->getSpoiler());
 //        currentCar->setTyre(mementoCar->getTyre());
     }else{
+        cout<<"Reinstating future car."<<endl;
         //future car
         Formula1Car* mementoCar= me->getState();
         futureCar->setChasis(mementoCar->getChasis());
@@ -143,39 +146,36 @@ void TeamResources::changeTestType(string type) {
 void TeamResources::construct()
 {
     cout << "Constructing a Formula1 car" << endl;
+    if(currentCar)
+    {
+        delete currentCar; // memory leak management
+    }
     this->currentCar = new Formula1Car();
 
     //Engine building
     this->carPartBuilder[0] = new EnginePartBuilder();
     this->carPartBuilder[0]->buildPart();
     this->currentCar->setEngine(this->carPartBuilder[0]->getPart());
-    int seed =  (rand() % 30) + 1;
-    srand(seed);
+
 
     //Tyre building
     this->carPartBuilder[1] = new TyrePartBuilder();
     this->carPartBuilder[1]->buildPart();
     this->currentCar->setTyre(this->carPartBuilder[1]->getPart());
-    // srand(2);
-    seed =  (rand() % 30) + 1;
-    srand(seed);
+
 
     //Chasis building
     this->carPartBuilder[2] = new ChasisPartBuilder();
     this->carPartBuilder[2]->buildPart();
     this->currentCar->setChasis(this->carPartBuilder[2]->getPart());
-    // srand(3);
-    seed =  (rand() % 30) + 1;
-    srand(seed);
+
 
 
     //Electronics building
     this->carPartBuilder[3] = new ElectronicsPartBuilder();
     this->carPartBuilder[3]->buildPart();
     this->currentCar->setElectronics(this->carPartBuilder[3]->getPart());
-    // srand(4);
-    seed =  (rand() % 30) + 1;
-    srand(seed);
+
 
     //Spoiler building
     this->carPartBuilder[4] = new SpoilerPartBuilder();

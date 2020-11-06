@@ -6,10 +6,11 @@
 
 class WindTunnel: public Test{
 public:
+    WindTunnel(TeamResources*, Hangar*);
+    // primitive functions
     virtual bool run();
     virtual bool load();
-    virtual void save();
-    WindTunnel(TeamResources*, Hangar*);
+    virtual void undo();
 };
 
 #endif //PROJECT_WINDTUNNEL_H

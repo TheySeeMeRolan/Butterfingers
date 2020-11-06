@@ -6,10 +6,11 @@
 
 class Simulation: public Test{
 public:
+    Simulation(TeamResources*, Hangar*);
+    // primitive functions
     virtual bool run();
     virtual bool load();
-    virtual void save();
-    Simulation(TeamResources*, Hangar*);
+    virtual void undo();
 };
 
 #endif //PROJECT_SIMULATION_H

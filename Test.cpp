@@ -26,13 +26,12 @@ bool Test::test(Formula1Car *car) {
     if(viable)
     {
         bool better = run(); // get the different parts, duplicate, and randomly generate new values which may be greater or lower
-        if(better)
-        {
+        if(better){
             cout<<"The test made adjstments to the "<<teamResources->getCompany()<<"'s formula1 car and placed it in the hangar."<<endl;
-            save(); // if greater then save the cloned car in the hangar
-        }else
-        {
-            cout<<"The test on the "<<teamResources->getCompany()<<"'s did not yield a better design."<<endl;
+        }
+        else{
+            cout<<"The test on the "<<teamResources->getCompany()<<"'s car did not yield a better design."<<endl;
+            undo(); // if greater then save the cloned car in the hangar
         }
         
         return true;
@@ -52,17 +51,8 @@ bool Test::run() {
 
 }
 
-void Test::save() {
-
+void Test::undo() {
+    teamResources->reinstantiateMemento((hangar->retrieveMemento()), true); // get the stored car back and reinstate current car
 }
 
-// void Test::getResult(bool t) {
-//     if(t)
-//     {
-//         
-//     }else
-//     {
-//         
-//     }
-// }
 
