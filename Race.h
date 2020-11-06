@@ -26,6 +26,8 @@ private:
     string location;
     int date;
     bool european;
+    Strategy* strategy;
+    vector<vector<int>> tyreSets;
 public:
     Race(Track* t, string location);
     ~Race();
@@ -43,6 +45,9 @@ public:
     //setters
     void addTeam(Team* t);
     void storeEquipment(Equipment* teamEquipment);
+    void race();
+    void shipTyres(vector<int> t);
+
 };
 
 #endif //PROJECT_RACE_H

@@ -11,6 +11,9 @@ TeamResources::TeamResources(string name,vector<Race*> sRaces)
     //initialise the 2 test Types
     company = name;
     raceSchedule = sRaces;
+    vector<int> resetTyres = {0,0,0};
+    this->tyresToOrder = resetTyres;
+
 }
 
 TeamResources::~TeamResources()
@@ -211,3 +214,10 @@ void TeamResources::setWindTunnelTokens(int p)
 }
 
 
+vector<int> TeamResources::getTyresToOrder() {
+    return this->tyresToOrder;
+}
+
+void TeamResources::setTyresToOrder(vector<int> t) {
+    tyresToOrder=t;
+}

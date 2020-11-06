@@ -38,6 +38,10 @@ private:
     int windTunnelTokens;
 
     string company;
+    Test * windTest;
+    Test * simulationTest;
+    string company;
+    vector<int> tyresToOrder;
 
 public:
     void construct();
@@ -75,6 +79,8 @@ public:
 
     Formula1Car *getCar(bool current);
     CarPartBuilder* getTyrePartBuilder();
+    vector<int> getTyresToOrder();
+    void setTyresToOrder(vector<int> t);
 };
 
 

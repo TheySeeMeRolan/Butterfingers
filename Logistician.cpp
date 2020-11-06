@@ -8,20 +8,39 @@ void Logistician::handleRequest(string p){
     if(p == "prepare")
     {
         Race* raceThisWeek = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek());
-        Race* race1Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek()+4);
-        Race* race3Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek()+12);
 
-        if(race3Month!= nullptr)
+        Race* race1Month= nullptr;
+        Race* race3Month = nullptr;
+
+        if (teamResources->getCurrentWeek()<=39 )
+        {
+            race1Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek() + 4);
+        }
+        cout<<teamResources->getCurrentWeek() + 3<<endl;
+
+        if (teamResources->getCurrentWeek()<31 )
+        {
+            cout<<teamResources->getCurrentWeek() + 2<<endl;
+
+            race3Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek() + 12);
+        }
+
+
+        if(teamResources->getCurrentWeek()<=31 && race3Month!= nullptr)
         {
             if (!race3Month->getTrack()->isEuropean())
                 shipContainerNonEuropean();
         }
-        if(race1Month!= nullptr && !race1Month->getTrack()->isEuropean())
+        if(race1Month!= nullptr ) //&& !race1Month->getTrack()->isEuropean()
         {
             orderTyres();
         }
         if(raceThisWeek != nullptr)
         {
+            cout<< "\U0001F3C1"<<"\U0001F3C1"<<"\U0001F3C1"<< "\U0001F3C1"<<"\U0001F3C1"<<"\U0001F3C1"<< "\U0001F3C1"<<"\U0001F3C1"<<"\U0001F3C1"
+            <<" RACE " <<raceThisWeek->getLocation()<<" "
+            <<"\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1" <<endl;
+
             this->prepareForRace();
             travelToRace();
         }
@@ -37,10 +56,10 @@ void Logistician::handleRequest(string p){
     {
 
     }
-    
-    if(p == "strategise")
+
+        if(p == "strategise")
     {
-        
+
     }
 
     if(p == "service")
@@ -81,8 +100,11 @@ void Logistician::travelToRace()
 }
 void Logistician::orderTyres()
 {
-    cout<<"The "<<teamResources->getCompany()<<" team logistician orders tyres for the race taking place in one months time , as specified by engineers and strategist"<<endl;
-    // need some fucntion here
+    cout<<"The "<<teamResources->getCompany()<<" teams logistician orders for the tyres for the race occurring in 1 month"<<endl;
+    cout<<"Tyres ordered: soft - "<<teamResources->getTyresToOrder().at(0)<< " medium - "<<teamResources->getTyresToOrder().at(1)<< " hard - "<<teamResources->getTyresToOrder().at(2)<<endl;
+
+    vector<int> resetTyres = {0,0,0};
+    teamResources->setTyresToOrder(resetTyres);
 }
 
 void Logistician::shipContainerNonEuropean()
