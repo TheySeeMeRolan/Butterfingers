@@ -2,7 +2,6 @@
 
 Electronics::Electronics():CarPart("Electronics")
 {
-    srand((unsigned)time(NULL));
     int eff = rand() % 100 + 1;
     int ass = rand() % 100 + 1;
     this->efficiency = eff;

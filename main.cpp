@@ -20,17 +20,18 @@ includes for generating teams???
 -----------------------------
 #include "Team.h"
 */
+
 #include <vector>
 
 using namespace std;
 
 int main(){
 
-    cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
-    cout<<"\033[1;36m       INITIALISATIONS    \033[0m\n";
+cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
+    cout<<"\033[1;36m       INITIALIZATION    \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
 
-    //Create Tracks
+    //Create TracksFactories
     TrackPartFactory* trackGenerator[3];
     trackGenerator[0] = new LeftCurveFactory();
     trackGenerator[1] = new StraightFactory();
@@ -83,7 +84,7 @@ int main(){
 //    calender->startSeason();
 
 
-    Race* race = new Race(track1,"Soweto");
+    Race* race = new Race(track1,"Circuit de Monaco");
 
     cout<<endl;
     Equipment* equipment = new Equipment("Stuff");
@@ -101,8 +102,8 @@ int main(){
     race->addTeam(team10);
 
 
-    cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
-    cout<<"\033[1;36m          SIMULISATION    \033[0m\n";
+cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
+    cout<<"\033[1;36m          SIMULATION           \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
 
 
@@ -134,4 +135,7 @@ int main(){
     cout<<"\033[1;36m         DESTRUCTION    \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
     delete trackGenerator[0];
+    delete trackGenerator[1];
+    delete trackGenerator[2];
+    delete track1;
 }
