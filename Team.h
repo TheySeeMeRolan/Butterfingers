@@ -28,6 +28,7 @@ class Team : public Observer
 private:
     WeekCalender* calender;
     Human * lead;
+    Driver* driver;
     Command* command[6];
     TeamResources* teamResources;
     HumanFactory** factories;

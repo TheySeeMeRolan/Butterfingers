@@ -7,6 +7,7 @@
 
 TeamResources::TeamResources(string name,vector<Race*> sRaces)
 {
+    construct();
     company = name;
     raceSchedule = sRaces;
 }

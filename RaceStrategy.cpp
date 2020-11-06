@@ -5,16 +5,16 @@ vector<Team *> RaceStrategy::race(vector<Team *> teams, Track *track) {
     Team* temp;
     int tempScore,startPosition = 0;
     if(track->isEuropean()) {
-        for (auto &team : teams) {
-//            ((Driver*)team->getDriver())->drive();
-            teamScore.push_back(determineTeamRaceScore(team,track->getTotalDifficulty(),track->getTotalLength())-startPosition);
-            startPosition++;
+        for (int i = 0; i < teams.size();i++) {
+            teams[i]->race();
+            std::cout<<i+1<<std::endl;
+            teamScore.push_back(determineTeamRaceScore(teams[i],track->getTotalDifficulty()+i,track->getTotalLength()));
         }
     } else {
-        for (auto &team : teams) {
-//            ((Driver*)team->getDriver())->drive();
-            teamScore.push_back(determineTeamRaceScore(team,track->getTotalDifficulty()+1,track->getTotalLength())-startPosition);
-            startPosition++;
+        for (int i = 0; i < teams.size();i++) {
+            teams[i]->race();
+            std::cout<<i+1<<std::endl;
+            teamScore.push_back(determineTeamRaceScore(teams[i],track->getTotalDifficulty()+i,track->getTotalLength()));
         }
     }
     for (int i = 0; i < (int)teams.size()-1; ++i) {

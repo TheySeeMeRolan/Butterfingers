@@ -5,14 +5,16 @@ vector<Team *> QualifyingStrategy::race(vector<Team *> teams, Track *track) {
     Team* temp;
     int tempScore;
     if(track->isEuropean()) {
-        for (auto &team : teams) {
-//            ((Driver*)team->getDriver())->drive();
-            teamScore.push_back(determineTeamRaceScore(team,track->getTotalDifficulty(),track->getTotalLength()));
+        for (int i = 0; i < teams.size();i++) {
+            teams[i]->race();
+            std::cout<<i+1<<std::endl;
+            teamScore.push_back(determineTeamRaceScore(teams[i],track->getTotalDifficulty()+i,track->getTotalLength()));
         }
     } else {
-        for (auto &team : teams) {
-//            ((Driver*)team->getDriver())->drive();
-            teamScore.push_back(determineTeamRaceScore(team,track->getTotalDifficulty()+1,track->getTotalLength()));
+        for (int i = 0; i < teams.size();i++) {
+            teams[i]->race();
+            std::cout<<i+1<<std::endl;
+            teamScore.push_back(determineTeamRaceScore(teams[i],track->getTotalDifficulty()+i,track->getTotalLength()));
         }
     }
     for (int i = 0; i < (int)teams.size()-1; ++i) {
@@ -32,9 +34,9 @@ vector<Team *> QualifyingStrategy::race(vector<Team *> teams, Track *track) {
 
 int QualifyingStrategy::determineTeamRaceScore(Team* team, int difficulty, int length) {
     int cumulativeTeamScore = length;
-//    int driverScore = ((Driver*)team->getDriver())->getSkill() + ((Driver*)team->getDriver())->getLuck();
+    int driverScore = ((Driver*)team->getDriver())->getSkill() + ((Driver*)team->getDriver())->getLuck();
 //    int tyreScore = team->getTyre()->getThread() * difficulty;
-//    int engineScore = team->getTeamResources()->getEngine()->getHorsePower() * difficulty + team->getTeamResources()->getEngine()->getTorque() * difficulty;
+    int engineScore = team->getTeamResources()->getEngine()->getHorsePower() * difficulty;// + team->getTeamResources()->getEngine()->getTorque() * difficulty;
 //    int chasisScore = team->getTeamResources()->getChasis()->getHeight() * difficulty + team->getTeamResources()->getChasis()->getAerodynamicsScore() * difficulty;
 //    int electronicScore = team->getTeamResources()->getElectronics()->getEfficiency() * difficulty;
 //    int spoilerScore = team->getTeamResources()->getSpoiler()->getWeight() * difficulty + team->getTeamResources()->getSpoiler()->getAerodynamicsScore() * difficulty;
@@ -51,7 +53,7 @@ int QualifyingStrategy::determineTeamRaceScore(Team* team, int difficulty, int l
 
 //    cumulativeTeamScore += driverScore;
 //    cumulativeTeamScore += tyreScore;
-//    cumulativeTeamScore += engineScore;
+    cumulativeTeamScore += engineScore;
 //    cumulativeTeamScore += chasisScore;
 //    cumulativeTeamScore += electronicScore;
 //    cumulativeTeamScore += spoilerScore;

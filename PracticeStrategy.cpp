@@ -2,12 +2,14 @@
 
 vector<Team *> PracticeStrategy::race(vector<Team *> teams, Track *track) {
     if(track->isEuropean()) {
-        for (auto &team : teams) {
-//            ((Driver*)team->getDriver())->drive();
+        for (int i = 0; i < teams.size();i++) {
+            teams[i]->race();
+            std::cout<<i+1<<std::endl;
         }
     } else {
-        for (auto &team : teams) {
-//            ((Driver*)team->getDriver())->drive();
+        for (int i = 0; i < teams.size();i++) {
+            teams[i]->race();
+            std::cout<<i+1<<std::endl;
         }
     }
     return teams;
