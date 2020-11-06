@@ -23,14 +23,8 @@ void ChasisEngineer::handleRequest(string p){
         
     }
 
-    if(p == "service")
-    {
-        cout<<"The "<<teamResources->getCompany()<<" teams chassis engineer formulates it choice of tyre"<<endl;
+    if(p == "service"){
 
-        int chosenTyre= rand() % 2 ;
-        vector<int> tyres = teamResources->getTyresToOrder();
-        tyres.at(chosenTyre) = tyres.at(chosenTyre) + 1 ;
-        teamResources->setTyresToOrder(tyres);
     }
     
     if(p == "racing"){

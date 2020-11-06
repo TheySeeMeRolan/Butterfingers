@@ -2,15 +2,13 @@
 #define PROJECT_WINDTUNNEL_H
 
 #include "Test.h"
-#include <iostream>
 
 class WindTunnel: public Test{
 public:
-    WindTunnel(TeamResources*, Hangar*);
-    // primitive functions
-    virtual bool run();
-    virtual bool load();
-    virtual void undo();
+    virtual void run();
+    virtual void load();
+    virtual void save();
+    WindTunnel();
 };
 
 #endif //PROJECT_WINDTUNNEL_H

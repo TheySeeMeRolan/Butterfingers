@@ -19,14 +19,7 @@ void AerodynamicsEngineer::handleRequest(string p){
     }
     
     if(p == "strategise"){
-
-            cout<<"The "<<teamResources->getCompany()<<" teams aerodynamics engineer formulates it choice of tyre"<<endl;
-
-            int chosenTyre= rand() % 2 ;
-            vector<int> tyres = teamResources->getTyresToOrder();
-            tyres.at(chosenTyre) = tyres.at(chosenTyre) + 1 ;
-            teamResources->setTyresToOrder(tyres);
-
+        
     }
 
     if(p == "service"){
@@ -44,5 +37,4 @@ void AerodynamicsEngineer::handleRequest(string p){
 
 void AerodynamicsEngineer::changeShape(){
    cout<<"The "<<teamResources->getCompany()<<" team's aerodynamic engineer is changing the shape of the formula one racing car"<<endl;
-//    teamResources->runWindTest(teamResources->getCurrentCar()); // should actually use current car from the hangar
 }

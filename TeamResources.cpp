@@ -7,13 +7,9 @@
 
 TeamResources::TeamResources(string name,vector<Race*> sRaces)
 {
-    construct(); //set current car
-    //initialise the 2 test Types
+    construct();
     company = name;
     raceSchedule = sRaces;
-    vector<int> resetTyres = {0,0,0};
-    this->tyresToOrder = resetTyres;
-
 }
 
 TeamResources::~TeamResources()
@@ -27,7 +23,20 @@ string TeamResources::getCompany()
 }
 
 
+// template
+void TeamResources::runWindTest(Formula1Car * p)
+{
+    // send in the car to the test and have it return a car to replace the memento with
+    // send in future or current car
+    windTest->test(p);
+}
 
+void TeamResources::runSimulationTest(Formula1Car * p)
+{
+    // send in the car to the test and have it return a car to replace the memento with
+    // send in future or current car
+    simulationTest->test(p);
+}
 
 
 
@@ -49,9 +58,7 @@ CarMemento* TeamResources::createMemento(bool b){
 
 
 void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
-
     if (b){
-        cout<<"Reinstating current car."<<endl;
         //current car
         Formula1Car* mementoCar= me->getState();
         currentCar->setChasis(mementoCar->getChasis());
@@ -60,7 +67,6 @@ void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
         currentCar->setSpoiler(mementoCar->getSpoiler());
 //        currentCar->setTyre(mementoCar->getTyre());
     }else{
-        cout<<"Reinstating future car."<<endl;
         //future car
         Formula1Car* mementoCar= me->getState();
         futureCar->setChasis(mementoCar->getChasis());
@@ -119,36 +125,32 @@ void TeamResources::changeTestType(string type) {
 void TeamResources::construct()
 {
     cout << "Constructing a Formula1 car" << endl;
-    if(currentCar)
-    {
-        delete currentCar; // memory leak management
-    }
     this->currentCar = new Formula1Car();
 
     //Engine building
     this->carPartBuilder[0] = new EnginePartBuilder();
     this->carPartBuilder[0]->buildPart();
     this->currentCar->setEngine(this->carPartBuilder[0]->getPart());
-
+    srand(1);
 
     //Tyre building
     this->carPartBuilder[1] = new TyrePartBuilder();
     this->carPartBuilder[1]->buildPart();
     this->currentCar->setTyre(this->carPartBuilder[1]->getPart());
-
+    srand(2);
 
     //Chasis building
     this->carPartBuilder[2] = new ChasisPartBuilder();
     this->carPartBuilder[2]->buildPart();
     this->currentCar->setChasis(this->carPartBuilder[2]->getPart());
-
+    srand(3);
 
 
     //Electronics building
     this->carPartBuilder[3] = new ElectronicsPartBuilder();
     this->carPartBuilder[3]->buildPart();
     this->currentCar->setElectronics(this->carPartBuilder[3]->getPart());
-
+    srand(4);
 
     //Spoiler building
     this->carPartBuilder[4] = new SpoilerPartBuilder();
@@ -160,19 +162,18 @@ void TeamResources::construct()
 }
 
 Formula1Car* TeamResources::cloneCar() {
-    Formula1Car* car = new Formula1Car();
+    this->futureCar = new Formula1Car();
 
     if (currentCar == nullptr){
         cout << "currentCar needs to be set first to clone it to futureCar" << endl;
         this->construct();
     }
 
-    car->setEngine(this->carPartBuilder[0]->getPart());
-    car->setTyre(this->carPartBuilder[1]->getPart());
-    car->setChasis(this->carPartBuilder[2]->getPart());
-    car->setElectronics(this->carPartBuilder[3]->getPart());
-    car->setSpoiler(this->carPartBuilder[4]->getPart());
-    return car;
+    this->futureCar->setEngine(this->carPartBuilder[0]->getPart());
+    this->futureCar->setTyre(this->carPartBuilder[1]->getPart());
+    this->futureCar->setChasis(this->carPartBuilder[2]->getPart());
+    this->futureCar->setElectronics(this->carPartBuilder[3]->getPart());
+    this->futureCar->setSpoiler(this->carPartBuilder[4]->getPart());
 }
 
 Formula1Car* TeamResources::getCar(bool current)
@@ -202,22 +203,4 @@ int TeamResources::getCurrentWeek()
 
 CarPartBuilder *TeamResources::getTyrePartBuilder() {
     return this->carPartBuilder[1];
-}
-int TeamResources::getWindTunnelTokens()
-{
-    return windTunnelTokens;
-}
-
-void TeamResources::setWindTunnelTokens(int p)
-{
-    windTunnelTokens = p;
-}
-
-
-vector<int> TeamResources::getTyresToOrder() {
-    return this->tyresToOrder;
-}
-
-void TeamResources::setTyresToOrder(vector<int> t) {
-    tyresToOrder=t;
 }

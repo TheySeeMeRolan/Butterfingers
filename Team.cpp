@@ -37,11 +37,6 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     command[4] = new SimulationTestingCommand(lead);
     command[5] = new ServiceCommand(lead);
     command[6] = new ChangeTyreCommand(lead);
-
-    // tests
-    Hangar * hangar = new Hangar();
-    windTest = new WindTunnel(teamResources, hangar); // team is the client of the memento pattern
-    simulationTest = new Simulation(teamResources, hangar);
 }
 
 Team::~Team(){
@@ -69,14 +64,12 @@ void Team::strategise()
 
 void Team::testWindTunnel()
 {
-    command[3]->execute(); // executes humans
-    runWindTest(teamResources->getCar(true)); // get current car from hangar
+    command[3]->execute();
 }
 
 void Team::testSimulation()
 {
-    command[4]->execute(); // executes humans
-    runSimulationTest(teamResources->getCar(true)); // get current car from hangar
+    command[4]->execute();
 }
 
 void Team::service()
@@ -163,23 +156,10 @@ void Team::update()
     currentWeek = calender->getWeek();
     teamResources->setCurrentWeek(currentWeek);
     cout<<"Team "<<teamResources->getCompany()<<" receives Calender Notification AND gets updated week : "<<currentWeek<<endl;
-    prepare();
 
 //    cout<<"Team "<<teamResources->getCompany()<<" gets updated week : "<<currentWeek<<endl;
 
 }
 
-// template
-void Team::runWindTest(Formula1Car * p)
-{
-    // send in the car to the test and have it return a car to replace the memento with
-    // send in future or current car
-    windTest->test(p);
-}
 
-void Team::runSimulationTest(Formula1Car * p)
-{
-    // send in the car to the test and have it return a car to replace the memento with
-    // send in future or current car
-    simulationTest->test(p);
-}
+

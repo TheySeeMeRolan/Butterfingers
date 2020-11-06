@@ -21,11 +21,6 @@
 #include "ChasisFactory.h"
 #include "EngineFactory.h"
 #include "TeamResources.h"
-#include "Test.h"
-#include "Test.h"
-#include "WindTunnel.h"
-#include "Simulation.h"
-#include "Hangar.h"
 
 using namespace std;
 class Team : public Observer
@@ -40,8 +35,6 @@ private:
     HumanFactory** factories;
     int currentWeek;
     vector<int> driverStats;
-    Test * windTest;
-    Test * simulationTest;
 
 public:
     Team(WeekCalender* schedule, string,vector<Race*>);
@@ -74,8 +67,6 @@ public:
     Human* getEngineEngineer();
     Human* getLead();
 
-    void runWindTest(Formula1Car *); ///get car from memento store and run test to see if its replaced ///
-    void runSimulationTest(Formula1Car *); ///get car from memento store and run test to see if its replaced ///
 
 };
 

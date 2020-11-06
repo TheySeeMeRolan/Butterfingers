@@ -19,14 +19,8 @@ void ElectronicEngineer::handleRequest(string p){
 
     }
     
-    if(p == "strategise")
-    {
-        cout<<"The "<<teamResources->getCompany()<<" teams aerodynamics engineer formulates it choice of tyre"<<endl;
-
-        int chosenTyre= rand() % 2 ;
-        vector<int> tyres = teamResources->getTyresToOrder();
-        tyres.at(chosenTyre) = tyres.at(chosenTyre) + 1 ;
-        teamResources->setTyresToOrder(tyres);
+    if(p == "strategise"){
+        
     }
 
     if(p == "service"){

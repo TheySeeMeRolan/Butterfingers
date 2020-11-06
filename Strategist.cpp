@@ -46,10 +46,5 @@ void Strategist::handleRequest(string p){
 }
 
 void Strategist::strategise(){
-    cout<<"The "<<teamResources->getCompany()<<" teams strategist formulates it choice of tyre"<<endl;
-
-    int chosenTyre= rand() % 2 ;
-    vector<int> tyres = teamResources->getTyresToOrder();
-    tyres.at(chosenTyre) = tyres.at(chosenTyre) + 1 ;
-    teamResources->setTyresToOrder(tyres);
+//    cout<<"The "<<team->getCompany()<<" teams strategist formulates a race plan"<<endl;
 }
