@@ -16,33 +16,25 @@ using namespace std;
 
 class Race{
 private:
-
     vector<Team*> teams;
-    vector<int> logStatement;
-    vector<Equipment*> equipment;
-    Strategy* strategy;
-    Track* track;
-
     string location;
+    vector<int> logStatement;
     int date;
+    vector<Equipment*> equipment;
+    Track* track;
     bool european;
+    Strategy* strategy;
 public:
     Race(Track* t, string location);
     ~Race();
-
-    //behavioral
-    void update();//update is the ___in the strategy pattern
-    void race();//race simulates the Race-weekend
-
-    //getters
-    vector<int> getLogStatement();
+    void addTeam(Team* t);
+    void update();
+    bool isEuropean();
     string getLocation();
     Track* getTrack();
-    bool isEuropean();
-
-    //setters
-    void addTeam(Team* t);
+    vector<int> getLogStatement();
     void storeEquipment(Equipment* teamEquipment);
+    void race();
 };
 
 #endif //PROJECT_RACE_H

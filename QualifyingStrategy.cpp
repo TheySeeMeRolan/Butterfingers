@@ -27,7 +27,7 @@ vector<Team *> QualifyingStrategy::race(vector<Team *> teams, Track *track) {
         // teams race sim for a km of the race...
         for (int i = 0; i < teams.size(); ++i) {
             if (teamTyreCount.at(i) > 0 && (km % 60 == 0 || teams[i]->getTeamResources()->getTyre()->getThread() <=0 || teams[i]->getTeamResources()->getTyre()->getThread() <=0)) {
-                teams[i]->changeTyre();
+                teams[i]->getLead()->handleRequest("changeTyre");
                 teamTyreCount.at(i)--;
             }
             else if(km % 5 == 0) {
