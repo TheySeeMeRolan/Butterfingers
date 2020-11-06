@@ -1,8 +1,11 @@
+////View TrackPart.h for an example
+
+
 Rules:
   1) Comments can come before the code item.
-  2) For class members and parameters they may also come after them.
-  3)  They may be either brief (one line) or detailed or both.
-  4)  Put the reference documentation type comments (class and method descriptions) in the .h file and not in (or, at least, in addition to) the .cxx files.
+  2) For class members and parameters they may also come after them. ///< for variables of classes
+  3) They may be either brief (one line) or detailed or both.
+  4) Put the reference documentation type comments (class and method descriptions) in the .h file and not in (or, at least, in addition to) the .cxx files.
 
   /**
   *{top of class}
@@ -12,6 +15,9 @@ Rules:
   *followed by longer info of however much needed.
   *
   *@author AuthorName {insert your name}
+  *
+  *{After a variable} ///< one line description of variable
+  */**< long description after variable */ 
   *                   
   *{Before methods}
   *@brief short information
@@ -41,7 +47,7 @@ Add an extra "*"
 Add an extra "/<"
     void DoSomething(); ///< This method does something
 
-Detailed comment after
+                                                                Detailed comment after
 Add an extra "*<"
     void DoNothing(); /**< This is a method that does so
       * much that I must write an epic 
