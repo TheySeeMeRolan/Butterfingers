@@ -37,4 +37,5 @@ void AerodynamicsEngineer::handleRequest(string p){
 
 void AerodynamicsEngineer::changeShape(){
    cout<<"The "<<teamResources->getCompany()<<" team's aerodynamic engineer is changing the shape of the formula one racing car"<<endl;
+//    teamResources->runWindTest(teamResources->getCurrentCar()); // should actually use current car from the hangar
 }

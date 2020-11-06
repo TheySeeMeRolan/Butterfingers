@@ -8,6 +8,9 @@
 TeamResources::TeamResources(string name)
 {
     company = name;
+    construct(); //set current car
+    //initialise the 2 test Types
+
 }
 
 TeamResources::~TeamResources()
@@ -21,20 +24,7 @@ string TeamResources::getCompany()
 }
 
 
-// template
-void TeamResources::runWindTest(Formula1Car * p)
-{
-    // send in the car to the test and have it return a car to replace the memento with
-    // send in future or current car
-    windTest->test(p);
-}
 
-void TeamResources::runSimulationTest(Formula1Car * p)
-{
-    // send in the car to the test and have it return a car to replace the memento with
-    // send in future or current car
-    simulationTest->test(p);
-}
 
 void TeamResources::setUpcomingRaces(tuple<Race *, Race *, Race *> uR)
 {
@@ -159,26 +149,33 @@ void TeamResources::construct()
     this->carPartBuilder[0] = new EnginePartBuilder();
     this->carPartBuilder[0]->buildPart();
     this->currentCar->setEngine(this->carPartBuilder[0]->getPart());
-    srand(1);
+    int seed =  (rand() % 30) + 1;
+    srand(seed);
 
     //Tyre building
     this->carPartBuilder[1] = new TyrePartBuilder();
     this->carPartBuilder[1]->buildPart();
     this->currentCar->setTyre(this->carPartBuilder[1]->getPart());
-    srand(2);
+    // srand(2);
+    seed =  (rand() % 30) + 1;
+    srand(seed);
 
     //Chasis building
     this->carPartBuilder[2] = new ChasisPartBuilder();
     this->carPartBuilder[2]->buildPart();
     this->currentCar->setChasis(this->carPartBuilder[2]->getPart());
-    srand(3);
+    // srand(3);
+    seed =  (rand() % 30) + 1;
+    srand(seed);
 
 
     //Electronics building
     this->carPartBuilder[3] = new ElectronicsPartBuilder();
     this->carPartBuilder[3]->buildPart();
     this->currentCar->setElectronics(this->carPartBuilder[3]->getPart());
-    srand(4);
+    // srand(4);
+    seed =  (rand() % 30) + 1;
+    srand(seed);
 
     //Spoiler building
     this->carPartBuilder[4] = new SpoilerPartBuilder();
@@ -210,3 +207,15 @@ Formula1Car* TeamResources::getCar(bool current)
     }
     return NULL;
 }
+
+int TeamResources::getWindTunnelTokens()
+{
+    return windTunnelTokens;
+}
+
+void TeamResources::setWindTunnelTokens(int p)
+{
+    windTunnelTokens = p;
+}
+
+
