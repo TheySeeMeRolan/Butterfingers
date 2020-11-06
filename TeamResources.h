@@ -9,7 +9,11 @@
 // car builder
 #include "vector"
 #include "Formula1Car.h"
-#include "CarPartBuilder.h"
+#include "EnginePartBuilder.h"
+#include "TyrePartBuilder.h"
+#include "ChasisPartBuilder.h"
+#include "ElectronicsPartBuilder.h"
+#include "SpoilerPartBuilder.h"
 
 //Memento
 #include "CarMemento.h"
