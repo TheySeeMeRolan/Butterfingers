@@ -24,6 +24,7 @@ private:
     Track* track;
     bool european;
     Strategy* strategy;
+    vector<vector<int>> tyreSets;
 public:
     Race(Track* t, string location);
     ~Race();
@@ -35,6 +36,8 @@ public:
     vector<int> getLogStatement();
     void storeEquipment(Equipment* teamEquipment);
     void race();
+    void shipTyres(vector<int> t);
+
 };
 
 #endif //PROJECT_RACE_H

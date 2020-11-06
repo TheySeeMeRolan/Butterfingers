@@ -10,6 +10,9 @@ TeamResources::TeamResources(string name,vector<Race*> sRaces)
     construct();
     company = name;
     raceSchedule = sRaces;
+    vector<int> resetTyres = {0,0,0};
+    this->tyresToOrder = resetTyres;
+
 }
 
 TeamResources::~TeamResources()
@@ -80,7 +83,7 @@ void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
 
 vector< Race *> TeamResources::getRaceSchedule()
 {
-//    return getRaceSchedule;
+    return raceSchedule;
 }
 
 Equipment* TeamResources::getTeamEquipment()
@@ -197,4 +200,12 @@ this->currentWeek = cD;
 int TeamResources::getCurrentWeek()
 {
     return currentWeek;
+}
+
+vector<int> TeamResources::getTyresToOrder() {
+    return this->tyresToOrder;
+}
+
+void TeamResources::setTyresToOrder(vector<int> t) {
+    tyresToOrder=t;
 }

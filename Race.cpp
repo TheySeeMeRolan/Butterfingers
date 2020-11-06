@@ -114,6 +114,10 @@ string Race::getLocation() {
     return location;
 }
 
+void Race::shipTyres(vector<int> t) {
+    tyreSets.push_back(t);
+}
+
 
 
 

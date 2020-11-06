@@ -53,8 +53,55 @@ int main(){
 
     WeekCalender* calender = new WeekCalender();
 
-    vector<Race*> seasonRaces = {new Race(track1,"UK"),new Race(track1,"SPAIN"),new Race(track1,"FRANCE"),new Race(track1,"BELGIUM")
-                                 ,new Race(track2,"SA"),new Race(track2,"USA")};
+    vector<Race*> seasonRaces = {
+                                 nullptr,                                       //week 0
+                                 nullptr,                                       //week 1
+                                 nullptr,                                       //week 2
+                                 nullptr,                                       //week 3
+                                 new Race(track1,"UK"),                 //week 4
+                                 nullptr,                                       //week 5
+                                 new Race(track1,"SPAIN"),              //week 6
+                                 nullptr,                                       //week 7
+                                 new Race(track1,"FRANCE"),             //week 8
+                                 nullptr,                                       //week 9
+                                 new Race(track1,"BELGIUM"),            //week 10
+                                 nullptr,                                       //week 11
+                                 new Race(track1,"Monaco"),             //week 12
+                                 nullptr,                                       //week 13
+                                 new Race(track1,"Germany"),            //week 14
+                                 nullptr,                                       //week 15
+                                 new Race(track1,"Hungary"),            //week 16
+                                 nullptr,                                       //week 17
+                                 new Race(track1,"Italy"),              //week 18
+                                 nullptr,                                       //week 19
+                                 new Race(track1,"Austria"),            //week 20
+                                 nullptr,                                       //week 21
+                                 new Race(track1,"FRANCE"),             //week 22
+                                 nullptr,                                       //week 23
+                                 new Race(track1,"MONACO"),             //week 24
+                                 nullptr,                                       //week 25
+                                 //NON EU
+                                 new Race(track2,"Japan"),              //week 26
+                                 nullptr,                                       //week 27
+                                 new Race(track2,"China"),              //week 28
+                                 nullptr,                                       //week 29
+                                 new Race(track2,"Sweden"),             //week 30
+                                 nullptr,                                       //week 31
+                                 new Race(track2,"South Korea"),        //week 32
+                                 nullptr,                                       //week 33
+                                 new Race(track2,"Singapore"),          //week 34
+                                 nullptr,                                       //week 35
+                                 new Race(track2,"Russia"),             //week 36
+                                 nullptr,                                       //week 37
+                                 new Race(track2,"United States"),      //week 38
+                                 nullptr,                                       //week 39
+                                 new Race(track2,"United Arab Emirates"), //week 40
+                                 nullptr,                                       //week 41
+                                 new Race(track2,"South-Africa"),       //week 42
+                                 nullptr,                                       //week 43
+                                 new Race(track2,"Malaysia")           //week 44
+
+    };
 
 
 
@@ -99,15 +146,6 @@ int main(){
     race->addTeam(team8);
     race->addTeam(team9);
     race->addTeam(team10);
-
-        cout<<"HIEEEEEEEEEEEEEERRRRR"<<((Driver*)team3->getDriver())->getLuck()<<endl;
-        cout<<"HIEEEEEEEEEEEEEERRRRR"<<((Driver*)team3->getDriver())->getSkill()<<endl;
-        AerodynamicsFactory* aF = new AerodynamicsFactory(nullptr,nullptr);
-//        Human* AWE = aF->makePersonnel(nullptr);
-//    cout<<"HIEEEEEEEEEEEEEERRRRR"<< ((Driver*)AWE)->getSkill()<<endl;
-//    cout<<"HIEEEEEEEEEEEEEERRRRR"<< ((Driver*)AWE)->getLuck()<<endl;
-
-    team3->getDriver();
 
 
 //    Equipment* equipment = new Equipment("Stuff");

@@ -38,7 +38,7 @@ private:
     Test * windTest;
     Test * simulationTest;
     string company;
-
+    vector<int> tyresToOrder;
 
 public:
     void construct();
@@ -73,6 +73,8 @@ public:
 
 
     Formula1Car *getCar(bool current);
+    vector<int> getTyresToOrder();
+    void setTyresToOrder(vector<int> t);
 };
 
 
