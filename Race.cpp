@@ -1,12 +1,13 @@
 #include "Race.h"
 #include "Team.h"
 
-Race::Race(Track *t, string location) {
+Race::Race(Track *t, string location,Log* logIn) {
     track = t;
     this->location = location;
     date = 0;
     update();
     european = track->isEuropean();
+    log = logIn;
 //    count =0;
 }
 
@@ -93,6 +94,12 @@ void Race::race() {
     for (int k = 0; k < logStatement.size(); ++k) {
         cout <<"Team " << teamsCopy[k]->getTeamResources()->getCompany()<<" finished in position: " << logStatement[k]+1 << endl;
     }
+
+    cout << endl;
+
+    log->addScores(logStatement);
+
+    log->printStandings();
 
     cout << endl;
 

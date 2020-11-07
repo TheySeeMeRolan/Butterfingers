@@ -4,6 +4,7 @@
 //member variable includes
 #include "Equipment.h"
 #include "Track.h"
+#include "Log.h"
 
 //includes for the strategy pattern
 #include "Strategy.h"
@@ -25,6 +26,7 @@ private:
     vector<Equipment*> equipment;
     vector<int> logStatement;
     vector<vector<int>> tyreSets;
+    Log* log;
 
     //pointers to objects
     Strategy* strategy;
@@ -36,7 +38,7 @@ private:
     bool european;
 
 public:
-    Race(Track* t, string location);
+    Race(Track* t, string location,Log* logIn);
     ~Race();
 
     //behavioral
