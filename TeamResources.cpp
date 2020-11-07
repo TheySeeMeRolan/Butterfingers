@@ -10,6 +10,9 @@ TeamResources::TeamResources(string name,vector<Race*> sRaces)
     construct();
     company = name;
     raceSchedule = sRaces;
+    vector<int> resetTyres = {0,0,0};
+    this->tyresToOrder = resetTyres;
+
 }
 
 TeamResources::~TeamResources()
@@ -201,6 +204,14 @@ this->currentWeek = cD;
 int TeamResources::getCurrentWeek()
 {
     return currentWeek;
+}
+
+vector<int> TeamResources::getTyresToOrder() {
+    return this->tyresToOrder;
+}
+
+void TeamResources::setTyresToOrder(vector<int> t) {
+    tyresToOrder=t;
 }
 
 CarPartBuilder *TeamResources::getTyrePartBuilder() {

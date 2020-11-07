@@ -16,12 +16,12 @@ using namespace std;
 
 class Race{
 private:
-
     vector<Team*> teams;
     vector<int> logStatement;
     vector<Equipment*> equipment;
     Strategy* strategy;
     Track* track;
+    vector<vector<int>> tyreSets;
 
     string location;
     int date;
@@ -43,6 +43,8 @@ public:
     //setters
     void addTeam(Team* t);
     void storeEquipment(Equipment* teamEquipment);
+    void shipTyres(vector<int> t);
+
 };
 
 #endif //PROJECT_RACE_H

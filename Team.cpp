@@ -1,3 +1,4 @@
+
 #include "Team.h"
 
 
@@ -37,6 +38,7 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     command[4] = new SimulationTestingCommand(lead);
     command[5] = new ServiceCommand(lead);
     command[6] = new ChangeTyreCommand(lead);
+    command[7] = new OrderTyresCommand(lead);
 }
 
 Team::~Team(){
@@ -82,6 +84,10 @@ void Team::changeTyre()
     command[6]->execute();
 }
 
+void Team::orderTyres()
+{
+command[7]->execute();
+}
 
 vector<int> Team::getDriver() {
     return driverStats;
@@ -160,6 +166,3 @@ void Team::update()
 //    cout<<"Team "<<teamResources->getCompany()<<" gets updated week : "<<currentWeek<<endl;
 
 }
-
-
-

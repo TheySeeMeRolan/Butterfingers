@@ -108,4 +108,4 @@ QualifyingStrategy::~QualifyingStrategy() {
 //                teams[j+1] = temp;
 //            }
 //        }
-//    }
+//    

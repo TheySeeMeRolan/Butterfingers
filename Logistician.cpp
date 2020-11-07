@@ -8,20 +8,30 @@ void Logistician::handleRequest(string p){
     if(p == "prepare")
     {
         Race* raceThisWeek = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek());
-        Race* race1Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek()+4);
-        Race* race3Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek()+12);
 
-        if(race3Month!= nullptr)
+        Race* race3Month = nullptr;
+
+
+
+        if (teamResources->getCurrentWeek()<31 )
+        {
+            cout<<teamResources->getCurrentWeek() + 2<<endl;
+
+            race3Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek() + 12);
+        }
+
+
+        if(teamResources->getCurrentWeek()<=31 && race3Month!= nullptr)
         {
             if (!race3Month->getTrack()->isEuropean())
                 shipContainerNonEuropean();
         }
-        if(race1Month!= nullptr && !race1Month->getTrack()->isEuropean())
-        {
-            orderTyres();
-        }
         if(raceThisWeek != nullptr)
         {
+            cout<< "\U0001F3C1"<<"\U0001F3C1"<<"\U0001F3C1"<< "\U0001F3C1"<<"\U0001F3C1"<<"\U0001F3C1"<< "\U0001F3C1"<<"\U0001F3C1"<<"\U0001F3C1"
+            <<" RACE " <<raceThisWeek->getLocation()<<" "
+            <<"\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1" <<endl;
+
             this->prepareForRace();
             travelToRace();
         }
@@ -37,10 +47,10 @@ void Logistician::handleRequest(string p){
     {
 
     }
-    
-    if(p == "strategise")
+
+        if(p == "strategise")
     {
-        
+
     }
 
     if(p == "service")
@@ -78,11 +88,6 @@ void Logistician::travelToRace()
     cout<<"The "<<teamResources->getCompany()<<" team logistician aranges transport for the team and they travel to the race"<<endl;
     teamResources->getRaceSchedule().at(teamResources->getCurrentWeek())->addTeam(this->team);
 
-}
-void Logistician::orderTyres()
-{
-    cout<<"The "<<teamResources->getCompany()<<" team logistician orders tyres for the race taking place in one months time , as specified by engineers and strategist"<<endl;
-    // need some fucntion here
 }
 
 void Logistician::shipContainerNonEuropean()

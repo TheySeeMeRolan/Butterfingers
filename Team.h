@@ -13,6 +13,7 @@
 #include "TestingCommand.h"
 #include "ServiceCommand.h"
 #include "ChangeTyreCommand.h"
+#include "OrderTyresCommand.h"
 #include "WindTestingCommand.h"
 #include "SimulationTestingCommand.h"
 #include "Driver.h"
@@ -30,7 +31,7 @@ private:
     WeekCalender* calender;
     Human * lead;
     Driver* driver;
-    Command* command[7];
+    Command* command[8];
     TeamResources* teamResources;
     HumanFactory** factories;
     int currentWeek;
@@ -52,6 +53,7 @@ public:
     void testSimulation();
     void service();
     void changeTyre();
+    void orderTyres();
 
     TeamResources* getTeamResources();
     //getters for the personnel hierarchy

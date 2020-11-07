@@ -26,5 +26,3 @@ PracticeStrategy::~PracticeStrategy() {
 vector<Team *> PracticeStrategy::sort(vector<Team *>t, vector<int>, vector<int> &) {
     return t;
 }
-
-

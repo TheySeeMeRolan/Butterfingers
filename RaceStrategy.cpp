@@ -96,5 +96,3 @@ vector<Team *> RaceStrategy::sort(vector<Team *> teams, vector<int> teamScore, v
     }
     return teams;
 }
-
-
