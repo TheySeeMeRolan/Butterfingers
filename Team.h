@@ -13,7 +13,6 @@
 #include "TestingCommand.h"
 #include "ServiceCommand.h"
 #include "ChangeTyreCommand.h"
-#include "OrderTyresCommand.h"
 #include "WindTestingCommand.h"
 #include "SimulationTestingCommand.h"
 #include "Driver.h"
@@ -53,7 +52,6 @@ public:
     void testSimulation();
     void service();
     void changeTyre();
-    void orderTyres();
 
     TeamResources* getTeamResources();
     //getters for the personnel hierarchy
