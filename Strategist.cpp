@@ -54,10 +54,16 @@ void Strategist::handleRequest(string p){
 }
 
 void Strategist::strategise(){
-    cout<<"The "<<teamResources->getCompany()<<" teams strategist formulates it choice of tyre"<<endl;
+    cout<<left << setw(75)<<"The "+ teamResources->getCompany()+" teams STRATEGIST formulates it choice of tyre : ";
 
     int chosenTyre= rand() % 3 ;
     vector<int> tyres = teamResources->getTyresToOrder();
     tyres.at(chosenTyre) = tyres.at(chosenTyre) + 1 ;
     teamResources->setTyresToOrder(tyres);
+    if (chosenTyre==0)
+        cout<<"soft "<<endl;
+    if (chosenTyre==1)
+        cout<<"medium "<<endl;
+    if (chosenTyre==2)
+        cout<<"hard "<<endl;
 }

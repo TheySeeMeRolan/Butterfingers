@@ -167,6 +167,7 @@ void Team::update()
     currentWeek = calender->getWeek();
     teamResources->setCurrentWeek(currentWeek);
     cout<<"Team "<<teamResources->getCompany()<<" receives Calender Notification AND gets updated week : "<<currentWeek<<endl;
+    cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ "<<teamResources->getCompany()<<" WEEK : "<<currentWeek<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ "<<endl;
     prepare();
     strategise();
     orderTyres();

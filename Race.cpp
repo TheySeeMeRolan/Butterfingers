@@ -52,28 +52,37 @@ void Race::race() {
     while (dayCounter < 4) {
 
         if(dayCounter==0 && track->isEuropean()) {
-            std::cout<<"--Running the Friday European Practice race in: " + location +"--\n";
+            std::cout<<   "-------"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"--Running the Friday European Practice race in: " + location +"--"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"-------"<<"\n";
         }
         else if(dayCounter==0) {
-            std::cout<<"--Running the Friday Non-European Practice race in: " + location +"--\n";
+            std::cout<<   "-------"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"--Running the Friday Non-European Practice race in: " + location +"--"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"-------"<<"\n";
         }
         else if(dayCounter==1 && track->isEuropean()) {
-            std::cout<<"--Running the Saturday European Practice race in: " + location +"--\n";
+            std::cout<<   "-------"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"--Running the Saturday European Practice race in: " + location +"--"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"-------"<<"\n";
         }
         else if(dayCounter==1) {
-            std::cout<<"--Running the Saturday Non-European Qualifying race in: " + location +"--\n";
+            std::cout<<   "-------"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"--Running the Saturday Non-European Practice race in: " + location +"--"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"\U0001F534"<<"-------"<<"\n";
+
         }
         else if(dayCounter==2 && track->isEuropean()) {
-            std::cout<<"--Running the European Qualifying race in: " + location +"--\n";
+            std::cout<<   "-------"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"-------Running the European Qualifying race in:" + location +"--"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"------------"<<"\n";
+
         }
         else if(dayCounter==2) {
+            std::cout<<   "-------"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"-------Running the Non-European Qualifying race in:" + location +"--"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"------------"<<"\n";
+
             std::cout<<"--Running the Non-European Qualifying race in: " + location +"--\n";
         }
-        else if(dayCounter==3 && track->isEuropean()) {
-            std::cout<<"--Running the European Race in: " + location +"--\n";
+        else if(dayCounter==3 && track->isEuropean())
+        {
+            std::cout<<   "-------"<<"\U0001F7E2"<<"\U0001F7E2"<<"\U0001F7E2"<<"\U0001F7E2"<<"\U0001F7E2"<<"-------Running the European ACTUAL race in:" + location +"-------"<<"\U0001F7E2"<<"\U0001F7E2"<<"\U0001F7E2"<<"\U0001F7E2"<<"\U0001F7E2"<<"-------"<<"\n";
+
+
+//            std::cout<<"--Running the European Race in: " + location +"--\n";
         }
         else if(dayCounter==3) {
-            std::cout<<"--Running the European Race in: " + location +"--\n";
+            std::cout<<   "-------"<<"\U0001F7E2"<<"\U0001F7E2"<<"\U0001F7E2"<<"\U0001F7E2"<<"\U0001F7E2"<<"-------Running the Non-European ACTUAL race in:" + location +"-------"<<"\U0001F7E2"<<"\U0001F7E2"<<"\U0001F7E2"<<"\U0001F7E2"<<"\U0001F7E2"<<"-------"<<"\n";
+
         }
 
         teams = strategy->race(teams,track, tyreSets); //teams will be set according to race strategy's race method qualifying will reshuffle the teams such that the starting positions are different
@@ -92,7 +101,7 @@ void Race::race() {
         }
     }
     for (int k = 0; k < logStatement.size(); ++k) {
-        cout <<"Team " << teamsCopy[k]->getTeamResources()->getCompany()<<" finished in position: " << logStatement[k]+1 << endl;
+        cout<< setw(45)<<"Team " + teamsCopy[k]->getTeamResources()->getCompany() +" finished in position: " << logStatement[k]+1 << endl;
     }
 
     int size = logStatement.size();
@@ -153,6 +162,10 @@ Track* Race::getTrack() {
 void Race::addTeam(Team *t) {
     teams.push_back(t);
     if(teams.size()==10){
+        cout<< "--------------"<<"\U0001F3C1"<<"\U0001F6A5"<<"\U0001F3C1"<<"---"<<"\U0001F3C1"<<"\U0001F6A5"<<"\U0001F3C1";
+        cout <<" RACE WEEEKEND IN "<< getLocation()<<" ( WEEK "<<teams[0]->getTeamResources()->getCurrentWeek()<<" ) ";
+        cout<< "\U0001F3C1"<<"\U0001F6A5"<<"\U0001F3C1"<<"---"<<"\U0001F3C1"<<"\U0001F6A5"<<"\U0001F3C1"<<"--------------"<<endl;
+
         race();
     }
 }
