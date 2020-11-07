@@ -36,10 +36,10 @@ bool Simulation::run(){
     teamResources->construct(); // recreate the current car
 
     Formula1Car * test = teamResources->getCar(true); // get current car
-    var1 = before->getEngine()->getHorsePower();
-    var2 = before->getEngine()->getTorque();
-    var3 = before->getElectronics()->getAssistance();
-    var4 = before->getElectronics()->getEfficiency();
+    var1 = test->getEngine()->getHorsePower();
+    var2 = test->getEngine()->getTorque();
+    var3 = test->getElectronics()->getAssistance();
+    var4 = test->getElectronics()->getEfficiency();
 
     int result2 = var1 + var2 + var3 + var4;
 
