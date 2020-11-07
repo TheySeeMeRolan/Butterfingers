@@ -26,31 +26,31 @@ private:
 public:
     /**
      * @brief add leaf parts to vector
-     * The pure virtual method to allow the track {Composite} to add parts {Leafs} in to the vector
+     * The implementation of the method to add parts {Leafs} in to the sections vector
      * @param part pointer to a TrackPart 
      */
     void addPart(TrackPart* part);
     /**
      * @brief return difficulty of track 
-     * The virtual method that returns the total difficulty of the track or of each leaf.
+     * The implementation of the method that returns the total difficulty of the track. It will sum the difficulties of the trackPart leafs in the sections vector.
      * @return int of difficulty
      */
     int getTotalDifficulty();
     /**
      * @brief return difficulty of track 
-     * The virtual method that returns the total difficulty of the track or of each leaf.
+     * The implementation of the method that returns the total length of the track. It will sum the lengths of the trackPart leafs in the sections vector.
      * @return int of difficulty
      */
     int getTotalLength();
     /**
      * @brief test if track is european
-     * The pure virtual method to determine if the track is in Europe.
+     * The implementation of the method to determine if the track is in Europe.
      * @return Boolean indicating European 
      */
     bool isEuropean();
     /**
      * @brief return type of track 
-     * The virtual method that returns the trackPartType of Composite track, Left Curve, Straight or Right Curve.
+     * The implementation of the method that returns the trackPartType of Composite track.
      * @return string track part type
     */    
     string getTrackPartType();
