@@ -1,9 +1,10 @@
 /**
  * @class StraightFactory
- * @brief Concrete factory participant 
+ * @brief Concrete factory participant.
  * 
  * The concrete participant ConcreteFactory of Factory design pattern. 
  * Implements the virtual functions defined in the base class.
+ * Instantiates StraightParts of the track.
  * 
  * @author Luke Partridge u19010240
  * 
@@ -17,20 +18,20 @@
 class StraightFactory: public TrackPartFactory{
 public:
     /**
-     * @brief create track parts (parameterized)
+     * @brief create track parts (parameterized).
      * Implementation of creating the Straight trackParts with parameterized values.
-     * @param length int of part length
-     * @param difficulty int of part difficulty
+     * @param length int of part length.
+     * @param difficulty int of part difficulty.
      */
    TrackPart* createPart(int l, int d);
     /**
-     * @brief create track parts
+     * @brief create track parts.
      * The implementation to create Straight trackParts with random values for length and difficulty.
      */
    TrackPart* createPart();
     /**
-     * @brief destructor
-     * The concrete destructor that ensure this derived class is destroyed before the base class TrackPartFactory
+     * @brief destructor.
+     * The concrete destructor that ensures this derived class is destroyed before the base class TrackPartFactory.
     */
    ~StraightFactory();
 };
