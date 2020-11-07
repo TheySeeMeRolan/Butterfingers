@@ -129,7 +129,6 @@ int main(){
 
     calender->startSeason();
 
-
 //    Race* race = new Race(track1,"Soweto");
 //
 //    cout<<endl;
