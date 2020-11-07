@@ -22,7 +22,10 @@
 #include "ChasisFactory.h"
 #include "EngineFactory.h"
 #include "TeamResources.h"
-
+#include "Test.h"
+#include "WindTunnel.h"
+#include "Simulation.h"
+#include "Hangar.h"
 using namespace std;
 class Team : public Observer
 {
@@ -36,6 +39,9 @@ private:
     HumanFactory** factories;
     int currentWeek;
     vector<int> driverStats;
+    Test * windTest;
+    Test * simulationTest;
+
 
 public:
     Team(WeekCalender* schedule, string,vector<Race*>);
@@ -70,6 +76,9 @@ public:
     Human* getLead();
 
 
+    void runSimulationTest(Formula1Car *p);
+
+    void runWindTest(Formula1Car *p);
 };
 
 

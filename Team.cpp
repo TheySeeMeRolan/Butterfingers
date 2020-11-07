@@ -39,13 +39,15 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     command[5] = new ServiceCommand(lead);
     command[6] = new ChangeTyreCommand(lead);
     command[7] = new OrderTyresCommand(lead);
+
+    Hangar* hangar = new Hangar();
+    windTest = new WindTunnel(teamResources,hangar);
+    simulationTest = new Simulation(teamResources,hangar);
+
 }
 
 Team::~Team(){
-    // for(int i ; i < 4)
-    // {
 
-    // }
 }
 
 // "button" functions
@@ -67,11 +69,14 @@ void Team::strategise()
 void Team::testWindTunnel()
 {
     command[3]->execute();
+    runWindTest(teamResources->getCar(true)); // get current car from hangar
 }
 
 void Team::testSimulation()
 {
     command[4]->execute();
+    runSimulationTest(teamResources->getCar(true)); // get current car from hangar
+
 }
 
 void Team::service()
@@ -165,4 +170,17 @@ void Team::update()
     prepare();
     strategise();
     orderTyres();
+}
+void Team::runWindTest(Formula1Car * p)
+{
+    // send in the car to the test and have it return a car to replace the memento with
+    // send in future or current car
+    windTest->test(p);
+}
+
+void Team::runSimulationTest(Formula1Car * p)
+{
+    // send in the car to the test and have it return a car to replace the memento with
+    // send in future or current car
+    simulationTest->test(p);
 }
