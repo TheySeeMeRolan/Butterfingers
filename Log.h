@@ -22,6 +22,7 @@ public:
     void AddTeams(vector<Team*>);
     void addScores(vector<int>);
     void printStandings();
+    void printFinalStandings();
 private:
     vector <int> scores;
     vector <string> teamNames;

@@ -8,13 +8,15 @@ void WeekCalender::goToNextWeek()
 
 void WeekCalender::startSeason()
 {
-    cout<<" ###################### SEASON STARTS #####################"<<endl;
+    cout<<"##################################### SEASON STARTS ####################################"<<endl;
+
     for(int a= 0;a<45;a++)
     {
         goToNextWeek();
         notify();
     }
-    cout<<" #################### SEASON HAS ENDED ####################"<<endl;
+    cout<<"\n################################# SEASON HAS ENDED ###################################"<<endl;
+
 
 
 }
