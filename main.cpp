@@ -13,7 +13,7 @@ includes for generating tracks
 #include "Track.h"
 #include "Team.h"
 #include "Race.h"
-
+#include "Log.h"
 
 /*
 includes for generating teams???
@@ -104,28 +104,25 @@ int main(){
     };
 
 
+    vector<Team*> teams = {new Team(calender, "Mercedes",seasonRaces),
+                           new Team(calender, "Ferrari",seasonRaces),
+                           new Team(calender, "McLaren",seasonRaces),
+                           new Team(calender, "Renault",seasonRaces),
+                           new Team(calender, "AlphaTauri",seasonRaces),
+                           new Team(calender, "Williams Racing",seasonRaces),
+                           new Team(calender, "Hass F1 Team",seasonRaces),
+                           new Team(calender, "Lotus",seasonRaces),
+                           new Team(calender, "Alfa Romeo",seasonRaces),
+                           new Team(calender, "Toro Rosso",seasonRaces)
+                           };
 
-    Team* team1 = new Team(calender, "Mercedes",seasonRaces);
-    Team* team2 = new Team(calender, "Ferrari",seasonRaces);
-    Team* team3 = new Team(calender, "McLaren",seasonRaces);
-    Team* team4 = new Team(calender, "Renault",seasonRaces);
-    Team* team5 = new Team(calender, "AlphaTauri",seasonRaces);
-    Team* team6 = new Team(calender, "Williams Racing",seasonRaces);
-    Team* team7 = new Team(calender, "Hass F1 Team",seasonRaces);
-    Team* team8 = new Team(calender, "Lotus",seasonRaces);
-    Team* team9 = new Team(calender, "Alfa Romeo",seasonRaces);
-    Team* team10 = new Team(calender, "Toro Rosso",seasonRaces);
+    vector<  Team*  >::iterator team_it = teams.begin();
 
-    calender->attach(team1);
-    calender->attach(team2);
-    calender->attach(team3);
-    calender->attach(team4);
-    calender->attach(team5);
-    calender->attach(team6);
-    calender->attach(team7);
-    calender->attach(team8);
-    calender->attach(team9);
-    calender->attach(team10);
+    for(team_it= teams.begin(); team_it!= teams.end(); ++team_it)
+    {
+        calender->attach(*team_it);
+
+    }
 
     calender->startSeason();
 
@@ -136,16 +133,18 @@ int main(){
     Equipment* equipment = new Equipment("Stuff");
     race->storeEquipment(equipment);
 
-    race->addTeam(team1);
-    race->addTeam(team2);
-    race->addTeam(team3);
-    race->addTeam(team4);
-    race->addTeam(team5);
-    race->addTeam(team6);
-    race->addTeam(team7);
-    race->addTeam(team8);
-    race->addTeam(team9);
-    race->addTeam(team10);
+
+
+//    race->addTeam(team1);
+//    race->addTeam(team2);
+//    race->addTeam(team3);
+//    race->addTeam(team4);
+//    race->addTeam(team5);
+//    race->addTeam(team6);
+//    race->addTeam(team7);
+//    race->addTeam(team8);
+//    race->addTeam(team9);
+//    race->addTeam(team10);
 
 
 //    Equipment* equipment = new Equipment("Stuff");
@@ -155,6 +154,17 @@ int main(){
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
 
 
+    Log champ1= Log();
+    champ1.AddTeams(teams);
+    vector<int> first = {10,9,8,7,6,5,4,3,2,1};
+    vector<int> second = {10,9,8,7,6,5,4,3,2,1};
+    vector<int> thirds = {10,9,8,7,6,1,4,6,2,4};
+    champ1.addScores(first);
+    champ1.printStandings();
+    champ1.addScores(second);
+    champ1.printStandings();
+    champ1.addScores(thirds);
+    champ1.printStandings();
 
     // commands and chain of responsibility
     // team1->prepare(); // needs to be implemented still
