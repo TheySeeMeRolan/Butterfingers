@@ -170,6 +170,12 @@ void Team::update()
     prepare();
     strategise();
     orderTyres();
+
+    if (teamResources->getRaceSchedule().at(currentWeek)== nullptr)
+    {
+        testWindTunnel();
+        testSimulation();
+    }
 }
 void Team::runWindTest(Formula1Car * p)
 {
