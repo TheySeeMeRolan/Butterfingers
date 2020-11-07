@@ -25,11 +25,12 @@ includes for generating teams???
 using namespace std;
 
 int main(){
-
     cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
     cout<<"\033[1;36m       INITIALISATIONS    \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
 
+
+    srand(0);
     //Create Tracks
     TrackPartFactory* trackGenerator[3];
     trackGenerator[0] = new LeftCurveFactory();

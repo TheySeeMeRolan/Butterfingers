@@ -8,19 +8,19 @@ ChasisEngineer::ChasisEngineer(Team* t, Human * s,TeamResources* tR):Engineering
 void ChasisEngineer::handleRequest(string p){
 
     if(p == "prepare"){
-        
+
     }
-    
+
     if(p == "test simulation"){
         test();
     }
-    
+
     if(p == "test windtunnel"){
         test();
     }
-    
+
     if(p == "strategise"){
-        
+
     }
 
     if(p == "service")
@@ -41,9 +41,9 @@ void ChasisEngineer::handleRequest(string p){
         }
 
     }
-    
+
     if(p == "racing"){
-        
+
     }
 
     if (successor) {

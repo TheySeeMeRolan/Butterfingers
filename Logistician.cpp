@@ -26,29 +26,30 @@ void Logistician::handleRequest(string p){
             if (!race3Month->getTrack()->isEuropean())
                 shipContainerNonEuropean();
         }
+
         if(raceThisWeek != nullptr)
         {
             cout<< "\U0001F3C1"<<"\U0001F3C1"<<"\U0001F3C1"<< "\U0001F3C1"<<"\U0001F3C1"<<"\U0001F3C1"<< "\U0001F3C1"<<"\U0001F3C1"<<"\U0001F3C1"
-            <<" RACE " <<raceThisWeek->getLocation()<<" "
-            <<"\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1" <<endl;
+                <<" RACE " <<raceThisWeek->getLocation()<<" "
+                <<"\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1" <<endl;
 
             this->prepareForRace();
             travelToRace();
         }
 
     }
-    
+
     if(p == "test simulation")
     {
 
     }
-    
+
     if(p == "test windtunnel")
     {
 
     }
 
-        if(p == "strategise")
+    if(p == "strategise")
     {
 
     }
@@ -57,13 +58,28 @@ void Logistician::handleRequest(string p){
     {
 //        std::cout<<"Servicing\n";
     }
-    
+
     if(p == "racing")
     {
 //        this->analyseTrack();
     }
+    if(p == "orderTyres")
+    {
 
-    if (successor) 
+        Race* race1Month= nullptr;
+        if (teamResources->getCurrentWeek()<=39 )
+        {
+            race1Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek() + 4);
+        }
+        if(race1Month!= nullptr ) //&& !race1Month->getTrack()->isEuropean()
+        {
+            orderTyres();
+        }
+
+    }
+
+
+    if (successor)
     {
         successor->handleRequest(p);
     }
@@ -90,6 +106,7 @@ void Logistician::travelToRace()
 
 }
 
+
 void Logistician::shipContainerNonEuropean()
 {
 
@@ -105,4 +122,14 @@ void Logistician::shipContainerEuropean()
 void Logistician::equipRace(Race *race, Equipment *equipment)
 {
     race->storeEquipment(equipment);
+}
+void Logistician::orderTyres()
+{
+
+
+    cout<<"The "<<teamResources->getCompany()<<" teams logistician orders for the tyres for the race occurring in 1 month"<<endl;
+    cout<<"Tyres ordered: soft - "<<teamResources->getTyresToOrder().at(0)<< " medium - "<<teamResources->getTyresToOrder().at(1)<< " hard - "<<teamResources->getTyresToOrder().at(2)<<endl;
+
+    vector<int> resetTyres = {0,0,0};
+    teamResources->setTyresToOrder(resetTyres);
 }

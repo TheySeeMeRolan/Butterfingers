@@ -7,17 +7,17 @@ AerodynamicsEngineer::AerodynamicsEngineer(Team* team, Human * s,TeamResources* 
 
 void AerodynamicsEngineer::handleRequest(string p){
     if(p == "prepare"){
-    
+
     }
-    
+
     if(p == "test simulation"){
 
     }
-    
+
     if(p == "test windtunnel"){
         changeShape();
     }
-    
+
     if(p == "strategise"){
         Race* race1Month= nullptr;
         if (teamResources->getCurrentWeek()<=39 )
@@ -40,9 +40,9 @@ void AerodynamicsEngineer::handleRequest(string p){
     if(p == "service"){
 
     }
-    
+
     if(p == "racing"){
-        
+
     }
 
     if (successor) {
@@ -51,5 +51,5 @@ void AerodynamicsEngineer::handleRequest(string p){
 }
 
 void AerodynamicsEngineer::changeShape(){
-   cout<<"The "<<teamResources->getCompany()<<" team's aerodynamic engineer is changing the shape of the formula one racing car"<<endl;
+    cout<<"The "<<teamResources->getCompany()<<" team's aerodynamic engineer is changing the shape of the formula one racing car"<<endl;
 }

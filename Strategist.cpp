@@ -6,43 +6,51 @@ Strategist::Strategist(Team* t, Human * s,TeamResources* tR): Personnel(t, s,tR)
 }
 
 void Strategist::handleRequest(string p){
-    
+
     if(p == "prepare")
     {
 
     }
-    
+
     if(p == "test simulation")
     {
 
     }
-    
+
     if(p == "test windtunnel")
     {
 
     }
-    
+
     if(p == "strategise")
     {
-        this->strategise();
+        Race* race1Month= nullptr;
+        if (teamResources->getCurrentWeek()<=39 )
+        {
+            race1Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek() + 4);
+        }
+        if(race1Month!= nullptr ) //&& !race1Month->getTrack()->isEuropean()
+        {
+            this->strategise();
+        }
     }
 
     if(p == "service")
     {
 
     }
-    
+
     if(p == "racing")
     {
-        
+
     }
 
     // send it along the line
-    if (successor) 
+    if (successor)
     {
         successor->handleRequest(p);
     }
-    
+
 }
 
 void Strategist::strategise(){

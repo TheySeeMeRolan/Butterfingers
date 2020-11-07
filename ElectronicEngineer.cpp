@@ -10,15 +10,15 @@ void ElectronicEngineer::handleRequest(string p){
     if(p == "prepare"){
         tinker();
     }
-    
+
     if(p == "test simulation"){
-        
+
     }
-    
+
     if(p == "test windtunnel"){
 
     }
-    
+
     if(p == "strategise")
     {
         Race* race1Month= nullptr;
@@ -41,9 +41,9 @@ void ElectronicEngineer::handleRequest(string p){
     if(p == "service"){
         tinker();
     }
-    
+
     if(p == "racing"){
-        
+
     }
 
     if (successor) {
@@ -52,5 +52,5 @@ void ElectronicEngineer::handleRequest(string p){
 }
 
 void ElectronicEngineer::tinker(){
-   cout<<"The "<<teamResources->getCompany()<<" team's electronic engineer is fiddling with the electronics."<<endl;
+    cout<<"The "<<teamResources->getCompany()<<" team's electronic engineer is fiddling with the electronics."<<endl;
 }

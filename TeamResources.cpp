@@ -134,26 +134,22 @@ void TeamResources::construct()
     this->carPartBuilder[0] = new EnginePartBuilder();
     this->carPartBuilder[0]->buildPart();
     this->currentCar->setEngine(this->carPartBuilder[0]->getPart());
-    srand(1);
 
     //Tyre building
     this->carPartBuilder[1] = new TyrePartBuilder();
     this->carPartBuilder[1]->buildPart();
     this->currentCar->setTyre(this->carPartBuilder[1]->getPart());
-    srand(2);
 
     //Chasis building
     this->carPartBuilder[2] = new ChasisPartBuilder();
     this->carPartBuilder[2]->buildPart();
     this->currentCar->setChasis(this->carPartBuilder[2]->getPart());
-    srand(3);
 
 
     //Electronics building
     this->carPartBuilder[3] = new ElectronicsPartBuilder();
     this->carPartBuilder[3]->buildPart();
     this->currentCar->setElectronics(this->carPartBuilder[3]->getPart());
-    srand(4);
 
     //Spoiler building
     this->carPartBuilder[4] = new SpoilerPartBuilder();

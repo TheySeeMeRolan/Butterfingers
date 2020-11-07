@@ -2,7 +2,7 @@
 
 Chasis::Chasis():CarPart("Chasis")
 {
-    srand((unsigned)time(NULL));
+
     int hgt = rand() % 100 + 1;
     int ADS = rand() % 100 + 1;
     this->height = hgt;
