@@ -95,6 +95,42 @@ void Race::race() {
         cout <<"Team " << teamsCopy[k]->getTeamResources()->getCompany()<<" finished in position: " << logStatement[k]+1 << endl;
     }
 
+    int size = logStatement.size();
+    logStatement.clear();
+
+    for (int k = 0; k < size; ++k) {
+        if(logStatement[k]==0) {
+            logStatement.push_back(25);
+        }
+        else if (logStatement[k]==1) {
+            logStatement.push_back(18);
+        }
+        else if (logStatement[k]==2) {
+            logStatement.push_back(15);
+        }
+        else if (logStatement[k]==3) {
+            logStatement.push_back(12);
+        }
+        else if (logStatement[k]==4) {
+            logStatement.push_back(10);
+        }
+        else if (logStatement[k]==5) {
+            logStatement.push_back(8);
+        }
+        else if (logStatement[k]==6) {
+            logStatement.push_back(6);
+        }
+        else if (logStatement[k]==7) {
+            logStatement.push_back(4);
+        }
+        else if (logStatement[k]==8) {
+            logStatement.push_back(2);
+        }
+        else if (logStatement[k]==9) {
+            logStatement.push_back(1);
+        }
+    }
+
     cout << endl;
 
     log->addScores(logStatement);
