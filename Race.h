@@ -26,6 +26,7 @@ private:
     string location;
     int date;
     bool european;
+    int count;
 public:
     Race(Track* t, string location);
     ~Race();

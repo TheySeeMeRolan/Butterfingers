@@ -22,7 +22,7 @@ void EngineEngineer::handleRequest(string p){
     if(p == "strategise"){
 
         Race* race1Month= nullptr;
-        if (teamResources->getCurrentWeek()<=39 )
+        if (teamResources->getCurrentWeek()<=40 )
         {
             race1Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek() + 4);
         }

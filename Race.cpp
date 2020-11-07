@@ -7,6 +7,7 @@ Race::Race(Track *t, string location) {
     date = 0;
     update();
     european = track->isEuropean();
+    count =0;
 }
 
 Race::~Race() {

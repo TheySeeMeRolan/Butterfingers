@@ -13,15 +13,13 @@ void Logistician::handleRequest(string p){
 
 
 
-        if (teamResources->getCurrentWeek()<31 )
+        if (teamResources->getCurrentWeek()<32 )
         {
-            cout<<teamResources->getCurrentWeek() + 2<<endl;
-
             race3Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek() + 12);
         }
 
 
-        if(teamResources->getCurrentWeek()<=31 && race3Month!= nullptr)
+        if(teamResources->getCurrentWeek()<=32 && race3Month!= nullptr)
         {
             if (!race3Month->getTrack()->isEuropean())
                 shipContainerNonEuropean();
@@ -67,7 +65,7 @@ void Logistician::handleRequest(string p){
     {
 
         Race* race1Month= nullptr;
-        if (teamResources->getCurrentWeek()<=39 )
+        if (teamResources->getCurrentWeek()<=40 )
         {
             race1Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek() + 4);
         }
@@ -111,6 +109,8 @@ void Logistician::shipContainerNonEuropean()
 {
 
     equipRace(teamResources->getRaceSchedule().at(teamResources->getCurrentWeek()+12), teamResources->getTeamEquipment());
+    cout<<"The "<<teamResources->getCompany()<<" team logistician sees there is a non-European race in 3 months time and ships the team's container to the race in : "<<teamResources->getRaceSchedule().at(teamResources->getCurrentWeek()+12)->getLocation()<<endl;
+
 
 }
 void Logistician::shipContainerEuropean()
@@ -128,6 +128,7 @@ void Logistician::orderTyres()
 
 
     cout<<"The "<<teamResources->getCompany()<<" teams logistician orders for the tyres for the race occurring in 1 month"<<endl;
+    teamResources->getRaceSchedule().at(teamResources->getCurrentWeek()+4)->shipTyres(teamResources->getTyresToOrder());
     cout<<"Tyres ordered: soft - "<<teamResources->getTyresToOrder().at(0)<< " medium - "<<teamResources->getTyresToOrder().at(1)<< " hard - "<<teamResources->getTyresToOrder().at(2)<<endl;
 
     vector<int> resetTyres = {0,0,0};
