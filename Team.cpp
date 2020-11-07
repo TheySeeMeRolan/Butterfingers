@@ -27,8 +27,6 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     tempHuman = factories[2]->makeEngineer(tempHuman); // logistician with pitcrew successor
     lead = tempHuman;
 
-    lead = tempHuman;
-
     /// Create the commands ( to use the personnel )
     command[0] = new PrepareCommand(lead);
     command[1] = new RacingCommand(lead);
@@ -37,6 +35,7 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     command[4] = new SimulationTestingCommand(lead);
     command[5] = new ServiceCommand(lead);
     command[6] = new ChangeTyreCommand(lead);
+    command[7] = new OrderTyresCommand(lead);
 }
 
 Team::~Team(){
@@ -82,6 +81,10 @@ void Team::changeTyre()
     command[6]->execute();
 }
 
+void Team::orderTyres()
+{
+command[7]->execute();
+}
 
 vector<int> Team::getDriver() {
     return driverStats;
@@ -156,6 +159,10 @@ void Team::update()
     currentWeek = calender->getWeek();
     teamResources->setCurrentWeek(currentWeek);
     cout<<"Team "<<teamResources->getCompany()<<" receives Calender Notification AND gets updated week : "<<currentWeek<<endl;
+    prepare();
+    strategise();
+    orderTyres();
+
 
 //    cout<<"Team "<<teamResources->getCompany()<<" gets updated week : "<<currentWeek<<endl;
 

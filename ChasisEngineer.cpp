@@ -23,7 +23,22 @@ void ChasisEngineer::handleRequest(string p){
         
     }
 
-    if(p == "service"){
+    if(p == "service")
+    {
+        Race* race1Month= nullptr;
+        if (teamResources->getCurrentWeek()<=39 )
+        {
+            race1Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek() + 4);
+        }
+        if(race1Month!= nullptr ) //&& !race1Month->getTrack()->isEuropean()
+        {
+            cout<<"The "<<teamResources->getCompany()<<" teams aerodynamics engineer formulates it choice of tyre"<<endl;
+
+            int chosenTyre= rand() % 3 ;
+            vector<int> tyres = teamResources->getTyresToOrder();
+            tyres.at(chosenTyre) = tyres.at(chosenTyre) + 1 ;
+            teamResources->setTyresToOrder(tyres);
+        }
 
     }
     
