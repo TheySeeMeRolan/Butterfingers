@@ -36,7 +36,7 @@ public:
     virtual TrackPart* createPart()=0;
     /**
      * @brief virtual destructor.
-     * The virtual destructor that ensure the base class TrackPartFactory is destroyed after the derived class.
+     * The virtual destructor that ensures the base class TrackPartFactory is destroyed after the derived class.
     */
     virtual ~TrackPartFactory();
 };

@@ -57,7 +57,7 @@ public:
     virtual string getTrackPartType();
     /**
      * @brief virtual destructor.
-     * The virtual destructor that ensure the base class TrackPart is destroyed after the derived class.
+     * The virtual destructor that ensures the base class TrackPart is destroyed after the derived class.
     */
     virtual ~TrackPart();
     /**
