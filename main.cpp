@@ -30,7 +30,6 @@ int main(){
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
 
 
-    srand(0);
     //Create Tracks
     TrackPartFactory* trackGenerator[3];
     trackGenerator[0] = new LeftCurveFactory();

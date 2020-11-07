@@ -19,11 +19,11 @@ void ChasisEngineer::handleRequest(string p){
         test();
     }
 
-    if(p == "strategise"){
+    if(p == "service"){
 
     }
 
-    if(p == "service")
+    if(p == "strategise")
     {
         Race* race1Month= nullptr;
         if (teamResources->getCurrentWeek()<=39 )

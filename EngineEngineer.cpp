@@ -34,7 +34,6 @@ void EngineEngineer::handleRequest(string p){
             vector<int> tyres = teamResources->getTyresToOrder();
             tyres.at(chosenTyre) = tyres.at(chosenTyre) + 1 ;
             teamResources->setTyresToOrder(tyres);
-
         }
 
 

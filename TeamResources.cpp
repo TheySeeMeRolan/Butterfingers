@@ -188,7 +188,7 @@ Formula1Car* TeamResources::getCar(bool current)
 }
 
 void TeamResources::setRaceSchedule(vector<Race *> uR) {
-    this->raceSchedule;
+    this->raceSchedule = uR;
 
 }
 
