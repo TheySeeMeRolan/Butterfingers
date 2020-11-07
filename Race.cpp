@@ -23,14 +23,17 @@ Race::~Race() {
 void Race::update() {
     switch (date) {
         case 0:
-            delete strategy;
             strategy = new PracticeStrategy();
             break;
         case 1:
             delete strategy;
-            strategy = new QualifyingStrategy();
+            strategy = new PracticeStrategy();
             break;
         case 2:
+            delete strategy;
+            strategy = new QualifyingStrategy();
+            break;
+        case 3:
             delete strategy;
             strategy = new RaceStrategy();
             break;
@@ -44,28 +47,34 @@ void Race::update() {
 void Race::race() {
     int dayCounter = 0;
     vector<Team*> teamsCopy = teams;
-    while (dayCounter < 3) {
+    while (dayCounter < 4) {
 
         if(dayCounter==0 && track->isEuropean()) {
-            std::cout<<"--Running a European Practice race in: " + location +"--\n";
+            std::cout<<"--Running the Friday European Practice race in: " + location +"--\n";
         }
         else if(dayCounter==0) {
-            std::cout<<"--Running a Non-European Practice race in: " + location +"--\n";
+            std::cout<<"--Running the Friday Non-European Practice race in: " + location +"--\n";
         }
         else if(dayCounter==1 && track->isEuropean()) {
-            std::cout<<"--Running a European Qualifying race in: " + location +"--\n";
+            std::cout<<"--Running the Saturday European Practice race in: " + location +"--\n";
         }
         else if(dayCounter==1) {
-            std::cout<<"--Running a Non-European Qualifying race in: " + location +"--\n";
+            std::cout<<"--Running the Saturday Non-European Qualifying race in: " + location +"--\n";
         }
         else if(dayCounter==2 && track->isEuropean()) {
-            std::cout<<"--Running a European Race in: " + location +"--\n";
+            std::cout<<"--Running the European Qualifying race in: " + location +"--\n";
         }
         else if(dayCounter==2) {
-            std::cout<<"--Running a European Race in: " + location +"--\n";
+            std::cout<<"--Running the Non-European Qualifying race in: " + location +"--\n";
+        }
+        else if(dayCounter==3 && track->isEuropean()) {
+            std::cout<<"--Running the European Race in: " + location +"--\n";
+        }
+        else if(dayCounter==3) {
+            std::cout<<"--Running the European Race in: " + location +"--\n";
         }
 
-        teams = strategy->race(teams,track); //teams will be set according to race strategy's race method qualifying will reshuffle the teams such that the starting positions are different
+        teams = strategy->race(teams,track, tyreSets); //teams will be set according to race strategy's race method qualifying will reshuffle the teams such that the starting positions are different
         date++;
         this->update(); //changes the strategy based on the date variable
         dayCounter++;
@@ -80,6 +89,12 @@ void Race::race() {
             }
         }
     }
+    for (int k = 0; k < logStatement.size(); ++k) {
+        cout <<"Team " << teamsCopy[k]->getTeamResources()->getCompany()<<" finished in position: " << logStatement[k]+1 << endl;
+    }
+
+    cout << endl;
+
     teams = teamsCopy;
     for(auto& team: teams) {
         team->service();

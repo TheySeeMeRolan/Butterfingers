@@ -53,6 +53,7 @@ int main(){
 
     WeekCalender* calender = new WeekCalender();
 
+
     vector<Race*> seasonRaces = {
                                  nullptr,                                       //week 0
                                  nullptr,                                       //week 1
@@ -104,7 +105,6 @@ int main(){
     };
 
 
-
     Team* team1 = new Team(calender, "Mercedes",seasonRaces);
     Team* team2 = new Team(calender, "Ferrari",seasonRaces);
     Team* team3 = new Team(calender, "McLaren",seasonRaces);
@@ -130,22 +130,22 @@ int main(){
     calender->startSeason();
 
 
-    Race* race = new Race(track1,"Soweto");
-
-    cout<<endl;
-    Equipment* equipment = new Equipment("Stuff");
-    race->storeEquipment(equipment);
-
-    race->addTeam(team1);
-    race->addTeam(team2);
-    race->addTeam(team3);
-    race->addTeam(team4);
-    race->addTeam(team5);
-    race->addTeam(team6);
-    race->addTeam(team7);
-    race->addTeam(team8);
-    race->addTeam(team9);
-    race->addTeam(team10);
+//    Race* race = new Race(track1,"Soweto");
+//
+//    cout<<endl;
+//    Equipment* equipment = new Equipment("Stuff");
+//    race->storeEquipment(equipment);
+//
+//    race->addTeam(team1);
+//    race->addTeam(team2);
+//    race->addTeam(team3);
+//    race->addTeam(team4);
+//    race->addTeam(team5);
+//    race->addTeam(team6);
+//    race->addTeam(team7);
+//    race->addTeam(team8);
+//    race->addTeam(team9);
+//    race->addTeam(team10);
 
 
 //    Equipment* equipment = new Equipment("Stuff");

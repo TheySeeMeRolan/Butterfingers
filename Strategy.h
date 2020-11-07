@@ -1,6 +1,7 @@
 #ifndef PROJECT_STRATEGY_H
 #define PROJECT_STRATEGY_H
 
+//functionality includes
 #include "Track.h"
 #include "Team.h"
 
@@ -13,9 +14,8 @@ using namespace std;
 
 class Strategy{
 public:
-    virtual vector<Team*> race(vector<Team*> team, Track* track)=0;
+    virtual vector<Team*> race(vector<Team*> team, Track* track,vector<vector<int>>)=0;
     virtual int determineTeamRaceScore(Team*,int, int)=0;
-     virtual vector<Team*> sort(vector<Team*>t,vector<int>, vector<int>&) { return t;};
     virtual ~Strategy(){};
 };
 
