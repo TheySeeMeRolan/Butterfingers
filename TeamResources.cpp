@@ -10,9 +10,6 @@ TeamResources::TeamResources(string name,vector<Race*> sRaces)
     construct();
     company = name;
     raceSchedule = sRaces;
-    vector<int> resetTyres = {0,0,0};
-    this->tyresToOrder = resetTyres;
-
 }
 
 TeamResources::~TeamResources()
@@ -98,9 +95,8 @@ Engine *TeamResources::getEngine() {
     return currentCar->getEngine();
 }
 
-Tyre **TeamResources::getTyre() {
-//    return currentCar->getTyre();
-    return nullptr;
+Tyre *TeamResources::getTyre() {
+    return currentCar->getTyres();
 }
 
 Chasis *TeamResources::getChasis() {
@@ -160,21 +156,26 @@ void TeamResources::construct()
     this->carPartBuilder[4] = new SpoilerPartBuilder();
     this->carPartBuilder[4]->buildPart();
     this->currentCar->setSpoiler(this->carPartBuilder[4]->getPart());
+
+    this->currentCar2 = cloneCar();
+    this->futureCar = cloneCar();
 }
 
-void TeamResources::cloneCar() {
-    this->futureCar = new Formula1Car();
+Formula1Car* TeamResources::cloneCar() {
+    Formula1Car* car = new Formula1Car();
 
     if (currentCar == nullptr){
         cout << "currentCar needs to be set first to clone it to futureCar" << endl;
         this->construct();
     }
 
-    this->futureCar->setEngine(this->carPartBuilder[0]->getPart());
-    this->futureCar->setTyre(this->carPartBuilder[1]->getPart());
-    this->futureCar->setChasis(this->carPartBuilder[2]->getPart());
-    this->futureCar->setElectronics(this->carPartBuilder[3]->getPart());
-    this->futureCar->setSpoiler(this->carPartBuilder[4]->getPart());
+    car->setEngine(this->carPartBuilder[0]->getPart());
+    car->setTyre(this->carPartBuilder[1]->getPart());
+    car->setChasis(this->carPartBuilder[2]->getPart());
+    car->setElectronics(this->carPartBuilder[3]->getPart());
+    car->setSpoiler(this->carPartBuilder[4]->getPart());
+
+    return car;
 }
 
 Formula1Car* TeamResources::getCar(bool current)
@@ -202,10 +203,6 @@ int TeamResources::getCurrentWeek()
     return currentWeek;
 }
 
-vector<int> TeamResources::getTyresToOrder() {
-    return this->tyresToOrder;
-}
-
-void TeamResources::setTyresToOrder(vector<int> t) {
-    tyresToOrder=t;
+CarPartBuilder *TeamResources::getTyrePartBuilder() {
+    return this->carPartBuilder[1];
 }

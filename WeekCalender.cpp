@@ -9,7 +9,7 @@ void WeekCalender::goToNextWeek()
 void WeekCalender::startSeason()
 {
     cout<<" ###################### SEASON STARTS #####################"<<endl;
-    for(int a= 0;a<45;a++)
+    for(int a= 0;a<46;a++)
     {
         goToNextWeek();
         notify();

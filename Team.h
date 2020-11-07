@@ -12,6 +12,8 @@
 #include "StrategiseCommand.h"
 #include "TestingCommand.h"
 #include "ServiceCommand.h"
+#include "ChangeTyreCommand.h"
+#include "OrderTyresCommand.h"
 #include "WindTestingCommand.h"
 #include "SimulationTestingCommand.h"
 #include "Driver.h"
@@ -20,7 +22,6 @@
 #include "ChasisFactory.h"
 #include "EngineFactory.h"
 #include "TeamResources.h"
-#include "OrderTyresCommand.h"
 
 using namespace std;
 class Team : public Observer
@@ -51,6 +52,7 @@ public:
     void testWindTunnel();
     void testSimulation();
     void service();
+    void changeTyre();
     void orderTyres();
 
     TeamResources* getTeamResources();

@@ -31,24 +31,27 @@ private:
     int currentWeek;
     vector <Race*> raceSchedule;
     Equipment* teamEquipment;
+
     Formula1Car* currentCar;
+    Formula1Car* currentCar2;
+
     Formula1Car* futureCar;
     CarPartBuilder* carPartBuilder[5];
     int windTunnelTokens;
     Test * windTest;
     Test * simulationTest;
     string company;
-    vector<int> tyresToOrder;
+
 
 public:
     void construct();
-    void cloneCar();
+    Formula1Car* cloneCar();
     TeamResources(string,vector<Race*> sRaces);
     string getCompany();
     void test(Formula1Car* c);
     void changeTestType();
     Engine* getEngine();
-    Tyre** getTyre();
+    Tyre* getTyre();
     Chasis* getChasis();
     Electronics* getElectronics();
     Spoiler* getSpoiler();
@@ -73,8 +76,7 @@ public:
 
 
     Formula1Car *getCar(bool current);
-    vector<int> getTyresToOrder();
-    void setTyresToOrder(vector<int> t);
+    CarPartBuilder* getTyrePartBuilder();
 };
 
 

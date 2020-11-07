@@ -34,7 +34,7 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     command[3] = new WindTestingCommand(lead);
     command[4] = new SimulationTestingCommand(lead);
     command[5] = new ServiceCommand(lead);
-
+    command[6] = new ChangeTyreCommand(lead);
     command[7] = new OrderTyresCommand(lead);
 }
 
@@ -76,6 +76,15 @@ void Team::service()
     command[5]->execute();
 }
 
+void Team::changeTyre()
+{
+    command[6]->execute();
+}
+
+void Team::orderTyres()
+{
+command[7]->execute();
+}
 
 Human* Team::getDriver() {
     Human* temp = lead;
@@ -163,8 +172,5 @@ void Team::update()
 
 }
 
-void Team::orderTyres()
-{
-command[7]->execute();
-}
+
 
