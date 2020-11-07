@@ -15,7 +15,6 @@ class Strategy{
 public:
     virtual vector<Team*> race(vector<Team*> team, Track* track)=0;
     virtual int determineTeamRaceScore(Team*,int, int)=0;
-    virtual vector<Team*> sort(vector<Team*>t,vector<int>, vector<int>&) { return t;};
     virtual ~Strategy(){};
 };
 

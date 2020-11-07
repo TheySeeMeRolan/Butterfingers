@@ -7,7 +7,7 @@ PitCrew::PitCrew(Team* team, Human * s,TeamResources* tR): Personnel(team, s,tR)
 
 void PitCrew::handleRequest(string p){
     
-    if(p == "changeTyre")
+    if(p == "prepare")
     {
         this->changeTyre();
     }
@@ -44,7 +44,7 @@ void PitCrew::handleRequest(string p){
 }
 
 void PitCrew::changeTyre(){
-    teamResources->getTyrePartBuilder()->buildPart();
-    teamResources->getCar(true)->setTyre(teamResources->getTyrePartBuilder()->getPart());
+//     team->changeTyre();
+    // string newTyre = team->getTyre();
     cout<<"The "<<teamResources->getCompany()<<" teams Pitcrew changes the cars tyre."<<endl;
 }

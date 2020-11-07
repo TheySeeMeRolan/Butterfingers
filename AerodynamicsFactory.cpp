@@ -4,11 +4,13 @@ AerodynamicsFactory::AerodynamicsFactory(Team* team,TeamResources* tR): HumanFac
 
 }
 
-Driver* AerodynamicsFactory::makePersonnel(Human * s){
+Human* AerodynamicsFactory::makePersonnel(Human * s){
     int skill= (rand()%(100-0)+1)+0;
-    int luck= (rand()%(100-0)+1)+0;
+    cout<<"SKILLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"<< skill<<endl;
+    int luck= (rand()%(100-0)+1)+0;    cout<<
+    "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLUCK"<< luck<<endl;
 
-    Driver* re= new Driver(getTeam(),s,luck,skill,getTeamResources());
+    Human* re= new Driver(getTeam(),s,luck,skill,getTeamResources());
     return re;
 }
 
