@@ -1,0 +1,14 @@
+#ifndef PROJECT_WINDTESTINGCOMMAND_H
+#define PROJECT_WINDTESTINGCOMMAND_H
+
+#include "Command.h"
+
+class WindTestingCommand: public Command{
+public:
+    virtual void execute();
+    WindTestingCommand(Human *h);
+};
+
+
+
+#endif 

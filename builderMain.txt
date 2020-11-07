@@ -1,0 +1,95 @@
+#include <iostream>
+#include "Formula1Car.h"
+#include "EnginePartBuilder.h"
+#include "TyrePartBuilder.h"
+#include "ChasisPartBuilder.h"
+#include "ElectronicsPartBuilder.h"
+#include "SpoilerPartBuilder.h"
+
+using namespace std;
+
+int main(){
+    cout << endl << "Testing Car Builder" << endl;
+    cout << "------------------------------" << endl << endl;
+
+    //This should all happen inside the construct() function for team
+    Formula1Car* f1fastBoi = new Formula1Car();
+    CarPartBuilder* carCreator[5];
+    
+    //Engine building
+    carCreator[0] = new EnginePartBuilder();
+    carCreator[0]->buildPart();
+    f1fastBoi->setEngine(carCreator[0]->getPart());
+
+    cout << "Printing Engine information: " << endl;
+    cout << "------------------------------" << endl;
+    cout << "Part type (Engine): ";
+    cout << f1fastBoi->getEngine()->getType() << endl;
+    cout << "Horse ponies (random): ";
+    cout << f1fastBoi->getEngine()->getHorsePower() << endl;
+    cout << "Torque bois (random): ";
+    cout << f1fastBoi->getEngine()->getTorque() << endl << endl;
+
+    //Tyre building
+    carCreator[1] = new TyrePartBuilder();
+    carCreator[1]->buildPart();
+    f1fastBoi->setTyre(carCreator[1]->getPart());
+
+    cout << "Printing Tyre information: " << endl;
+    cout << "------------------------------" << endl;
+    cout << "Part type (Tyre): ";
+    cout << f1fastBoi->getTyres()->getType() << endl;
+    cout << "Tyre pressure (random): ";
+    cout << f1fastBoi->getTyres()->getPressure() << endl;
+    cout << "Thread level (random): ";
+    cout << f1fastBoi->getTyres()->getThread() << endl << endl;
+
+    //Chasis building
+    carCreator[2] = new ChasisPartBuilder();
+    carCreator[2]->buildPart();
+    f1fastBoi->setChasis(carCreator[2]->getPart());
+
+    cout << "Printing Chasis information: " << endl;
+    cout << "------------------------------" << endl;
+    cout << "Part type (Chasis): ";
+    cout << f1fastBoi->getChasis()->getType() << endl;
+    cout << "Aerodynamics score (random): ";
+    cout << f1fastBoi->getChasis()->getAerodynamicsScore() << endl;
+    cout << "Height ?lol? (random): ";
+    cout << f1fastBoi->getChasis()->getHeight() << endl  << endl;
+
+    //Electronics building
+    carCreator[3] = new ElectronicsPartBuilder();
+    carCreator[3]->buildPart();
+    f1fastBoi->setElectronics(carCreator[3]->getPart());
+
+    cout << "Printing Electronics information: " << endl;
+    cout << "------------------------------" << endl;
+    cout << "Part type (Electronics): ";
+    cout << f1fastBoi->getElectronics()->getType() << endl;
+    cout << "Assistance (random): ";
+    cout << f1fastBoi->getElectronics()->getAssistance() << endl;
+    cout << "Efficiency (random): ";
+    cout << f1fastBoi->getElectronics()->getEfficiency() << endl  << endl;
+
+    //Spoiler building
+    carCreator[4] = new SpoilerPartBuilder();
+    carCreator[4]->buildPart();
+    f1fastBoi->setSpoiler(carCreator[4]->getPart());
+
+    cout << "Printing Spoiler information: " << endl;
+    cout << "------------------------------" << endl;
+    cout << "Part type (Spoiler): ";
+    cout << f1fastBoi->getSpoiler()->getType()  << endl;
+    cout << "Aerodynamics score (random): ";
+    cout << f1fastBoi->getSpoiler()->getAerodynamicsScore() << endl;
+    cout << "Weight much? (random): ";
+    cout << f1fastBoi->getSpoiler()->getWeight() << endl << endl;
+
+
+
+
+    //--------------------------------------------------------------------
+    cout << "------------------------------" << endl;
+    cout << "I run completely YAY!" << endl;
+}

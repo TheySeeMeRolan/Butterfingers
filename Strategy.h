@@ -1,0 +1,22 @@
+#ifndef PROJECT_STRATEGY_H
+#define PROJECT_STRATEGY_H
+
+#include "Track.h"
+#include "Team.h"
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+class Team;
+using namespace std;
+
+class Strategy{
+public:
+    virtual vector<Team*> race(vector<Team*> team, Track* track)=0;
+    virtual int determineTeamRaceScore(Team*,int, int)=0;
+     virtual vector<Team*> sort(vector<Team*>t,vector<int>, vector<int>&) { return t;};
+    virtual ~Strategy(){};
+};
+
+#endif //PROJECT_STRATEGY_H

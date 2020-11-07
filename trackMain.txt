@@ -1,0 +1,98 @@
+#include <iostream>
+/*
+includes for generating tracks
+--------------------------------
+*/
+
+#include "TrackPartFactory.h"
+#include "LeftCurveFactory.h"
+#include "RightCurveFactory.h"
+#include "StraightFactory.h"
+#include "Track.h"
+
+#include <vector>
+
+using namespace std;
+
+int main(){
+    cout << endl << "Track Testing" << endl;
+    cout << "----------------------------------" << endl << endl;
+
+
+    cout << "Creating factories" << endl;
+    cout << "----------------------------------" << endl;
+    TrackPartFactory* trackGenerator[3];
+    trackGenerator[0] = new LeftCurveFactory();
+    trackGenerator[1] = new StraightFactory();
+    trackGenerator[2] = new RightCurveFactory();
+    cout << "Factories created successfully" << endl << endl << endl;
+
+
+
+    cout << "Manually storing trackparts (do NOT do it this way) - all 10,2" << endl;
+    cout << "----------------------------------" << endl;
+    TrackPart* trackParts[3]; // should be avoided since track destructor will delete all trackparts (so they should be made anonymously as shown later)
+    for (int x=0; x<3; x++){
+        trackParts[x] = trackGenerator[x]->createPart(10,2); // just for testing
+    }
+    cout << endl << "TrackParts made successfully"<< endl << endl;
+
+
+
+    cout << endl << "Testing functions on manually stored parts" << endl;
+    cout << "----------------------------------" << endl << endl;
+    for (int x=0; x<3; x++){
+        cout << trackParts[x]->getTrackPartType() << endl;
+        cout << "Difficulty (2): ";
+        cout << trackParts[x]->getTotalDifficulty() << endl;
+        cout << "Length (10): ";
+        cout << trackParts[x]->getTotalLength() << endl << endl;
+    }
+    cout << endl << "TrackParts functions successful" << endl << endl;
+
+
+
+    cout << endl << "Deleting manually stored parts (3)" << endl;
+    cout << "----------------------------------" << endl << endl;
+    delete trackParts[0];
+    delete trackParts[1];
+    delete trackParts[2];
+    cout << endl << "TrackParts deleted successfully" << endl << endl;
+
+
+    
+
+    cout << endl << "Adding anonymous trackparts to TrackComposite (do it this way in final) - all 5,8" << endl;
+    cout << "----------------------------------" << endl << endl;
+    Track* track1 = new Track(true);
+    track1->addPart(trackGenerator[0]->createPart(5,8));
+    track1->addPart(trackGenerator[1]->createPart(5,8));
+    track1->addPart(trackGenerator[2]->createPart(5,8));
+    cout << endl << "Added anonymous trackParts to TrackComposite successfully" << endl;
+
+    cout << endl << "Testing composite functions" << endl;
+    cout << "----------------------------------" << endl << endl;
+    cout << track1->getTrackPartType() << endl << endl;
+    cout << "Track isEuropean? (true) :";
+    cout << boolalpha << track1->isEuropean() << endl << endl;
+    cout << "Total difficulty (24) : " << track1->getTotalDifficulty() << endl << endl;
+    cout << "Total length (15) : " << track1->getTotalLength() << endl << endl;
+
+
+    cout << endl << "Retrieved getTrackPartType() and isEuropean on composite successfully" << endl << endl << endl;
+
+
+    cout << "Destructing the remaining Factories(3) and track Composite (should delete all 3 anonymous trackParts)" << endl;
+    cout << "----------------------------------" << endl << endl;
+    delete trackGenerator[0];
+    delete trackGenerator[1];
+    delete trackGenerator[2];
+    cout << endl;
+    delete track1;
+    cout << endl << "Deleted all successfully" << endl;
+    
+
+    cout << "----------------------------------" << endl << endl;
+    cout << endl << endl << "I run to the end YAY!" << endl;
+    
+}
