@@ -31,7 +31,7 @@ public:
    TrackPart* createPart();
     /**
      * @brief destructor.
-     * The concrete destructor that ensure this derived class is destroyed before the base class TrackPartFactory.
+     * The concrete destructor that ensures this derived class is destroyed before the base class TrackPartFactory.
     */
    ~StraightFactory();
 };
