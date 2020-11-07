@@ -163,7 +163,7 @@ void Race::addTeam(Team *t) {
     teams.push_back(t);
     if(teams.size()==10){
         cout<< "--------------"<<"\U0001F3C1"<<"\U0001F6A5"<<"\U0001F3C1"<<"---"<<"\U0001F3C1"<<"\U0001F6A5"<<"\U0001F3C1";
-        cout <<" RACE WEEEKEND IN "<< getLocation()<<" ( WEEK "<<teams[0]->getTeamResources()->getCurrentWeek()<<" ) ";
+        cout <<endl<<endl<<" RACE WEEEKEND IN "<< getLocation()<<" ( WEEK "<<teams[0]->getTeamResources()->getCurrentWeek()<<" ) ";
         cout<< "\U0001F3C1"<<"\U0001F6A5"<<"\U0001F3C1"<<"---"<<"\U0001F3C1"<<"\U0001F6A5"<<"\U0001F3C1"<<"--------------"<<endl;
 
         race();
