@@ -25,22 +25,15 @@ string TeamResources::getCompany()
     return company;
 }
 
-
-// template
-void TeamResources::runWindTest(Formula1Car * p)
+int TeamResources::getWindTunnelTokens()
 {
-    // send in the car to the test and have it return a car to replace the memento with
-    // send in future or current car
-    windTest->test(p);
+    return windTunnelTokens;
 }
 
-void TeamResources::runSimulationTest(Formula1Car * p)
+void TeamResources::setWindTunnelTokens(int p)
 {
-    // send in the car to the test and have it return a car to replace the memento with
-    // send in future or current car
-    simulationTest->test(p);
+    windTunnelTokens = p;
 }
-
 
 
 void TeamResources::shipCarToFactory()
