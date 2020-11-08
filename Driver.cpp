@@ -32,7 +32,7 @@ void Driver::handleRequest(string p)
 
 void Driver::drive()
 {
-    cout<<setw(22)<<""<<"Team "<<teamResources->getCompany()<<"'s driver starts the race";
+    cout<<"Team "<<teamResources->getCompany()<<"'s driver starts the race";
 }
 
 

@@ -12,15 +12,23 @@ vector<Team *> RaceStrategy::race(vector<Team *> teams, Track *track, vector<vec
     // each team starts with a starting position score(indicating that starting position in a race affect placing
     if(track->isEuropean()) {
         for (int i = 0; i < teams.size();i++) {
+            std::cout<<setw(15)<<""<< "(First Driver) ";
             teams[i]->race();
-            std::cout<< " in position: "<<i+1<<std::endl;
+            std::cout << " in position: "<<i+1<<std::endl;
+            std::cout<<setw(15)<<""<< "(Second Driver) ";
+            teams[i]->race();
+            std::cout<<" in position: "<<teams.size()+i+1<<std::endl;
             teamScore.push_back(teams.size()-i);
         }
     }
     else {
         for (int i = 0; i < teams.size();i++) {
+            std::cout<<setw(15)<<""<< "(First Driver) ";
             teams[i]->race();
-            std::cout<< " in position: "<<i+1<<std::endl;
+            std::cout << " in position: "<<i+1<<std::endl;
+            std::cout<<setw(15)<<""<< "(Second Driver) ";
+            teams[i]->race();
+            std::cout<<" in position: "<<teams.size()+i+1<<std::endl;
             teamScore.push_back(teams.size()-i);
         }
     }
@@ -111,7 +119,7 @@ int RaceStrategy::determineTeamRaceScore(Team* team, int difficulty, int length)
     // each team starts with a cumulative score of length * difficuly, the random is applied to introduce variability
     int cumulativeTeamScore = length*difficulty*rand();
     // each team has a driver score which is the drivers skill level * the drivers luck(luck acts as a multiplier)
-    int driverScore = team->getDriver().at(0)*team->getDriver().at(1);
+    int driverScore = team->getDriver().at(0)*team->getDriver().at(1) + (team->getDriver().at(2)*team->getDriver().at(3));
     // each team will get a tyreScore depending on the state of the tyres pressure and thread(which will wear out as the race progresses)
     int tyreScore = team->getTeamResources()->getTyre()->getPressure()  + team->getTeamResources()->getTyre()->getThread();
     // each team will get an engineScore based on their car's engine's horsepower and torque

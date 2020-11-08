@@ -20,6 +20,10 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     Human * tempHuman = factories[0]->makePersonnel(nullptr); // chasis engineer with aerodynamics engineer successor
     driverStats.push_back(dynamic_cast<Driver *>(tempHuman)->getSkill()); // driverstats.at(0) is the skill
     driverStats.push_back(dynamic_cast<Driver *>(tempHuman)->getLuck()); // driverstats.at(1) is the luck
+    tempHuman = factories[0]->makePersonnel(nullptr); // creates a second driver
+    driverStats.push_back(dynamic_cast<Driver *>(tempHuman)->getSkill()); // driverstats.at(2) is the skill of the second driver
+    driverStats.push_back(dynamic_cast<Driver *>(tempHuman)->getLuck()); // driverstats.at(3) is the luck of the second driver
+
     tempHuman = factories[3]->makePersonnel(tempHuman); // engine engineer with no successor
     tempHuman = factories[2]->makePersonnel(tempHuman); // electronics engineer with engine engineer successor
     tempHuman = factories[1]->makePersonnel(tempHuman); // aerodynamics engineer with electronics engineer successor
