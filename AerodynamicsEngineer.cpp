@@ -10,8 +10,9 @@ void AerodynamicsEngineer::handleRequest(string p){
 
     }
 
-    if(p == "test simulation"){
-
+    if(p == "test simulation")
+    {
+        changeShape();
     }
 
     if(p == "test windtunnel"){
@@ -44,6 +45,7 @@ void AerodynamicsEngineer::handleRequest(string p){
     }
 
     if(p == "service"){
+        cout<<"The "<<teamResources->getCompany()<<" team's AERODYNAMICS ENGINEER services the cars"<<endl;
 
     }
 

@@ -7,11 +7,11 @@
 
 #include "HumanFactory.h"
 #include "Strategist.h"
-#include "ChasisEngineer.h"
+#include "ChassisEngineer.h"
 
-class ChasisFactory: public HumanFactory{
+class ChassisFactory: public HumanFactory{
 public:
-    ChasisFactory(Team* t,TeamResources* tR);
+    ChassisFactory(Team* t, TeamResources* tR);
     Human * makeEngineer(Human * s) ;
     Human * makePersonnel(Human * s) ;
 };

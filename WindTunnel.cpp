@@ -4,7 +4,7 @@
 
 bool WindTunnel::load(){
 
-    cout<<"LOAD WIND TUNNEL FOR "<<teamResources->getCompany()<<" TEAM."<<endl;
+    cout<<endl<<"                   >>> LOAD WIND TUNNEL FOR "<<teamResources->getCompany()<<" TEAM <<<"<<endl;
 
     int tokensUsed =  (rand() % 30) + 1;
     int currentTokens = teamResources->getWindTunnelTokens();
@@ -18,24 +18,13 @@ bool WindTunnel::load(){
     cout<<"Tokens used in this test: "<<tokensUsed<<endl;
     cout<<"Total Tokens used: "<<teamResources->getWindTunnelTokens()<<endl<<endl;
 
-    cout<<"STATS BEFORE TEST:"<<endl;
-    cout<<"-----------------------"<<endl<<endl;
 
-    cout<<"Aerodynamics Score:"<<endl;
-    cout<<"Spoiler - "<<teamResources->getSpoiler()->getAerodynamicsScore()<<" pts"<<endl;
-    cout<<"Chasis - "<<teamResources->getChasis()->getAerodynamicsScore()<<" pts"<<endl<<endl;
-
-    cout<<"Weight and Height:"<<endl;
-    cout<<"Spoiler Weight - "<<teamResources->getSpoiler()->getWeight()<<" kg"<<endl;
-    cout<<"Chasis Height - "<<teamResources->getChasis()->getHeight()<<" m"<<endl<<endl;
 
     return result;
 }
 
 bool WindTunnel::run(){
-    cout<<"RUNNING WIND TUNNEL TEST"<<endl;
-    cout<<"-----------------------"<<endl<<endl;
-
+    cout<<"-----------------------RUNNING WIND TUNNEL TEST-----------------------"<<endl<<endl;
     // get car from the wind tests hangar
     // teamResources->reinstantiateMemento(); // create memento of the current car
 
@@ -46,14 +35,21 @@ bool WindTunnel::run(){
     int var1 = before->getChasis()->getAerodynamicsScore();
     int var2 = before->getSpoiler()->getAerodynamicsScore();
     int result1 = var1 + var2;
-
+    int originalVar1=var1;
+    int originalVar2=var2;
+    int originalWeight=before->getSpoiler()->getWeight();
+    int originaHeight=before->getChasis()->getHeight();
     teamResources->construct(); // recreate the current car
 
     Formula1Car * test = teamResources->getCar(true); // get current car
     var1 = test->getChasis()->getAerodynamicsScore();
     var2 = test->getSpoiler()->getAerodynamicsScore();
     int result2 = var1 + var2;
+    cout<<setw(12)<<""<<"===STATS BEFORE TEST vs STATS DURING TEST==="<<endl;    cout<<"Aerodynamics Score:"<<endl;
+    cout<<setw(18)<<"Spoiler - "+to_string(originalVar2)+" pts"<<"vs "<<to_string(var2)+" pts"<<endl;
+    cout<<setw(18)<<"Chassis - "+to_string(originalVar1)+" pts"<<"vs "<<to_string(var1)+" pts"<<endl<<endl;
 
+    cout<<setw(24)<<""<<"-------RESULTS:-------"<<endl;
     cout<<"Score Before Test: "<<result1<<endl;
     cout<<"Score After Test:  "<<result2<<endl;
 

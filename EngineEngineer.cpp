@@ -11,11 +11,13 @@ void EngineEngineer::handleRequest(string p){
 
     }
 
-    if(p == "test simulation"){
-
+    if(p == "test simulation")
+    {
+        cout<<"The "<<teamResources->getCompany()<<" team's engine engineer is testing out ENGINE changes."<<endl;
     }
 
     if(p == "test windtunnel"){
+        cout<<"The "<<teamResources->getCompany()<<" team's engine engineer is testing out ENGINE changes."<<endl;
 
     }
 
@@ -60,5 +62,5 @@ void EngineEngineer::handleRequest(string p){
 
 
 void EngineEngineer::useWrench(){
-    cout<<"The "<<teamResources->getCompany()<<" team's engine engineer is using the wrench."<<endl;
+    cout<<"The "<<teamResources->getCompany()<<" team's ENGINE ENGINEER services the cars"<<endl;
 }

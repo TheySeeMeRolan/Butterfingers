@@ -19,7 +19,7 @@
 #include "Driver.h"
 #include "AerodynamicsFactory.h"
 #include "ElectronicFactory.h"
-#include "ChasisFactory.h"
+#include "ChassisFactory.h"
 #include "EngineFactory.h"
 #include "TeamResources.h"
 #include "Test.h"

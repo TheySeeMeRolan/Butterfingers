@@ -5,15 +5,16 @@ vector<Team *> PracticeStrategy::race(vector<Team *> teams, Track *track,vector<
     if(track->isEuropean()) {
         for (int i = 0; i < teams.size();i++) {
             teams[i]->race();
-            std::cout<<i+1<<std::endl;
+            std::cout<< " in position: "<<i+1<<std::endl;
         }
     }
     else {
         for (int i = 0; i < teams.size();i++) {
             teams[i]->race();
-            std::cout<<i+1<<std::endl;
+            std::cout<< " in position: "<<i+1<<std::endl;
         }
     }
+    cout<<endl<<setw(30)<<left<<""<<" ======= Race completed =======" <<right<<endl;
     return teams;
 }
 

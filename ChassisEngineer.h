@@ -7,12 +7,12 @@
 
 #include "Engineering.h"
 
-class ChasisEngineer: public Engineering{
+class ChassisEngineer: public Engineering{
 public:
     void handleRequest(string s);
     void test();
-//    ChasisEngineer();
-    ChasisEngineer(Team* team, Human * s,TeamResources* tR);
+//    ChassisEngineer();
+    ChassisEngineer(Team* team, Human * s, TeamResources* tR);
 };
 
 #endif //PROJECT_CHASISENGINEER_H

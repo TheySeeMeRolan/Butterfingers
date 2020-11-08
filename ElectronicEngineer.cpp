@@ -12,10 +12,12 @@ void ElectronicEngineer::handleRequest(string p){
     }
 
     if(p == "test simulation"){
+        cout<<"The "<<teamResources->getCompany()<<" team's electronic engineer is testing out ELECTRONICS changes."<<endl;
 
     }
 
     if(p == "test windtunnel"){
+        cout<<"The "<<teamResources->getCompany()<<" team's electronic engineer is testing out ENGINE changes."<<endl;
 
     }
 
@@ -61,5 +63,5 @@ void ElectronicEngineer::handleRequest(string p){
 }
 
 void ElectronicEngineer::tinker(){
-    cout<<"The "<<teamResources->getCompany()<<" team's electronic engineer is fiddling with the electronics."<<endl;
+    cout<<"The "<<teamResources->getCompany()<<" team's ELECTRONICS ENGINEER services the cars."<<endl;
 }

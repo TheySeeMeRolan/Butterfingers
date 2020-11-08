@@ -3,7 +3,7 @@
 void WeekCalender::goToNextWeek()
 {
     this->week++;
-    cout<< endl <<" >>> Calender week changes from "<< week -1 <<" to "<<week<< "<<<"<<endl;
+    cout<< endl <<setw(22)<<""<<" >>> Calender week changes from "<< week -1 <<" to "<<week<< "<<<"<<endl;
 }
 
 void WeekCalender::startSeason()
@@ -23,7 +23,7 @@ void WeekCalender::startSeason()
 
 void WeekCalender::notify()
 {
-    cout<<" >>>    CALENDER NOTIFIES OBSERVERS     <<< "<<endl;
+    cout<<setw(22)<<""<<" >>>    CALENDER NOTIFIES OBSERVERS    <<< "<<endl;
 
     vector<  Observer*  >::iterator Obs_it = teams.begin();
     for(Obs_it= teams.begin(); Obs_it!= teams.end(); ++Obs_it)

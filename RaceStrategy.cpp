@@ -13,14 +13,14 @@ vector<Team *> RaceStrategy::race(vector<Team *> teams, Track *track, vector<vec
     if(track->isEuropean()) {
         for (int i = 0; i < teams.size();i++) {
             teams[i]->race();
-            std::cout<<i+1<<std::endl;
+            std::cout<< " in position: "<<i+1<<std::endl;
             teamScore.push_back(teams.size()-i);
         }
     }
     else {
         for (int i = 0; i < teams.size();i++) {
             teams[i]->race();
-            std::cout<<i+1<<std::endl;
+            std::cout<< " in position: "<<i+1<<std::endl;
             teamScore.push_back(teams.size()-i);
         }
     }

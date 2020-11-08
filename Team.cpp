@@ -12,16 +12,17 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     factories = new HumanFactory*[4];
     factories[0] = new AerodynamicsFactory(this,teamResources);
     factories[1] = new ElectronicFactory(this,teamResources);
-    factories[2] = new ChasisFactory(this,teamResources);
+    factories[2] = new ChassisFactory(this, teamResources);
     factories[3] = new EngineFactory(this,teamResources);
 
     // Strategist holds Driver, driver holds Logistician etc , start creation from the back (EngineEngineer)
-    Human * tempHuman = factories[3]->makePersonnel(nullptr); // engine engineer with no successor
-    tempHuman = factories[2]->makePersonnel(tempHuman); // electronics engineer with engine engineer successor 
-    tempHuman = factories[1]->makePersonnel(tempHuman); // aerodynamics engineer with electronics engineer successor
-    tempHuman = factories[0]->makePersonnel(tempHuman); // chasis engineer with aerodynamics engineer successor
+    Human * tempHuman = factories[0]->makePersonnel(nullptr); // chasis engineer with aerodynamics engineer successor
     driverStats.push_back(dynamic_cast<Driver *>(tempHuman)->getSkill()); // driverstats.at(0) is the skill
     driverStats.push_back(dynamic_cast<Driver *>(tempHuman)->getLuck()); // driverstats.at(1) is the luck
+    tempHuman = factories[3]->makePersonnel(tempHuman); // engine engineer with no successor
+    tempHuman = factories[2]->makePersonnel(tempHuman); // electronics engineer with engine engineer successor
+    tempHuman = factories[1]->makePersonnel(tempHuman); // aerodynamics engineer with electronics engineer successor
+
     tempHuman = factories[3]->makeEngineer(tempHuman);  // pitcrew engineer with chasis engineer successor
     tempHuman = factories[1]->makeEngineer(tempHuman); // driver with logistician successor
     tempHuman = factories[0]->makeEngineer(tempHuman); // strategist with driver successor
@@ -74,6 +75,7 @@ void Team::testWindTunnel()
 
 void Team::testSimulation()
 {
+    cout<<endl<<"-----------------------RUNNING SIMULATION TEST-----------------------"<<endl;
     command[4]->execute();
     runSimulationTest(teamResources->getCar(true)); // get current car from hangar
 
@@ -166,16 +168,22 @@ void Team::update()
 {
     currentWeek = calender->getWeek();
     teamResources->setCurrentWeek(currentWeek);
-    cout<<endl<<"Team "<<teamResources->getCompany()<<" receives Calender Notification AND gets updated week : "<<currentWeek<<endl;
+    cout<<endl<<endl<<"Team "<<teamResources->getCompany()<<" receives Calender Notification AND gets updated week : "<<currentWeek<<endl;
     cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ "<<teamResources->getCompany()<<" WEEK : "<<currentWeek<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ "<<endl;
     prepare();
     strategise();
     orderTyres();
 
+
+
     if (teamResources->getRaceSchedule().at(currentWeek)== nullptr)
     {
+        cout<<endl<<"-----------------------RUNNING TESTS AND MAKING ADJUSTMENTS-----------------------"<<endl<<endl;
+
         testWindTunnel();
         testSimulation();
+        cout<<endl<<endl<<"-----------------------ALL TESTS AND ADJUSTMENTS DONE FOR WEEK-----------------------"<<endl<<endl;
+
     }
 }
 void Team::runWindTest(Formula1Car * p)

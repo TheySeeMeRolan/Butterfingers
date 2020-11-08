@@ -28,7 +28,7 @@ void Logistician::handleRequest(string p){
         if(raceThisWeek != nullptr)
         {
             cout<< "\U0001F3C1"<<"\U0001F3C1"<<"\U0001F3C1"<< "\U0001F3C1"<<"\U0001F3C1"<<"\U0001F3C1"<< "\U0001F3C1"<<"\U0001F3C1"<<"\U0001F3C1"
-                <<" "<<teamResources->getCompany()<<" sees this is a RACING WEEK - Location :" <<raceThisWeek->getLocation()<<" "
+                <<" "<<teamResources->getCompany()<<" sees this is a RACING WEEK - Location: " <<raceThisWeek->getLocation()<<" "
                 <<"\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1""\U0001F3C1" <<endl;
 
             this->prepareForRace();

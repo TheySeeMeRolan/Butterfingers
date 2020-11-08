@@ -46,5 +46,5 @@ void PitCrew::handleRequest(string p){
 void PitCrew::changeTyre(){
     teamResources->getTyrePartBuilder()->buildPart();
     teamResources->getCar(true)->setTyre(teamResources->getTyrePartBuilder()->getPart());
-    cout<<"The "<<teamResources->getCompany()<<" teams Pitcrew changes the cars tyre to: ";
+    cout<<setw(18)<<""<<setw(52)<<teamResources->getCompany()+" Pitcrew changes the cars tyre to: ";
 }

@@ -1,11 +1,11 @@
-#include "ChasisEngineer.h"
+#include "ChassisEngineer.h"
 //#include "Team.cpp"
 
-ChasisEngineer::ChasisEngineer(Team* t, Human * s,TeamResources* tR):Engineering(t, s,tR){
-    typeHuman="ChasisEngineer";
+ChassisEngineer::ChassisEngineer(Team* t, Human * s, TeamResources* tR): Engineering(t, s, tR){
+    typeHuman="ChassisEngineer";
 }
 
-void ChasisEngineer::handleRequest(string p){
+void ChassisEngineer::handleRequest(string p){
 
     if(p == "prepare"){
 
@@ -19,7 +19,9 @@ void ChasisEngineer::handleRequest(string p){
         test();
     }
 
-    if(p == "service"){
+    if(p == "service")
+    {
+        cout<<"The "<<teamResources->getCompany()<<" team's CHASSIS ENGINEER services the cars."<<endl;
 
     }
 
@@ -57,6 +59,6 @@ void ChasisEngineer::handleRequest(string p){
     }
 }
 
-void ChasisEngineer::test(){
-//    cout<<"The "<<team->getCompany()<<" team's chassis engineer is testing."<<endl;
+void ChassisEngineer::test(){
+    cout<<"The "<<teamResources->getCompany()<<" team's chassis engineer is testing out CHASSIS changes."<<endl;
 }

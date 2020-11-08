@@ -13,14 +13,14 @@ vector<Team *> QualifyingStrategy::race(vector<Team *> teams, Track *track, vect
     if(track->isEuropean()) {
         for (int i = 0; i < teams.size();i++) {
             teams[i]->race();
-            std::cout<<i+1<<std::endl;
+            std::cout<< " in position: "<<i+1<<std::endl;
             teamScore.push_back(0);
         }
     }
     else {
         for (int i = 0; i < teams.size();i++) {
             teams[i]->race();
-            std::cout<<i+1<<std::endl;
+            std::cout<< " in position: "<<i+1<<std::endl;
             teamScore.push_back(0);
         }
     }
@@ -103,6 +103,8 @@ vector<Team *> QualifyingStrategy::race(vector<Team *> teams, Track *track, vect
             }
         }
     }
+    cout<<endl<<setw(30)<<left<<""<<" ======= Race completed =======" <<right<<endl;
+
     return teams;
 }
 

@@ -70,8 +70,6 @@ void Race::race() {
         }
         else if(dayCounter==2) {
             std::cout<<   "-------"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"-------Running the Non-European Qualifying race in:" + location +"--"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"\U0001F7E1"<<"------------"<<"\n";
-
-            std::cout<<"--Running the Non-European Qualifying race in: " + location +"--\n";
         }
         else if(dayCounter==3 && track->isEuropean())
         {
@@ -85,6 +83,7 @@ void Race::race() {
 
         }
 
+        cout<<setw(30)<<left<<""<<" ==== 3 . . 2 . . 1 . . . GO ====" <<endl;
         teams = strategy->race(teams,track, tyreSets); //teams will be set according to race strategy's race method qualifying will reshuffle the teams such that the starting positions are different
         date++;
         this->update(); //changes the strategy based on the date variable
@@ -100,9 +99,11 @@ void Race::race() {
             }
         }
     }
+
     for (int k = 0; k < logStatement.size(); ++k) {
-        cout<< setw(45)<<"Team " + teamsCopy[k]->getTeamResources()->getCompany() +" finished in position: " << logStatement[k]+1 << endl;
+        cout<<setw(22)<<""<< setw(45)<<"Team " + teamsCopy[k]->getTeamResources()->getCompany() +" finished in position: " << logStatement[k]+1 << endl;
     }
+    cout<<endl<<setw(30)<<left<<""<<" ======= Race completed =======" <<right<<endl;
 
     int size = logStatement.size();
     logStatement.clear();
@@ -150,6 +151,10 @@ void Race::race() {
 
     teams = teamsCopy;
     for(auto& team: teams) {
+        cout<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"
+        <<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699  "
+        <<setw(65)<<team->getTeamResources()->getCompany()+" ships its cars to the factory to get serviced  "<<
+        "\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699"<<"\U00002699  "<<endl;
         team->service();
     }
     teamsCopy.clear();

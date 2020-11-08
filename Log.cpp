@@ -45,7 +45,7 @@ Log::Log()
 
 void Log::printStandings()
 {
-    cout<< "> > > > > > > > CHAMPIONSHIP LOG < < < < < < < <"<< endl;
+    cout<<setw(22)<<""<< "> > > > > > > > CHAMPIONSHIP LOG < < < < < < < <"<< endl;
 
     vector<string> teamsPos;
     vector<int> scorePos = scores;
@@ -78,7 +78,7 @@ void Log::printStandings()
                 string pointS = "Points:";
                 placeS.append(to_string(place));
                 pointS.append(to_string(*rit));
-                cout<< "TEAM " << left<<setw(3)<<placeS<<" - - - - "<<setw(10)<< pointS<<" - - - - "<< teamNames[pos] << endl;
+                cout<<setw(22)<<""<< "TEAM " << left<<setw(3)<<placeS<<" - - - - "<<setw(10)<< pointS<<" - - - - "<< teamNames[pos] << endl;
                 place++;
 
                 break;
@@ -90,7 +90,7 @@ void Log::printStandings()
     }
 
 
-    cout<< "> > > > > > > > END OF CHAMP LOG < < < < < < < <"<< endl;
+    cout<<setw(22)<<""<< "> > > > > > > > END OF CHAMP LOG < < < < < < < <"<< endl;
     scores = scoreReset;
 
 

@@ -3,25 +3,16 @@
 
 bool Simulation::load(){
 
-    cout<<"LOAD SIMULATION FOR "<<teamResources->getCompany()<<" TEAM."<<endl;
 
-    cout<<"STATS BEFORE TEST:"<<endl;
-    cout<<"-----------------------"<<endl<<endl;
-    cout<<"Engine:"<<endl;
+    cout<<endl<<setw(24)<<""<<"SIMULATION LOADED"<<endl;
 
-    cout<<"Horse Power - "<<teamResources->getEngine()->getHorsePower()<<" hp"<<endl;
-    cout<<"Torque - "<<teamResources->getEngine()->getTorque()<<" N.m"<<endl<<endl;
-
-    cout<<"Electronics:"<<endl;
-    cout<<"Spoiler Weight - "<<teamResources->getElectronics()->getAssistance()<<" pts"<<endl;
-    cout<<"Chasis Height - "<<teamResources->getElectronics()->getEfficiency()<<" pts"<<endl<<endl;
 
     return true;
 }
 
 bool Simulation::run(){
-    cout<<"RUNNING SIMULATON TEST"<<endl;
-    cout<<"-----------------------"<<endl<<endl;
+    cout<<setw(21)<<""<<"STARTING SIMULATON TEST"<<endl;
+    cout<<setw(21)<<""<<"-----------------------"<<endl<<endl;
 
     hangar->storeMemento(teamResources->createMemento(true)); // store memento of current car before changing it with construct
 
@@ -30,6 +21,11 @@ bool Simulation::run(){
     int var2 = before->getEngine()->getTorque();
     int var3 = before->getElectronics()->getAssistance();
     int var4 = before->getElectronics()->getEfficiency();
+
+    int OriginalHP = var1;
+    int OriginalT  = var2;
+    int OriginalA   = var3;
+    int OriginalE   =var4;
 
     int result1 = var1 + var2 + var3 + var4;
 
@@ -42,6 +38,20 @@ bool Simulation::run(){
     var4 = test->getElectronics()->getEfficiency();
 
     int result2 = var1 + var2 + var3 + var4;
+
+
+    cout<<setw(12)<<""<<"===STATS BEFORE TEST vs STATS DURING TEST==="<<endl;
+    cout<<"Engine:"<<endl;
+    cout<<setw(18)<<"Horse Power - "+to_string(OriginalHP)+" hp"<<"vs "<<to_string(var1)+" hp"<<endl;
+    cout<<setw(18)<<"Torque      - "+to_string(OriginalT)+" N.m"<<"vs "<<to_string(var2)+" N.m"<<endl<<endl;
+
+    cout<<"Electronics:"<<endl;
+    cout<<setw(18)<<"Spoiler Assistance - "+to_string(OriginalA)+" pts"<<"vs "<<to_string(var3)+" pts"<<endl;
+    cout<<setw(18)<<"Chassis Efficiency - "+to_string(OriginalE)+" pts"<<"vs "<<to_string(var4)+" pts"<<endl<<endl;
+
+
+
+    cout<<setw(24)<<""<<"-------RESULTS:-------"<<endl;
 
     cout<<"Score Before Test: "<<result1<<endl;
     cout<<"Score After Test:  "<<result2<<endl;
