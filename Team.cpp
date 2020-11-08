@@ -100,65 +100,6 @@ vector<int> Team::getDriver() {
     return driverStats;
 }
 
-Human* Team::getPitCrew(){
-    Human* temp = lead;
-    while (temp->getSuccesor()->getTypeHuman() != "PitCrew") {
-        temp = temp->getSuccesor();
-    }
-    return temp;
-}
-
-Human* Team::getLogistician(){
-    Human* temp = lead;
-    while (temp->getSuccesor()->getTypeHuman() != "Logistician") {
-        temp = temp->getSuccesor();
-    }
-    return temp;
-}
-
-Human* Team::getStrategist(){
-    Human* temp = lead;
-    while (temp->getSuccesor()->getTypeHuman() != "Strategist") {
-        temp = temp->getSuccesor();
-    }
-    return temp;
-}
-
-Human* Team::getElectricEngineer(){
-    Human* temp = lead;
-    while (temp->getSuccesor()->getTypeHuman() != "ElectronicEngineer") {
-        temp = temp->getSuccesor();
-    }
-    return temp;
-}
-
-Human* Team::getEngineEngineer(){
-    Human* temp = lead;
-    while (temp->getSuccesor()->getTypeHuman() != "EngineEngineer") {
-        temp = temp->getSuccesor();
-    }
-    return temp;
-}
-
-Human* Team::getChassisEngineer(){
-    Human* temp = lead;
-    while (temp->getSuccesor()->getTypeHuman() != "ChassisEngineer") {
-        temp = temp->getSuccesor();
-    }
-    return temp;
-}
-
-Human* Team::getAerodynamicsEngineer(){
-    Human* temp = lead;
-    while (temp->getSuccesor()->getTypeHuman() != "AerodynamicsEngineer") {
-        temp = temp->getSuccesor();
-    }
-    return temp;
-}
-
-Human* Team::getLead(){
-    return lead;
-}
 
 TeamResources *Team::getTeamResources() {
     return teamResources;
@@ -188,8 +129,7 @@ void Team::update()
 }
 void Team::runWindTest(Formula1Car * p)
 {
-    // send in the car to the test and have it return a car to replace the memento with
-    // send in future or current car
+
     windTest->test(p);
 }
 

@@ -118,7 +118,7 @@ int QualifyingStrategy::determineTeamRaceScore(Team* team, int difficulty, int l
     // each team will get an engineScore based on their car's engine's horsepower and torque
     int engineScore = team->getTeamResources()->getEngine()->getHorsePower()  + team->getTeamResources()->getEngine()->getTorque();
     // each team will get an chasisScore based on their car's chasis and its height setting and aerodynamicsScore
-    int chasisScore = team->getTeamResources()->getChasis()->getHeight()  + team->getTeamResources()->getChasis()->getAerodynamicsScore();
+    int chasisScore = team->getTeamResources()->getChassis()->getHeight() + team->getTeamResources()->getChassis()->getAerodynamicsScore();
     // each team will get an electronicsScore based on their car's electronics setting
     int electronicScore = team->getTeamResources()->getElectronics()->getEfficiency();
     // each team will get a spoilerScoer based on their car's spoilers weight and aerodynamicsScore

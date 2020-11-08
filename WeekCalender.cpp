@@ -21,13 +21,15 @@ void WeekCalender::startSeason()
 
 }
 
-void WeekCalender::notify()
+int WeekCalender::getWeek()
 {
-    cout<<setw(22)<<""<<" >>>    CALENDER NOTIFIES OBSERVERS    <<< "<<endl;
+    return week;
+}
 
-    vector<  Observer*  >::iterator Obs_it = teams.begin();
-    for(Obs_it= teams.begin(); Obs_it!= teams.end(); ++Obs_it)
-    {
-        (*Obs_it)->update();
-    }
+WeekCalender::WeekCalender() {
+
+        cout<<"Constructed calender"<<endl;
+        week = -1;
+
+
 }
