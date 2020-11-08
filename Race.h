@@ -77,6 +77,12 @@ public:
     void race();
 
     /**
+     * @brief returns the company with the best car.
+     * @return a tuple with a string-the companyName with the best car and their cars stats.
+     */
+    tuple<string, int> getCompanyWithBestCar();
+
+    /**
      * @brief access the points each team got for the race.
      * @return vector<int> points achieved by each team in the race.
      */
