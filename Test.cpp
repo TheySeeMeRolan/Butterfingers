@@ -9,9 +9,6 @@ Test::Test(TeamResources * t, Hangar* h) {
     hangar = h;
 }
 
-Formula1Car *Test::getState() {
-    return nullptr;
-}
 
 bool Test::test(Formula1Car *car) {
 
