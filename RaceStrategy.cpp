@@ -12,10 +12,10 @@ vector<Team *> RaceStrategy::race(vector<Team *> teams, Track *track, vector<vec
     // each team starts with a starting position score(indicating that starting position in a race affect placing
     if(track->isEuropean()) {
         for (int i = 0; i < teams.size();i++) {
-            std::cout<< "(First Driver) ";
+            std::cout<<setw(15)<<""<< "(First Driver) ";
             teams[i]->race();
             std::cout << " in position: "<<i+1<<std::endl;
-            std::cout<< "(Second Driver)";
+            std::cout<<setw(15)<<""<< "(Second Driver) ";
             teams[i]->race();
             std::cout<<" in position: "<<teams.size()+i+1<<std::endl;
             teamScore.push_back(teams.size()-i);
@@ -23,10 +23,10 @@ vector<Team *> RaceStrategy::race(vector<Team *> teams, Track *track, vector<vec
     }
     else {
         for (int i = 0; i < teams.size();i++) {
-            std::cout<< "(First Driver) ";
+            std::cout<<setw(15)<<""<< "(First Driver) ";
             teams[i]->race();
             std::cout << " in position: "<<i+1<<std::endl;
-            std::cout<< "(Second Driver)";
+            std::cout<<setw(15)<<""<< "(Second Driver) ";
             teams[i]->race();
             std::cout<<" in position: "<<teams.size()+i+1<<std::endl;
             teamScore.push_back(teams.size()-i);

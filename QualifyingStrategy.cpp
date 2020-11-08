@@ -12,10 +12,10 @@ vector<Team *> QualifyingStrategy::race(vector<Team *> teams, Track *track, vect
     // each team starts with zero score(indicating that starting position in a qualifying race does not affect placing
     if(track->isEuropean()) {
         for (int i = 0; i < teams.size();i++) {
-            std::cout<< "(First Driver) ";
+            std::cout<<setw(15)<<""<< "(First Driver) ";
             teams[i]->race();
             std::cout << " in position: "<<i+1<<std::endl;
-            std::cout<< "(Second Driver)";
+            std::cout<<setw(15)<<""<< "(Second Driver) ";
             teams[i]->race();
             std::cout<<" in position: "<<teams.size()+i+1<<std::endl;
             teamScore.push_back(0);
@@ -23,10 +23,12 @@ vector<Team *> QualifyingStrategy::race(vector<Team *> teams, Track *track, vect
     }
     else {
         for (int i = 0; i < teams.size();i++) {
+            std::cout<<setw(15)<<""<< "(First Driver) ";
             teams[i]->race();
-            std::cout<< "(First Driver)" << " in position: "<<i+1<<std::endl;
+            std::cout << " in position: "<<i+1<<std::endl;
+            std::cout<<setw(15)<<""<< "(Second Driver) ";
             teams[i]->race();
-            std::cout<< "(Second Driver)" << " in position: "<<teams.size()+1<<std::endl;
+            std::cout<<" in position: "<<teams.size()+i+1<<std::endl;
             teamScore.push_back(0);
         }
     }
