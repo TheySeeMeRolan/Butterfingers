@@ -1,5 +1,5 @@
 /**
- * @class Test
+ * @class Simulation
  * @brief Derived class of the template design pattern.
  * 
  * This derived class will implement the run, load and undo 

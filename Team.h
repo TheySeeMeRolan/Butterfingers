@@ -10,7 +10,6 @@
 #include "PrepareCommand.h"
 #include "RacingCommand.h"
 #include "StrategiseCommand.h"
-#include "TestingCommand.h"
 #include "ServiceCommand.h"
 #include "ChangeTyreCommand.h"
 #include "OrderTyresCommand.h"
