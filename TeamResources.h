@@ -13,7 +13,7 @@
 #include "Formula1Car.h"
 #include "EnginePartBuilder.h"
 #include "TyrePartBuilder.h"
-#include "ChasisPartBuilder.h"
+#include "ChassisPartBuilder.h"
 #include "ElectronicsPartBuilder.h"
 #include "SpoilerPartBuilder.h"
 
@@ -54,7 +54,7 @@ public:
     void changeTestType();
     Engine* getEngine();
     Tyre* getTyre();
-    Chasis* getChasis();
+    Chassis* getChasis();
     Electronics* getElectronics();
     Spoiler* getSpoiler();
     void setCurrentWeek(int cD);

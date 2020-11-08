@@ -20,18 +20,18 @@ using namespace std;
 
 class CarPart {
 protected: 
-    string type;///< The type of the carPart -> Engine, Tyre, Chasis, Electronics, Spoiler.
+    string type;///< The type of the carPart -> Engine, Tyre, Chassis, Electronics, Spoiler.
 
 public:
     /**
      * @brief parameterized constructor.
      * The constructor that allows the base members to be instantiated.
-     * @param type string of carPart type -> Engine, Tyre, Chasis, Electronics, Spoiler.
+     * @param type string of carPart type -> Engine, Tyre, Chassis, Electronics, Spoiler.
     */
     CarPart(string typ);
     /**
      * @brief return type of carPart.
-     * The implementation of the method that returns the carPart type -> Engine, Tyre, Chasis, Electronics, Spoiler.
+     * The implementation of the method that returns the carPart type -> Engine, Tyre, Chassis, Electronics, Spoiler.
      * @return string carPart type.
     */
     string getType();

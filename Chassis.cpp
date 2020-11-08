@@ -1,6 +1,6 @@
-#include "Chasis.h"
+#include "Chassis.h"
 
-Chasis::Chasis():CarPart("Chasis")
+Chassis::Chassis(): CarPart("Chassis")
 {
 
     int hgt = rand() % 100 + 1;
@@ -9,26 +9,26 @@ Chasis::Chasis():CarPart("Chasis")
     this->aeroDynamicScore = ADS;
 }
 
-int Chasis::getHeight() {
+int Chassis::getHeight() {
     return this->height;
 }
 
-int Chasis::getAerodynamicsScore()
+int Chassis::getAerodynamicsScore()
 {
     return this->aeroDynamicScore;
 }
 
-void Chasis::setHeight(int hgt)
+void Chassis::setHeight(int hgt)
 {
     this->height = hgt;
 }
     
-void Chasis::setAeroDynamicScore(int ADS)
+void Chassis::setAeroDynamicScore(int ADS)
 {
     this->aeroDynamicScore = ADS;
 }
     
-Chasis::~Chasis()
+Chassis::~Chassis()
 {
-    cout << "Destructed Chasis (Derived)" << endl;
+    cout << "Destructed Chassis (Derived)" << endl;
 }   

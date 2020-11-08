@@ -1,5 +1,5 @@
 /**
- * @class ChasisPartBuilder
+ * @class ChassisPartBuilder
  * @brief concrete class.
  * 
  * A concrete builder for the builder design pattern. 
@@ -12,12 +12,12 @@
 #ifndef PROJECT_CHASISPARTBUILDER_H
 #define PROJECT_CHASISPARTBUILDER_H
 
-#include "Chasis.h"
+#include "Chassis.h"
 #include "CarPartBuilder.h"
 
-class ChasisPartBuilder: public CarPartBuilder{
+class ChassisPartBuilder: public CarPartBuilder{
 private:
-    Chasis* chasisPart; ///< The chasis part.
+    Chassis* chasisPart; ///< The chasis part.
 public:
     /**
      * @brief create car part.
@@ -33,7 +33,7 @@ public:
      * @brief destructor.
      * The concrete destructor that ensures this derived class is destroyed before the base class CarPartBuilder.
     */
-    ~ChasisPartBuilder();
+    ~ChassisPartBuilder();
 };
 
 #endif //PROJECT_CHASISPARTBUILDER_H

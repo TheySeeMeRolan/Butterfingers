@@ -1,11 +1,5 @@
 #include <iostream>
-//#include "Formula1.h"
-
-/*
-includes for generating tracks
---------------------------------
-*/
-
+#include <vector>
 #include "TrackPartFactory.h"
 #include "LeftCurveFactory.h"
 #include "RightCurveFactory.h"
@@ -14,13 +8,6 @@ includes for generating tracks
 #include "Team.h"
 #include "Race.h"
 #include "Log.h"
-
-/*
-includes for generating teams???
------------------------------
-#include "Team.h"
-*/
-#include <vector>
 
 using namespace std;
 
@@ -67,45 +54,46 @@ int main(){
                                  nullptr,                                       //week 9
                                  new Race(track1,"BELGIUM",champ1),            //week 10
                                  nullptr,                                       //week 11
-                                 new Race(track1,"Monaco",champ1),             //week 12
+                                 new Race(track1,"MONACO",champ1),             //week 12
                                  nullptr,                                       //week 13
-                                 new Race(track1,"Germany",champ1),            //week 14
+                                 new Race(track1,"GERMANY",champ1),            //week 14
                                  nullptr,                                       //week 15
-                                 new Race(track1,"Hungary",champ1),            //week 16
+                                 new Race(track1,"HUNGARY",champ1),            //week 16
                                  nullptr,                                       //week 17
-                                 new Race(track1,"Italy",champ1),              //week 18
+                                 new Race(track1,"ITALY",champ1),              //week 18
                                  nullptr,                                       //week 19
-                                 new Race(track1,"Austria",champ1),            //week 20
+                                 new Race(track1,"AUSTRIA",champ1),            //week 20
                                  nullptr,                                       //week 21
                                  new Race(track1,"FRANCE",champ1),             //week 22
                                  nullptr,                                       //week 23
                                  new Race(track1,"MONACO",champ1),             //week 24
                                  nullptr,                                       //week 25
                                  //NON EU
-                                 new Race(track2,"Japan",champ1),              //week 26
+                                 new Race(track2,"JAPAN",champ1),              //week 26
                                  nullptr,                                       //week 27
-                                 new Race(track2,"China",champ1),              //week 28
+                                 new Race(track2,"CHINA",champ1),              //week 28
                                  nullptr,                                       //week 29
-                                 new Race(track2,"Sweden",champ1),             //week 30
+                                 new Race(track2,"SWEDEN",champ1),             //week 30
                                  nullptr,                                       //week 31
-                                 new Race(track2,"South Korea",champ1),        //week 32
+                                 new Race(track2,"SOUTH KOREA",champ1),        //week 32
                                  nullptr,                                       //week 33
-                                 new Race(track2,"Singapore",champ1),          //week 34
+                                 new Race(track2,"SINGAPORE",champ1),          //week 34
                                  nullptr,                                       //week 35
-                                 new Race(track2,"Russia",champ1),             //week 36
+                                 new Race(track2,"RUSSIA",champ1),             //week 36
                                  nullptr,                                       //week 37
-                                 new Race(track2,"United States",champ1),      //week 38
+                                 new Race(track2,"USA",champ1),      //week 38
                                  nullptr,                                       //week 39
-                                 new Race(track2,"United Arab Emirates",champ1), //week 40
+                                 new Race(track2,"UNITED ARAB EMIRATES",champ1), //week 40
                                  nullptr,                                       //week 41
-                                 new Race(track2,"South-Africa",champ1),       //week 42
+                                 new Race(track2,"SOUTH-AFRICA",champ1),       //week 42
                                  nullptr,                                       //week 43
-                                 new Race(track2,"Malaysia",champ1)           //week 44
+                                 new Race(track2,"MALAYSIA",champ1)           //week 44
 
     };
 
 
-    vector<Team*> teams = {new Team(calender, "Mercedes",seasonRaces),
+    vector<Team*> teams = {
+                           new Team(calender, "Mercedes",seasonRaces),
                            new Team(calender, "Ferrari",seasonRaces),
                            new Team(calender, "McLaren",seasonRaces),
                            new Team(calender, "Renault",seasonRaces),
@@ -117,48 +105,25 @@ int main(){
                            new Team(calender, "Toro Rosso",seasonRaces)
                            };
 
-    vector<  Team*  >::iterator team_it = teams.begin();
 
-    for(team_it= teams.begin(); team_it!= teams.end(); ++team_it)
-    {
-        calender->attach(*team_it);
-
-    }
-
-    champ1->AddTeams(teams);
-
-    calender->startSeason();
-
-    champ1->printFinalStandings();
 
     cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
     cout<<"\033[1;36m          SIMULISATION    \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
 
 
+    vector<  Team*  >::iterator team_it = teams.begin();
+    for(team_it= teams.begin(); team_it!= teams.end(); ++team_it)
+    {
+        calender->attach(*team_it);
+    }
 
-    // commands and chain of responsibility
-    // team1->prepare(); // needs to be implemented still
-//    team1->race();
-//    team1->strategise();
-//    team1->testWindTunnel();
-//    team1->testSimulation();
-//    team1->service();
-
-    // team1->getLead()->handleRequest("racing");
-
+    champ1->AddTeams(teams);
+    calender->startSeason();
+    champ1->printFinalStandings();
 
 
-    //Create Teams - which should construct() cars and create all the humans
 
-//    Formula1* season1 = new Formula1();
-//    vector<Track*> seasonTracks;
-//    seasonTracks.push_back(track1);
-//    season1->addTracks(seasonTracks);
-    //season1->addTeams(Teams Vector)
-    //season1->prepareLogistics();
-    //season1->startSeason(); // which should basically do the rest of the program, by running the races and generating output?
-    cout << "I run YAY!" << endl;
 
     cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
     cout<<"\033[1;36m         DESTRUCTION    \033[0m\n";

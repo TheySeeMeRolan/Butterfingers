@@ -16,7 +16,7 @@
 
 #include "Engine.h"
 #include "Tyre.h"
-#include "Chasis.h"
+#include "Chassis.h"
 #include "Electronics.h"
 #include "Spoiler.h"
 
@@ -24,7 +24,7 @@ class Formula1Car {
 private:
     Engine* engine; ///< The engine part of the formula 1 car.
     Tyre* tyres;   ///< The tyres part of the formula 1 car.
-    Chasis* chasis; ///< The chasis part of the formula 1 car.
+    Chassis* chasis; ///< The chasis part of the formula 1 car.
     Electronics* electronics; ///< The electronics part of the formula 1 car.
     Spoiler* spoiler; ///< The spoiler part of the formula 1 car.
 public:
@@ -46,9 +46,9 @@ public:
      * @brief return chasis part.
      * The implementation of the method that returns the chasis part of the formula 1 car.
      * Used by memento's originator.
-     * @return Chasis* chasis part.
+     * @return Chassis* chasis part.
     */
-    Chasis* getChasis();
+    Chassis* getChasis();
     /**
      * @brief return electronics part.
      * The implementation of the method that returns the electronics part of the formula 1 car.
@@ -79,7 +79,7 @@ public:
     /**
      * @brief Set the chasis of the formula 1 car.
      * The implementation of the method that sets the chasis of the formula 1 car.
-     * @param chs CarPart* which is upcasted to Chasis*.
+     * @param chs CarPart* which is upcasted to Chassis*.
     */
     void setChasis(CarPart* chs);
     /**
