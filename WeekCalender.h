@@ -6,6 +6,10 @@
 class WeekCalender : public Subject
 {
 public:
+    WeekCalender()
+    {
+        cout<<"Constructed calender"<<endl;
+    }
     void goToNextWeek();
     void startSeason();
     void notify();

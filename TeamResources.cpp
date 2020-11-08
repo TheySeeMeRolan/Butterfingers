@@ -95,7 +95,7 @@ Tyre *TeamResources::getTyre() {
     return currentCar->getTyres();
 }
 
-Chasis *TeamResources::getChasis() {
+Chassis *TeamResources::getChasis() {
     return currentCar->getChasis();
 }
 
@@ -133,8 +133,8 @@ void TeamResources::construct()
     this->carPartBuilder[1]->buildPart();
     this->currentCar->setTyre(this->carPartBuilder[1]->getPart());
 
-    //Chasis building
-    this->carPartBuilder[2] = new ChasisPartBuilder();
+    //Chassis building
+    this->carPartBuilder[2] = new ChassisPartBuilder();
     this->carPartBuilder[2]->buildPart();
     this->currentCar->setChasis(this->carPartBuilder[2]->getPart());
 

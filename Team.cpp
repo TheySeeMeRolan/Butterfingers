@@ -4,6 +4,7 @@
 
 Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
 {
+    cout<<"Constructing Team "<<name<< endl;
     calender=schedule;
 
 
@@ -44,7 +45,6 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     Hangar* hangar = new Hangar();
     windTest = new WindTunnel(teamResources,hangar);
     simulationTest = new Simulation(teamResources,hangar);
-
 }
 
 Team::~Team(){

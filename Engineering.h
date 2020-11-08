@@ -1,6 +1,12 @@
 //
 // Created by Joanita on 2020/10/28.
 //
+/**
+ * @class Engineering
+ * @brief Concrete product in the Abstract Factory design pattern, inherits from Human.
+ * @author Joanita Nell (u19006812)
+ * **/
+
 
 #ifndef PROJECT_ENGINEERING_H
 #define PROJECT_ENGINEERING_H
@@ -11,6 +17,12 @@ class Engineering: public Human{
 public:
     virtual void handleRequest();
 //    Engineering();
+/**
+ * @brief paramaterized constructor. instantiate derived class from the parent class
+ * @param team sends the team to the parent, Human.
+ * @param s the successor for the for the chain of responsibility design pattern.
+ * @param tR link the teamResources to the correct human. 
+ * **/
     Engineering(Team* team, Human * s,TeamResources* tR);
 };
 #endif //PROJECT_ENGINEERING_H
