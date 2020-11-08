@@ -27,8 +27,8 @@ public:
     Formula1Car* getState();
     bool test(Formula1Car* car);
     // primitive functions
-    virtual bool load();
-    virtual bool run();
+    virtual bool load()=0;
+    virtual bool run()=0;
     virtual void undo();
 };
 

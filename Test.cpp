@@ -39,13 +39,7 @@ bool Test::test(Formula1Car *car) {
 
 }
 
-bool Test::load() {
 
-}
-
-bool Test::run() {
-
-}
 
 void Test::undo() {
     teamResources->reinstantiateMemento((hangar->retrieveMemento()), true); // get the stored car back and reinstate current car
