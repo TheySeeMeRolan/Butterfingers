@@ -2,6 +2,7 @@
 using namespace std;
 
 TrackPart::TrackPart(int l, int d, string t){
+
     length = l;
     difficulty = d;
     trackPartType = t;
