@@ -82,7 +82,7 @@ void Log::printStandings()
                 string pointS = "Points:";
                 placeS.append(to_string(place));
                 pointS.append(to_string(*rit));
-                cout<<setw(22)<<""<< "TEAM " << left<<setw(3)<<placeS<<" - - - - "<<setw(10)<< pointS<<" - - - - "<< teamNames[pos] << endl;
+                cout<< setw(21) <<""<< "TEAM " << left<<setw(3)<<placeS<<" - - - - "<<setw(15)<< teamNames[pos] <<" - - - - "<< pointS << endl;
                 place++;
 
                 break;
@@ -151,7 +151,7 @@ void Log::printFinalStandings()
                 string pointS = "Points:";
                 placeS.append(to_string(place));
                 pointS.append(to_string(*rit));
-                cout<< setw(17) <<""<< "TEAM " << left<<setw(3)<<placeS<<" - - - - "<<setw(10)<< pointS<<" - - - - "<< teamNames[pos] << endl;
+                cout<< setw(18) <<""<< "TEAM " << left<<setw(3)<<placeS<<" - - - - "<<setw(15)<< teamNames[pos] <<" - - - - "<< pointS << endl;
                 place++;
 
 
