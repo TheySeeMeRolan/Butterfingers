@@ -1,5 +1,5 @@
 /**
- * @class Chasis
+ * @class Chassis
  * @brief concrete class.
  * 
  * A concrete product participant for the builder design pattern. 
@@ -17,7 +17,7 @@
 
 using namespace std;
 
-class Chasis : public CarPart{
+class Chassis : public CarPart{
 private:
     int height;///< The height of the chasis off the ground.
     int aeroDynamicScore;///< The aero dynamic score of the chasis.
@@ -27,7 +27,7 @@ public:
      * @brief constructor.
      * The constructor that instantiates the derived members with random values.
     */
-    Chasis();
+    Chassis();
     /**
      * @brief return the height of chasis.
      * The implementation of the method that returns the height int of the chasis.
@@ -56,7 +56,7 @@ public:
      * @brief destructor.
      * The concrete destructor that ensures this derived class is destroyed before the base class carPart.
     */
-    ~Chasis();
+    ~Chassis();
 };
 
 #endif //PROJECT_CHASIS_H

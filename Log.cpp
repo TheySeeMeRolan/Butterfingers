@@ -41,6 +41,8 @@ void Log::addScores(vector<int> inPoints) {
 Log::Log()
 {
     scores = {0,0,0,0,0,0,0,0,0,0};
+    cout<<"Constructed a Log "<< endl;
+
 }
 
 void Log::printStandings()

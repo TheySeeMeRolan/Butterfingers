@@ -36,12 +36,6 @@ void TeamResources::setWindTunnelTokens(int p)
 }
 
 
-void TeamResources::shipCarToFactory()
-{
-//TBD
-}
-
-
 
 CarMemento* TeamResources::createMemento(bool b){
     if (b)
@@ -95,7 +89,7 @@ Tyre *TeamResources::getTyre() {
     return currentCar->getTyres();
 }
 
-Chasis *TeamResources::getChasis() {
+Chassis *TeamResources::getChassis() {
     return currentCar->getChasis();
 }
 
@@ -107,17 +101,10 @@ Spoiler *TeamResources::getSpoiler() {
     return currentCar->getSpoiler();
 }
 
-void TeamResources::test(Formula1Car *c) {
 
-}
 
-void TeamResources::changeTestType() {
 
-}
 
-void TeamResources::changeTestType(string type) {
-
-}
 void TeamResources::construct()
 {
     cout << "Constructing a Formula1 car" << endl;
@@ -133,8 +120,8 @@ void TeamResources::construct()
     this->carPartBuilder[1]->buildPart();
     this->currentCar->setTyre(this->carPartBuilder[1]->getPart());
 
-    //Chasis building
-    this->carPartBuilder[2] = new ChasisPartBuilder();
+    //Chassis building
+    this->carPartBuilder[2] = new ChassisPartBuilder();
     this->carPartBuilder[2]->buildPart();
     this->currentCar->setChasis(this->carPartBuilder[2]->getPart());
 
@@ -205,4 +192,16 @@ void TeamResources::setTyresToOrder(vector<int> t) {
 
 CarPartBuilder *TeamResources::getTyrePartBuilder() {
     return this->carPartBuilder[1];
+}
+
+void TeamResources::swapToFutureCarAndMakeNewCurrentCars()
+{
+//    delete currentCar;
+//    delete currentCar2;
+//    reinstantiateMemento((hangar->retrieveMemento()), true);
+//    futureCar =
+//    currentCar = futureCar;
+//    currentCar2 = cloneCar();
+
+
 }

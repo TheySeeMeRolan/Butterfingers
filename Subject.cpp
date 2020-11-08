@@ -16,16 +16,14 @@ void Subject::detach(Observer *team) {
     }
 }
 
-Subject::Subject()
-{
-    week = -1;
-}
 
 Subject::~Subject()
 {
     teams.clear();
 }
 void Subject::notify() {
+
+    cout<<setw(22)<<""<<" >>>    SUBJECT NOTIFIES OBSERVERS    <<< "<<endl;
 
     vector<  Observer*  >::iterator Obs_it = teams.begin();
 
@@ -35,7 +33,3 @@ void Subject::notify() {
     }
 }
 
-int Subject::getWeek()
-{
-    return week;
-}
