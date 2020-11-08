@@ -10,7 +10,13 @@
 
 class Strategist: public Personnel{
 public:
+ /**
+     * @brief chain of responsibility's main function, tests what type of command is suppose to execute and calls that function. Move the chain by calling its succcessor to handle the next request.
+* **/
     void handleRequest(string s);
+    /**
+     * @brief command that is executed by the chain of reponsibility
+     * **/
     void strategise();
 //    Strategist();
  /**

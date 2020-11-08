@@ -18,7 +18,13 @@ private:
     int luck;
     int skill;
 public:
+ /**
+     * @brief chain of responsibility's main function, tests what type of command is suppose to execute and calls that function. Move the chain by calling its succcessor to handle the next request.
+* **/
     void handleRequest(string s);
+    /**
+     * @brief command that is executed by the chain of reponsibility
+     * **/
     void drive();
 /**
  * @brief paramaterized constructor. the values specified in the constructor is what is stored in Human.
@@ -27,7 +33,13 @@ public:
  * @param tR link the teamResources to the correct human. 
  * **/
     Driver(Team* team, Human* human, int l, int s,TeamResources* tR);
+    /**
+     * @brief accessor method for skill attribute
+     * **/
     int getSkill();
+    /***
+     * @brief accessor methof for luck attribute
+     * **/
     int getLuck();
 //    Driver(Team* team, int l, int s);
 };

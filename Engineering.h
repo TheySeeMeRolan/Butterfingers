@@ -15,6 +15,10 @@
 
 class Engineering: public Human{
 public:
+ /**
+     * @brief chain of responsibility's main function, tests what type of command is suppose to execute and calls that function. Move the chain by calling its succcessor to handle the next request.
+     * * @param s enables the program to know what comman to execute.
+* **/
     virtual void handleRequest();
 //    Engineering();
 /**
