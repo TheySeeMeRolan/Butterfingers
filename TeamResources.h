@@ -1,7 +1,12 @@
 //
 // Created by ro on 2020/11/04.
 //
-
+/**
+ * @class TeamResources
+ * @brief Originator of the memento design pattern
+ * implements the createMemento ans reinstantiateMemento methods.
+ * @author Joanita Nell (u19006812)
+ * **/
 #ifndef BUTTERFINGERS_TEAMRESOURCES_H
 #define BUTTERFINGERS_TEAMRESOURCES_H
 
@@ -58,7 +63,18 @@ public:
     Spoiler* getSpoiler();
 
     //memento functions
+    /**
+     * @brief paramateized method to create a memento of the formula one car.
+     * @param b paramater to test if the memento should be made of the current or future car.
+     * when true make memento of the future car. Else when false make memnto of the future car. 
+     * **/
     CarMemento* createMemento(bool b);// if bool true create memento of current car else create memento of future car
+    /**
+     * @brief paramateized method to set a formula one car's attributes from a memento received.
+     * @param me the car memento used to set the state of the formula one car.
+     * @param b paramater to test if the future or current car's attributes should be set
+     * when true set attributes of current car, else when false set attributes of the duture car.
+     * **/
     void reinstantiateMemento(CarMemento* me, bool b);// bool is to check for future or current car. if true current car else future car:)
 
     // template
