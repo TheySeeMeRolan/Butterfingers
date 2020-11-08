@@ -7,9 +7,7 @@ ChassisEngineer::ChassisEngineer(Team* t, Human * s, TeamResources* tR): Enginee
 
 void ChassisEngineer::handleRequest(string p){
 
-    if(p == "prepare"){
 
-    }
 
     if(p == "test simulation"){
         test();
@@ -47,10 +45,6 @@ void ChassisEngineer::handleRequest(string p){
             else if (chosenTyre==2)
                 cout<<"hard "<<endl;
         }
-
-    }
-
-    if(p == "racing"){
 
     }
 

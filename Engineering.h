@@ -1,6 +1,4 @@
-//
-// Created by Joanita on 2020/10/28.
-//
+
 /**
  * @class Engineering
  * @brief Concrete product in the Abstract Factory design pattern, inherits from Human.

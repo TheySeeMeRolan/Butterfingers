@@ -7,9 +7,6 @@ ElectronicEngineer::ElectronicEngineer(Team* t, Human * s,TeamResources* tR) : E
 
 
 void ElectronicEngineer::handleRequest(string p){
-    if(p == "prepare")
-    {
-    }
 
     if(p == "test simulation"){
         cout<<"The "<<teamResources->getCompany()<<" team's electronic engineer is testing out ELECTRONICS changes."<<endl;
@@ -51,10 +48,6 @@ void ElectronicEngineer::handleRequest(string p){
 
     if(p == "service"){
         tinker();
-    }
-
-    if(p == "racing"){
-
     }
 
     if (successor) {

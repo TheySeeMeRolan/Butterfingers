@@ -37,30 +37,6 @@ void Logistician::handleRequest(string p){
 
     }
 
-    if(p == "test simulation")
-    {
-
-    }
-
-    if(p == "test windtunnel")
-    {
-
-    }
-
-    if(p == "strategise")
-    {
-
-    }
-
-    if(p == "service")
-    {
-//        std::cout<<"Servicing\n";
-    }
-
-    if(p == "racing")
-    {
-//        this->analyseTrack();
-    }
     if(p == "orderTyres")
     {
 

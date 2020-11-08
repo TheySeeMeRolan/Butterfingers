@@ -1,6 +1,4 @@
-//
-// Created by Joanita on 2020/10/28.
-//
+
 /**
  * @class ChassisFactory
  * @brief Concrete Factory in the abstract factory design pattern.

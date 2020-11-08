@@ -40,6 +40,8 @@ void Log::addScores(vector<int> inPoints) {
 
 Log::Log()
 {
+    bestCarScore = -999;
+    companyWithBestCar = "";
     scores = {0,0,0,0,0,0,0,0,0,0};
     cout<<"Constructed a Log "<< endl;
 
@@ -136,8 +138,11 @@ void Log::printFinalStandings()
                 if(place==1)
                 {
                     cout<< "\U0001F3C6"<<"\U0001F3C6"<<"\U0001F3C6"<< "\U0001F3C6"<<"\U0001F3C6"<<"\U0001F3C6"<< "\U0001F3C6"<<"\U0001F3C6"<<"\U0001F3C6"
-                        <<" WINNER OF THE RACING CHAMPIONSHIP: " <<teamNames[pos]<<" "
+                        <<" WINNER OF THE DRIVERS CHAMPIONSHIP: " <<teamNames[pos]<<" "
                         <<"\U0001F3C6""\U0001F3C6""\U0001F3C6""\U0001F3C6""\U0001F3C6""\U0001F3C6""\U0001F3C6""\U0001F3C6""\U0001F3C6" <<endl;
+                    cout<< "\U0001F527"<<"\U0001F527"<<"\U0001F527"<< "\U0001F527"<<"\U0001F527"<<"\U0001F527"<< "\U0001F527"<<"\U0001F527"<<"\U0001F527"
+                        <<" WINNER OF THE CONSTRUCTORS CHAMPIONSHIP: " <<companyWithBestCar<<" "
+                        <<"\U0001F527""\U0001F527""\U0001F527""\U0001F527""\U0001F527""\U0001F527""\U0001F527""\U0001F527""\U0001F527" <<endl;
 
                     cout<<"" "============================ FINAL CHAMPIONSHIP STANDINGS ============================"<< endl;
 
@@ -165,5 +170,15 @@ void Log::printFinalStandings()
 
 
 
+
+}
+
+void Log::saveBestCarData(tuple<string, int> inT)
+{
+if (get<1>(inT)>bestCarScore)
+{
+    bestCarScore = get<1>(inT);
+    companyWithBestCar = get<0>(inT);
+}
 
 }

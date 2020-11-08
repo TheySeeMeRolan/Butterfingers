@@ -1,10 +1,6 @@
-//
-// Created by Joanita on 2020/10/28.
-//
-
 /**
  * @class AerodynamicsEngineer
- * @brief concrete product of the abstract factory pattern. Inherits from Enginnering
+ * @brief concrete product of the abstract factory pattern. Inherits from Engineering
  * @author Joanita Nell (u19006812) 
  * **/
 

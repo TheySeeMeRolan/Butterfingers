@@ -142,8 +142,8 @@ void Race::race() {
     }
 
     cout << endl;
-
     log->addScores(logStatement);
+    log->saveBestCarData(getCompanyWithBestCar());
 
     log->printStandings();
 

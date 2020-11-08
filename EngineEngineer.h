@@ -1,6 +1,4 @@
-//
-// Created by Joanita on 2020/10/28.
-//
+
 /**
  * @class EngineEngineer
  * @brief concrete product of the abstract factory pattern. Inherits from Enginnering

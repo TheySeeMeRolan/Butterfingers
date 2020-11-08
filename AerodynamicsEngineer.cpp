@@ -6,9 +6,6 @@ AerodynamicsEngineer::AerodynamicsEngineer(Team* team, Human * s,TeamResources* 
 }
 
 void AerodynamicsEngineer::handleRequest(string p){
-    if(p == "prepare"){
-
-    }
 
     if(p == "test simulation")
     {
@@ -46,10 +43,6 @@ void AerodynamicsEngineer::handleRequest(string p){
 
     if(p == "service"){
         cout<<"The "<<teamResources->getCompany()<<" team's AERODYNAMICS ENGINEER services the cars"<<endl;
-
-    }
-
-    if(p == "racing"){
 
     }
 

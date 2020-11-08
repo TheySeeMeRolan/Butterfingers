@@ -7,9 +7,6 @@ EngineEngineer::EngineEngineer(Team* team, Human * s,TeamResources* tR): Enginee
 
 void EngineEngineer::handleRequest(string p){
 
-    if(p == "prepare"){
-
-    }
 
     if(p == "test simulation")
     {
@@ -51,9 +48,6 @@ void EngineEngineer::handleRequest(string p){
         useWrench();
     }
 
-    if(p == "racing"){
-
-    }
 
     if (successor) {
         successor->handleRequest(p);
