@@ -35,7 +35,7 @@ public:
      * @brief method to create the Driver of Personell.
      * @param s used tp set the successor of the personnel for the chain of responsibility design patern.
      * **/
-    Human * makePersonnel(Human * s);
+    Driver * makePersonnel(Human * s);
 };
 
 #endif //PROJECT_AERODYNAMICSFACTORY_H

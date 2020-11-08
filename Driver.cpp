@@ -16,24 +16,9 @@ void Driver::handleRequest(string p)
     
     if(p == "test simulation")
     {
-        this->drive();
-    }
-    
-    if(p == "test windtunnel")
-    {
-
-    }
-    
-    if(p == "strategise")
-    {
-        
+        cout<<"Team "<<teamResources->getCompany()<<"'s driver gets ready to drive in the simulation"<<endl;
     }
 
-    if(p == "service")
-    {
-
-    }
-    
     if(p == "racing")
     {
         this->drive();
@@ -47,7 +32,7 @@ void Driver::handleRequest(string p)
 
 void Driver::drive()
 {
-//    cout<<"Team "<<team->getCompany()<<"'s driver drives the car."<<endl;
+    cout<<"Team "<<teamResources->getCompany()<<"'s driver starts the race";
 }
 
 

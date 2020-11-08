@@ -7,28 +7,54 @@ ElectronicEngineer::ElectronicEngineer(Team* t, Human * s,TeamResources* tR) : E
 
 
 void ElectronicEngineer::handleRequest(string p){
-    if(p == "prepare"){
-        tinker();
+    if(p == "prepare")
+    {
     }
-    
+
     if(p == "test simulation"){
-        
-    }
-    
-    if(p == "test windtunnel"){
+        cout<<"The "<<teamResources->getCompany()<<" team's electronic engineer is testing out ELECTRONICS changes."<<endl;
 
     }
-    
-    if(p == "strategise"){
-        
+
+    if(p == "test windtunnel"){
+        cout<<"The "<<teamResources->getCompany()<<" team's electronic engineer is testing out ENGINE changes."<<endl;
+
+    }
+
+    if(p == "strategise")
+    {
+        Race* race1Month= nullptr;
+        if (teamResources->getCurrentWeek()<=40 )
+        {
+            race1Month = teamResources->getRaceSchedule().at(teamResources->getCurrentWeek() + 4);
+        }
+        if(race1Month!= nullptr ) //&& !race1Month->getTrack()->isEuropean()
+        {
+            cout<<left << setw(75)<<"The "+ teamResources->getCompany()+" teams ELECTRONIC ENGINEER formulates it choice of tyre : ";
+
+            int chosenTyre= rand() % 3 ;
+            vector<int> tyres = teamResources->getTyresToOrder();
+            tyres.at(chosenTyre) = tyres.at(chosenTyre) + 1 ;
+            teamResources->setTyresToOrder(tyres);
+
+            if (chosenTyre==0)
+                cout<<"soft "<<endl;
+            else if (chosenTyre==1)
+                cout<<"medium "<<endl;
+            else if (chosenTyre==2)
+                cout<<"hard "<<endl;
+
+
+        }
+
     }
 
     if(p == "service"){
         tinker();
     }
-    
+
     if(p == "racing"){
-        
+
     }
 
     if (successor) {
@@ -37,5 +63,5 @@ void ElectronicEngineer::handleRequest(string p){
 }
 
 void ElectronicEngineer::tinker(){
-   cout<<"The "<<teamResources->getCompany()<<" team's electronic engineer is fiddling with the electronics."<<endl;
+    cout<<"The "<<teamResources->getCompany()<<" team's ELECTRONICS ENGINEER services the cars."<<endl;
 }

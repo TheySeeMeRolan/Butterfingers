@@ -5,9 +5,14 @@
 #include "TeamResources.h"
 
 
-TeamResources::TeamResources(string name)
+TeamResources::TeamResources(string name,vector<Race*> sRaces)
 {
+    construct();
     company = name;
+    raceSchedule = sRaces;
+    vector<int> resetTyres = {0,0,0};
+    this->tyresToOrder = resetTyres;
+
 }
 
 TeamResources::~TeamResources()
@@ -20,56 +25,14 @@ string TeamResources::getCompany()
     return company;
 }
 
-
-// template
-void TeamResources::runWindTest(Formula1Car * p)
+int TeamResources::getWindTunnelTokens()
 {
-    // send in the car to the test and have it return a car to replace the memento with
-    // send in future or current car
-    windTest->test(p);
+    return windTunnelTokens;
 }
 
-void TeamResources::runSimulationTest(Formula1Car * p)
+void TeamResources::setWindTunnelTokens(int p)
 {
-    // send in the car to the test and have it return a car to replace the memento with
-    // send in future or current car
-    simulationTest->test(p);
-}
-
-void TeamResources::setUpcomingRaces(tuple<Race *, Race *, Race *> uR)
-{
-//upcomingRaces = uR;
-}
-
-// void TeamResources::changeTestType(string type)
-// {
-//     // if (tester)
-//     // {
-//     //     delete tester;
-//     // }
-
-//     // if(type == "wind tunnel")
-//     // {
-//     //     tester = new WindTunnel();
-//     // }else if(type == "simulation")
-//     // {
-//     //     tester = new Simulation();
-//     // }
-// }
-//
-//void TeamResources::update()
-//{
-////    int currentWeek;
-//    currentWeek=registeredAt->getWeek();
-//    upcomingRaces = registeredAt->getRaces();
-//    //if
-//
-//
-//}
-
-void TeamResources::shipCarToFactory()
-{
-//TBD
+    windTunnelTokens = p;
 }
 
 
@@ -105,9 +68,9 @@ void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
     }
 }
 
-tuple< Race *, Race *, Race *> TeamResources::getUpcomingRaces()
+vector< Race *> TeamResources::getRaceSchedule()
 {
-//    return upcomingRaces;
+    return raceSchedule;
 }
 
 Equipment* TeamResources::getTeamEquipment()
@@ -122,12 +85,11 @@ Engine *TeamResources::getEngine() {
     return currentCar->getEngine();
 }
 
-Tyre **TeamResources::getTyre() {
-//    return currentCar->getTyre();
-    return nullptr;
+Tyre *TeamResources::getTyre() {
+    return currentCar->getTyres();
 }
 
-Chasis *TeamResources::getChasis() {
+Chassis *TeamResources::getChassis() {
     return currentCar->getChasis();
 }
 
@@ -139,17 +101,10 @@ Spoiler *TeamResources::getSpoiler() {
     return currentCar->getSpoiler();
 }
 
-void TeamResources::test(Formula1Car *c) {
 
-}
 
-void TeamResources::changeTestType() {
 
-}
 
-void TeamResources::changeTestType(string type) {
-
-}
 void TeamResources::construct()
 {
     cout << "Constructing a Formula1 car" << endl;
@@ -159,46 +114,47 @@ void TeamResources::construct()
     this->carPartBuilder[0] = new EnginePartBuilder();
     this->carPartBuilder[0]->buildPart();
     this->currentCar->setEngine(this->carPartBuilder[0]->getPart());
-    srand(1);
 
     //Tyre building
     this->carPartBuilder[1] = new TyrePartBuilder();
     this->carPartBuilder[1]->buildPart();
     this->currentCar->setTyre(this->carPartBuilder[1]->getPart());
-    srand(2);
 
-    //Chasis building
-    this->carPartBuilder[2] = new ChasisPartBuilder();
+    //Chassis building
+    this->carPartBuilder[2] = new ChassisPartBuilder();
     this->carPartBuilder[2]->buildPart();
     this->currentCar->setChasis(this->carPartBuilder[2]->getPart());
-    srand(3);
 
 
     //Electronics building
     this->carPartBuilder[3] = new ElectronicsPartBuilder();
     this->carPartBuilder[3]->buildPart();
     this->currentCar->setElectronics(this->carPartBuilder[3]->getPart());
-    srand(4);
 
     //Spoiler building
     this->carPartBuilder[4] = new SpoilerPartBuilder();
     this->carPartBuilder[4]->buildPart();
     this->currentCar->setSpoiler(this->carPartBuilder[4]->getPart());
+
+    this->currentCar2 = cloneCar();
+    this->futureCar = cloneCar();
 }
 
-void TeamResources::cloneCar() {
-    this->futureCar = new Formula1Car();
+Formula1Car* TeamResources::cloneCar() {
+    Formula1Car* car = new Formula1Car();
 
     if (currentCar == nullptr){
         cout << "currentCar needs to be set first to clone it to futureCar" << endl;
         this->construct();
     }
 
-    this->futureCar->setEngine(this->carPartBuilder[0]->getPart());
-    this->futureCar->setTyre(this->carPartBuilder[1]->getPart());
-    this->futureCar->setChasis(this->carPartBuilder[2]->getPart());
-    this->futureCar->setElectronics(this->carPartBuilder[3]->getPart());
-    this->futureCar->setSpoiler(this->carPartBuilder[4]->getPart());
+    car->setEngine(this->carPartBuilder[0]->getPart());
+    car->setTyre(this->carPartBuilder[1]->getPart());
+    car->setChasis(this->carPartBuilder[2]->getPart());
+    car->setElectronics(this->carPartBuilder[3]->getPart());
+    car->setSpoiler(this->carPartBuilder[4]->getPart());
+
+    return car;
 }
 
 Formula1Car* TeamResources::getCar(bool current)
@@ -209,4 +165,43 @@ Formula1Car* TeamResources::getCar(bool current)
         return this->futureCar;
     }
     return NULL;
+}
+
+void TeamResources::setRaceSchedule(vector<Race *> uR) {
+    this->raceSchedule = uR;
+
+}
+
+void TeamResources::setCurrentWeek(int cD)
+{
+this->currentWeek = cD;
+}
+
+int TeamResources::getCurrentWeek()
+{
+    return currentWeek;
+}
+
+vector<int> TeamResources::getTyresToOrder() {
+    return this->tyresToOrder;
+}
+
+void TeamResources::setTyresToOrder(vector<int> t) {
+    tyresToOrder=t;
+}
+
+CarPartBuilder *TeamResources::getTyrePartBuilder() {
+    return this->carPartBuilder[1];
+}
+
+void TeamResources::swapToFutureCarAndMakeNewCurrentCars()
+{
+//    delete currentCar;
+//    delete currentCar2;
+//    reinstantiateMemento((hangar->retrieveMemento()), true);
+//    futureCar =
+//    currentCar = futureCar;
+//    currentCar2 = cloneCar();
+
+
 }

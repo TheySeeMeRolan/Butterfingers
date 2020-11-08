@@ -11,7 +11,7 @@ void Formula1Car::setTyre(CarPart* trs){
 }
 
 void Formula1Car::setChasis(CarPart* chs){
-    this->chasis= (Chasis*)chs;
+    this->chasis= (Chassis*)chs;
 }
 
 void Formula1Car::setElectronics(CarPart* elctr){
@@ -30,7 +30,7 @@ Tyre* Formula1Car:: getTyres(){
     return this->tyres;
 }
 
-Chasis* Formula1Car::getChasis(){
+Chassis* Formula1Car::getChasis(){
     return this->chasis;
 }
 

@@ -8,7 +8,7 @@ TrackPart* StraightFactory::createPart(int l, int d)
 
 TrackPart* StraightFactory::createPart()
 {
-    srand((unsigned)time(NULL));
+
     int l = rand() % 100 + 1;
     int d = rand() % 100 + 1;
     return new StraightPart(l, d);

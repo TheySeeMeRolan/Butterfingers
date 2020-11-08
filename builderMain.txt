@@ -56,7 +56,7 @@ int main(){
     cout << "Aerodynamics score (random): ";
     cout << f1fastBoi->getChasis()->getAerodynamicsScore() << endl;
     cout << "Height ?lol? (random): ";
-    cout << f1fastBoi->getChasis()->getHeight() << endl  << endl;
+    cout << f1fastBoi->getChassis()->getHeight() << endl  << endl;
 
     //Electronics building
     carCreator[3] = new ElectronicsPartBuilder();

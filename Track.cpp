@@ -72,6 +72,11 @@ string Track::getTrackPartType()
 Track::Track(bool isEuropean) : TrackPart(0, 0, "Composite track")
 {
     this->european = isEuropean;
+    if(isEuropean)
+    cout<<"Constructed European track"<<endl;
+    else
+        cout<<"Constructed Non-European track"<<endl;
+
 }
 
 Track::~Track()

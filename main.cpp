@@ -1,11 +1,5 @@
 #include <iostream>
-//#include "Formula1.h"
-
-/*
-includes for generating tracks
---------------------------------
-*/
-
+#include <vector>
 #include "TrackPartFactory.h"
 #include "LeftCurveFactory.h"
 #include "RightCurveFactory.h"
@@ -13,85 +7,158 @@ includes for generating tracks
 #include "Track.h"
 #include "Team.h"
 #include "Race.h"
-
-
-/*
-includes for generating teams???
------------------------------
-#include "Team.h"
-*/
-#include <vector>
+#include "Log.h"
 
 using namespace std;
 
 int main(){
-
     cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
     cout<<"\033[1;36m       INITIALISATIONS    \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
 
+    Track* tracks[6] ;
     //Create Tracks
     TrackPartFactory* trackGenerator[3];
     trackGenerator[0] = new LeftCurveFactory();
     trackGenerator[1] = new StraightFactory();
     trackGenerator[2] = new RightCurveFactory();
 
-    TrackPart* trackParts[3];
-    trackParts[0] = trackGenerator[0]->createPart(10,10);
-    trackParts[1] = trackGenerator[1]->createPart(10,10);
-    trackParts[2] = trackGenerator[2]->createPart(10,10);
+    for (int i = 0; i < 6; ++i)
+    {
+        if(i<3)
+        {
+            tracks[i] = new Track(true);
+            //for ease of demonstration we have decided that european races all have  6 straights 4 right curves and 2 left curves
+            tracks[i]->addPart(trackGenerator[1]->createPart());    // add straight
+            tracks[i]->addPart(trackGenerator[2]->createPart());    // add right curve
+            tracks[i]->addPart(trackGenerator[1]->createPart());    // add straight
+            tracks[i]->addPart(trackGenerator[2]->createPart());    // add right curve
+            tracks[i]->addPart(trackGenerator[0]->createPart());    // add left curve
+            tracks[i]->addPart(trackGenerator[1]->createPart());    // add straight
+            tracks[i]->addPart(trackGenerator[0]->createPart());    // add left curve
+            tracks[i]->addPart(trackGenerator[1]->createPart());    // add straight
+            tracks[i]->addPart(trackGenerator[2]->createPart());    // add right curve
+            tracks[i]->addPart(trackGenerator[1]->createPart());    // add straight
+            tracks[i]->addPart(trackGenerator[2]->createPart());    // add right curve
+            tracks[i]->addPart(trackGenerator[1]->createPart(50,20));   //add straight with own lengths not random
+        }
+        else
+        {
+            tracks[i] = new Track(false);
 
-    Track* track1 = new Track(true);
-    track1->addPart(trackParts[0]);
-    track1->addPart(trackParts[1]);
-    track1->addPart(trackParts[2]);
+            //for ease of demonstration we have decided that european races all have  4 straights 3 right curves and 3 left curves
 
+            tracks[i]->addPart(trackGenerator[1]->createPart());    // add straight
+            tracks[i]->addPart(trackGenerator[2]->createPart());    // add right curve
+            tracks[i]->addPart(trackGenerator[1]->createPart());    // add straight
+            tracks[i]->addPart(trackGenerator[0]->createPart());    // add left curve
+            tracks[i]->addPart(trackGenerator[2]->createPart());    // add right curve
+            tracks[i]->addPart(trackGenerator[0]->createPart());    // add left curve
+            tracks[i]->addPart(trackGenerator[1]->createPart());    // add straight
+            tracks[i]->addPart(trackGenerator[2]->createPart());    // add right curve
+            tracks[i]->addPart(trackGenerator[0]->createPart(70,65));    // add left curve
+            tracks[i]->addPart(trackGenerator[1]->createPart());    // add straight
+
+
+        }
+        cout<<endl;
+    }
+
+
+
+    //create a calender for the season
     WeekCalender* calender = new WeekCalender();
-    Team* team1 = new Team(calender, "Mercedes");
-    Team* team2 = new Team(calender, "Ferrari");
-    Team* team3 = new Team(calender, "McLaren");
-    Team* team4 = new Team(calender, "Renault");
-    Team* team5 = new Team(calender, "Red Bull");
+    //create Log to keep track of the scores for the season
+    Log* seasonLog= new Log();
 
-    Race* race = new Race(track1,"Soweto");
-    race->addTeam(team1);
-    race->addTeam(team2);
-    race->addTeam(team3);
-    race->addTeam(team4);
-    race->addTeam(team5);
+    //create races
+    vector<Race*> seasonRaces = {
+                                 nullptr,                                                   //week 0
+                                 nullptr,                                                   //week 1
+                                 nullptr,                                                   //week 2
+                                 nullptr,                                                   //week 3
+                                 new Race(tracks[0],"UK",seasonLog),                //week 4
+                                 nullptr,                                                   //week 5
+                                 new Race(tracks[1],"SPAIN",seasonLog),             //week 6
+                                 nullptr,                                                   //week 7
+                                 new Race(tracks[2],"FRANCE",seasonLog),            //week 8
+                                 nullptr,                                                   //week 9
+                                 new Race(tracks[0],"BELGIUM",seasonLog),           //week 10
+                                 nullptr,                                                   //week 11
+                                 new Race(tracks[1],"MONACO",seasonLog),            //week 12
+                                 nullptr,                                                   //week 13
+                                 new Race(tracks[2],"GERMANY",seasonLog),           //week 14
+                                 nullptr,                                                   //week 15
+                                 new Race(tracks[0],"HUNGARY",seasonLog),           //week 16
+                                 nullptr,                                                   //week 17
+                                 new Race(tracks[1],"ITALY",seasonLog),             //week 18
+                                 nullptr,                                                   //week 19
+                                 new Race(tracks[2],"AUSTRIA",seasonLog),           //week 20
+                                 nullptr,                                                   //week 21
+                                 new Race(tracks[0],"FRANCE",seasonLog),            //week 22
+                                 nullptr,                                                   //week 23
+                                 new Race(tracks[1],"MONACO",seasonLog),            //week 24
+                                 nullptr,                                                   //week 25
+                                 //NON EU
+                                 new Race(tracks[3],"JAPAN",seasonLog),             //week 26
+                                 nullptr,                                                   //week 27
+                                 new Race(tracks[4],"CHINA",seasonLog),             //week 28
+                                 nullptr,                                                   //week 29
+                                 new Race(tracks[5],"SWEDEN",seasonLog),            //week 30
+                                 nullptr,                                                   //week 31
+                                 new Race(tracks[3],"SOUTH KOREA",seasonLog),       //week 32
+                                 nullptr,                                                   //week 33
+                                 new Race(tracks[4],"SINGAPORE",seasonLog),         //week 34
+                                 nullptr,                                                   //week 35
+                                 new Race(tracks[5],"RUSSIA",seasonLog),            //week 36
+                                 nullptr,                                                   //week 37
+                                 new Race(tracks[3],"USA",seasonLog),               //week 38
+                                 nullptr,                                                   //week 39
+                                 new Race(tracks[4],"UNITED ARAB EMIRATES",seasonLog), //week 40
+                                 nullptr,                                                   //week 41
+                                 new Race(tracks[5],"SOUTH-AFRICA",seasonLog),      //week 42
+                                 nullptr,                                                   //week 43
+                                 new Race(tracks[3],"MALAYSIA",seasonLog)           //week 44
 
-    Equipment* equipment = new Equipment("Stuff");
+    };
+
+    //creat teams
+    vector<Team*> teams = {
+                           new Team(calender, "Mercedes",seasonRaces),
+                           new Team(calender, "Ferrari",seasonRaces),
+                           new Team(calender, "McLaren",seasonRaces),
+                           new Team(calender, "Renault",seasonRaces),
+                           new Team(calender, "AlphaTauri",seasonRaces),
+                           new Team(calender, "Williams Racing",seasonRaces),
+                           new Team(calender, "Hass F1 Team",seasonRaces),
+                           new Team(calender, "Lotus",seasonRaces),
+                           new Team(calender, "Alfa Romeo",seasonRaces),
+                           new Team(calender, "Toro Rosso",seasonRaces)
+                           };
+
+
 
     cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
-    cout<<"\033[1;36m          SIMULISATION    \033[0m\n";
+    cout<<"\033[1;36m          EXECUTION    \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
 
-    race->storeEquipment(equipment);
+    //attach teams to calender
+    vector<  Team*  >::iterator team_it = teams.begin();
+    for(team_it= teams.begin(); team_it!= teams.end(); ++team_it)
+    {
+        calender->attach(*team_it);
+    }
 
-    race->race();
+    //add teams to the Log so that they are a part of the fixtures
+    seasonLog->AddTeams(teams);
 
-    // commands and chain of responsibility
-    // team1->prepare(); // needs to be implemented still
-    team1->race();
-    team1->strategise();
-    team1->testWindTunnel();
-    team1->testSimulation();
-    team1->service();
-    
-    // team1->getLead()->handleRequest("racing");
+    //start the season
+    calender->startSeason();
+    //print the result of the season
+    seasonLog->printFinalStandings();
 
 
 
-    //Create Teams - which should construct() cars and create all the humans
-
-//    Formula1* season1 = new Formula1();
-//    vector<Track*> seasonTracks;
-//    seasonTracks.push_back(track1);
-//    season1->addTracks(seasonTracks);
-    //season1->addTeams(Teams Vector)
-    //season1->prepareLogistics();
-    //season1->startSeason(); // which should basically do the rest of the program, by running the races and generating output?
-    cout << "I run YAY!" << endl;
 
     cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
     cout<<"\033[1;36m         DESTRUCTION    \033[0m\n";
