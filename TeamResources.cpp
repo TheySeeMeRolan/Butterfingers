@@ -19,6 +19,9 @@ TeamResources::~TeamResources()
 {
     delete teamEquipment;
     delete currentCar;
+    delete currentCar2;
+    delete futureCar;
+
 
     for (int r = 0;r <5 ; ++r)
     {
@@ -57,7 +60,7 @@ void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
     if (b){
         //current car
         Formula1Car* mementoCar= me->getState();
-        currentCar->setChasis(mementoCar->getChasis());
+        currentCar->setchassis(mementoCar->getchassis());
         currentCar->setEngine(mementoCar->getEngine());
         currentCar->setElectronics(mementoCar->getElectronics());
         currentCar->setSpoiler(mementoCar->getSpoiler());
@@ -65,7 +68,7 @@ void TeamResources::reinstantiateMemento(CarMemento* me, bool b){
     }else{
         //future car
         Formula1Car* mementoCar= me->getState();
-        futureCar->setChasis(mementoCar->getChasis());
+        futureCar->setchassis(mementoCar->getchassis());
         futureCar->setEngine(mementoCar->getEngine());
         futureCar->setElectronics(mementoCar->getElectronics());
         futureCar->setSpoiler(mementoCar->getSpoiler());
@@ -96,7 +99,7 @@ Tyre *TeamResources::getTyre() {
 }
 
 Chassis *TeamResources::getChassis() {
-    return currentCar->getChasis();
+    return currentCar->getchassis();
 }
 
 Electronics *TeamResources::getElectronics() {
@@ -129,7 +132,7 @@ void TeamResources::construct()
     //Chassis building
     this->carPartBuilder[2] = new ChassisPartBuilder();
     this->carPartBuilder[2]->buildPart();
-    this->currentCar->setChasis(this->carPartBuilder[2]->getPart());
+    this->currentCar->setchassis(this->carPartBuilder[2]->getPart());
 
 
     //Electronics building
@@ -162,7 +165,7 @@ Formula1Car* TeamResources::cloneCar() {
 
     car->setEngine(carPartBuilder[0]->getPart());
     car->setTyre(this->carPartBuilder[1]->getPart());
-    car->setChasis(this->carPartBuilder[2]->getPart());
+    car->setchassis(this->carPartBuilder[2]->getPart());
     car->setElectronics(this->carPartBuilder[3]->getPart());
     car->setSpoiler(this->carPartBuilder[4]->getPart());
 
@@ -170,8 +173,8 @@ Formula1Car* TeamResources::cloneCar() {
     car->getEngine()->setHorsePower(currentCar->getEngine()->getHorsePower());
     car->getElectronics()->setEfficiency(currentCar->getElectronics()->getEfficiency());
     car->getElectronics()->setAssistance(currentCar->getElectronics()->getAssistance());
-    car->getChasis()->setHeight(currentCar->getChasis()->getHeight());
-    car->getChasis()->setAeroDynamicScore(currentCar->getChasis()->getAerodynamicsScore());
+    car->getchassis()->setHeight(currentCar->getchassis()->getHeight());
+    car->getchassis()->setAeroDynamicScore(currentCar->getchassis()->getAerodynamicsScore());
     car->getSpoiler()->setAerodynamicsScore(currentCar->getSpoiler()->getAerodynamicsScore());
     car->getSpoiler()->setWeight(currentCar->getSpoiler()->getWeight());
     car->getTyres()->setThread(currentCar->getTyres()->getThread());
@@ -220,9 +223,10 @@ void TeamResources::swapToFutureCar()
 {
     cout<<"Deleting current cars and replacing them with our future car."<<endl;
     delete currentCar;
+    delete currentCar2;
     currentCar = futureCar;
     currentCar2 = cloneCar();
-
+    futureCar = new Formula1Car();
 
 
 }

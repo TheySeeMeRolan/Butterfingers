@@ -32,17 +32,17 @@ bool WindTunnel::run(){
     // the mememto gets replaced if the car generated is better than the car stored in the memento
 
     Formula1Car * before = teamResources->getCar(true); // get current car
-    int var1 = before->getChasis()->getAerodynamicsScore();
+    int var1 = before->getchassis()->getAerodynamicsScore();
     int var2 = before->getSpoiler()->getAerodynamicsScore();
     int result1 = var1 + var2;
     int originalVar1=var1;
     int originalVar2=var2;
     int originalWeight=before->getSpoiler()->getWeight();
-    int originaHeight=before->getChasis()->getHeight();
+    int originaHeight=before->getchassis()->getHeight();
     teamResources->construct(); // recreate the current car
 
     Formula1Car * test = teamResources->getCar(true); // get current car
-    var1 = test->getChasis()->getAerodynamicsScore();
+    var1 = test->getchassis()->getAerodynamicsScore();
     var2 = test->getSpoiler()->getAerodynamicsScore();
     int result2 = var1 + var2;
     cout<<setw(12)<<""<<"===STATS BEFORE TEST vs STATS DURING TEST==="<<endl;    cout<<"Aerodynamics Score:"<<endl;

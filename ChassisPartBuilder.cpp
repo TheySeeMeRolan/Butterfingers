@@ -1,11 +1,11 @@
 #include "ChassisPartBuilder.h"
 
 void ChassisPartBuilder::buildPart(){
-    this->chasisPart = new Chassis();
+    this->chassisPart = new Chassis();
 }
 
 CarPart* ChassisPartBuilder::getPart(){
-    return this->chasisPart;
+    return this->chassisPart;
 }
 
 ChassisPartBuilder::~ChassisPartBuilder(){

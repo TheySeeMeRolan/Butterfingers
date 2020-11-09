@@ -12,6 +12,7 @@ Race::Race(Track *t, string location,Log* logIn) {
 }
 
 Race::~Race() {
+    cout<<"Deleting Race at: " << location <<endl;
     location = "";
     date = 0;
     european = false;
@@ -200,7 +201,7 @@ tuple<string, int> Race::getCompanyWithBestCar() {
     string bestTeamName = "";
     int tyreScore;
     int engineScore;
-    int chasisScore;
+    int chassisScore;
     int electronicScore;
     int spoilerScore;
     int bestCarStats = -1, temp;
@@ -209,14 +210,14 @@ tuple<string, int> Race::getCompanyWithBestCar() {
         tyreScore = team->getTeamResources()->getTyre()->getPressure()  + team->getTeamResources()->getTyre()->getThread();
         // each team will get an engineScore based on their car's engine's horsepower and torque
         engineScore = team->getTeamResources()->getEngine()->getHorsePower()  + team->getTeamResources()->getEngine()->getTorque();
-        // each team will get an chasisScore based on their car's chasis and its height setting and aerodynamicsScore
-        chasisScore = team->getTeamResources()->getChassis()->getHeight()  + team->getTeamResources()->getChassis()->getAerodynamicsScore();
+        // each team will get an chassisScore based on their car's chassis and its height setting and aerodynamicsScore
+        chassisScore = team->getTeamResources()->getChassis()->getHeight()  + team->getTeamResources()->getChassis()->getAerodynamicsScore();
         // each team will get an electronicsScore based on their car's electronics setting
         electronicScore = team->getTeamResources()->getElectronics()->getEfficiency();
         // each team will get a spoilerScoer based on their car's spoilers weight and aerodynamicsScore
         spoilerScore = team->getTeamResources()->getSpoiler()->getWeight()  + team->getTeamResources()->getSpoiler()->getAerodynamicsScore() ;
 
-        temp = tyreScore + engineScore + chasisScore + electronicScore + spoilerScore;
+        temp = tyreScore + engineScore + chassisScore + electronicScore + spoilerScore;
 
         if(temp > bestCarStats) {
             bestCarStats = temp;

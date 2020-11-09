@@ -2,7 +2,7 @@
 #include "Formula1Car.h"
 #include "EnginePartBuilder.h"
 #include "TyrePartBuilder.h"
-#include "ChasisPartBuilder.h"
+#include "chassisPartBuilder.h"
 #include "ElectronicsPartBuilder.h"
 #include "SpoilerPartBuilder.h"
 
@@ -44,17 +44,17 @@ int main(){
     cout << "Thread level (random): ";
     cout << f1fastBoi->getTyres()->getThread() << endl << endl;
 
-    //Chasis building
-    carCreator[2] = new ChasisPartBuilder();
+    //chassis building
+    carCreator[2] = new chassisPartBuilder();
     carCreator[2]->buildPart();
-    f1fastBoi->setChasis(carCreator[2]->getPart());
+    f1fastBoi->setchassis(carCreator[2]->getPart());
 
-    cout << "Printing Chasis information: " << endl;
+    cout << "Printing chassis information: " << endl;
     cout << "------------------------------" << endl;
-    cout << "Part type (Chasis): ";
-    cout << f1fastBoi->getChasis()->getType() << endl;
+    cout << "Part type (chassis): ";
+    cout << f1fastBoi->getchassis()->getType() << endl;
     cout << "Aerodynamics score (random): ";
-    cout << f1fastBoi->getChasis()->getAerodynamicsScore() << endl;
+    cout << f1fastBoi->getchassis()->getAerodynamicsScore() << endl;
     cout << "Height ?lol? (random): ";
     cout << f1fastBoi->getChassis()->getHeight() << endl  << endl;
 

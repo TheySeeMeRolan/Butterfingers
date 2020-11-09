@@ -175,9 +175,34 @@ int main(){
     cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
     cout<<"\033[1;36m         DESTRUCTION    \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
+
+    cout<<endl<<endl<<"DELETING ALL TRACKBUILDERS"<<endl;
+
     delete trackGenerator[0];
+    delete trackGenerator[1];
+    delete trackGenerator[2];
+
+    cout<<endl<<endl<<"DELETING ALL TEAMS"<<endl;
     for(team_it= teams.begin(); team_it!= teams.end(); ++team_it)
     {
         delete *team_it;
     }
+    for (int i = 0; i < 6; ++i)
+    {
+        cout<<endl<<endl<<"Deleting Track"<<endl;
+        delete tracks[i];
+    }
+
+    delete calender;
+    delete seasonLog;
+
+    cout<<endl<<endl<<"DELETING ALL RACES"<<endl;
+    vector<  Race*  >::iterator r_it = seasonRaces.begin();
+    for(r_it= seasonRaces.begin(); r_it!= seasonRaces.end(); ++r_it)
+    {
+        delete *r_it;
+    }
+    cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
+    cout<<"\033[1;36m         DONE :) :) :)    \033[0m\n";
+    cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
 }

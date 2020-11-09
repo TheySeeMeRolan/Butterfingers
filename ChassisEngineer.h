@@ -7,8 +7,8 @@
 
 
 
-#ifndef PROJECT_CHASISENGINEER_H
-#define PROJECT_CHASISENGINEER_H
+#ifndef PROJECT_chassisENGINEER_H
+#define PROJECT_chassisENGINEER_H
 
 #include "Engineering.h"
 
@@ -22,7 +22,7 @@ public:
      * @brief command that is executed by the chain of reponsibility
      * **/
     void test();
-//    ChasisEngineer();
+//    chassisEngineer();
 /**
  * @brief paramaterized constructor. the values specified in the constructor is what is stored in Human.
  * @param team sends the team to the parent, Human.
@@ -32,4 +32,4 @@ public:
     ChassisEngineer(Team* team, Human * s,TeamResources* tR);
 };
 
-#endif //PROJECT_CHASISENGINEER_H
+#endif //PROJECT_chassisENGINEER_H

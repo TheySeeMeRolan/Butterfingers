@@ -7,8 +7,8 @@
  * @author Joanita Nell (u19006812)
  * **/
 
-#ifndef PROJECT_CHASISFACTORY_H
-#define PROJECT_CHASISFACTORY_H
+#ifndef PROJECT_chassisFACTORY_H
+#define PROJECT_chassisFACTORY_H
 
 #include "HumanFactory.h"
 #include "Strategist.h"
@@ -23,7 +23,7 @@ public:
  * **/
     ChassisFactory(Team* t,TeamResources* tR);
     /**
-     * @brief method to create the ChasisEngineer.
+     * @brief method to create the chassisEngineer.
      * @param s used tp set the successor of the engineer for the chain of responsibility design patern.
      * **/
     Human * makeEngineer(Human * s) ;
@@ -34,4 +34,4 @@ public:
     Human * makePersonnel(Human * s) ;
 };
 
-#endif //PROJECT_CHASISFACTORY_H
+#endif //PROJECT_chassisFACTORY_H

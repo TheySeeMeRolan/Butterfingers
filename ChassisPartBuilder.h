@@ -9,24 +9,24 @@
  * 
  */
 
-#ifndef PROJECT_CHASISPARTBUILDER_H
-#define PROJECT_CHASISPARTBUILDER_H
+#ifndef PROJECT_chassisPARTBUILDER_H
+#define PROJECT_chassisPARTBUILDER_H
 
 #include "Chassis.h"
 #include "CarPartBuilder.h"
 
 class ChassisPartBuilder: public CarPartBuilder{
 private:
-    Chassis* chasisPart; ///< The chasis part.
+    Chassis* chassisPart; ///< The chassis part.
 public:
     /**
      * @brief create car part.
-     * The implementation for building the chasis car part.
+     * The implementation for building the chassis car part.
      */
     void buildPart();
     /**
      * @brief return car part.
-     * The implementation for returning the chasis car part.
+     * The implementation for returning the chassis car part.
      */
     CarPart* getPart();
     /**
@@ -36,4 +36,4 @@ public:
     ~ChassisPartBuilder();
 };
 
-#endif //PROJECT_CHASISPARTBUILDER_H
+#endif //PROJECT_chassisPARTBUILDER_H

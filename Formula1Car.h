@@ -3,7 +3,7 @@
  * @brief concrete class.
  * 
  * A concrete class that holds the different parts of the formula1 car built by the builders.
- * Implements getters and setters for the 5 parts -> engine, tyres, chasis, electronics and spoiler.
+ * Implements getters and setters for the 5 parts -> engine, tyres, chassis, electronics and spoiler.
  * State of the memento. Accessors and mutators are used to help with the memento design patterns's originator(TeamResources)
  *  
  * @author Luke Partridge u19010240
@@ -24,7 +24,7 @@ class Formula1Car {
 private:
     Engine* engine; ///< The engine part of the formula 1 car.
     Tyre* tyres;   ///< The tyres part of the formula 1 car.
-    Chassis* chasis; ///< The chasis part of the formula 1 car.
+    Chassis* chassis; ///< The chassis part of the formula 1 car.
     Electronics* electronics; ///< The electronics part of the formula 1 car.
     Spoiler* spoiler; ///< The spoiler part of the formula 1 car.
 public:
@@ -43,12 +43,12 @@ public:
     */
     Tyre* getTyres();
     /**
-     * @brief return chasis part.
-     * The implementation of the method that returns the chasis part of the formula 1 car.
+     * @brief return chassis part.
+     * The implementation of the method that returns the chassis part of the formula 1 car.
      * Used by memento's originator.
-     * @return Chassis* chasis part.
+     * @return Chassis* chassis part.
     */
-    Chassis* getChasis();
+    Chassis* getchassis();
     /**
      * @brief return electronics part.
      * The implementation of the method that returns the electronics part of the formula 1 car.
@@ -77,11 +77,11 @@ public:
     */
     void setTyre(CarPart* trs);
     /**
-     * @brief Set the chasis of the formula 1 car.
-     * The implementation of the method that sets the chasis of the formula 1 car.
+     * @brief Set the chassis of the formula 1 car.
+     * The implementation of the method that sets the chassis of the formula 1 car.
      * @param chs CarPart* which is upcasted to Chassis*.
     */
-    void setChasis(CarPart* chs);
+    void setchassis(CarPart* chs);
     /**
      * @brief Set the electronics of the formula 1 car.
      * The implementation of the method that sets the electronics of the formula 1 car.

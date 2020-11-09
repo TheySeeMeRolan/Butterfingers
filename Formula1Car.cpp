@@ -10,8 +10,8 @@ void Formula1Car::setTyre(CarPart* trs){
     this->tyres = (Tyre*)trs;
 }
 
-void Formula1Car::setChasis(CarPart* chs){
-    this->chasis= (Chassis*)chs;
+void Formula1Car::setchassis(CarPart* chs){
+    this->chassis= (Chassis*)chs;
 }
 
 void Formula1Car::setElectronics(CarPart* elctr){
@@ -30,8 +30,8 @@ Tyre* Formula1Car:: getTyres(){
     return this->tyres;
 }
 
-Chassis* Formula1Car::getChasis(){
-    return this->chasis;
+Chassis* Formula1Car::getchassis(){
+    return this->chassis;
 }
 
 Electronics* Formula1Car::getElectronics(){
@@ -44,8 +44,9 @@ Spoiler* Formula1Car::getSpoiler(){
 
 Formula1Car::~Formula1Car()
 {
-    if (chasis)
-    delete chasis;
+    cout<<endl<<"DELETING Formula1Car: "<<endl;
+    if (chassis)
+    delete chassis;
     if (spoiler)
     delete spoiler;
     if (electronics)

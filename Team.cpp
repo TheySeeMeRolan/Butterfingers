@@ -53,6 +53,7 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
 
 Team::~Team()
 {
+    cout<<endl<<endl<<"DELETING TEAM: "<<teamResources->getCompany()<<endl;
     delete lead;
     for(int r = 0 ; r<8;r++)
         delete command[r];
