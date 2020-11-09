@@ -1,9 +1,9 @@
  /**
  * @class Team
- * @brief Concrete Observer of the Observer pattern and one of the central classes in our system.
+ * @brief Concrete Observer of the Observer pattern , Invoker of the Command pattern and one of the central classes in our system.
  *
  * Used to observe the WeeKCalender for the season and react accordingly to updates.
- * When an update is issued it sends the necessary commands to get its humans/staff to do the correct functions.
+ * When an update is issued it invokes the necessary commands to get its humans/staff to do the correct functions.
  * Holds a pointer to the start of a linked list (Resultant of the chain of responsibility) of humans.
  * Holds stats for the driver as well as *s to the testing facilities it may make use of .
  * Holds *'s to the human factories it uses during construction
@@ -45,7 +45,7 @@ private:
 
     WeekCalender* calender;/// concrete observer pointer so that it can call getWeek()
     Human * lead;///leading pointer of the Human* list.
-    Command* command[8];/// array of commands used by the team
+    Command* command[8];/// array of commands used by the team ,these  are the commands invoked (as this is the invoker of the command pattern) in the command pattern
     TeamResources* teamResources; ///Pointer to class of teamRecources type , which contains all the teams resources
     HumanFactory** factories;/// Array of pointers tp factory objects , used to create humans on creation
     int currentWeek;    /// variable used to save some of the state information from the concrete subject
@@ -138,6 +138,16 @@ public:
      * @param p The car on which you wish to do the testing.
      */
     void runWindTest(Formula1Car *p);
+
+    /**
+     * Makes preparations and moves team to a new season,calls swapToFutureCarAndMakeNewCurrentCars() in teamResources
+     * Sets new WeekCalender value , new racingSchedule
+     * Sets current week to -1
+     * @param newCal New Concrete subject to observe
+     * @param newRaces New racing schedule
+     */
+    void moveToNextSeason(WeekCalender* newCal, vector<Race*> newRaces);
+
 };
 
 

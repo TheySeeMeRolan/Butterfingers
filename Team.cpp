@@ -17,21 +17,21 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     factories[3] = new EngineFactory(this,teamResources);
 
     // Strategist holds Driver, driver holds Logistician etc , start creation from the back (EngineEngineer)
-    Human * tempHuman = factories[0]->makePersonnel(nullptr); // chasis engineer with aerodynamics engineer successor
+    Human * tempHuman = factories[0]->makePersonnel(nullptr); // driver with no successor
     driverStats.push_back(dynamic_cast<Driver *>(tempHuman)->getSkill()); // driverstats.at(0) is the skill
     driverStats.push_back(dynamic_cast<Driver *>(tempHuman)->getLuck()); // driverstats.at(1) is the luck
-    tempHuman = factories[0]->makePersonnel(nullptr); // creates a second driver
+    tempHuman = factories[0]->makePersonnel(nullptr); // creates a second driver with driver successor
     driverStats.push_back(dynamic_cast<Driver *>(tempHuman)->getSkill()); // driverstats.at(2) is the skill of the second driver
     driverStats.push_back(dynamic_cast<Driver *>(tempHuman)->getLuck()); // driverstats.at(3) is the luck of the second driver
 
-    tempHuman = factories[3]->makePersonnel(tempHuman); // engine engineer with no successor
-    tempHuman = factories[2]->makePersonnel(tempHuman); // electronics engineer with engine engineer successor
-    tempHuman = factories[1]->makePersonnel(tempHuman); // aerodynamics engineer with electronics engineer successor
+    tempHuman = factories[3]->makePersonnel(tempHuman); // pitcrew with driver successor
+    tempHuman = factories[2]->makePersonnel(tempHuman); // strategist with engine pitcrew successor
+    tempHuman = factories[1]->makePersonnel(tempHuman); // logistician with electronics strategist successor
 
-    tempHuman = factories[3]->makeEngineer(tempHuman);  // pitcrew engineer with chasis engineer successor
-    tempHuman = factories[1]->makeEngineer(tempHuman); // driver with logistician successor
-    tempHuman = factories[0]->makeEngineer(tempHuman); // strategist with driver successor
-    tempHuman = factories[2]->makeEngineer(tempHuman); // logistician with pitcrew successor
+    tempHuman = factories[3]->makeEngineer(tempHuman);  // engine engineer with logistician successor
+    tempHuman = factories[1]->makeEngineer(tempHuman); //  electronics engineer with engine engineer successor
+    tempHuman = factories[0]->makeEngineer(tempHuman); // Aerodynamics engineer with electronics engineer successor
+    tempHuman = factories[2]->makeEngineer(tempHuman); // chassis engineer with Aerodynamics engineer successor
     lead = tempHuman;
 
     lead = tempHuman;
@@ -142,4 +142,16 @@ void Team::runSimulationTest(Formula1Car * p)
     // send in the car to the test and have it return a car to replace the memento with
     // send in future or current car
     simulationTest->test(p);
+}
+
+void Team::moveToNextSeason(WeekCalender *newCal, vector<Race *> newRaces)
+{
+    cout<<"TEAM "<< teamResources->getCompany() << " makes arrangements to move on to a new season:"<<endl;
+    teamResources->swapToFutureCarAndMakeNewCurrentCars();
+    this->calender =newCal;
+    this->currentWeek=-1;
+    this->teamResources->setCurrentWeek(-1);
+    this->teamResources->setRaceSchedule(newRaces);
+    cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+
 }

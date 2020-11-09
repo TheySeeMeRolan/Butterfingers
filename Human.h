@@ -1,7 +1,8 @@
 /**
  * @class Human
- * @brief Abstract product of the Abstract Factory design pattern.
+ * @brief Abstract product of the Abstract Factory design pattern , as well as receiver of the Command pattern.
  * @author Joanita Nell (u19006812)
+ * @author Rolan Strydom
  * **/
 
 #ifndef PROJECT_HUMAN_H

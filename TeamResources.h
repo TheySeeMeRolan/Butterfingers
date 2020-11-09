@@ -3,9 +3,8 @@
  * @brief Originator of the memento design pattern
  * implements the createMemento and reinstantiateMemento methods.
  *
- * @author Rolan Strydom u16002613 - All non memento functions
- * @author Joanita Nell (u19006812) - the memento functions
- * 
+ * @author Rolan Strydom u16002613
+ *
  **/
 #ifndef BUTTERFINGERS_TEAMRESOURCES_H
 #define BUTTERFINGERS_TEAMRESOURCES_H
@@ -185,6 +184,7 @@ public:
      * Function to swap to future car at end of season and create two new current cars
      */
     void swapToFutureCarAndMakeNewCurrentCars();
+
 };
 
 

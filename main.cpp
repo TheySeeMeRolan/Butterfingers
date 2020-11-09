@@ -158,7 +158,19 @@ int main(){
     seasonLog->printFinalStandings();
 
 
+    // IF YOU WOULD WANT TO MOVE TO A NEW SEASON (FOR DEMO PURPOSES USING SAME RACES AS LAST TIME)
+    cout<<endl<<endl<<endl<<endl;
+    cout << "====TO SHOW THAT WE DO HAVE THE FUNCTIONALITY TO MOVE TO A NEXT SEASON IF WANTED===="<<endl;
+    WeekCalender* season2Cal = new WeekCalender();
 
+    team_it = teams.begin();
+    for(team_it= teams.begin(); team_it!= teams.end(); ++team_it)
+    {
+        season2Cal->attach(*team_it);
+        (*team_it)->moveToNextSeason(season2Cal,seasonRaces);
+    }
+    //CAN UNCOMMENT TO SHOW , however chose to comment for demo because our code already print a LOT :P!
+    //season2Cal->startSeason();
 
     cout<<"\n\n\033[1;36m┌─────────── ⋄❋ ⋄ ───────────┐\033[0m\n";
     cout<<"\033[1;36m         DESTRUCTION    \033[0m\n";
