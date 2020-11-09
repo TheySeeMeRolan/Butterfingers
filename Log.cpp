@@ -115,9 +115,6 @@ void Log::printFinalStandings()
     int pos = -1;
     int counter = 0;
     string WINNER = "";
-    int wPOINTS ;
-
-
 
     vector<  int  >::iterator it = scores.begin();
     vector<  int  >::reverse_iterator rit = scorePos.rbegin();

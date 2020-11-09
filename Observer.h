@@ -20,7 +20,7 @@ public:
      * Pure virtual methods , in child classes will be used to react to updates / notifications from the concrete subjects
      */
     virtual void update()=0;
-
+    virtual ~Observer();
 };
 
 

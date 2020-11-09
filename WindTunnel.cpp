@@ -37,8 +37,6 @@ bool WindTunnel::run(){
     int result1 = var1 + var2;
     int originalVar1=var1;
     int originalVar2=var2;
-    int originalWeight=before->getSpoiler()->getWeight();
-    int originaHeight=before->getchassis()->getHeight();
     teamResources->construct(); // recreate the current car
 
     Formula1Car * test = teamResources->getCar(true); // get current car
