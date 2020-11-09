@@ -53,10 +53,7 @@ void Logistician::handleRequest(string p){
     }
 
 
-    if (successor)
-    {
-        successor->handleRequest(p);
-    }
+Human::handleRequest(p);
 }
 
 void Logistician::analyseTrack(){
@@ -67,7 +64,6 @@ void Logistician::prepareForRace(){
     cout<<"The "<<teamResources->getCompany()<<" team logistician prepares everything for the race weekend";
     if (teamResources->getRaceSchedule().at(teamResources->getCurrentWeek())->getTrack()->isEuropean())
     {
-        cout<<"and transports all the equipment to the European track ";
         shipContainerEuropean();
     }
     cout<<endl;
@@ -92,6 +88,7 @@ void Logistician::shipContainerNonEuropean()
 void Logistician::shipContainerEuropean()
 {
     equipRace(teamResources->getRaceSchedule().at(teamResources->getCurrentWeek()), teamResources->getTeamEquipment());
+    cout<<endl<<"The "<<teamResources->getCompany()<<" team logistician ships all their equipment to the track for this weekend's European race "<<endl;
 
 }
 

@@ -30,5 +30,8 @@ string Human::getTypeHuman(){
 }
 
 void Human::handleRequest(string s) {
-
+    if (successor)
+    {
+        successor->handleRequest(s);
+    }
 }

@@ -13,10 +13,7 @@ void PitCrew::handleRequest(string p){
     }
 
 
-    if (successor) 
-    {
-        successor->handleRequest(p);
-    }
+    Human::handleRequest(p);
 }
 
 void PitCrew::changeTyre(){

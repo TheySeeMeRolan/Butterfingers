@@ -50,9 +50,7 @@ void ElectronicEngineer::handleRequest(string p){
         tinker();
     }
 
-    if (successor) {
-        successor->handleRequest(p);
-    }
+    Human::handleRequest(p);
 }
 
 void ElectronicEngineer::tinker(){

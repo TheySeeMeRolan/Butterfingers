@@ -46,9 +46,7 @@ void AerodynamicsEngineer::handleRequest(string p){
 
     }
 
-    if (successor) {
-        successor->handleRequest(p);
-    }
+    Human::handleRequest(p);
 }
 
 void AerodynamicsEngineer::changeShape(){

@@ -24,10 +24,7 @@ void Driver::handleRequest(string p)
         this->drive();
     }
 
-    if (successor) 
-    {
-        successor->handleRequest(p);
-    }
+    Human::handleRequest(p);
 }
 
 void Driver::drive()

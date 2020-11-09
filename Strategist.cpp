@@ -46,10 +46,7 @@ void Strategist::handleRequest(string p){
     }
 
     // send it along the line
-    if (successor)
-    {
-        successor->handleRequest(p);
-    }
+Human::handleRequest(p);
 
 }
 

@@ -13,9 +13,5 @@ void Personnel::handleRequest(string s) {
 }
 
 Personnel::~Personnel() {
-//    if (successor){
-//        cout<<"Deleting "<< this->getTypeHuman()<<endl;
-//        delete successor;
-//    }
 
 }
