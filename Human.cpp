@@ -12,13 +12,11 @@ Human::Human(Team* t, Human * s,TeamResources* tR)
 }
 
 Human::~Human(){
-//    if (successor){
-//        delete successor;
-//    }
-//    if (team){
-//        delete team;
-//    }
-//
+    if (successor){
+        cout<<"Deleting "<< this->getTypeHuman()<<endl;
+        delete successor;
+    }
+
 }
 
 

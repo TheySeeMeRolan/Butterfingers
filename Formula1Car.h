@@ -94,6 +94,10 @@ public:
      * @param splr CarPart* which is upcasted to Spoiler*.
     */
     void setSpoiler(CarPart* splr);
+    /**
+ * Destructor
+ */
+    ~Formula1Car();
 };
 
 #endif //PROJECT_FORMULA1CAR_H

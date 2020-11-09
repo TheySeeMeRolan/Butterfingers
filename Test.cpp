@@ -1,7 +1,7 @@
 #include "Test.h"
 
 Test::~Test() {
-
+    delete hangar;
 }
 
 Test::Test(TeamResources * t, Hangar* h) {

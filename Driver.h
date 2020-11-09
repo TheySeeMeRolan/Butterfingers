@@ -1,5 +1,3 @@
-
-
 /**
  * @class Driver
  * @brief concrete product of the abstract factory pattern. Inherits from Personnel
@@ -36,10 +34,14 @@ public:
      * **/
     int getSkill();
     /***
-     * @brief accessor methof for luck attribute
+     * @brief accessor method for luck attribute
      * **/
     int getLuck();
 //    Driver(Team* team, int l, int s);
+    /**
+     * Virtual destructor
+     */
+    ~Driver();
 };
 
 #endif //PROJECT_DRIVER_H

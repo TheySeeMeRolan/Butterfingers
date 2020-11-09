@@ -17,7 +17,13 @@ TeamResources::TeamResources(string name,vector<Race*> sRaces)
 
 TeamResources::~TeamResources()
 {
+    delete teamEquipment;
+    delete currentCar;
 
+    for (int r = 0;r <5 ; ++r)
+    {
+    delete carPartBuilder[r];
+    }
 }
 
 string TeamResources::getCompany()
@@ -144,16 +150,32 @@ Formula1Car* TeamResources::cloneCar() {
     Formula1Car* car = new Formula1Car();
 
     if (currentCar == nullptr){
-        cout << "currentCar needs to be set first to clone it to futureCar" << endl;
+        cout << "currentCar needs to be set first to clone it " << endl;
         this->construct();
     }
 
-    car->setEngine(this->carPartBuilder[0]->getPart());
+    carPartBuilder[0]->buildPart();
+    carPartBuilder[1]->buildPart();
+    carPartBuilder[2]->buildPart();
+    carPartBuilder[3]->buildPart();
+    carPartBuilder[4]->buildPart();
+
+    car->setEngine(carPartBuilder[0]->getPart());
     car->setTyre(this->carPartBuilder[1]->getPart());
     car->setChasis(this->carPartBuilder[2]->getPart());
     car->setElectronics(this->carPartBuilder[3]->getPart());
     car->setSpoiler(this->carPartBuilder[4]->getPart());
 
+    car->getEngine()->setTorque(currentCar->getEngine()->getTorque());
+    car->getEngine()->setHorsePower(currentCar->getEngine()->getHorsePower());
+    car->getElectronics()->setEfficiency(currentCar->getElectronics()->getEfficiency());
+    car->getElectronics()->setAssistance(currentCar->getElectronics()->getAssistance());
+    car->getChasis()->setHeight(currentCar->getChasis()->getHeight());
+    car->getChasis()->setAeroDynamicScore(currentCar->getChasis()->getAerodynamicsScore());
+    car->getSpoiler()->setAerodynamicsScore(currentCar->getSpoiler()->getAerodynamicsScore());
+    car->getSpoiler()->setWeight(currentCar->getSpoiler()->getWeight());
+    car->getTyres()->setThread(currentCar->getTyres()->getThread());
+    car->getTyres()->setPressure(currentCar->getTyres()->getPressure());
     return car;
 }
 
@@ -198,7 +220,6 @@ void TeamResources::swapToFutureCar()
 {
     cout<<"Deleting current cars and replacing them with our future car."<<endl;
     delete currentCar;
-    delete currentCar2;
     currentCar = futureCar;
     currentCar2 = cloneCar();
 

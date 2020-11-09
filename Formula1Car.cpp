@@ -42,3 +42,17 @@ Spoiler* Formula1Car::getSpoiler(){
     return this->spoiler;
 }
 
+Formula1Car::~Formula1Car()
+{
+    if (chasis)
+    delete chasis;
+    if (spoiler)
+    delete spoiler;
+    if (electronics)
+    delete electronics;
+    if (engine)
+    delete engine;
+    if (tyres)
+    delete tyres;
+}
+

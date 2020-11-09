@@ -44,6 +44,12 @@ int Driver:: getLuck(){
     return luck;
 }
 
+Driver::~Driver() {
+    cout<<"Deleting Driver"<<endl;
+    if (successor)
+        delete successor;
+}
+
 
 
 

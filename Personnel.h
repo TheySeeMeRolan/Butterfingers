@@ -25,6 +25,10 @@ public:
  * @param tR link the teamResources to the correct human. 
  * **/
     Personnel(Team* team, Human * s,TeamResources* tR);
+    /**
+     * Virtual destructor
+     */
+    virtual ~Personnel();
 };
 
 #endif //PROJECT_PERSONNEL_H

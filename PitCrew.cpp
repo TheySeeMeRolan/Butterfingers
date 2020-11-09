@@ -11,31 +11,7 @@ void PitCrew::handleRequest(string p){
     {
         this->changeTyre();
     }
-    
-    if(p == "test simulation")
-    {
 
-    }
-    
-    if(p == "test windtunnel")
-    {
-
-    }
-    
-    if(p == "strategise")
-    {
-        
-    }
-
-    if(p == "service")
-    {
-
-    }
-    
-    if(p == "racing")
-    {
-        
-    }
 
     if (successor) 
     {

@@ -19,10 +19,10 @@ using namespace std;
 class Team; 
 class Human{
 protected:
-    Team* team;
-    Human* successor;
-    string typeHuman; //vir Janlu
-    TeamResources* teamResources;
+    Team* team; ///team human belongs to
+    Human* successor; ///next in line in the Chain of reponsibility pattern
+    string typeHuman; /// type of human, identifies specialization in human hierarchy
+    TeamResources* teamResources;   ///allows humans to access resources in team
 public:
 /**
  * @brief paramaterized constructor, sets the values of the attributes.

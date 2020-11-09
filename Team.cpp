@@ -51,7 +51,19 @@ Team::Team(WeekCalender* schedule, string name,vector<Race*>sRaces)
     simulationTest = new Simulation(teamResources,hangar);
 }
 
-Team::~Team(){
+Team::~Team()
+{
+    delete lead;
+    for(int r = 0 ; r<8;r++)
+        delete command[r];
+    delete teamResources;
+    delete simulationTest;
+    delete windTest;
+
+    for(int r = 0 ; r<3;r++)
+        delete factories[r];
+    delete [] factories;
+
 
 }
 

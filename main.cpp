@@ -176,4 +176,8 @@ int main(){
     cout<<"\033[1;36m         DESTRUCTION    \033[0m\n";
     cout<<"\033[1;36m└─────────── ⋄❋ ⋄ ───────────┘\033[0m\n";
     delete trackGenerator[0];
+    for(team_it= teams.begin(); team_it!= teams.end(); ++team_it)
+    {
+        delete *team_it;
+    }
 }

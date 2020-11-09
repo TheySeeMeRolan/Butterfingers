@@ -10,7 +10,6 @@ vector<Team *> PracticeStrategy::race(vector<Team *> teams, Track *track,vector<
             std::cout<<setw(15)<<""<< "(Second Driver) ";
             teams[i]->race();
             std::cout<<" in position: "<<teams.size()+i+1<<std::endl;
-            std::cout<<" in position: "<<teams.size()+i+1<<std::endl;
         }
     }
     else {

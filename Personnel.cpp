@@ -11,3 +11,11 @@ Personnel::Personnel(Team* t, Human * s,TeamResources* tR):Human(t, s, tR){
 void Personnel::handleRequest(string s) {
     Human::handleRequest(s);
 }
+
+Personnel::~Personnel() {
+//    if (successor){
+//        cout<<"Deleting "<< this->getTypeHuman()<<endl;
+//        delete successor;
+//    }
+
+}
