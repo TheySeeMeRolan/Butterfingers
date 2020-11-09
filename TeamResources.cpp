@@ -194,13 +194,14 @@ CarPartBuilder *TeamResources::getTyrePartBuilder() {
     return this->carPartBuilder[1];
 }
 
-void TeamResources::swapToFutureCarAndMakeNewCurrentCars()
+void TeamResources::swapToFutureCar()
 {
-    cout<<"DELETING CURRENT CARS AND REPLACING THEM WITH OUT FUTURE CAR"<<endl;
+    cout<<"Deleting current cars and replacing them with our future car."<<endl;
     delete currentCar;
     delete currentCar2;
     currentCar = futureCar;
     currentCar2 = cloneCar();
+
 
 
 }

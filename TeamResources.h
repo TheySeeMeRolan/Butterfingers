@@ -183,7 +183,7 @@ public:
     /**
      * Function to swap to future car at end of season and create two new current cars
      */
-    void swapToFutureCarAndMakeNewCurrentCars();
+    void swapToFutureCar();
 
 };
 

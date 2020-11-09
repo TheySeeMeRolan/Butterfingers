@@ -147,11 +147,13 @@ void Team::runSimulationTest(Formula1Car * p)
 void Team::moveToNextSeason(WeekCalender *newCal, vector<Race *> newRaces)
 {
     cout<<"TEAM "<< teamResources->getCompany() << " makes arrangements to move on to a new season:"<<endl;
-    teamResources->swapToFutureCarAndMakeNewCurrentCars();
+    teamResources->swapToFutureCar();
     this->calender =newCal;
     this->currentWeek=-1;
     this->teamResources->setCurrentWeek(-1);
     this->teamResources->setRaceSchedule(newRaces);
+    cout<<"All preparations made to move to start the new season ! "<<endl;
+
     cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
 
 }
