@@ -7,18 +7,9 @@ Strategist::Strategist(Team* t, Human * s,TeamResources* tR): Personnel(t, s,tR)
 
 void Strategist::handleRequest(string p){
 
-    if(p == "prepare")
-    {
-
-    }
-
     if(p == "test simulation")
     {
-
-    }
-
-    if(p == "test windtunnel")
-    {
+        cout<<"The "<<teamResources->getCompany()<<" team's strategist creates new strategies for the simulation."<<endl;
 
     }
 

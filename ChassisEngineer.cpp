@@ -9,9 +9,6 @@ void ChassisEngineer::handleRequest(string p){
 
 
 
-    if(p == "test simulation"){
-        test();
-    }
 
     if(p == "test windtunnel"){
         test();

@@ -13,10 +13,6 @@ void ElectronicEngineer::handleRequest(string p){
 
     }
 
-    if(p == "test windtunnel"){
-        cout<<"The "<<teamResources->getCompany()<<" team's electronic engineer is testing out ENGINE changes."<<endl;
-
-    }
 
     if(p == "strategise")
     {

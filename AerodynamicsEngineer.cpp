@@ -7,11 +7,6 @@ AerodynamicsEngineer::AerodynamicsEngineer(Team* team, Human * s,TeamResources* 
 
 void AerodynamicsEngineer::handleRequest(string p){
 
-    if(p == "test simulation")
-    {
-        changeShape();
-    }
-
     if(p == "test windtunnel"){
         changeShape();
     }
